@@ -1,0 +1,13 @@
+无法匹配POS机中的授权码{!RTV_POS_Data__c.Auth_Code__c}。
+已生成孤单，请尽快登录系统查看并修改孤单的授权码。
+
+授权码：{!RTV_POS_Data__c.Auth_Code__c}
+客户名称：{!RTV_POS_Data__c.Name}
+Order No：{!RTV_POS_Data__c.Order_No__c}
+详细信息：{!RTV_POS_Data__c.Link}
+
+
+特此通知。
+Best regards
+
+Converse - RMS 系统运维

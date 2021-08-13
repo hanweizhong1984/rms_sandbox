@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Defective Source --></label>
+    <name>Defective_Source__c</name>
+    <picklistValues>
+        <masterLabel>原残</masterLabel>
+        <translation><!-- 原残 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>客残</masterLabel>
+        <translation><!-- 客残 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

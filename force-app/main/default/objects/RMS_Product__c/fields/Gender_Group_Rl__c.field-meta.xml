@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gender_Group_Rl__c</fullName>
+    <description>gender_group_all_all_rl</description>
+    <externalId>false</externalId>
+    <label>Gender Group Rl</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FEMALE</fullName>
+                <default>false</default>
+                <label>FEMALE</label>
+            </value>
+            <value>
+                <fullName>JUNIOR</fullName>
+                <default>false</default>
+                <label>JUNIOR</label>
+            </value>
+            <value>
+                <fullName>MALE</fullName>
+                <default>false</default>
+                <label>MALE</label>
+            </value>
+            <value>
+                <fullName>MEN</fullName>
+                <default>false</default>
+                <label>MEN</label>
+            </value>
+            <value>
+                <fullName>UNISEX</fullName>
+                <default>false</default>
+                <label>UNISEX</label>
+            </value>
+            <value>
+                <fullName>WOMEN</fullName>
+                <default>false</default>
+                <label>WOMEN</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

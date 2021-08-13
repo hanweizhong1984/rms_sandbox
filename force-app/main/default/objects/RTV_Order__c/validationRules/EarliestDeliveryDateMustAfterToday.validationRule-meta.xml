@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EarliestDeliveryDateMustAfterToday</fullName>
+    <active>true</active>
+    <description>Earliest Delivery Date must after today.</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &apos;Ready&apos;) &amp;&amp;
+ISCHANGED(Earliest_Delivery_Date__c) &amp;&amp;
+Earliest_Delivery_Date__c &lt;= TODAY()</errorConditionFormula>
+    <errorDisplayField>Earliest_Delivery_Date__c</errorDisplayField>
+    <errorMessage>最早提货日必须在系统日期的第二天或以后</errorMessage>
+</ValidationRule>

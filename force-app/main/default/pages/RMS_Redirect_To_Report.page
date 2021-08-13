@@ -1,0 +1,2 @@
+<apex:page controller="RMS_Redirect_To_Report" action="{!redirect}">
+</apex:page>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CFS_DTC_Takeback_Kick_Off</fullName>
+    <active>true</active>
+    <description>DTC Takeback Kick Off</description>
+    <label>CFS DTC Takeback Kick Off</label>
+    <picklistValues>
+        <picklist>Program_Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kick Off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

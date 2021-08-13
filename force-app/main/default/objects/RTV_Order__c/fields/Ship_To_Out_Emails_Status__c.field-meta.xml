@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_To_Out_Emails_Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Ship-To外部邮件的发送结果</inlineHelpText>
+    <label>Ship-To Out Emails Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sent</fullName>
+                <color>#33FF33</color>
+                <default>false</default>
+                <label>Sent</label>
+            </value>
+            <value>
+                <fullName>Failed</fullName>
+                <color>#CC0000</color>
+                <default>false</default>
+                <label>Failed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Asia Sub Category --></label>
+    <name>Asia_Sub_Category__c</name>
+    <picklistValues>
+        <masterLabel>Backpack</masterLabel>
+        <translation><!-- Backpack --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Baseball</masterLabel>
+        <translation><!-- Baseball --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CROSSBODY</masterLabel>
+        <translation><!-- CROSSBODY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DUFFEL</masterLabel>
+        <translation><!-- DUFFEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FLEECE BOTTOM</masterLabel>
+        <translation><!-- FLEECE BOTTOM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FLEECE TOP</masterLabel>
+        <translation><!-- FLEECE TOP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FOOTIES</masterLabel>
+        <translation><!-- FOOTIES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HIDDENS</masterLabel>
+        <translation><!-- HIDDENS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LS TEE</masterLabel>
+        <translation><!-- LS TEE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Messenger</masterLabel>
+        <translation><!-- Messenger --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NON PADDED</masterLabel>
+        <translation><!-- NON PADDED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>POUCH</masterLabel>
+        <translation><!-- POUCH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SLEEVELESS</masterLabel>
+        <translation><!-- SLEEVELESS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SS TEE</masterLabel>
+        <translation><!-- SS TEE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Snapback</masterLabel>
+        <translation><!-- Snapback --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TEE DRESS</masterLabel>
+        <translation><!-- TEE DRESS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRACK BOTTOM</masterLabel>
+        <translation><!-- TRACK BOTTOM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRACK TOP</masterLabel>
+        <translation><!-- TRACK TOP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Totes</masterLabel>
+        <translation><!-- Totes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WOVEN BOTTOM</masterLabel>
+        <translation><!-- WOVEN BOTTOM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Waist Bag</masterLabel>
+        <translation><!-- Waist Bag --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

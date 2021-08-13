@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RTV 订单明细</value>
+    </caseValues>
+    <layouts>
+        <layout>Baozun Seeding</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC</layout>
+        <sections>
+            <label>申请信息</label>
+            <section>Application Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>产品信息</label>
+            <section>Product Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Defective</layout>
+        <sections>
+            <label><!-- Application Information --></label>
+            <section>Application Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inbound Information --></label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Information --></label>
+            <section>Product Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Defective</layout>
+        <sections>
+            <label>申请信息</label>
+            <section>Application Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>产品信息</label>
+            <section>Product Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Defective With Price</layout>
+        <sections>
+            <label>申请信息</label>
+            <section>Application Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspect Information</section>
+        </sections>
+        <sections>
+            <label>产品信息</label>
+            <section>Product Information</section>
+        </sections>
+        <sections>
+            <label><!-- Selling Price --></label>
+            <section>Selling Price</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Takeback</layout>
+        <sections>
+            <label>申请信息</label>
+            <section>Application Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>产品信息</label>
+            <section>Product Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Takeback With Price</layout>
+        <sections>
+            <label>申请信息</label>
+            <section>Application Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspection Information</section>
+        </sections>
+        <sections>
+            <label>产品信息</label>
+            <section>Product Information</section>
+        </sections>
+        <sections>
+            <label>销售价格</label>
+            <section>Selling Price</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Item Code --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Baozun Seeding --></label>
+        <name>Baozun_Seeding</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DTC --></label>
+        <name>DTC</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DTC Defective --></label>
+        <name>DTC_Defective</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Defective Order Item --></label>
+        <name>Defective_Order_Item</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Normal --></label>
+        <name>Normal</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- Export_DTC_DEF_PackingList --></label>
+        <name>Export_DTC_DEF_PackingList</name>
+    </webLinks>
+    <webLinks>
+        <label>导出装箱单</label>
+        <name>Report_Packing_List</name>
+    </webLinks>
+    <webLinks>
+        <label>导出装箱单(A)</label>
+        <name>Report_Packing_List_A</name>
+    </webLinks>
+    <webLinks>
+        <label>导出装箱单(F)</label>
+        <name>Report_Packing_List_F</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Upload_DTC_DEF_Reason --></label>
+        <name>Upload_DTC_DEF_Reason</name>
+    </webLinks>
+    <webLinks>
+        <label>上传装箱单</label>
+        <name>Upload_Packing_List</name>
+    </webLinks>
+</CustomObjectTranslation>

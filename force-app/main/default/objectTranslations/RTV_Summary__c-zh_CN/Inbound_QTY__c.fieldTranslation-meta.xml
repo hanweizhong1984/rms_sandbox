@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>最终验收入库商品数量的合计。</help>
+    <label>实际退货数量</label>
+    <name>Inbound_QTY__c</name>
+</CustomFieldTranslation>

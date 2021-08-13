@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selling_Unit_Price_CNY_inV__c</fullName>
+    <externalId>false</externalId>
+    <formula>Selling_Unit_Price__c * SP_TaxRate__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>销售单价(CNY/含税)</inlineHelpText>
+    <label>Selling Unit Price (CNY/incl.VAT)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

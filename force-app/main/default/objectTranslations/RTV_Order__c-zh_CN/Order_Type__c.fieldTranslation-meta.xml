@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>订单类型</label>
+    <name>Order_Type__c</name>
+    <picklistValues>
+        <masterLabel>CFS DTC Defective</masterLabel>
+        <translation><!-- CFS DTC Defective --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CFS DTC Takeback</masterLabel>
+        <translation><!-- CFS DTC Takeback --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Digital DTC Defective</masterLabel>
+        <translation><!-- Digital DTC Defective --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Digital DTC Takeback</masterLabel>
+        <translation><!-- Digital DTC Takeback --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RTV Defective</masterLabel>
+        <translation><!-- RTV Defective --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WSL Takeback</masterLabel>
+        <translation>WSL召回</translation>
+    </picklistValues>
+</CustomFieldTranslation>

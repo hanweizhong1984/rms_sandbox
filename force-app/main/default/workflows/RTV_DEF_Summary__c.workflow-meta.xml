@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>RTV_DEF_Summary_Completed_BELLE</fullName>
+        <description>RTV DEF Summary Completed(BELLE)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_WSL_Belle</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Summary_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DEF_Summary_Completed_YY</fullName>
+        <description>RTV DEF Summary Completed(YY)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_WSL_YY_HQ</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Summary_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DEF_Summary_Created_BELLE</fullName>
+        <description>RTV DEF Summary Created(BELLE)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_WSL_Belle</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_WSL_Belle_Ship_to</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_WSL_Belle_Sold_to</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Summary_Create</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DEF_Summary_Created_YY</fullName>
+        <description>RTV DEF Summary Created(YY)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_WSL_YY_HQ</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Summary_Create</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DEF_Summary_Inbound</fullName>
+        <description>RTV DEF Summary Inbound</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Summary_Inbound</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Insp_CS_Approve_Time</fullName>
+        <field>Insp_CS_Approve_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Insp CS Approve Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Insp_CS_Reject_Time</fullName>
+        <field>Insp_CS_Reject_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Insp CS Reject Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Insp_Submit_Time</fullName>
+        <field>Insp_Submit_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Insp Submit Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RMS_Active_Close</fullName>
+        <field>Active_Status__c</field>
+        <literalValue>Closed</literalValue>
+        <name>RMS Active = Close</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RMS_Active_Open</fullName>
+        <field>Active_Status__c</field>
+        <literalValue>Opening</literalValue>
+        <name>RMS Active = Open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>RTV DEF Summary Close</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.Apply_Close_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.Active_Status__c</field>
+            <operation>equals</operation>
+            <value>Opening</value>
+        </criteriaItems>
+        <description>Close Date 时 Active=Close</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RMS_Active_Close</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>RTV_DEF_Summary__c.Apply_Close_Date__c</offsetFromField>
+            <timeLength>12</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RTV DEF Summary Completed%28BELLE%29</fullName>
+        <actions>
+            <name>RTV_DEF_Summary_Completed_BELLE</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.Account_Group_Name__c</field>
+            <operation>equals</operation>
+            <value>02)Belle</value>
+        </criteriaItems>
+        <description>DEF Summary完成后，发送邮件给CS,BELLE</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DEF Summary Completed%28YY%29</fullName>
+        <actions>
+            <name>RTV_DEF_Summary_Completed_YY</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.Account_Group_Name__c</field>
+            <operation>equals</operation>
+            <value>01)YY</value>
+        </criteriaItems>
+        <description>DEF Summary完成后，发送邮件给CS,YY</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DEF Summary Created%28BELLE%29</fullName>
+        <actions>
+            <name>RTV_DEF_Summary_Created_BELLE</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.Account_Group_Name__c</field>
+            <operation>equals</operation>
+            <value>02)Belle</value>
+        </criteriaItems>
+        <description>新建DEF Summary，发送邮件给CS,BELLE</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DEF Summary Created%28YY%29</fullName>
+        <actions>
+            <name>RTV_DEF_Summary_Created_YY</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.Account_Group_Name__c</field>
+            <operation>equals</operation>
+            <value>01)YY</value>
+        </criteriaItems>
+        <description>新建DEF Summary，发送邮件给CS,YY</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DEF Summary Inbound</fullName>
+        <actions>
+            <name>RTV_DEF_Summary_Inbound</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.LF_WH_Inbound_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.CS_Inbound_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.DTC_Type__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>DEF Summary第一次Inbound之后，发送邮件给CS,LF</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DEF Summary Open</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.Apply_Open_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_DEF_Summary__c.Active_Status__c</field>
+            <operation>equals</operation>
+            <value>Not Start</value>
+        </criteriaItems>
+        <description>Open Date 时 Active=Open</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RMS_Active_Open</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>RTV_DEF_Summary__c.Apply_Open_Date__c</offsetFromField>
+            <timeLength>-12</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

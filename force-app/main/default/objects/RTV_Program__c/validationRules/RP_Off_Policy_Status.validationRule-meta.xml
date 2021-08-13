@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RP_Off_Policy_Status</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+OR(TEXT(Program_Status__c)== &apos;Pending&apos;,
+TEXT(Program_Status__c)== &apos;Remove&apos;),
+OR( RecordType.Name == &apos;WSL Discount Takeback Off Policy&apos; ,
+RecordType.Name == &apos;WSL Full Takeback Off Policy&apos;,
+RecordType.Name == &apos;WSL Gold Store Off Policy&apos;,
+RecordType.Name == &apos;CFS DTC Takeback Kick Off&apos;,
+RecordType.Name == &apos;Digital DTC Takeback Kick Off&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>Program_Status__c</errorDisplayField>
+    <errorMessage>当Program状态为Off Policy时，不能将状态改为Pending或Remove</errorMessage>
+</ValidationRule>

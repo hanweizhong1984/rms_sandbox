@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsReturnEnable__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>True: 可退货   False: 不可退货</description>
+    <externalId>false</externalId>
+    <inlineHelpText>是否可退货</inlineHelpText>
+    <label>IsReturnEnable</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

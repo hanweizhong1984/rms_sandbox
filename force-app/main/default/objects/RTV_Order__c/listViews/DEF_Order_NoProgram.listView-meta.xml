@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DEF_Order_NoProgram</fullName>
+    <columns>NAME</columns>
+    <columns>RTV_DEF_Summary__c</columns>
+    <columns>Sold_To__c</columns>
+    <columns>Ship_To__c</columns>
+    <columns>Status__c</columns>
+    <columns>From_TakeBack_Order__c</columns>
+    <columns>Actual_Date_Of_WSL_Confirmed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RTV_DEF_Summary__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>RTV_Defective__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>RTV_Defective_FW__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>DEF 未归档订单</label>
+</ListView>

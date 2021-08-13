@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PostLF_Need_ApplyQTY</fullName>
+    <active>true</active>
+    <description>申请数量为0！请在 POST To LF 前先上传装箱单</description>
+    <errorConditionFormula>ISCHANGED(Status__c) &amp;&amp;
+ISPICKVAL(Status__c, &apos;POST to LF&apos;) &amp;&amp;
+Application_QTY__c = 0</errorConditionFormula>
+    <errorMessage>申请数量为0！请在 POST To LF 前先上传装箱单</errorMessage>
+</ValidationRule>

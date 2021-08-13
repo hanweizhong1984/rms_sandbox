@@ -1,0 +1,37 @@
+<apex:page controller="RTV_Summary_ClearData">
+    <style type="text/css">
+        body .bPageTitle .ptBody h1.noSecondHeader{
+            color: white;
+        }
+    </style>
+    
+    <!-- 没有被Kick Off的Summary-->
+    <apex:form >
+        <!-- Summary列表 -->
+        <apex:pageBlock tabStyle="RTV_Summary__c">
+            <apex:sectionHeader Title="Clear Summary Data"></apex:sectionHeader>
+
+            <apex:variable var="rowNum" value="{!0}"/>
+            <apex:pageBlockTable value="{!objs}" var="obj">
+                <apex:column headerValue="No">
+                     <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                     {!rowNum}
+                 </apex:column>
+                <apex:column headerValue="Summary Name">
+                    <apex:outputLink value="/{!obj.Id}">{!obj.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column value="{!obj.Status__c}" headerValue="Status"/>
+            </apex:pageBlockTable>
+
+            <!-- 按钮 -->
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Clear" action="{!clearData}" rendered="{!loginUser.isCS || loginUser.isAdmin}"/>
+                <apex:commandButton value="Close" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+
+        </apex:pageBlock>
+    </apex:form>
+
+    <!-- Message -->
+    <apex:pageMessages />
+</apex:page>

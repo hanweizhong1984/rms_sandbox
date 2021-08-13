@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_Number_Check</fullName>
+    <active>true</active>
+    <description>验证电话号码</description>
+    <errorConditionFormula>OR(
+AND(NOT(ISBLANK(Ship_To_Phone1__c)),NOT(REGEX(Ship_To_Phone1__c, &quot;^((\\d{3,4}-)?[0-9]{7,8})|(1(3|4|5|6|7|8|9|)\\d{1}[ ]?\\d{4}[ ]?\\d{4})$&quot;))),
+AND(NOT(ISBLANK(Ship_To_Phone2__c)),NOT(REGEX(Ship_To_Phone2__c, &quot;^((\\d{3,4}-)?[0-9]{7,8})|(1(3|4|5|6|7|8|9|)\\d{1}[ ]?\\d{4}[ ]?\\d{4})$&quot;)))
+)</errorConditionFormula>
+    <errorMessage>请输入正确的电话号码！</errorMessage>
+</ValidationRule>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 是否有精确到该AccountGroup以下的商品预算？ --></help>
+    <label><!-- Has Sku Budget --></label>
+    <name>Has_Sku_Budget__c</name>
+</CustomFieldTranslation>

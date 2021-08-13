@@ -1,0 +1,133 @@
+<apex:page controller="RTV_DTC_DEF_Summary_Inbound" lightningStylesheets="True" action="{!loadPage}" docType="HTML-5.0">
+    <apex:slds /> <!-- 用<apex:slds>标签引入lightning的css -->
+
+    <apex:outputPanel id="_body">
+        
+        <!-- 结果 -->
+        <apex:outputPanel id="panel">
+            <!-- 表单 -->
+            <apex:form >
+                <!-- LF仓库 Inbound -->
+                <apex:pageBlock title="批量入库" rendered="{!loginUser.isLF}">
+                    <apex:pageBlockSection >
+                        <apex:pageBlock id="pbattach" title="附件" rendered="{!summary.ContentDocumentLinks != null}">
+                            <table border="0" >
+                                <apex:repeat value="{!summary.ContentDocumentLinks}" var="att">
+                                    <tr>
+                                        <td>
+                                            <apex:outputField value="{!att.ContentDocumentId}"/>
+                                        </td>
+                                    </tr>
+                                </apex:repeat> 
+                            </table>
+                        </apex:pageBlock>
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlockSection rendered="{!workOrdersCnt > 0}">
+                        <apex:pageBlock title="上传附件">
+                            <apex:inputFile value="{!fileBody}" filename="{!fileName}"/>
+                            <apex:pageBlockButtons location="bottom">
+                                <apex:commandButton value="上传" action="{!upload}"/>
+                            </apex:pageBlockButtons>
+                        </apex:pageBlock>
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlock title="入库备注">
+                        <apex:pageBlockSection columns="1">
+                            <apex:inputField label="备注：" value="{!summary.LF_WH_Inbound_Comment__c}" style="width: 800px;"/>
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+
+                    <!-- 按钮 -->
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton value="入库" action="{!inbound}" rendered="{!workOrdersCnt > 0}"/>
+                        <apex:commandButton value="关闭" action="{!cancel}"/>
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+
+                <!-- System Administrator Inbound -->
+                <apex:pageBlock title="批量入库" rendered="{!loginUser.isAdmin}">
+                    <apex:pageBlockSection >
+                        <apex:pageBlock id="pbattach" title="附件" rendered="{!summary.ContentDocumentLinks != null}">
+                            <table border="0" >
+                                <apex:repeat value="{!summary.ContentDocumentLinks}" var="att">
+                                    <tr>
+                                        <td>
+                                            <apex:outputField value="{!att.ContentDocumentId}"/>
+                                        </td>
+                                        <td>
+                                            <apex:outputField value="{!att.ContentDocument.Owner.Name}"/>
+                                        </td>
+                                        <td>
+                                            <apex:actionRegion >
+                                                <apex:commandLink action="{!deleteAttach}" value="[删除]" reRender="pbattach">
+                                                    <apex:param name="cdId" value="{!att.ContentDocumentId}" assignTo="{!contentDocumentId}"/>
+                                                </apex:commandLink>
+                                            </apex:actionRegion>
+                                        </td>
+                                    </tr>
+                                </apex:repeat> 
+                            </table>
+                        </apex:pageBlock>
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlockSection >
+                        <apex:pageBlock title="上传附件">
+                            <apex:inputFile value="{!fileBody}" filename="{!fileName}"/>
+                            <apex:pageBlockButtons location="bottom">
+                                <apex:commandButton value="上传" action="{!upload}" />
+                            </apex:pageBlockButtons>
+                        </apex:pageBlock>
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlock title="入库备注">
+                        <apex:pageBlockSection columns="1">
+                            <apex:inputField label="LF仓库备注：" value="{!summary.LF_WH_Inbound_Comment__c}" style="width: 800px;"/>
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+
+                    <!-- 按钮 -->
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton value="LF仓库入库" action="{!inbound}" rendered="{!workOrdersCnt > 0}"/>
+                        <apex:commandButton value="关闭" action="{!cancel}"/>
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+
+            </apex:form>
+        
+            <!-- Message -->
+            <apex:pageMessages />
+            
+            <!-- Loading -->
+            <apex:outputPanel layout="block" rendered="{!isLoading}">
+                <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.75;width:100%;">
+                    <div class="waitingHolder" style="top: 100px; width: 91px;">
+                        <img class="waitingImage" src="/img/loading.gif" title="Please Wait..."  style="width: 40;height:40;"/>
+                    </div>
+                </div>
+            </apex:outputPanel>
+            
+            <!-- Order列表 -->
+            <apex:pageBlock title="RTV订单" >
+                <apex:pageBlockTable value="{!orders}" var="order">
+                    <apex:column headerValue="订单号">
+                        <apex:outputLink value="/{!order.Id}">{!order.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!order.Ship_To__r.Name}" headerValue="SHIP TO 编号"/>
+                    <apex:column value="{!order.Inspect_QTY_A__c}" headerValue="数量(A)"/>
+                    <apex:column value="{!order.Inspect_QTY_B__c}" headerValue="数量(B)"/>
+                    <apex:column value="{!order.Inspect_QTY_C__c}" headerValue="数量(C)"/>
+                    <apex:column value="{!order.Inspect_QTY_D__c}" headerValue="数量(D)"/>
+                    <apex:column headerValue="附件">
+                        <apex:repeat value="{!order.ContentDocumentLinks}" var="att">
+                            <apex:outputField value="{!att.ContentDocumentId}"/><br/>
+                        </apex:repeat>
+                    </apex:column>
+                    <apex:column value="{!order.Inbound_QTY__c}" headerValue="入库数量"/>
+                    <apex:column value="{!order.To_DEF_Order__c }" headerValue="退残次订单"/>
+                    <apex:column value="{!order.Status__c}" headerValue="状态"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:page>

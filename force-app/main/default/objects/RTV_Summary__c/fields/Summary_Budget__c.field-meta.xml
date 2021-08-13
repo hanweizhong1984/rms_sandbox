@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Summary_Budget__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>lookup summary budget</description>
+    <externalId>false</externalId>
+    <label>Summary Budget</label>
+    <referenceTo>RTV_RP_Summary_Budget__c</referenceTo>
+    <relationshipLabel>RTV Summaries</relationshipLabel>
+    <relationshipName>RTV_Summaries</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

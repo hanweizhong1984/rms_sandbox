@@ -1,0 +1,14 @@
+Hi, All																										
+																											
+退货/召回流程{!RTV_Program__c.Name}已经发起，请按照相关信息配合完成退货/召回流程，具体信息可进入RMS系统查看。
+　
+退货编号：{!RTV_Program__c.Finance_Code__c}
+退货类型：{!RTV_Program__c.RecordType}
+截止日期：{!RTV_Program__c.Expiration_Date__c}
+详细信息：{!RTV_Program__r.Link}
+																										
+																											
+特此通知。																											
+Best regards
+
+Converse - RMS 系统运维

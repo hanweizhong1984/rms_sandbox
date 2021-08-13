@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The first 2 characters of product&apos;s BU --></help>
+    <label>BU</label>
+    <name>BU_2__c</name>
+</CustomFieldTranslation>

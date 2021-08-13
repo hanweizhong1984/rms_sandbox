@@ -1,0 +1,75 @@
+<apex:page controller="RTV_Order_UploadPackingCtrl" lightningStylesheets="True">
+    <apex:slds />
+    
+    <!-- 上传表单 -->
+    <apex:form >
+        <apex:pageBlock title="上传装箱单(.CSV)" mode="edit">
+            <apex:pageBlockSection columns="2">
+                <!-- 左边 -->
+                <apex:pageBlockSection columns="1">
+                    <!-- input:上传部分 -->
+                    <apex:inputFile value="{!fileUploadBody}" fileName="{!fileUploadName}" accept=".csv"/>
+                    <apex:selectRadio value="{!fileCharset}" layout="pageDirection">
+                        <apex:selectOptions value="{!fileCharsetOpts}"/>
+                    </apex:selectRadio>
+                    
+                    <!-- 提示 -->
+                    <apex:outputText >
+                        <span style="font-weight:bold;">请注意:<br/></span>
+                        上传的商品尺码中，(美码)和(亚码)请选择一个填写。<br/>
+                        只填写(亚码)时，系统会自动计算出(美码)。<br/>
+                        只填写(美码)时，系统会自动计算出(亚码)。<br/>
+                    </apex:outputText>
+                </apex:pageBlockSection>
+                
+                <!-- 右边 -->
+                <apex:pageBlockSection columns="1">
+                    <!-- input:选择ship-to -->
+                    <div>请选择 Ship-To</div>
+                    <apex:selectList value="{!shipToSelected}" size="5">
+                        <apex:selectOptions value="{!shipToSelectOptions}"/>
+                    </apex:selectList>
+                </apex:pageBlockSection>
+            </apex:pageBlockSection>
+            <!-- 按钮 -->
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="上传" action="{!upload}"/>
+                <apex:commandButton value="返回" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    
+    
+    <!-- 用Ajax检查上传结果（间隔5s） -->
+    <apex:form >
+        <apex:actionPoller enabled="{!isLoading}" action="{!checkUploadResult}" reRender="_resultView" interval="5" />
+    </apex:form>
+    
+    <!-- 结果 -->
+    <apex:outputPanel id="_resultView" title="Result" >
+        <!-- Loading -->
+        <apex:outputPanel layout="block" rendered="{!isLoading}">
+            <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.75;width:100%;">
+                <div class="waitingHolder" style="top: 100px; width: 91px;">
+                    <img class="waitingImage" src="/img/loading.gif" title="Please Wait..."  style="width: 40;height:40;"/>
+                    <span class="waitingDescription">Loading({!loadingPercent}%)...</span>
+                    
+                    <div class="slds-progress-bar slds-progress-bar_large" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{!loadingPercent}" role="progressbar">
+                        <span class="slds-progress-bar__value slds-progress-bar__value_success" style="width: {!loadingPercent}%"/>
+                    </div>
+                </div>
+            </div>
+        </apex:outputPanel>
+        
+        <!-- 显示message -->
+        <apex:pageMessages />
+        
+        <!-- 下载错误信息文件 -->
+        <apex:outputText rendered="{!resErrCsvFile != null}">
+            <script type="text/javascript">
+                // 打开下载链接
+                window.open("/servlet/servlet.FileDownload?file={!resErrCsvFile.Id}&operationContext=S1");
+            </script>
+        </apex:outputText>
+    </apex:outputPanel>
+</apex:page>

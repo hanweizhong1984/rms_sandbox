@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Return method(discount% on return) --></help>
+    <label>折扣</label>
+    <name>Discount__c</name>
+</CustomFieldTranslation>

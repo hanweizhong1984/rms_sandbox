@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Basic_Material_Group__c</fullName>
+    <description>basic_material_group_all_all_gl</description>
+    <externalId>false</externalId>
+    <label>Basic Material Group</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Canvas</fullName>
+                <default>false</default>
+                <label>Canvas</label>
+            </value>
+            <value>
+                <fullName>Cotton Ripstop</fullName>
+                <default>false</default>
+                <label>Cotton Ripstop</label>
+            </value>
+            <value>
+                <fullName>Cotton Twill</fullName>
+                <default>false</default>
+                <label>Cotton Twill</label>
+            </value>
+            <value>
+                <fullName>French Terry</fullName>
+                <default>false</default>
+                <label>French Terry</label>
+            </value>
+            <value>
+                <fullName>Jersey</fullName>
+                <default>false</default>
+                <label>Jersey</label>
+            </value>
+            <value>
+                <fullName>Mesh</fullName>
+                <default>false</default>
+                <label>Mesh</label>
+            </value>
+            <value>
+                <fullName>Nylon Ripstop</fullName>
+                <default>false</default>
+                <label>Nylon Ripstop</label>
+            </value>
+            <value>
+                <fullName>Pique</fullName>
+                <default>false</default>
+                <label>Pique</label>
+            </value>
+            <value>
+                <fullName>Polyester Ripstop</fullName>
+                <default>false</default>
+                <label>Polyester Ripstop</label>
+            </value>
+            <value>
+                <fullName>Polyester Taffeta</fullName>
+                <default>false</default>
+                <label>Polyester Taffeta</label>
+            </value>
+            <value>
+                <fullName>Polyester Tricot</fullName>
+                <default>false</default>
+                <label>Polyester Tricot</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

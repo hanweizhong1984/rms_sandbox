@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>From_Takeback_Order__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This Defective is created from a Takeback order</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This Defective is created from a Takeback order</inlineHelpText>
+    <label>From Takeback Order</label>
+    <referenceTo>RTV_Order__c</referenceTo>
+    <relationshipName>RTV_Defective</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

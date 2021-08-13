@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Rpc Global --></label>
+    <name>Rpc_Global__c</name>
+    <picklistValues>
+        <masterLabel>AC</masterLabel>
+        <translation><!-- AC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AP</masterLabel>
+        <translation><!-- AP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>APAC GLOBAL</masterLabel>
+        <translation><!-- APAC GLOBAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ASIA REQUESTED</masterLabel>
+        <translation><!-- ASIA REQUESTED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GLOBAL</masterLabel>
+        <translation><!-- GLOBAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INLINE</masterLabel>
+        <translation><!-- INLINE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Men</masterLabel>
+        <translation><!-- Men --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REGIONAL</masterLabel>
+        <translation><!-- REGIONAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RPC</masterLabel>
+        <translation><!-- RPC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Regional Product Create</masterLabel>
+        <translation><!-- Regional Product Create --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SMU</masterLabel>
+        <translation><!-- SMU --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

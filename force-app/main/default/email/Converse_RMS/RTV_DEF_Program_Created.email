@@ -1,0 +1,15 @@
+Hi, ALL		
+		
+退残汇总{!RTV_Defective__c.Name}已经启动，请登录RMS系统，生成OFF POLICY。		
+		
+		
+退残编号：{!RTV_Defective__c.Defective_Auth_Code__c}	
+类型：{!RTV_Defective__c.Type__c}	
+起始日期：{!RTV_Defective__c.Start_Date__c}		
+截止日期：{!RTV_Defective__c.End_Date__c}	
+详细信息：{!RTV_Defective__c.Link}
+		
+特此通知。		
+Best regards		
+		
+Converse - RMS 系统运维

@@ -1,0 +1,15 @@
+Hi,ALL
+　
+退货/召回订单汇总{!RTV_Summary__c.Name}质检报告被退回，请登录系统查看具体原因。
+
+　
+订单汇总名称：{!RTV_Summary__c.Name}
+客户名称：{!RTV_Summary__c.Account_Group__c}
+类型: {!RTV_Summary__c.Property__c}
+详细信息：{!RTV_Summary__c.Link}
+Reject Comments: 
+
+特此通知。
+Best regards
+
+Converse - RMS 系统运维

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Total Summary Budget &apos;s $NET --></help>
+    <label>预算退货金额 (USD/excl.VAT)</label>
+    <name>Budget_Amount_NET__c</name>
+</CustomFieldTranslation>

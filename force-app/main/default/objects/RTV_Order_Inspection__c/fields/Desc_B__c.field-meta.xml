@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Desc_B__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+ ISNULL(RTV_Order_Item__r.RTV_Order__r.Insp_CS_Approve_Time__c) &amp;&amp;
+ (
+  $Profile.Name = &apos;RMS WSL HQ&apos; ||
+  $Profile.Name = &apos;RMS WSL Reg Branch&apos; ||
+  $Profile.Name = &apos;RMS WSL Sold To&apos; ||
+  $Profile.Name = &apos;RMS WSL Ship To&apos; ||
+  $Profile.Name = &apos;RMS WSL Ship To -Only DEF&apos; 
+ ),
+ &apos;&apos;,
+ (
+  IF(B1__c &gt; 0, &apos;APP无包装,Plastic Bag *&apos; + TEXT(B1__c) +&apos;; &apos;, &apos;&apos;) +
+  IF(B2__c &gt; 0, &apos;有价格标 *&apos; + TEXT(B2__c) +&apos;; &apos;, &apos;&apos;) +
+  IF(B2_1__c &gt; 0, &apos;无吊牌 *&apos; + TEXT(B2_1__c) +&apos;; &apos;, &apos;&apos;) +
+  IF(B3__c &gt; 0, &apos;去除脏 *&apos; + TEXT(B3__c) +&apos;; &apos;, &apos;&apos;) +
+  IF(B4__c &gt; 0, &apos;去除脏且换鞋盒 *&apos; + TEXT(B4__c) +&apos;; &apos;, &apos;&apos;) +
+  IF(B5__c &gt; 0, &apos;去除脏但无原鞋盒 *&apos; + TEXT(B5__c) +&apos;; &apos;, &apos;&apos;) +
+  IF(B6__c &gt; 0, &apos;鞋盒破损（可换） *&apos; + TEXT(B6__c) + &apos;; &apos;, &apos;&apos;) +
+  IF(B7__c &gt; 0, &apos;鞋盒破损（不可换） *&apos; + TEXT(B7__c) + &apos;; &apos;, &apos;&apos;)
+ )
+)</formula>
+    <label>Desc B</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

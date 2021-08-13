@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PostLF_Need_Address</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(Status__c) &amp;&amp;
+ISPICKVAL(Status__c, &apos;POST to LF&apos;) &amp;&amp;
+LEN(TRIM(Ship_To_Address__c))==0 &amp;&amp;
+Application_QTY__c != 0</errorConditionFormula>
+    <errorMessage>[Ship to Address] is required</errorMessage>
+</ValidationRule>

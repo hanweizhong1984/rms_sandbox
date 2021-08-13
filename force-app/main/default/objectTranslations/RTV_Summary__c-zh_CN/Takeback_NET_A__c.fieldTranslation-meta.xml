@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>质检退货总金额 (A)(USD/excl.VAT)</label>
+    <name>Takeback_NET_A__c</name>
+</CustomFieldTranslation>

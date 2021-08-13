@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C__c</fullName>
+    <description>Inspection QTY of SKU level C</description>
+    <externalId>false</externalId>
+    <formula>C1__c +  C2_1__c + C2_2__c + C2_3__c + C2_4__c + C2_5__c + C2_6__c + C2_6_1__c + C2_7__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Inspection QTY of SKU level B</inlineHelpText>
+    <label>C</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DEF Summary Inbound</description>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV DEF Summary Inbound</name>
+    <style>none</style>
+    <subject>[RMS-Inbound] 退残订单汇总{!RTV_DEF_Summary__c.Name}，{!RTV_DEF_Summary__c.Account_Group__c}，质检结果仓库已入库完成，请登录RMS系统查看。</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

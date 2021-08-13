@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Delivery QTY --></help>
+    <label>实际提货数量</label>
+    <name>Delivery_QTY__c</name>
+</CustomFieldTranslation>

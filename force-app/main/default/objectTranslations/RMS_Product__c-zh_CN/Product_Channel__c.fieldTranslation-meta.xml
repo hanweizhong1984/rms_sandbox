@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Channel --></label>
+    <name>Product_Channel__c</name>
+    <picklistValues>
+        <masterLabel>ADULTS</masterLabel>
+        <translation><!-- ADULTS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KIDS</masterLabel>
+        <translation><!-- KIDS --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

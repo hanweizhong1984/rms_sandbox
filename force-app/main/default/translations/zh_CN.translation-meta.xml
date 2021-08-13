@@ -1,0 +1,2284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- Converse RMS --></label>
+        <name>Converse_RMS</name>
+    </customApplications>
+    <customTabs>
+        <label><!-- RTV Help --></label>
+        <name>RTV_Help</name>
+    </customTabs>
+    <reportTypes>
+        <description><!-- DEF SAP CSV --></description>
+        <label><!-- DEF SAP CSV --></label>
+        <name>DEF_SAP_CSV</name>
+        <sections>
+            <label><!-- RTV DEF Summary --></label>
+            <name>RTV DEF Summary</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Condition_Value(ZDSI) --></label>
+                <name>Condition_Value(ZDSI)</name>
+            </columns>
+            <columns>
+                <label><!-- Material_Code (Converse) --></label>
+                <name>Material_Code (Converse)</name>
+            </columns>
+            <columns>
+                <label><!-- Ordered_Qty --></label>
+                <name>Ordered_Qty</name>
+            </columns>
+            <columns>
+                <label><!-- Remark --></label>
+                <name>Remark</name>
+            </columns>
+            <columns>
+                <label><!-- US Size --></label>
+                <name>US Size</name>
+            </columns>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Ship_To_Customer --></label>
+                <name>Ship_To_Customer</name>
+            </columns>
+            <columns>
+                <label><!-- Sold_To_Customer --></label>
+                <name>Sold_To_Customer</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RMS DTC DEF Inspection --></description>
+        <label><!-- RMS DTC DEF Inspection --></label>
+        <name>RMS_DTC_DEF_Inspection</name>
+        <sections>
+            <columns>
+                <label><!-- DEF Order: ID --></label>
+                <name>DEF Order: ID</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Order: 状态 --></label>
+                <name>DEF Order: 状态</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To 地址 --></label>
+                <name>Ship-To 地址</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To 联系人 --></label>
+                <name>Ship-To 联系人</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To 联系人电话1 --></label>
+                <name>Ship-To 联系人电话1</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To 联系人电话2 --></label>
+                <name>Ship-To 联系人电话2</name>
+            </columns>
+            <columns>
+                <label><!-- ShipTo --></label>
+                <name>ShipTo</name>
+            </columns>
+            <columns>
+                <label><!-- SoldTo --></label>
+                <name>SoldTo</name>
+            </columns>
+            <columns>
+                <label><!-- 授权码 --></label>
+                <name>授权码</name>
+            </columns>
+            <label><!-- DEF Order --></label>
+            <name>DEF Order</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- &gt;12M&lt;18M --></label>
+                <name>&gt;12M&lt;18M</name>
+            </columns>
+            <columns>
+                <label><!-- Bar Code --></label>
+                <name>Bar Code</name>
+            </columns>
+            <columns>
+                <label><!-- Color --></label>
+                <name>Color</name>
+            </columns>
+            <columns>
+                <label><!-- MATERIAL --></label>
+                <name>MATERIAL</name>
+            </columns>
+            <columns>
+                <label><!-- POS SKU --></label>
+                <name>POS SKU</name>
+            </columns>
+            <columns>
+                <label><!-- Style --></label>
+                <name>Style</name>
+            </columns>
+            <columns>
+                <label><!-- specialcase退CC --></label>
+                <name>specialcase退CC</name>
+            </columns>
+            <columns>
+                <label><!-- 代码 --></label>
+                <name>代码</name>
+            </columns>
+            <columns>
+                <label><!-- 可接受退货数量 --></label>
+                <name>可接受退货数量</name>
+            </columns>
+            <columns>
+                <label><!-- 备注 --></label>
+                <name>备注</name>
+            </columns>
+            <columns>
+                <label><!-- 季节码 --></label>
+                <name>季节码</name>
+            </columns>
+            <columns>
+                <label><!-- 实收差异 --></label>
+                <name>实收差异</name>
+            </columns>
+            <columns>
+                <label><!-- 实收数量 --></label>
+                <name>实收数量</name>
+            </columns>
+            <columns>
+                <label><!-- 客/原残（LF） --></label>
+                <name>客/原残（LF）</name>
+            </columns>
+            <columns>
+                <label><!-- 客/原残（申请人） --></label>
+                <name>客/原残（申请人）</name>
+            </columns>
+            <columns>
+                <label><!-- 客户全称 --></label>
+                <name>客户全称</name>
+            </columns>
+            <columns>
+                <label><!-- 客户简称 --></label>
+                <name>客户简称</name>
+            </columns>
+            <columns>
+                <label><!-- 尺码 --></label>
+                <name>尺码</name>
+            </columns>
+            <columns>
+                <label><!-- 工厂代码 --></label>
+                <name>工厂代码</name>
+            </columns>
+            <columns>
+                <label><!-- 序号 --></label>
+                <name>序号</name>
+            </columns>
+            <columns>
+                <label><!-- 拒收件数 --></label>
+                <name>拒收件数</name>
+            </columns>
+            <columns>
+                <label><!-- 拒收原因 --></label>
+                <name>拒收原因</name>
+            </columns>
+            <columns>
+                <label><!-- 授权号 --></label>
+                <name>授权号</name>
+            </columns>
+            <columns>
+                <label><!-- 无实物退残？ --></label>
+                <name>无实物退残？</name>
+            </columns>
+            <columns>
+                <label><!-- 申请数量 --></label>
+                <name>申请数量</name>
+            </columns>
+            <columns>
+                <label><!-- 箱号 --></label>
+                <name>箱号</name>
+            </columns>
+            <columns>
+                <label><!-- 类别 --></label>
+                <name>类别</name>
+            </columns>
+            <columns>
+                <label><!-- 退残编号 --></label>
+                <name>退残编号</name>
+            </columns>
+            <columns>
+                <label><!-- 退货理由（LF） --></label>
+                <name>退货理由（LF）</name>
+            </columns>
+            <columns>
+                <label><!-- 退货理由（申请人） --></label>
+                <name>退货理由（申请人）</name>
+            </columns>
+            <label><!-- DEF Order Item Detail --></label>
+            <name>DEF Order Item Detail</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- DEF Summary: ID --></label>
+                <name>DEF Summary: ID</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Summary: Sales Channel --></label>
+                <name>DEF Summary: Sales Channel</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Summary: 名称 --></label>
+                <name>DEF Summary: 名称</name>
+            </columns>
+            <label><!-- DEF Summary --></label>
+            <name>DEF Summary</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RMS DTC DEF Packing List --></description>
+        <label><!-- RMS DTC DEF Packing List --></label>
+        <name>RMS_DTC_DEF_PackingList</name>
+        <sections>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:状态 --></label>
+                <name>DEF订单:状态</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单明细:ID --></label>
+                <name>DEF订单明细:ID</name>
+            </columns>
+            <columns>
+                <label><!-- Order ID --></label>
+                <name>Order ID</name>
+            </columns>
+            <columns>
+                <label><!-- Ship To --></label>
+                <name>Ship To</name>
+            </columns>
+            <columns>
+                <label><!-- Sold To --></label>
+                <name>Sold To</name>
+            </columns>
+            <columns>
+                <label><!-- Store Code --></label>
+                <name>Store Code</name>
+            </columns>
+            <columns>
+                <label><!-- 备注 --></label>
+                <name>备注</name>
+            </columns>
+            <columns>
+                <label><!-- 季节码 --></label>
+                <name>季节码</name>
+            </columns>
+            <columns>
+                <label><!-- 尺寸(亚码) --></label>
+                <name>尺寸(亚码)</name>
+            </columns>
+            <columns>
+                <label><!-- 尺寸(美码) --></label>
+                <name>尺寸(美码)</name>
+            </columns>
+            <columns>
+                <label><!-- 授权码 --></label>
+                <name>授权码</name>
+            </columns>
+            <columns>
+                <label><!-- 无实物退残？ --></label>
+                <name>无实物退残？</name>
+            </columns>
+            <columns>
+                <label><!-- 箱号 --></label>
+                <name>箱号</name>
+            </columns>
+            <columns>
+                <label><!-- 货品号 --></label>
+                <name>货品号</name>
+            </columns>
+            <label><!-- DEF Order Item --></label>
+            <name>DEF Order Item</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- 原残/客残 --></label>
+                <name>原残/客残</name>
+            </columns>
+            <columns>
+                <label><!-- 序号 --></label>
+                <name>序号</name>
+            </columns>
+            <columns>
+                <label><!-- 数量 --></label>
+                <name>数量</name>
+            </columns>
+            <columns>
+                <label><!-- 退货理由(必填) --></label>
+                <name>退货理由(必填)</name>
+            </columns>
+            <label><!-- DEF Order Item Detail --></label>
+            <name>DEF Order Item Detail</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- DEF Summary Id --></label>
+                <name>DEF Summary Id</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Summary Name --></label>
+                <name>DEF Summary Name</name>
+            </columns>
+            <columns>
+                <label><!-- DTC Type --></label>
+                <name>DTC Type</name>
+            </columns>
+            <columns>
+                <label><!-- Month --></label>
+                <name>Month</name>
+            </columns>
+            <columns>
+                <label><!-- Sales Channel --></label>
+                <name>Sales Channel</name>
+            </columns>
+            <columns>
+                <label><!-- Year --></label>
+                <name>Year</name>
+            </columns>
+            <label><!-- DEF Summary --></label>
+            <name>DEF Summary</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RMS DTC Order KPI --></description>
+        <label><!-- RMS DTC Order KPI --></label>
+        <name>RMS_DTC_Order_KPI</name>
+        <sections>
+            <columns>
+                <label><!-- Order Code --></label>
+                <name>Order Code</name>
+            </columns>
+            <columns>
+                <label><!-- Order Status --></label>
+                <name>Order Status</name>
+            </columns>
+            <label><!-- Orders --></label>
+            <name>Orders</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Finance Code --></label>
+                <name>Finance Code</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Name --></label>
+                <name>Summary Name</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Status --></label>
+                <name>Summary Status</name>
+            </columns>
+            <label><!-- Summary --></label>
+            <name>Summary</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RMS DTC PackingList --></description>
+        <label><!-- RMS DTC PackingList --></label>
+        <name>RMS_DTC_PackingList</name>
+        <sections>
+            <columns>
+                <label><!-- POS机数据获取时间 --></label>
+                <name>POS机数据获取时间</name>
+            </columns>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Order Owner --></label>
+                <name>Order Owner</name>
+            </columns>
+            <columns>
+                <label><!-- Ship To --></label>
+                <name>Ship To</name>
+            </columns>
+            <columns>
+                <label><!-- Sold To --></label>
+                <name>Sold To</name>
+            </columns>
+            <columns>
+                <label><!-- Store Code --></label>
+                <name>Store Code</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Finance Code --></label>
+                <name>Finance Code</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Owner --></label>
+                <name>Summary Owner</name>
+            </columns>
+            <columns>
+                <label><!-- Time of Kick Off --></label>
+                <name>Time of Kick Off</name>
+            </columns>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RMS DTC Summary Inspection --></description>
+        <label><!-- RMS DTC Summary Inspection --></label>
+        <name>RMS_DTC_Summary_Inspection</name>
+        <sections>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Order: 上次修改人: 全名 --></label>
+                <name>Order: 上次修改人: 全名</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 上次修改日期 --></label>
+                <name>Order: 上次修改日期</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 上次活动日期 --></label>
+                <name>Order: 上次活动日期</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 创建人 --></label>
+                <name>Order: 创建人</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 创建日期 --></label>
+                <name>Order: 创建日期</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 召回授权码 --></label>
+                <name>Order: 召回授权码</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 名称 --></label>
+                <name>Order: 名称</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 实际提货数量 --></label>
+                <name>Order: 实际提货数量</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 所有人: 全名 --></label>
+                <name>Order: 所有人: 全名</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 最早提货日 --></label>
+                <name>Order: 最早提货日</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 最终入库数量 --></label>
+                <name>Order: 最终入库数量</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 未找到件数 --></label>
+                <name>Order: 未找到件数</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 状态 --></label>
+                <name>Order: 状态</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 申请数量 --></label>
+                <name>Order: 申请数量</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 订单类型 --></label>
+                <name>Order: 订单类型</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 记录类型 --></label>
+                <name>Order: 记录类型</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检报告人: 全名 --></label>
+                <name>Order: 质检报告人: 全名</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(A) --></label>
+                <name>Order: 质检数量(A)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(B) --></label>
+                <name>Order: 质检数量(B)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(C) --></label>
+                <name>Order: 质检数量(C)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(D) --></label>
+                <name>Order: 质检数量(D)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 需确认件数 --></label>
+                <name>Order: 需确认件数</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To Code --></label>
+                <name>Ship-To Code</name>
+            </columns>
+            <columns>
+                <label><!-- Sold-To Code --></label>
+                <name>Sold-To Code</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Program: Finance Code --></label>
+                <name>Program: Finance Code</name>
+            </columns>
+            <columns>
+                <label><!-- Program: 项目名称 --></label>
+                <name>Program: 项目名称</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 名称 --></label>
+                <name>Summary: 名称</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 状态 --></label>
+                <name>Summary: 状态</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 类型 --></label>
+                <name>Summary: 类型</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 项目类型 --></label>
+                <name>Summary: 项目类型</name>
+            </columns>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RMS DTC Summary KPI --></description>
+        <label><!-- RMS DTC Summary KPI --></label>
+        <name>RMS_DTC_Summary_KPI</name>
+        <sections>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Finance Code --></label>
+                <name>Finance Code</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Name --></label>
+                <name>Summary Name</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Status --></label>
+                <name>Summary Status</name>
+            </columns>
+            <columns>
+                <label><!-- 预算数量 --></label>
+                <name>预算数量</name>
+            </columns>
+            <label><!-- Summary --></label>
+            <name>Summary</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RMS SAP CSV --></description>
+        <label><!-- RMS SAP CSV --></label>
+        <name>RMS_SAP_CSV</name>
+        <sections>
+            <label><!-- Inspection Details --></label>
+            <name>Inspection Details</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Sales Channel --></label>
+                <name>Sales Channel</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV Baozun Seeding --></description>
+        <label><!-- RTV Baozun Seeding --></label>
+        <name>RTV_Baozun_Seeding</name>
+        <sections>
+            <label><!-- RTV Baozun Seeding --></label>
+            <name>RTV Baozun Seeding</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- DEF Delivery Item --></description>
+        <label><!-- DEF Delivery Item --></label>
+        <name>RTV_DEF_Delivery_Item</name>
+        <sections>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Detail: ID --></label>
+                <name>DEF Detail: ID</name>
+            </columns>
+            <columns>
+                <label><!-- POS SKU --></label>
+                <name>POS SKU</name>
+            </columns>
+            <columns>
+                <label><!-- Ship To --></label>
+                <name>Ship To</name>
+            </columns>
+            <columns>
+                <label><!-- Sold To --></label>
+                <name>Sold To</name>
+            </columns>
+            <columns>
+                <label><!-- Status --></label>
+                <name>Status</name>
+            </columns>
+            <columns>
+                <label><!-- 原残/客残 --></label>
+                <name>原残/客残</name>
+            </columns>
+            <columns>
+                <label><!-- 备注 --></label>
+                <name>备注</name>
+            </columns>
+            <columns>
+                <label><!-- 季节码 --></label>
+                <name>季节码</name>
+            </columns>
+            <columns>
+                <label><!-- 尺寸(美码) --></label>
+                <name>尺寸(美码)</name>
+            </columns>
+            <columns>
+                <label><!-- 数量 --></label>
+                <name>数量</name>
+            </columns>
+            <columns>
+                <label><!-- 无实物退残？ --></label>
+                <name>无实物退残？</name>
+            </columns>
+            <columns>
+                <label><!-- 箱号 --></label>
+                <name>箱号</name>
+            </columns>
+            <columns>
+                <label><!-- 货品号 --></label>
+                <name>货品号</name>
+            </columns>
+            <columns>
+                <label><!-- 退残理由(必填) --></label>
+                <name>退残理由(必填)</name>
+            </columns>
+            <columns>
+                <label><!-- 退货授权码 --></label>
+                <name>退货授权码</name>
+            </columns>
+            <columns>
+                <label><!-- 零售价 --></label>
+                <name>零售价</name>
+            </columns>
+            <label><!-- DEF Order Item Detail --></label>
+            <name>DEF Order Item Detail</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- DEF Summary Id --></label>
+                <name>DEF Summary Id</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Summary Name --></label>
+                <name>DEF Summary Name</name>
+            </columns>
+            <columns>
+                <label><!-- Sales Channel --></label>
+                <name>Sales Channel</name>
+            </columns>
+            <label><!-- DEF Summary --></label>
+            <name>DEF Summary</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- DEF Inspection --></description>
+        <label><!-- DEF Inspection --></label>
+        <name>RTV_DEF_Inspection</name>
+        <sections>
+            <columns>
+                <label><!-- DEF Order: ID --></label>
+                <name>DEF Order: ID</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Order: 状态 --></label>
+                <name>DEF Order: 状态</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To 地址 --></label>
+                <name>Ship-To 地址</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To 联系人 --></label>
+                <name>Ship-To 联系人</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To 联系人电话1 --></label>
+                <name>Ship-To 联系人电话1</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To 联系人电话2 --></label>
+                <name>Ship-To 联系人电话2</name>
+            </columns>
+            <columns>
+                <label><!-- ShipTo --></label>
+                <name>ShipTo</name>
+            </columns>
+            <columns>
+                <label><!-- SoldTo --></label>
+                <name>SoldTo</name>
+            </columns>
+            <columns>
+                <label><!-- 授权码 --></label>
+                <name>授权码</name>
+            </columns>
+            <label><!-- DEF Order --></label>
+            <name>DEF Order</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- &gt;12M&lt;18M --></label>
+                <name>&gt;12M&lt;18M</name>
+            </columns>
+            <columns>
+                <label><!-- Color --></label>
+                <name>Color</name>
+            </columns>
+            <columns>
+                <label><!-- MATERIAL --></label>
+                <name>MATERIAL</name>
+            </columns>
+            <columns>
+                <label><!-- Style --></label>
+                <name>Style</name>
+            </columns>
+            <columns>
+                <label><!-- specialcase退CC --></label>
+                <name>specialcase退CC</name>
+            </columns>
+            <columns>
+                <label><!-- 代码 --></label>
+                <name>代码</name>
+            </columns>
+            <columns>
+                <label><!-- 可接受退货数量 --></label>
+                <name>可接受退货数量</name>
+            </columns>
+            <columns>
+                <label><!-- 备注 --></label>
+                <name>备注</name>
+            </columns>
+            <columns>
+                <label><!-- 季节码 --></label>
+                <name>季节码</name>
+            </columns>
+            <columns>
+                <label><!-- 实收差异 --></label>
+                <name>实收差异</name>
+            </columns>
+            <columns>
+                <label><!-- 实收数量 --></label>
+                <name>实收数量</name>
+            </columns>
+            <columns>
+                <label><!-- 客/原残（LF） --></label>
+                <name>客/原残（LF）</name>
+            </columns>
+            <columns>
+                <label><!-- 客/原残（WSL） --></label>
+                <name>客/原残（WSL）</name>
+            </columns>
+            <columns>
+                <label><!-- 客户全称 --></label>
+                <name>客户全称</name>
+            </columns>
+            <columns>
+                <label><!-- 客户简称 --></label>
+                <name>客户简称</name>
+            </columns>
+            <columns>
+                <label><!-- 尺码 --></label>
+                <name>尺码</name>
+            </columns>
+            <columns>
+                <label><!-- 工厂代码 --></label>
+                <name>工厂代码</name>
+            </columns>
+            <columns>
+                <label><!-- 序号 --></label>
+                <name>序号</name>
+            </columns>
+            <columns>
+                <label><!-- 拒收件数 --></label>
+                <name>拒收件数</name>
+            </columns>
+            <columns>
+                <label><!-- 拒收原因 --></label>
+                <name>拒收原因</name>
+            </columns>
+            <columns>
+                <label><!-- 授权号 --></label>
+                <name>授权号</name>
+            </columns>
+            <columns>
+                <label><!-- 无实物退残？ --></label>
+                <name>无实物退残？</name>
+            </columns>
+            <columns>
+                <label><!-- 申请数量 --></label>
+                <name>申请数量</name>
+            </columns>
+            <columns>
+                <label><!-- 箱号 --></label>
+                <name>箱号</name>
+            </columns>
+            <columns>
+                <label><!-- 类别 --></label>
+                <name>类别</name>
+            </columns>
+            <columns>
+                <label><!-- 退残编号 --></label>
+                <name>退残编号</name>
+            </columns>
+            <columns>
+                <label><!-- 退货理由（LF） --></label>
+                <name>退货理由（LF）</name>
+            </columns>
+            <columns>
+                <label><!-- 退货理由（WSL） --></label>
+                <name>退货理由（WSL）</name>
+            </columns>
+            <columns>
+                <label><!-- 退货销售单价(CNY/excl.VAT) --></label>
+                <name>退货销售单价(CNY/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- 退货销售单价(CNY/incl.VAT) --></label>
+                <name>退货销售单价(CNY/incl.VAT)</name>
+            </columns>
+            <label><!-- DEF Order Item Detail --></label>
+            <name>DEF Order Item Detail</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Account Group --></label>
+                <name>Account Group</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Summary: ID --></label>
+                <name>DEF Summary: ID</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Summary: 名称 --></label>
+                <name>DEF Summary: 名称</name>
+            </columns>
+            <columns>
+                <label><!-- Month --></label>
+                <name>Month</name>
+            </columns>
+            <columns>
+                <label><!-- Sales Channel --></label>
+                <name>Sales Channel</name>
+            </columns>
+            <columns>
+                <label><!-- Year --></label>
+                <name>Year</name>
+            </columns>
+            <label><!-- DEF Summary --></label>
+            <name>DEF Summary</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- DEF Mapping Selling Price --></description>
+        <label><!-- DEF Mapping Selling Price --></label>
+        <name>RTV_DEF_Mapping_Selling_Price</name>
+        <sections>
+            <columns>
+                <label><!-- DEF订单:CS确认直接时间 --></label>
+                <name>DEF订单:CS确认直接时间</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:ID --></label>
+                <name>DEF订单:ID</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:SellingPrice匹配错误件数 --></label>
+                <name>DEF订单:SellingPrice匹配错误件数</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:创建人 --></label>
+                <name>DEF订单:创建人</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:创建日期 --></label>
+                <name>DEF订单:创建日期</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:所有人 --></label>
+                <name>DEF订单:所有人</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:授权码 --></label>
+                <name>DEF订单:授权码</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:来自退仓订单 --></label>
+                <name>DEF订单:来自退仓订单</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:状态 --></label>
+                <name>DEF订单:状态</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:申请商品成本金额 --></label>
+                <name>DEF订单:申请商品成本金额</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:申请商品数量 --></label>
+                <name>DEF订单:申请商品数量</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:质检报告人 --></label>
+                <name>DEF订单:质检报告人</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:需确认件数 --></label>
+                <name>DEF订单:需确认件数</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To Code --></label>
+                <name>Ship-To Code</name>
+            </columns>
+            <columns>
+                <label><!-- Sold-To Code --></label>
+                <name>Sold-To Code</name>
+            </columns>
+            <label><!-- DEF Order --></label>
+            <name>DEF Order</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- DEF Order Item ID --></label>
+                <name>DEF Order Item ID</name>
+            </columns>
+            <columns>
+                <label><!-- LF Order Auth Code --></label>
+                <name>LF Order Auth Code</name>
+            </columns>
+            <columns>
+                <label><!-- Selling Type --></label>
+                <name>Selling Type</name>
+            </columns>
+            <columns>
+                <label><!-- Selling Unit Price (CNY/excl.VAT) --></label>
+                <name>Selling Unit Price (CNY/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Size (US) --></label>
+                <name>Size (US)</name>
+            </columns>
+            <label><!-- DEF Order Item --></label>
+            <name>DEF Order Item</name>
+        </sections>
+        <sections>
+            <label><!-- DEF Order Item Detail --></label>
+            <name>DEF Order Item Detail</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- DEF Summary --></label>
+                <name>DEF Summary</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Summary ID --></label>
+                <name>DEF Summary ID</name>
+            </columns>
+            <columns>
+                <label><!-- Sales Channel --></label>
+                <name>Sales Channel</name>
+            </columns>
+            <label><!-- DEF Summary --></label>
+            <name>DEF Summary</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- DEF Packing List --></description>
+        <label><!-- DEF Packing List --></label>
+        <name>RTV_DEF_PackingList</name>
+        <sections>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单:状态 --></label>
+                <name>DEF订单:状态</name>
+            </columns>
+            <columns>
+                <label><!-- DEF订单明细:ID --></label>
+                <name>DEF订单明细:ID</name>
+            </columns>
+            <columns>
+                <label><!-- Ship To --></label>
+                <name>Ship To</name>
+            </columns>
+            <columns>
+                <label><!-- Sold To --></label>
+                <name>Sold To</name>
+            </columns>
+            <columns>
+                <label><!-- 原残/客残 --></label>
+                <name>原残/客残</name>
+            </columns>
+            <columns>
+                <label><!-- 备注 --></label>
+                <name>备注</name>
+            </columns>
+            <columns>
+                <label><!-- 季节码 --></label>
+                <name>季节码</name>
+            </columns>
+            <columns>
+                <label><!-- 尺寸(亚码) --></label>
+                <name>尺寸(亚码)</name>
+            </columns>
+            <columns>
+                <label><!-- 尺寸(美码) --></label>
+                <name>尺寸(美码)</name>
+            </columns>
+            <columns>
+                <label><!-- 数量 --></label>
+                <name>数量</name>
+            </columns>
+            <columns>
+                <label><!-- 无实物退残？ --></label>
+                <name>无实物退残？</name>
+            </columns>
+            <columns>
+                <label><!-- 箱号 --></label>
+                <name>箱号</name>
+            </columns>
+            <columns>
+                <label><!-- 货品号 --></label>
+                <name>货品号</name>
+            </columns>
+            <columns>
+                <label><!-- 退残理由(必填) --></label>
+                <name>退残理由(必填)</name>
+            </columns>
+            <columns>
+                <label><!-- 退货授权码 --></label>
+                <name>退货授权码</name>
+            </columns>
+            <columns>
+                <label><!-- 零售价 --></label>
+                <name>零售价</name>
+            </columns>
+            <label><!-- DEF Order Item --></label>
+            <name>DEF Order Item</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- DEF Summary Id --></label>
+                <name>DEF Summary Id</name>
+            </columns>
+            <columns>
+                <label><!-- DEF Summary Name --></label>
+                <name>DEF Summary Name</name>
+            </columns>
+            <columns>
+                <label><!-- Sales Channel --></label>
+                <name>Sales Channel</name>
+            </columns>
+            <label><!-- DEF Summary --></label>
+            <name>DEF Summary</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV DEF Program(AC) --></description>
+        <label><!-- RTV DEF Program(AC) --></label>
+        <name>RTV_DEF_Program_AC</name>
+        <sections>
+            <label><!-- RTV DEF Program --></label>
+            <name>RTV DEF Program</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Sales Channel --></label>
+                <name>Sales Channel</name>
+            </columns>
+            <label><!-- RTV Orders(AC/AP) --></label>
+            <name>RTV Orders(AC/AP)</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV DEF Program(FW) --></description>
+        <label><!-- RTV DEF Program(FW) --></label>
+        <name>RTV_DEF_Program_FW</name>
+        <sections>
+            <label><!-- RTV DEF Program --></label>
+            <name>RTV DEF Program</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Order Item --></label>
+            <name>RTV Order Item</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Sales Channel --></label>
+                <name>Sales Channel</name>
+            </columns>
+            <label><!-- RTV Order(FW) --></label>
+            <name>RTV Order(FW)</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV DEF Summary KPI --></description>
+        <label><!-- RTV DEF Summary KPI --></label>
+        <name>RTV_DEF_Summary_KPI</name>
+        <sections>
+            <label><!-- RTV DEF Summary --></label>
+            <name>RTV DEF Summary</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV Inspection --></description>
+        <label><!-- RTV Inspection --></label>
+        <name>RTV_Inspection</name>
+        <sections>
+            <columns>
+                <label><!-- A(R.Code) --></label>
+                <name>A(R.Code)</name>
+            </columns>
+            <columns>
+                <label><!-- B(R.Code) --></label>
+                <name>B(R.Code)</name>
+            </columns>
+            <columns>
+                <label><!-- B1:APP无包装,Plastic Bag --></label>
+                <name>B1:APP无包装,Plastic Bag</name>
+            </columns>
+            <columns>
+                <label><!-- B2-1:无吊牌 --></label>
+                <name>B2-1:无吊牌</name>
+            </columns>
+            <columns>
+                <label><!-- B2:有价格标 --></label>
+                <name>B2:有价格标</name>
+            </columns>
+            <columns>
+                <label><!-- B3:去除脏 --></label>
+                <name>B3:去除脏</name>
+            </columns>
+            <columns>
+                <label><!-- B4:去除脏且换鞋盒 --></label>
+                <name>B4:去除脏且换鞋盒</name>
+            </columns>
+            <columns>
+                <label><!-- B5:去除脏但无原鞋盒 --></label>
+                <name>B5:去除脏但无原鞋盒</name>
+            </columns>
+            <columns>
+                <label><!-- B6:鞋盒破损（可换） --></label>
+                <name>B6:鞋盒破损（可换）</name>
+            </columns>
+            <columns>
+                <label><!-- B7:鞋盒破损（不可换） --></label>
+                <name>B7:鞋盒破损（不可换）</name>
+            </columns>
+            <columns>
+                <label><!-- C(R.Code) --></label>
+                <name>C(R.Code)</name>
+            </columns>
+            <columns>
+                <label><!-- C1:不在退货范围内 --></label>
+                <name>C1:不在退货范围内</name>
+            </columns>
+            <columns>
+                <label><!-- C2-1:试穿破损(APP/ACC) --></label>
+                <name>C2-1:试穿破损(APP/ACC)</name>
+            </columns>
+            <columns>
+                <label><!-- C2-2:试穿脏污(APP/ACC) --></label>
+                <name>C2-2:试穿脏污(APP/ACC)</name>
+            </columns>
+            <columns>
+                <label><!-- C2-3:试穿鞋（鞋底） --></label>
+                <name>C2-3:试穿鞋（鞋底）</name>
+            </columns>
+            <columns>
+                <label><!-- C2-4:脏污（鞋面） --></label>
+                <name>C2-4:脏污（鞋面）</name>
+            </columns>
+            <columns>
+                <label><!-- C2-5:脏污（侧边鞋头） --></label>
+                <name>C2-5:脏污（侧边鞋头）</name>
+            </columns>
+            <columns>
+                <label><!-- C2-6-1:单脚发黄 --></label>
+                <name>C2-6-1:单脚发黄</name>
+            </columns>
+            <columns>
+                <label><!-- C2-6:发黄 --></label>
+                <name>C2-6:发黄</name>
+            </columns>
+            <columns>
+                <label><!-- C2-7:其它 --></label>
+                <name>C2-7:其它</name>
+            </columns>
+            <columns>
+                <label><!-- D(R.Code) --></label>
+                <name>D(R.Code)</name>
+            </columns>
+            <columns>
+                <label><!-- Desc.A --></label>
+                <name>Desc.A</name>
+            </columns>
+            <columns>
+                <label><!-- Desc.B --></label>
+                <name>Desc.B</name>
+            </columns>
+            <columns>
+                <label><!-- Desc.C --></label>
+                <name>Desc.C</name>
+            </columns>
+            <columns>
+                <label><!-- Desc.D --></label>
+                <name>Desc.D</name>
+            </columns>
+            <columns>
+                <label><!-- 退货销售单价(incl.VAT) --></label>
+                <name>退货销售单价(incl.VAT)</name>
+            </columns>
+            <label><!-- RTV Order Inspection --></label>
+            <name>RTV Order Inspection</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- A(QTY) --></label>
+                <name>A(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- A(excl.VAT) --></label>
+                <name>A(excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- A(incl.VAT) --></label>
+                <name>A(incl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- B(QTY) --></label>
+                <name>B(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- B(excl.VAT) --></label>
+                <name>B(excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- B(incl.VAT) --></label>
+                <name>B(incl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- C(QTY) --></label>
+                <name>C(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- Color --></label>
+                <name>Color</name>
+            </columns>
+            <columns>
+                <label><!-- D(QTY) --></label>
+                <name>D(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- D(excl.VAT) --></label>
+                <name>D(excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- D(incl.VAT) --></label>
+                <name>D(incl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- SKU --></label>
+                <name>SKU</name>
+            </columns>
+            <columns>
+                <label><!-- Size(Asia) --></label>
+                <name>Size(Asia)</name>
+            </columns>
+            <columns>
+                <label><!-- Size(US) --></label>
+                <name>Size(US)</name>
+            </columns>
+            <columns>
+                <label><!-- Style --></label>
+                <name>Style</name>
+            </columns>
+            <columns>
+                <label><!-- TTL(excl.VAT) --></label>
+                <name>TTL(excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- TTL(incl.VAT) --></label>
+                <name>TTL(incl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- 召回编号 --></label>
+                <name>召回编号</name>
+            </columns>
+            <columns>
+                <label><!-- 季节码 --></label>
+                <name>季节码</name>
+            </columns>
+            <columns>
+                <label><!-- 市场指导价 --></label>
+                <name>市场指导价</name>
+            </columns>
+            <columns>
+                <label><!-- 申请件数 --></label>
+                <name>申请件数</name>
+            </columns>
+            <columns>
+                <label><!-- 退货销售单价(excl.VAT) --></label>
+                <name>退货销售单价(excl.VAT)</name>
+            </columns>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- A(QTY) --></label>
+                <name>A(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- A(excl.VAT) --></label>
+                <name>A(excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- B(QTY) --></label>
+                <name>B(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- B(excl.VAT) --></label>
+                <name>B(excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- C(QTY) --></label>
+                <name>C(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- D(QTY) --></label>
+                <name>D(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- D(excl.VAT) --></label>
+                <name>D(excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Ship to --></label>
+                <name>Ship to</name>
+            </columns>
+            <columns>
+                <label><!-- Sold to --></label>
+                <name>Sold to</name>
+            </columns>
+            <columns>
+                <label><!-- 客户名称 --></label>
+                <name>客户名称</name>
+            </columns>
+            <columns>
+                <label><!-- 差异 --></label>
+                <name>差异</name>
+            </columns>
+            <columns>
+                <label><!-- 申请件数 --></label>
+                <name>申请件数</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- A(QTY) --></label>
+                <name>A(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- B(QTY) --></label>
+                <name>B(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- C(QTY) --></label>
+                <name>C(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- D(QTY) --></label>
+                <name>D(QTY)</name>
+            </columns>
+            <columns>
+                <label><!-- 申请件数 --></label>
+                <name>申请件数</name>
+            </columns>
+            <columns>
+                <label><!-- 订单汇总名 --></label>
+                <name>订单汇总名</name>
+            </columns>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV Mapping Selling Price --></description>
+        <label><!-- RTV Mapping Selling Price --></label>
+        <name>RTV_Mapping_Selling_Price</name>
+        <sections>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- Color --></label>
+                <name>Color</name>
+            </columns>
+            <columns>
+                <label><!-- LF Order Auth Code --></label>
+                <name>LF Order Auth Code</name>
+            </columns>
+            <columns>
+                <label><!-- Material Code --></label>
+                <name>Material Code</name>
+            </columns>
+            <columns>
+                <label><!-- Season Code (CN) --></label>
+                <name>Season Code (CN)</name>
+            </columns>
+            <columns>
+                <label><!-- Selling Type --></label>
+                <name>Selling Type</name>
+            </columns>
+            <columns>
+                <label><!-- Selling Unit Price (CNY/excl.VAT) --></label>
+                <name>Selling Unit Price (CNY/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Size (US) --></label>
+                <name>Size (US)</name>
+            </columns>
+            <columns>
+                <label><!-- Style --></label>
+                <name>Style</name>
+            </columns>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Order: 上次修改人: 全名 --></label>
+                <name>Order: 上次修改人: 全名</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 上次修改日期 --></label>
+                <name>Order: 上次修改日期</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 上次活动日期 --></label>
+                <name>Order: 上次活动日期</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 创建人 --></label>
+                <name>Order: 创建人</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 创建日期 --></label>
+                <name>Order: 创建日期</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 召回授权码 --></label>
+                <name>Order: 召回授权码</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 名称 --></label>
+                <name>Order: 名称</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 实际提货数量 --></label>
+                <name>Order: 实际提货数量</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 所有人: 全名 --></label>
+                <name>Order: 所有人: 全名</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 最早提货日 --></label>
+                <name>Order: 最早提货日</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 最终入库数量 --></label>
+                <name>Order: 最终入库数量</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 未找到件数 --></label>
+                <name>Order: 未找到件数</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 状态 --></label>
+                <name>Order: 状态</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 申请数量 --></label>
+                <name>Order: 申请数量</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 申请退货金额 (USD/excl.VAT) --></label>
+                <name>Order: 申请退货金额 (USD/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 订单类型 --></label>
+                <name>Order: 订单类型</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 记录类型 --></label>
+                <name>Order: 记录类型</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检报告人: 全名 --></label>
+                <name>Order: 质检报告人: 全名</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(A) --></label>
+                <name>Order: 质检数量(A)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(B) --></label>
+                <name>Order: 质检数量(B)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(C) --></label>
+                <name>Order: 质检数量(C)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(D) --></label>
+                <name>Order: 质检数量(D)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检退货总金额(A)(CNY/excl.VAT) --></label>
+                <name>Order: 质检退货总金额(A)(CNY/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检退货总金额(B)(CNY/excl.VAT) --></label>
+                <name>Order: 质检退货总金额(B)(CNY/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检退货总金额(D)(CNY/excl.VAT) --></label>
+                <name>Order: 质检退货总金额(D)(CNY/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 需确认件数 --></label>
+                <name>Order: 需确认件数</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To Code --></label>
+                <name>Ship-To Code</name>
+            </columns>
+            <columns>
+                <label><!-- Sold-To Code --></label>
+                <name>Sold-To Code</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Program: 项目名称 --></label>
+                <name>Program: 项目名称</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 名称 --></label>
+                <name>Summary: 名称</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 状态 --></label>
+                <name>Summary: 状态</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 类型 --></label>
+                <name>Summary: 类型</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 项目类型 --></label>
+                <name>Summary: 项目类型</name>
+            </columns>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV PackingList --></description>
+        <label><!-- RTV PackingList --></label>
+        <name>RTV_PackingList</name>
+        <sections>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- Size (US) --></label>
+                <name>Size (US)</name>
+            </columns>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV Packinglist Item --></description>
+        <label><!-- RTV Packinglist Item --></label>
+        <name>RTV_Packinglist_Item</name>
+        <sections>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- RTV Summary ID --></label>
+                <name>RTV Summary ID</name>
+            </columns>
+            <columns>
+                <label><!-- Ship To --></label>
+                <name>Ship To</name>
+            </columns>
+            <columns>
+                <label><!-- Sold To --></label>
+                <name>Sold To</name>
+            </columns>
+            <columns>
+                <label><!-- 季节码 --></label>
+                <name>季节码</name>
+            </columns>
+            <columns>
+                <label><!-- 尺寸（亚码） --></label>
+                <name>尺寸（亚码）</name>
+            </columns>
+            <columns>
+                <label><!-- 尺寸（美码） --></label>
+                <name>尺寸（美码）</name>
+            </columns>
+            <columns>
+                <label><!-- 授权码 --></label>
+                <name>授权码</name>
+            </columns>
+            <columns>
+                <label><!-- 最早提货日 --></label>
+                <name>最早提货日</name>
+            </columns>
+            <columns>
+                <label><!-- 货品号 --></label>
+                <name>货品号</name>
+            </columns>
+            <label><!-- Other Items --></label>
+            <name>Other Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- 数量 --></label>
+                <name>数量</name>
+            </columns>
+            <columns>
+                <label><!-- 箱号 --></label>
+                <name>箱号</name>
+            </columns>
+            <label><!-- RTV Order Packings --></label>
+            <name>RTV Order Packings</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV Program Sku Budget --></description>
+        <label><!-- RTV Program Sku Budget --></label>
+        <name>RTV_Program_Sku_Budget</name>
+        <sections>
+            <columns>
+                <label><!-- Finance Code --></label>
+                <name>Finance Code</name>
+            </columns>
+            <columns>
+                <label><!-- RTV Program DTC Type --></label>
+                <name>RTV Program DTC Type</name>
+            </columns>
+            <columns>
+                <label><!-- RTV Program ID --></label>
+                <name>RTV Program ID</name>
+            </columns>
+            <columns>
+                <label><!-- RTV RP Summary Budget ID --></label>
+                <name>RTV RP Summary Budget ID</name>
+            </columns>
+            <label><!-- Program And Summary --></label>
+            <name>Program And Summary</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Store Code --></label>
+                <name>Store Code</name>
+            </columns>
+            <label><!-- RTV RP SKU Budget --></label>
+            <name>RTV RP SKU Budget</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV SAP A CSV --></description>
+        <label><!-- RTV SAP A CSV --></label>
+        <name>RTV_SAP_A_CSV</name>
+        <sections>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- Color --></label>
+                <name>Color</name>
+            </columns>
+            <columns>
+                <label><!-- Condition_Value(ZDSI) --></label>
+                <name>Condition_Value(ZDSI)</name>
+            </columns>
+            <columns>
+                <label><!-- LF Order Auth Code --></label>
+                <name>LF Order Auth Code</name>
+            </columns>
+            <columns>
+                <label><!-- Material_Code (Converse) --></label>
+                <name>Material_Code (Converse)</name>
+            </columns>
+            <columns>
+                <label><!-- Ordered_Qty --></label>
+                <name>Ordered_Qty</name>
+            </columns>
+            <columns>
+                <label><!-- Remark --></label>
+                <name>Remark</name>
+            </columns>
+            <columns>
+                <label><!-- Season Code (CN) --></label>
+                <name>Season Code (CN)</name>
+            </columns>
+            <columns>
+                <label><!-- Style --></label>
+                <name>Style</name>
+            </columns>
+            <columns>
+                <label><!-- US Size --></label>
+                <name>US Size</name>
+            </columns>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Ship_To_Customer --></label>
+                <name>Ship_To_Customer</name>
+            </columns>
+            <columns>
+                <label><!-- Sold_To_Customer --></label>
+                <name>Sold_To_Customer</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV SAP B CSV --></description>
+        <label><!-- RTV SAP B CSV --></label>
+        <name>RTV_SAP_B_CSV</name>
+        <sections>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- Color --></label>
+                <name>Color</name>
+            </columns>
+            <columns>
+                <label><!-- Condition_Value(ZDSI) --></label>
+                <name>Condition_Value(ZDSI)</name>
+            </columns>
+            <columns>
+                <label><!-- LF Order Auth Code --></label>
+                <name>LF Order Auth Code</name>
+            </columns>
+            <columns>
+                <label><!-- Material_Code (Converse) --></label>
+                <name>Material_Code (Converse)</name>
+            </columns>
+            <columns>
+                <label><!-- Ordered_Qty --></label>
+                <name>Ordered_Qty</name>
+            </columns>
+            <columns>
+                <label><!-- Remark --></label>
+                <name>Remark</name>
+            </columns>
+            <columns>
+                <label><!-- Season Code (CN) --></label>
+                <name>Season Code (CN)</name>
+            </columns>
+            <columns>
+                <label><!-- Style --></label>
+                <name>Style</name>
+            </columns>
+            <columns>
+                <label><!-- US Size --></label>
+                <name>US Size</name>
+            </columns>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Ship_To_Customer --></label>
+                <name>Ship_To_Customer</name>
+            </columns>
+            <columns>
+                <label><!-- Sold_To_Customer --></label>
+                <name>Sold_To_Customer</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV SAP D CSV --></description>
+        <label><!-- RTV SAP D CSV --></label>
+        <name>RTV_SAP_D_CSV</name>
+        <sections>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- Color --></label>
+                <name>Color</name>
+            </columns>
+            <columns>
+                <label><!-- Condition_Value(ZDSI) --></label>
+                <name>Condition_Value(ZDSI)</name>
+            </columns>
+            <columns>
+                <label><!-- LF Order Auth Code --></label>
+                <name>LF Order Auth Code</name>
+            </columns>
+            <columns>
+                <label><!-- Material_Code (Converse) --></label>
+                <name>Material_Code (Converse)</name>
+            </columns>
+            <columns>
+                <label><!-- Ordered_Qty --></label>
+                <name>Ordered_Qty</name>
+            </columns>
+            <columns>
+                <label><!-- Remark --></label>
+                <name>Remark</name>
+            </columns>
+            <columns>
+                <label><!-- Season Code (CN) --></label>
+                <name>Season Code (CN)</name>
+            </columns>
+            <columns>
+                <label><!-- Style --></label>
+                <name>Style</name>
+            </columns>
+            <columns>
+                <label><!-- US Size --></label>
+                <name>US Size</name>
+            </columns>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Ship_To_Customer --></label>
+                <name>Ship_To_Customer</name>
+            </columns>
+            <columns>
+                <label><!-- Sold_To_Customer --></label>
+                <name>Sold_To_Customer</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV SKU KPI --></description>
+        <label><!-- RTV SKU KPI --></label>
+        <name>RTV_SKU_KPI</name>
+        <sections>
+            <columns>
+                <label><!-- Program Name --></label>
+                <name>Program Name</name>
+            </columns>
+            <columns>
+                <label><!-- Sales Channel --></label>
+                <name>Sales Channel</name>
+            </columns>
+            <label><!-- RTV SKU KPI --></label>
+            <name>RTV SKU KPI</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV Summary Delivery Item --></description>
+        <label><!-- RTV Summary Delivery Item --></label>
+        <name>RTV_Summary_Delivery_Item</name>
+        <sections>
+            <columns>
+                <label><!-- 数量 --></label>
+                <name>数量</name>
+            </columns>
+            <columns>
+                <label><!-- 箱号 --></label>
+                <name>箱号</name>
+            </columns>
+            <label><!-- Packing Details --></label>
+            <name>Packing Details</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- BU --></label>
+                <name>BU</name>
+            </columns>
+            <columns>
+                <label><!-- POS SKU --></label>
+                <name>POS SKU</name>
+            </columns>
+            <columns>
+                <label><!-- 季节码 --></label>
+                <name>季节码</name>
+            </columns>
+            <columns>
+                <label><!-- 尺寸(亚码) --></label>
+                <name>尺寸(亚码)</name>
+            </columns>
+            <columns>
+                <label><!-- 尺寸(美码) --></label>
+                <name>尺寸(美码)</name>
+            </columns>
+            <columns>
+                <label><!-- 数量 --></label>
+                <name>数量</name>
+            </columns>
+            <columns>
+                <label><!-- 货品号 --></label>
+                <name>货品号</name>
+            </columns>
+            <columns>
+                <label><!-- 退货授权号 --></label>
+                <name>退货授权号</name>
+            </columns>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Ship to --></label>
+                <name>Ship to</name>
+            </columns>
+            <columns>
+                <label><!-- Sold to --></label>
+                <name>Sold to</name>
+            </columns>
+            <columns>
+                <label><!-- 客户名称 --></label>
+                <name>客户名称</name>
+            </columns>
+            <columns>
+                <label><!-- 最早提货日 --></label>
+                <name>最早提货日</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV Summary Inspection --></description>
+        <label><!-- RTV Summary Inspection --></label>
+        <name>RTV_Summary_Inspection</name>
+        <sections>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Order: 上次修改人: 全名 --></label>
+                <name>Order: 上次修改人: 全名</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 上次修改日期 --></label>
+                <name>Order: 上次修改日期</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 上次活动日期 --></label>
+                <name>Order: 上次活动日期</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 创建人 --></label>
+                <name>Order: 创建人</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 创建日期 --></label>
+                <name>Order: 创建日期</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 召回授权码 --></label>
+                <name>Order: 召回授权码</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 名称 --></label>
+                <name>Order: 名称</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 实际提货数量 --></label>
+                <name>Order: 实际提货数量</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 所有人: 全名 --></label>
+                <name>Order: 所有人: 全名</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 最早提货日 --></label>
+                <name>Order: 最早提货日</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 最终入库数量 --></label>
+                <name>Order: 最终入库数量</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 未找到件数 --></label>
+                <name>Order: 未找到件数</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 状态 --></label>
+                <name>Order: 状态</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 申请数量 --></label>
+                <name>Order: 申请数量</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 申请退货金额 (USD/excl.VAT) --></label>
+                <name>Order: 申请退货金额 (USD/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 订单类型 --></label>
+                <name>Order: 订单类型</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 记录类型 --></label>
+                <name>Order: 记录类型</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检报告人: 全名 --></label>
+                <name>Order: 质检报告人: 全名</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(A) --></label>
+                <name>Order: 质检数量(A)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(B) --></label>
+                <name>Order: 质检数量(B)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(C) --></label>
+                <name>Order: 质检数量(C)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检数量(D) --></label>
+                <name>Order: 质检数量(D)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检退货总金额(A)(CNY/excl.VAT) --></label>
+                <name>Order: 质检退货总金额(A)(CNY/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检退货总金额(B)(CNY/excl.VAT) --></label>
+                <name>Order: 质检退货总金额(B)(CNY/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 质检退货总金额(D)(CNY/excl.VAT) --></label>
+                <name>Order: 质检退货总金额(D)(CNY/excl.VAT)</name>
+            </columns>
+            <columns>
+                <label><!-- Order: 需确认件数 --></label>
+                <name>Order: 需确认件数</name>
+            </columns>
+            <columns>
+                <label><!-- Ship-To Code --></label>
+                <name>Ship-To Code</name>
+            </columns>
+            <columns>
+                <label><!-- Sold-To Code --></label>
+                <name>Sold-To Code</name>
+            </columns>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Finance Code --></label>
+                <name>Finance Code</name>
+            </columns>
+            <columns>
+                <label><!-- Program: 项目名称 --></label>
+                <name>Program: 项目名称</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 名称 --></label>
+                <name>Summary: 名称</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 状态 --></label>
+                <name>Summary: 状态</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 类型 --></label>
+                <name>Summary: 类型</name>
+            </columns>
+            <columns>
+                <label><!-- Summary: 项目类型 --></label>
+                <name>Summary: 项目类型</name>
+            </columns>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV Summary KPI --></description>
+        <label><!-- RTV Summary KPI --></label>
+        <name>RTV_Summary_KPI</name>
+        <sections>
+            <columns>
+                <label><!-- Order Status --></label>
+                <name>Order Status</name>
+            </columns>
+            <label><!-- RTV Order --></label>
+            <name>RTV Order</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Programs --></label>
+            <name>RTV Programs</name>
+        </sections>
+        <sections>
+            <label><!-- RTV RP Summary Budgets --></label>
+            <name>RTV RP Summary Budgets</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Summary Status --></label>
+                <name>Summary Status</name>
+            </columns>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- RTV Summary Orders --></description>
+        <label><!-- RTV Summary Orders --></label>
+        <name>RTV_Summary_Orders</name>
+        <sections>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+    </reportTypes>
+</Translations>

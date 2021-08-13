@@ -1,0 +1,24 @@
+<apex:page standardController="RTV_POS_Data__c" extensions="RTV_POSDataController" recordSetVar="posdata" sidebar="false">
+
+    <apex:form id="frm">
+        <apex:pageBlock tabStyle="RTV_POS_Data__c" id="pb">
+            <apex:sectionHeader Title="Delete POS Data"></apex:sectionHeader>
+
+            <apex:pageBlockTable value="{!posdata}" var="a">
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.Auth_Code__c}"/>
+                <apex:column value="{!a.Order_No__c}"/>
+                <apex:column value="{!a.Transfer_Time__c}"/>
+            </apex:pageBlockTable>
+
+            <!-- 按钮 -->
+            <apex:pageBlockButtons location="bottom" id="pbtns">
+                <apex:commandButton value="Delete" action="{!deleteData}"/>
+                <apex:commandButton value="Close" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+
+    <!-- 显示message -->
+    <apex:pageMessages />
+</apex:page>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>RTV_DTC_POS_Data_Create_To_CFS_Logistic</fullName>
+        <description>RTV DTC POS Data Create (To CFS Logistic)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CFS_Logistic_Confirm</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>noreply@converse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Converse_RMS/RTV_DTC_POS_Data_Create</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_POS_Data_Create_To_CFS_Owner</fullName>
+        <description>RTV DTC POS Data Create (To CFS Store)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@converse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Converse_RMS/RTV_DTC_POS_Data_Create</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_POS_Data_Create_To_DIG</fullName>
+        <description>RTV DTC POS Data Create (To DIG)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_DIG_Logistic_Confirm</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_DIG_User</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>noreply@converse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Converse_RMS/RTV_DTC_POS_Data_Create</template>
+    </alerts>
+    <rules>
+        <fullName>RTV DTC POS Data Create %28To CFS Logistic%29</fullName>
+        <actions>
+            <name>RTV_DTC_POS_Data_Create_To_CFS_Logistic</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>DTC》POSData》当生成CFS孤单时，发送邮件给Logistic</description>
+        <formula>ISPICKVAL(Sales_Channel__c, &apos;CFS&apos;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DTC POS Data Create %28To CFS Store%29</fullName>
+        <actions>
+            <name>RTV_DTC_POS_Data_Create_To_CFS_Owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>DTC》POSData》当生成CFS孤单时，发送邮件给对应ShipTo的Owner</description>
+        <formula>ISPICKVAL(Sales_Channel__c, &apos;CFS&apos;) &amp;&amp; Owner:User.Profile.Name == &apos;RMS CFS Store&apos;</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DTC POS Data Create %28To DIG%29</fullName>
+        <actions>
+            <name>RTV_DTC_POS_Data_Create_To_DIG</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>RTV_POS_Data__c.Sales_Channel__c</field>
+            <operation>equals</operation>
+            <value>DIG</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_POS_Data__c.Name</field>
+            <operation>equals</operation>
+            <value>4691</value>
+        </criteriaItems>
+        <description>DTC》POSData》当生成DIG孤单时，发送邮件给全体DIG用户</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

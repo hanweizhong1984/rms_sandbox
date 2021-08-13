@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Category__c</fullName>
+    <description>sub_category_all_all_gl</description>
+    <externalId>false</externalId>
+    <label>Sub Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Backpacks</fullName>
+                <default>false</default>
+                <label>Backpacks</label>
+            </value>
+            <value>
+                <fullName>Baseball</fullName>
+                <default>false</default>
+                <label>Baseball</label>
+            </value>
+            <value>
+                <fullName>Crews</fullName>
+                <default>false</default>
+                <label>Crews</label>
+            </value>
+            <value>
+                <fullName>Cross Body</fullName>
+                <default>false</default>
+                <label>Cross Body</label>
+            </value>
+            <value>
+                <fullName>Dresses</fullName>
+                <default>false</default>
+                <label>Dresses</label>
+            </value>
+            <value>
+                <fullName>Duffel/Barrel Bags</fullName>
+                <default>false</default>
+                <label>Duffel/Barrel Bags</label>
+            </value>
+            <value>
+                <fullName>Footies</fullName>
+                <default>false</default>
+                <label>Footies</label>
+            </value>
+            <value>
+                <fullName>Jackets</fullName>
+                <default>false</default>
+                <label>Jackets</label>
+            </value>
+            <value>
+                <fullName>No-Show</fullName>
+                <default>false</default>
+                <label>No-Show</label>
+            </value>
+            <value>
+                <fullName>Pants</fullName>
+                <default>false</default>
+                <label>Pants</label>
+            </value>
+            <value>
+                <fullName>Small Cases</fullName>
+                <default>false</default>
+                <label>Small Cases</label>
+            </value>
+            <value>
+                <fullName>Sweat Shirts</fullName>
+                <default>false</default>
+                <label>Sweat Shirts</label>
+            </value>
+            <value>
+                <fullName>Tees</fullName>
+                <default>false</default>
+                <label>Tees</label>
+            </value>
+            <value>
+                <fullName>Totes</fullName>
+                <default>false</default>
+                <label>Totes</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

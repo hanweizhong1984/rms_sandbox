@@ -1,0 +1,92 @@
+<apex:page controller="RTV_RP_UploadSKUBudgetController" applyHtmlTag="true" lightningStylesheets="True">
+    <head>
+        <apex:slds /> <!-- 用<apex:slds>标签引入lightning的css -->
+    </head>
+
+    <!-- Form -->
+    <apex:form id="form">
+        <apex:pageBlock title="Upload SKU Budget">
+            <!-- left -->
+            <apex:pageBlockSection columns="1">
+                <!-- 上传文件 -->
+                <apex:inputFile value="{!fileUploadBody}" fileName="{!fileUploadName}" accept=".csv"/>
+                <!-- 选择编码 -->
+                <apex:selectRadio value="{!fileCharset}" layout="pageDirection">
+                    <apex:selectOptions value="{!fileCharsetOpts}"/>
+                </apex:selectRadio>
+                
+                <apex:pageBlock rendered="{!IsDTC == false}">
+                    <span style="font-weight:bold;">Note:<br/></span>
+                    <div>If you add Ship-to or Sold-to or Account Group to csv:</div>
+                    <div style="padding-left: 1rem; padding-top: 0.2rem">The Sumamry Budget in the scope will be create and compute.</div>
+                    <div style="padding-left: 1rem; padding-top: 0.2rem">The Ship-to in the scope WhiteList will be create.</div>
+                    
+                    <!-- 删除其它的summaryBudget -->
+                    <apex:inputCheckbox value="{!isRecomputeSummaryBudget}">
+                        <span style="padding-left: 1rem;">Recalculation the exist Summary Budgets ?</span> 
+                    </apex:inputCheckbox><br/>
+                    
+                    <!-- 删除其它的summaryBudget -->
+                    <apex:inputCheckbox value="{!isDeleteOtherSummaryBudget}" disabled="{!IsDTC}">
+                        <span style="padding-left: 1rem;">Delete the other Summary Budgets out of CSV?</span> 
+                    </apex:inputCheckbox><br/>
+                    
+                    <!-- 删除其它的shipto白名单 -->
+                    <apex:inputCheckbox value="{!isDeleteOtherShipToWL}">
+                        <span style="padding-left: 1rem;">Delete the other Ship-to Whilte List out of CSV?</span> 
+                    </apex:inputCheckbox><br/>
+                    
+                    
+                    <span style="font-weight:bold;">Note:<br/></span>
+                    If there is only material code in the CSV:<br/>
+                    you need to manually upload the Ship-to Whitelist and Summary Budget.
+                </apex:pageBlock>
+
+                <apex:pageBlock rendered="{!IsDTC}">
+                    <span style="font-weight:bold;">Note:<br/></span>
+                    <div>If you add Ship-to or Sold-to or Account Group to csv:</div>
+                    <div style="padding-left: 1rem; padding-top: 0.2rem">The Ship-to in the scope WhiteList will be create.</div>
+                    
+                    <!-- 删除其它的shipto白名单 -->
+                    <apex:inputCheckbox value="{!isDeleteOtherShipToWL}">
+                        <span style="padding-left: 1rem;">Delete the other Ship-to Whilte List out of CSV?</span> 
+                    </apex:inputCheckbox>
+
+                </apex:pageBlock>
+                
+            </apex:pageBlockSection>
+            
+            <!-- 按钮 -->
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Upload" action="{!uploadFile}"/>
+                <apex:commandButton value="Close" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <!-- Form（检查上传结果用） -->
+    <apex:form >
+        <!-- 用Ajax检查上传结果（间隔5s） -->
+        <apex:actionPoller enabled="{!isLoading}" action="{!checkResult}" reRender="_resultView" interval="5" />
+    </apex:form>
+    
+    <!-- 结果 -->
+    <apex:outputPanel id="_resultView" title="Result" >
+        <!-- Message -->
+        <apex:pageMessages />
+
+        <!-- Loading -->
+        <apex:outputPanel layout="block" rendered="{!isLoading}">
+            <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.75;width:100%;">
+                <div class="waitingHolder" style="top: 100px; width: 91px;">
+                    <img class="waitingImage" src="/img/loading.gif" title="Please Wait..."  style="width: 40;height:40;"/>
+                    <span class="waitingDescription">Loading({!batchPercent}%)...</span>
+
+                    <div class="slds-progress-bar slds-progress-bar_large" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{!batchPercent}" role="progressbar">
+                        <span class="slds-progress-bar__value slds-progress-bar__value_success" style="width: {!batchPercent}%"/>
+                    </div>
+                </div>
+            </div>
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:page>

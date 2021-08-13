@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DefectiveNameCanNotChange</fullName>
+    <active>true</active>
+    <description>Defective Name Can Not Change</description>
+    <errorConditionFormula>ISCHANGED(Name)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Defective Name Can Not Change!</errorMessage>
+</ValidationRule>

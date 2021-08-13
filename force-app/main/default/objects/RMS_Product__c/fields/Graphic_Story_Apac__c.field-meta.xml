@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Graphic_Story_Apac__c</fullName>
+    <description>graphic_story_apac_all_gl</description>
+    <externalId>false</externalId>
+    <label>Graphic Story Apac</label>
+    <length>40</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

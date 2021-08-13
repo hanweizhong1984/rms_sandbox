@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>RTV_DEF_Program_Created</fullName>
+        <description>RTV DEF Program Created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Program_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DEF_Program_Off_Policy</fullName>
+        <description>RTV DEF Program Off Policy</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Program_Off_Policy</template>
+    </alerts>
+    <rules>
+        <fullName>RTV DEF Program Created</fullName>
+        <actions>
+            <name>RTV_DEF_Program_Created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_Defective__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </criteriaItems>
+        <description>当DEF Program新建，发送邮件给CS</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DEF Program Off Policy</fullName>
+        <actions>
+            <name>RTV_DEF_Program_Off_Policy</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_Defective__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Off Policy</value>
+        </criteriaItems>
+        <description>当DEF Program Off Policy 之后，发送邮件给CS</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

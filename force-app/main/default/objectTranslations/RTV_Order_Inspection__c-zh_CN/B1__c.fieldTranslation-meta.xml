@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- APP无包装,Plastic Bag --></help>
+    <label>质检数量 B1</label>
+    <name>B1__c</name>
+</CustomFieldTranslation>

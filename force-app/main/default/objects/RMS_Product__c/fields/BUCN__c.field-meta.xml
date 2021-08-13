@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BUCN__c</fullName>
+    <description>bu_all_cn_rl</description>
+    <externalId>false</externalId>
+    <label>BUCN</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACC</fullName>
+                <default>false</default>
+                <label>ACC</label>
+            </value>
+            <value>
+                <fullName>APP</fullName>
+                <default>false</default>
+                <label>APP</label>
+            </value>
+            <value>
+                <fullName>FTW-Core</fullName>
+                <default>false</default>
+                <label>FTW-Core</label>
+            </value>
+            <value>
+                <fullName>FTW-Seasonal</fullName>
+                <default>false</default>
+                <label>FTW-Seasonal</label>
+            </value>
+            <value>
+                <fullName>NULL</fullName>
+                <default>false</default>
+                <label>NULL</label>
+            </value>
+            <value>
+                <fullName>SS TEE</fullName>
+                <default>false</default>
+                <label>SS TEE</label>
+            </value>
+            <value>
+                <fullName>WOVEN BOTTOM</fullName>
+                <default>false</default>
+                <label>WOVEN BOTTOM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

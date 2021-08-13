@@ -1,0 +1,32 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "005a000000C0sjhAAB",
+      "createdByName": "Wang Sam",
+      "createdDate": "2015-10-07T14:42:04.000Z",
+      "fileName": "weblinks/Open_Door_Upload_Template_Zh.weblink",
+      "fullName": "Open_Door_Upload_Template_Zh",
+      "id": "00ba0000001QjzAAAS",
+      "lastModifiedById": "005a000000C0sjhAAB",
+      "lastModifiedByName": "Wang Sam",
+      "lastModifiedDate": "2015-10-07T14:42:04.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomPageWebLink"
+    },
+    {
+      "createdById": "0050c00000DgivHAAR",
+      "createdByName": "Suresh Shamanth",
+      "createdDate": "2018-04-30T14:03:33.000Z",
+      "fileName": "weblinks/dca_cnvrt_file__Configure.weblink",
+      "fullName": "dca_cnvrt_file__Configure",
+      "id": "00b0c000001YsGYAA0",
+      "lastModifiedById": "0050c00000DgivHAAR",
+      "lastModifiedByName": "Suresh Shamanth",
+      "lastModifiedDate": "2018-04-30T14:03:33.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "dca_cnvrt_file",
+      "type": "CustomPageWebLink"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>ZDSI(B)</label>
+    <name>Condition_Value_ZDSI_B__c</name>
+</CustomFieldTranslation>

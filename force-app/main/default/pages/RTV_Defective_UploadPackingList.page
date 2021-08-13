@@ -1,0 +1,100 @@
+<apex:page controller="RTV_Defective_UploadPackingListCtrl" lightningStylesheets="True">
+
+<!-- 上传表单 -->
+<apex:form >
+    <apex:pageBlock title="上传 Packing List CSV" mode="edit">
+        <apex:pageBlockSection columns="2">
+            <!-- LEFT -->
+            <apex:pageBlockSection columns="1">
+                <!-- input:上传部分 -->
+                <apex:inputFile value="{!fileUploadBody}" fileName="{!fileUploadName}" accept=".csv"/>
+                <apex:selectRadio value="{!fileCharset}" layout="pageDirection">
+                    <apex:selectOptions value="{!fileCharsetOpts}"/>
+                </apex:selectRadio>
+                <!-- 提示 -->
+                <apex:outputPanel >
+                    <span style="font-weight:bold;">Note:<br/></span>
+                    请注意上传的商品的尺码必须为美码。
+                </apex:outputPanel>
+                <apex:outputPanel >
+                    <span style="font-weight:bold;">Note:<br/></span>
+                    <span style="color:#c23934;">若验证后属非退货范围，随下一批大货寄回。</span>
+                </apex:outputPanel>
+                <apex:outputPanel >
+                    <span style="font-weight:bold;">Note:<br/></span>
+                    鞋盒问题不在退残范围内，如果到货后存在鞋盒破损/鞋盒标有问题的情况，<br/>
+                    请在到货三天内，邮件给：ConverseCS2@LFLogistics.com ，走索赔流程。
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <!-- RIGHT -->
+            <apex:pageBlockSection columns="1">
+                <!-- 特批退残的附件 -->
+                <apex:pageBlock title="特批退残证明">
+                    <!-- 上传附件 -->
+                    <div style="margin-bottom:1rem;">
+                        <apex:inputFile value="{!specialDef.inputFileBody}" fileName="{!specialDef.inputFileName}"/>
+                        <apex:commandButton action="{!specialDef.uploadFile}" value="上传文件"/>
+                    </div>
+                    <!-- 现有的附件tabel -->
+                    <apex:pageBlockTable value="{!specialDef.attachs}" var="att">
+                        <apex:column value="{!att.Name}"/>
+                        <apex:column value="{!att.CreatedBy.Name}" headerValue="创建人"/>
+                        <!-- 下载 -->
+                        <apex:column >
+                            <apex:outputLink value="/{!att.Id}">下载</apex:outputLink>
+                        </apex:column>
+                        <!-- 删除 -->
+                        <apex:column >
+                            <apex:commandLink action="{!specialDef.deleteFile}" value="删除" onclick="return confirm('确定删除吗?');">
+                                <apex:param name="attachId" value="{!att.id}"/>
+                            </apex:commandLink>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlockSection>
+        <!-- 按钮 -->
+        <apex:pageBlockButtons location="bottom">
+            <apex:commandButton value="上传" action="{!uploadFile}" onclick="startLoading()"/>
+            <apex:commandButton value="返回" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+
+<!-- 显示message -->
+<apex:pageMessages />
+
+<!-- Loading -->
+<div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.75;width:100%;display: none">
+    <div class="waitingHolder" style="top: 100px; width: 91px;">
+        <img class="waitingImage" src="/img/loading.gif" title="Please Wait..."  style="width: 40;height:40;"/>
+        <span class="waitingDescription">Loading...</span>
+    </div>
+</div>
+<script type="text/javascript">
+    function startLoading() {
+        document.getElementById("el_loading").style.display = 'inline';
+    }
+</script>
+
+<!-- 错误信息文件下载 -->
+<apex:outputText rendered="{!isNeedErrorCsv}">
+    <textarea id="el_error_msg" style="display:none;">{!resErrorCsv}</textarea>
+    <script type="text/javascript">
+        // 获取文件内容 (UTF8前加上"\uFEFF"，让excel不乱码)
+        var csvElement = document.getElementById("el_error_msg");
+        var csvBody = "\uFEFF" + csvElement.value;
+        
+        // 下载csv文件
+        var blob = new Blob([csvBody], {type:"text/plain;charset=utf-8"});
+        let a = document.createElement('a');
+        a.download = 'errors.csv';
+        a.href = URL.createObjectURL(blob);
+        a.click();
+        URL.revokeObjectURL(a.href);
+    </script>
+</apex:outputText>
+
+</apex:page>

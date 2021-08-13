@@ -1,0 +1,58 @@
+<apex:page controller="RTV_FileDownloadController" lightningStylesheets="True" sidebar="True">
+    <head>
+        <apex:slds /> <!-- 用<apex:slds>标签引入lightning的css -->
+    </head>
+    <div class="slds-coordinates__header">
+        <h1 class="slds-coordinates__title">帮助文档</h1>
+    </div>
+	 <!-- 管理员上传附件 -->
+    <apex:form rendered="{!isAdmin}" title="上传文件">
+        <apex:pageBlock >   
+            <apex:pageBlockSection columns="2">
+                <apex:inputFile value="{!fileBody}" fileName="{!fileName}" styleclass="slds-file-selector__button"/>
+                <!--<apex:inputText value="{!profile}" label="用户"/>-->
+                <apex:selectList value="{!profile}" label="用户">
+                    <apex:selectOptions value="{!profileList}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:commandButton value="上传" action="{!attach}" styleClass="slds-button slds-button_brand"/> 
+                <apex:inputTextarea value="{!fileDescription}" label="文件描述"/>  
+            </apex:pageBlockSection>
+        </apex:pageBlock>   
+    </apex:form>
+    <apex:pageMessages />
+    <apex:form title="文件列表">
+        <apex:pageBlock >    
+            <!-- 附件列表 -->
+            <pageBlockSection>
+                <apex:pageblocktable value="{!attList}" var="att">
+                    <!-- <apex:column value="{!att.name}" headerValue="文件名" width="80%"/> -->
+                    <apex:column headerValue="文件名">
+                        <apex:commandLink value="{!att.name}" id="download" action="{!downloadURL}" target="_blank">
+                          <apex:param id="fileId" name="fileId" value="{!att.id}"/>
+                        </apex:commandLink> 
+                    </apex:column>
+                     <apex:column headerValue="文件描述">
+                         <apex:inputField value="{!att.Description}" rendered="{!isUpdate}"></apex:inputField>
+                         <apex:outputField value="{!att.Description}" rendered="{!!isUpdate}"></apex:outputField>
+                    </apex:column>
+                    <apex:column rendered="{!isAdmin}">
+                        <apex:commandLink value="删除" id="delete" action="{!deleteFile}" styleClass="slds-button slds-button_neutral" rendered="{!isUpdate}">
+                          <apex:param id="delfileId" name="delfileId" value="{!att.id}"/>
+                        </apex:commandLink> 
+                    </apex:column>
+                </apex:pageblocktable>
+                <apex:pageBlockSection rendered="{!isAdmin}">
+                	<apex:commandButton value="编辑" id="update" action="{!updateFile}" styleClass="slds-button slds-button_brand" rendered="{!!isUpdate}"/>
+                	<apex:commandButton value="保存" id="save" action="{!saveFile}" styleClass="slds-button slds-button_brand" rendered="{!isUpdate}"/>
+                </apex:pageBlockSection>
+            </pageBlockSection>     
+        </apex:pageBlock>     
+    </apex:form>
+    
+    <style type="text/css">
+       	body .bPageBlock .detailList .labelCol {
+                text-align: left;
+    			width: 4%; 
+        }
+</style>
+</apex:page>

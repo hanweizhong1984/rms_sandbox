@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SeedingNameCanNotChange</fullName>
+    <active>true</active>
+    <description>Inprocess和Completed时，不能修改Seeding  Name</description>
+    <errorConditionFormula>AND(
+OR(TEXT( Status__c) ==&apos;In Process&apos;,TEXT(Status__c) ==&apos;Completed&apos;), ISCHANGED(Name)
+ )</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Seeding name can not be changed!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV DTC DEF Order PTLF</name>
+    <style>none</style>
+    <subject>[RMS-Delivery] 退残订单{!RTV_Order__c.Name}，客户{!RTV_Order__c.ShipTo_Or_Store_Code__c}已经装箱完毕待提货</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

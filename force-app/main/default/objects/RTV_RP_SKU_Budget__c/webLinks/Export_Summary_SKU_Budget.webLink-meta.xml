@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Export_Summary_SKU_Budget</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Export Summary SKU Budget</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/apex/RMS_Redirect_To_Report?reportName=RTV_Summary_Sku_Budget_hgi&amp;fv0={!RTV_RP_Summary_Budget__c.Return_ProgramId__c}&amp;fv1={!RTV_RP_Summary_Budget__c.Id}</url>
+</WebLink>

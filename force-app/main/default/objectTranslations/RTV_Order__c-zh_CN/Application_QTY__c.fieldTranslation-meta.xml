@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Total qty of customer applications --></help>
+    <label>申请商品数量</label>
+    <name>Application_QTY__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DTC》POSData》生成POSData时，发邮件给对应门店的用户</description>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV DTC POS Data Create</name>
+    <style>none</style>
+    <subject>[RMS-POS Data] 客户{!RTV_POS_Data__c.Name}，POS机生成的数据中存在孤单</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

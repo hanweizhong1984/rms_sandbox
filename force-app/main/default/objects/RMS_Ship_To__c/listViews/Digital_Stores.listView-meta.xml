@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Stores</fullName>
+    <columns>NAME</columns>
+    <columns>Sold_To_Code__c</columns>
+    <columns>DTC_Code__c</columns>
+    <columns>Sales_Channel__c</columns>
+    <columns>IsDtcValid__c</columns>
+    <columns>Contact_Pr__c</columns>
+    <columns>Contact_Tel1__c</columns>
+    <columns>Contact_Tel2__c</columns>
+    <columns>Owner_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Channel__c</field>
+        <operation>equals</operation>
+        <value>DIG</value>
+    </filters>
+    <label>Digital Stores</label>
+</ListView>

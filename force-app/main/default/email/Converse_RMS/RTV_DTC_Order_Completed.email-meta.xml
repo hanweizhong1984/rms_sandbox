@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV DTC Order Completed</name>
+    <style>none</style>
+    <subject>[RMS-Inbound-Completed] 退货/召回订单汇总{!RTV_Order__c.Name}，{!RTV_Order__c.ShipTo_Or_Store_Code__c}，已完成入库</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

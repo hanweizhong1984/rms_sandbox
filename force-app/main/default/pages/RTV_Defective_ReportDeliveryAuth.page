@@ -1,0 +1,83 @@
+<apex:page controller="RTV_Defective_ReportDeliveryAuth" 
+    contentType="application/vnd.ms-excel#Delivery Authorization.xls" readOnly="True" cache="false"> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/HTML;charset=UTF-8" />
+    </head>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!results}" var="res" rowClasses="odd,even" border="1">
+            <apex:column value="{!SysDateStr}">
+                <apex:facet name="header">月份</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Order_Auth_Code__c}">
+                <apex:facet name="header">退货编号</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.LF_Order_Auth_Code__c}">
+                <apex:facet name="header">退货授权号</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Earliest_Delivery_Date__c}">
+                <apex:facet name="header">最早提货日</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Ship_To__r.Sold_To_Code__r.Sold_To_Name_CN__c}">
+                <apex:facet name="header">客户名称</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Ship_To__r.Sold_To_Code__r.Sold_To_Name_CN__c}">
+                <apex:facet name="header">公司名称</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Ship_To__r.Province__c}">
+                <apex:facet name="header">省</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Ship_To__r.City__c}">
+                <apex:facet name="header">市</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Ship_To_Address__c}">
+                <apex:facet name="header">Shipto地址</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Ship_To__r.Sold_To_Code__r.Name}">
+                <apex:facet name="header">Soldto</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Ship_To__r.Name}">
+                <apex:facet name="header">Shipto</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Ship_To_Contact__c}">
+                <apex:facet name="header">联系人</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Ship_To_Phone1__c}">
+                <apex:facet name="header">电话1</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order__r.Ship_To_Phone2__c}">
+                <apex:facet name="header">电话2</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.BU_2__c}">
+                <apex:facet name="header">BU</apex:facet>
+            </apex:column>
+            <apex:column headerValue="申请箱数">
+                <apex:outputText value="{0, number, ########}" >
+                    <apex:param value="{!res.Application_Box_QTY__c}" />
+                </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="申请数量">
+                <apex:outputText value="{0, number, ########}" >
+                    <apex:param value="{!res.Application_QTY__c}" />
+                </apex:outputText>
+            </apex:column>
+            <apex:column value="{!empty}">
+                <apex:facet name="header">实收</apex:facet>
+            </apex:column>
+            <apex:column value="{!empty}">
+                <apex:facet name="header">差异</apex:facet>
+            </apex:column>
+            <apex:column value="{!empty}">
+                <apex:facet name="header">箱数</apex:facet>
+            </apex:column>
+            <apex:column value="{!empty}">
+                <apex:facet name="header">体积</apex:facet>
+            </apex:column>
+            <apex:column value="{!empty}">
+                <apex:facet name="header">Date-到货</apex:facet>
+            </apex:column>
+            <apex:column value="{!empty}">
+                <apex:facet name="header">Date-提货</apex:facet>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

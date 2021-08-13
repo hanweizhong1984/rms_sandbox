@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RTV RP SKU预算</value>
+    </caseValues>
+    <layouts>
+        <layout>RP SKU Budget</layout>
+        <sections>
+            <label><!-- Budget Information --></label>
+            <section>Budget Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Sku Budget Number --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- RP SKU Budget --></label>
+        <name>RP_SKU_Budget</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- Export_DTC_SKU_Budget --></label>
+        <name>Export_DTC_SKU_Budget</name>
+    </webLinks>
+    <webLinks>
+        <label>导出SKU预算</label>
+        <name>Export_SKU_Budget</name>
+    </webLinks>
+    <webLinks>
+        <label>导出汇总SKU预算</label>
+        <name>Export_Summary_SKU_Budget</name>
+    </webLinks>
+    <webLinks>
+        <label>上传SKU预算</label>
+        <name>Upload_SKU_Budget</name>
+    </webLinks>
+    <webLinks>
+        <label>上传SKU预算(金店)</label>
+        <name>Upload_SKU_Budget_For_Gold</name>
+    </webLinks>
+</CustomObjectTranslation>

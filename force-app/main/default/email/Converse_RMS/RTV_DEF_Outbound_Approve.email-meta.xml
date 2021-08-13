@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DEF: 发送外部审批Email给ShipTo</description>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV DEF Outbound Approve</name>
+    <style>none</style>
+    <subject>[RMS-Confirmed] 退残订单{!RTV_Order__c.Name}，{!RTV_Order__c.Ship_To__c}，质检结果已完成，请查看并核实报告</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

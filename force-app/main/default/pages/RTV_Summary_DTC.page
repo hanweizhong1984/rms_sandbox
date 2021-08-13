@@ -1,0 +1,537 @@
+<apex:page standardController="RTV_Summary__c" extensions="RTV_SummaryCtrl_DTC" lightningStylesheets="true" action="{!loadPage}">
+<head>
+    <apex:slds /> <!-- 用<apex:slds>标签引入lightning的css -->
+</head>
+<apex:pageMessages />
+
+<!-- =================================
+    合计信息
+================================== -->
+<h1>合计信息</h1>
+<!-- 申请合计 -->
+<apex:pageBlock >
+    <apex:pageBlockSection >
+        <apex:outputText label="申请数量" value="{0, number, ##,###,###}" >
+            <apex:param value="{!summaryTotal.Application_QTY}" />
+        </apex:outputText>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+<!-- 质检合计 -->
+<apex:pageBlock rendered="{!(summary.Status__c == 'POST to LF' || summary.Status__c == 'Completed')}">
+    <apex:pageBlockSection >
+        <apex:outputText label="检出数量 (A)" value="{0, number, ##,###,###}" >
+            <apex:param value="{!summaryTotal.Inspect_QTY_A}" />
+        </apex:outputText>
+        
+        <apex:outputText label="检出数量 (B)" value="{0, number, ##,###,###}">
+            <apex:param value="{!summaryTotal.Inspect_QTY_B}" />
+        </apex:outputText>
+        
+        <apex:outputText label="检出数量 (C)" value="{0, number, ##,###,###}">
+            <apex:param value="{!summaryTotal.Inspect_QTY_C}" />
+        </apex:outputText>
+        
+        <apex:outputText label="检出数量 (D)" value="{0, number, ##,###,###}">
+            <apex:param value="{!summaryTotal.Inspect_QTY_D}" />
+        </apex:outputText>
+        
+        <apex:outputText label="最终入库数量" value="{0, number, ##,###,###}" >
+            <apex:param value="{!summaryTotal.Inbound_QTY}" />
+        </apex:outputText>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+
+<!-- =================================
+    申请&删除订单
+================================== -->
+<apex:form rendered="{!loginUser.isCs || loginUser.isDtcBP || loginUser.isAdmin}">
+    <!-- 按钮 -->
+    <apex:commandButton styleClass="slds-button slds-button--brand" 
+        action="{!createOrderForm.open}" value="创建订单"
+        rendered="{!ISNULL(summary.LF_WH_Inbound_Date__c)}">
+    </apex:commandButton>
+    <apex:commandButton styleClass="slds-button slds-button--brand" 
+        action="{!createOrderForm.open}" value="已入库，请勿创建新订单"
+        rendered="{!NOT(ISNULL(summary.LF_WH_Inbound_Date__c)) && summary.Status__c != 'Completed'}"
+        disabled="true">
+    </apex:commandButton>
+    
+    <!-- 删除空白订单 -->
+    <apex:outputLink styleClass="slds-button slds-button_text-destructive slds-float_right"
+        value="/apex/RTV_Order_ClearData?summaryId={!summary.Id}"
+        style="color:orangered" rendered="{!orders_Ready_Cnt > 0}">
+        删除空白订单
+    </apex:outputLink>
+</apex:form>
+
+<!-- =================================
+    各状态的Order列表
+================================== -->
+<apex:form >
+    <apex:tabPanel switchType="client" rendered="{!orders_Cnt > 0}">
+        <!-- =================================
+            状态:Ready
+        ================================== -->
+        <apex:tab label="Ready ({!orders_Ready_Cnt})" rendered="{!orders_Ready_Cnt > 0}">
+            <apex:pageBlock title="RTV Orders">
+                <!-- button -->
+                <apex:pageBlockButtons location="top" style="text-align: right;">
+                    <!-- Export Auth Code -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RTV_Order_ReportAuthCode?summaryId={!summary.Id}">
+                        导出授权码
+                    </apex:outputLink>
+                    <!-- Export Customer Info -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RTV_Order_ReportCustomerInfo?summaryId={!summary.Id}">
+                        导出客户信息
+                    </apex:outputLink>
+                    <!-- Upload Customer Info -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral"
+                        value="/apex/RTV_Order_UploadCustomerInfo?summaryId={!summary.Id}">
+                        上传客户信息
+                    </apex:outputLink>
+                </apex:pageBlockButtons>
+                <!-- table -->
+                <apex:pageBlockTable value="{!orders_Ready}" var="order">
+                    <apex:column headerValue="Order Code">
+                        <apex:outputLink value="/{!order.Id}">{!order.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!order.Ship_To__r.Name}" rendered="{!summary.DTC_Type__c=='Digital'}"/>
+                    <apex:column value="{!order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
+                    <apex:column value="{!order.Application_QTY__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:tab>
+        <!-- =================================
+            状态:PostToLF
+        ================================== -->
+        <apex:tab label="提交LF ({!orders_PostLF_Cnt})" rendered="{!orders_PostLF_Cnt > 0}">
+            <apex:pageBlock title="RTV Orders">
+                <!-- button -->
+                <apex:pageBlockButtons location="top" style="text-align: right;">
+                    <!-- 导出PDF -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RTV_DeliveryPDF_Export?summaryId={!summaryId}">
+                        导出PDF
+                    </apex:outputLink>
+
+                    <!-- 导出delivery -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RTV_Order_ReportDeliveryAuth?summaryId={!summaryId}">
+                        导出提货委托书
+                    </apex:outputLink>
+                    
+                    <!-- 导出delivery.item -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RMS_DTC_Summary_Delivery_Item&fv0={!summary.Id}">
+                        导出提货委托明细
+                    </apex:outputLink>
+                    
+                    <!-- 上传delivery -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral"
+                        value="/apex/RTV_Order_UploadDelivery?summaryId={!summary.Id}"
+                        rendered="{!loginUser.isLF || loginUser.isAdmin}">
+                        上传提货报告
+                    </apex:outputLink>
+                </apex:pageBlockButtons>
+                <!-- table -->
+                <apex:pageBlockTable value="{!orders_PostLf}" var="order">
+                    <apex:column headerValue="Order Code">
+                        <apex:outputLink value="/{!order.Id}">{!order.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!order.Ship_To__r.Name}" rendered="{!summary.DTC_Type__c=='Digital'}"/>
+                    <apex:column value="{!order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
+                    <apex:column value="{!order.Application_QTY__c}"/>
+                    <apex:column value="{!order.Have_Read_Delivery_Report__c}" headerValue="提货报告已阅"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:tab>
+        <!-- =================================
+            状态:Delivered
+        ================================== -->
+        <apex:tab label="已提货 ({!orders_Delivered_Cnt})" rendered="{!orders_Delivered_Cnt > 0}">
+            <apex:pageBlock title="RTV Orders">
+                <!-- button -->
+                <apex:pageBlockButtons location="top" style="text-align: right;">
+                    <!-- 导出delivery.item -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RTV_Summary_Delivery_Item&fv0={!summary.Id}">
+                        导出提货委托书明细
+                    </apex:outputLink>
+                        
+                    <!-- 上传Inspection -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral"
+                        value="/apex/RTV_Order_UploadInspect_DTC?summaryId={!summary.Id}"
+                        rendered="{!loginUser.isLF || loginUser.isAdmin}">
+                        上传质检报告
+                    </apex:outputLink>
+                </apex:pageBlockButtons>
+                <!-- table -->
+                <apex:pageBlockTable value="{!orders_Delivered}" var="order">
+                    <apex:column headerValue="Order Code">
+                        <apex:outputLink value="/{!order.Id}">{!order.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!order.Ship_To__r.Name}" rendered="{!summary.DTC_Type__c=='Digital'}"/>
+                    <apex:column value="{!order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
+                    <apex:column value="{!order.Application_QTY__c}"/>
+                    <apex:column value="{!order.Delivery_QTY__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:tab>
+        <!-- =================================
+            状态:Inspected
+        ================================== -->
+        <apex:tab label="质检完成 ({!orders_Inspected_Cnt})" rendered="{!orders_Inspected_Cnt > 0}">
+            <apex:pageBlock title="RTV Orders">
+                <!-- button -->
+                <apex:pageBlockButtons location="top" style="text-align: right;">
+                    <!-- 下载inspection -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RMS_DTC_Summary_Inspection&fv0={!summary.Id}&fv1=-9999&fv2=Inspected"
+                        rendered="{!loginUser.isAdmin || loginUser.isLF}">
+                        导出质检报告
+                    </apex:outputLink>
+                    
+                    <!-- 下载inspection -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RMS_DTC_Summary_Inspection&fv0={!summary.Id}&fv1=0&fv2=Inspected"
+                        rendered="{!loginUser.isAdmin || loginUser.isLF}">
+                        导出质检差异表
+                    </apex:outputLink>
+                    
+                    <!-- 上传Inspection -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral"
+                        value="/apex/RTV_Order_UploadInspect_DTC?summaryId={!summary.Id}"
+                        rendered="{!loginUser.isLF || loginUser.isAdmin}">
+                        上传质检报告
+                    </apex:outputLink>
+                    
+                    <!-- 审批Inspect -->
+                    <apex:commandLink styleClass="slds-button slds-button_neutral"
+                        action="{!appSubmitForm.open}" value="提交待审批"
+                        rendered="{!loginUser.isLF || loginUser.isAdmin}"/>
+                    
+                </apex:pageBlockButtons>
+                <!-- table -->
+                <apex:pageBlockTable value="{!orders_Inspected}" var="order">
+                    <apex:column headerValue="Order Code">
+                        <apex:outputLink value="/{!order.Id}">{!order.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!order.Ship_To__r.Name}" rendered="{!summary.DTC_Type__c=='Digital'}"/>
+                    <apex:column value="{!order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
+                    <apex:column value="{!order.Inspect_QTY_A_Rd__c}" headerValue="QTY(A)"/>
+                    <apex:column value="{!order.Inspect_QTY_B_Rd__c}" headerValue="QTY(B)"/>
+                    <apex:column value="{!order.Inspect_QTY_C_Rd__c}" headerValue="QTY(C)"/>
+                    <apex:column value="{!order.Inspect_QTY_D_Rd__c}" headerValue="QTY(D)"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:tab>
+        <!-- =================================
+            状态:Insp Wait Approval
+        ================================== -->
+        <apex:tab label="检验结果待审核 ({!orders_InspWaitApproval_Cnt})" rendered="{!orders_InspWaitApproval_Cnt > 0}">
+            <apex:pageBlock title="RTV Orders">
+                <!-- button -->
+                <apex:pageBlockButtons location="top" style="text-align: right;">
+                    <!-- 下载inspection -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RMS_DTC_Summary_Inspection&fv0={!summary.Id}&fv1=-9999&fv2=Insp Wait Approval"
+                        rendered="{!loginUser.isAdmin || loginUser.isLF || loginUser.isCS || loginUser.isDTC}">
+                        导出质检报告
+                    </apex:outputLink>
+                    
+                    <!-- 下载inspection -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RMS_DTC_Summary_Inspection&fv0={!summary.Id}&fv1=0&fv2=Insp Wait Approval"
+                        rendered="{!loginUser.isAdmin || loginUser.isLF || loginUser.isCS || loginUser.isDTC}">
+                        导出质检差异表
+                    </apex:outputLink>
+                    
+                    <!-- 批量审批Inspect -->
+                    <apex:commandLink styleClass="slds-button slds-button_neutral"
+                        action="{!approveForm.open}" value="批量审批"
+                        rendered="{!approveForm.WorkItemsCnt > 0}"/>
+                </apex:pageBlockButtons>
+                <!-- table -->
+                <apex:pageBlockTable value="{!orders_InspWaitApproval}" var="orderInfo">
+                    <apex:column headerValue="Order Code">
+                        <apex:outputLink value="/{!orderInfo.order.Id}">{!orderInfo.order.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!orderInfo.order.Ship_To__r.Name}" rendered="{!summary.DTC_Type__c=='Digital'}"/>
+                    <apex:column value="{!orderInfo.order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
+                    <apex:column value="{!orderInfo.order.Inspect_QTY_A_Rd__c}" headerValue="QTY(A)"/>
+                    <apex:column value="{!orderInfo.order.Inspect_QTY_B_Rd__c}" headerValue="QTY(B)"/>
+                    <apex:column value="{!orderInfo.order.Inspect_QTY_C_Rd__c}" headerValue="QTY(C)"/>
+                    <apex:column value="{!orderInfo.order.Inspect_QTY_D_Rd__c}" headerValue="QTY(D)"/>
+                    <apex:column headerValue="下一个审批步骤">
+                        <apex:outputLink value="/{!orderInfo.nextApprovalStep.Id}" target="_blank"
+                            styleClass="
+                                {!IF(orderInfo.nextApprovalStep.StepStatus=='Approved','slds-text-color_success','')}
+                                {!IF(orderInfo.nextApprovalStep.StepStatus=='Rejected','slds-text-color_error','')}">
+                            {!orderInfo.nextApprovalStep.ProcessNode.Name}
+                        </apex:outputLink>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:tab>
+        <!-- =================================
+            状态:Insp Confirmed
+        ================================== -->
+        <apex:tab label="检验结果已确认 ({!orders_InsConfirmed_Cnt})" rendered="{!orders_InsConfirmed_Cnt > 0}">
+            <apex:pageBlock title="RTV Orders">
+                <!-- button -->
+                <apex:pageBlockButtons location="top" style="text-align: right;">
+                    <!-- 下载inspection -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RMS_DTC_Summary_Inspection&fv0={!summary.Id}&fv1=-9999&fv2=Insp Confirmed">
+                        导出质检报告
+                    </apex:outputLink>
+                    
+                    <!-- 下载SAP CSV(A) -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RTV_SAP_A&fv0={!summary.Id}"
+                        rendered="{!summary.CS_Inbound_Date__c != null && (loginUser.isCS || loginUser.isAdmin)}">
+                        导出 SAP (A)
+                    </apex:outputLink>
+                    
+                    <!-- 下载SAP CSV(B) -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RTV_SAP_B&fv0={!summary.Id}"
+                        rendered="{!summary.CS_Inbound_Date__c != null && (loginUser.isCS || loginUser.isAdmin)}">
+                        导出 SAP (B)
+                    </apex:outputLink>
+                    
+                    <!-- 多次入库 -->
+                    <apex:outputText >
+                        <apex:outputLink styleClass="slds-button slds-button_neutral"
+                            value="/apex/RTV_DTC_Summary_Inbound?summaryId={!summary.Id}"
+                            rendered="{!loginUser.isCS || loginUser.isLF || loginUser.isAdmin}">
+                            提交入库
+                        </apex:outputLink>
+                    </apex:outputText>
+                </apex:pageBlockButtons>
+                <!-- table -->
+                <apex:pageBlockTable value="{!orders_InsConfirmed}" var="order">
+                    <apex:column headerValue="Order Code">
+                        <apex:outputLink value="/{!order.Id}">{!order.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!order.Ship_To__r.Name}" rendered="{!summary.DTC_Type__c=='Digital'}"/>
+                    <apex:column value="{!order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
+                    <apex:column value="{!order.Inspect_QTY_A_Rd__c}" headerValue="QTY(A)"/>
+                    <apex:column value="{!order.Inspect_QTY_B_Rd__c}" headerValue="QTY(B)"/>
+                    <apex:column value="{!order.Inspect_QTY_C_Rd__c}" headerValue="QTY(C)"/>
+                    <apex:column value="{!order.Inspect_QTY_D_Rd__c}" headerValue="QTY(D)"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:tab>
+        <!-- =================================
+            状态:Inbound
+        ================================== -->
+        <apex:tab label="最终入库 ({!orders_Inbound_Cnt})" rendered="{!orders_Inbound_Cnt > 0}">
+            <apex:pageBlock title="RTV Orders">
+                <!-- button -->
+                <apex:pageBlockButtons location="top" style="text-align: right;">
+                    <!-- 下载inspection -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RMS_DTC_Summary_Inspection&fv0={!summary.Id}&fv1=-9999">
+                        导出质检报告
+                    </apex:outputLink>
+                    
+                   <!-- 下载SAP CSV(A) -->
+                   <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RTV_SAP_A&fv0={!summary.Id}"
+                        rendered="{!summary.CS_Inbound_Date__c != null && (loginUser.isCS || loginUser.isAdmin)}">
+                        导出 SAP (A)
+                    </apex:outputLink>
+                    
+                    <!-- 下载SAP CSV(B) -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RTV_SAP_B&fv0={!summary.Id}"
+                        rendered="{!summary.CS_Inbound_Date__c != null && (loginUser.isCS || loginUser.isAdmin)}">
+                        导出 SAP (B)
+                    </apex:outputLink>
+                    
+                    <!-- 入库 -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral"
+                        value="/apex/RTV_DTC_Summary_Inbound?summaryId={!summary.Id}"
+                        rendered="{!loginUser.isCS || loginUser.isLF || loginUser.isAdmin}">
+                        提交入库
+                    </apex:outputLink>
+                </apex:pageBlockButtons>
+                <!-- table -->
+                <apex:pageBlockTable value="{!orders_Inbound}" var="order">
+                    <apex:column headerValue="Order Code">
+                        <apex:outputLink value="/{!order.Id}">{!order.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!order.Ship_To__r.Name}" rendered="{!summary.DTC_Type__c=='Digital'}"/>
+                    <apex:column value="{!order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
+                    <apex:column value="{!order.Inspect_QTY_A_Rd__c}" headerValue="QTY(A)"/>
+                    <apex:column value="{!order.Inspect_QTY_B_Rd__c}" headerValue="QTY(B)"/>
+                    <apex:column value="{!order.Inspect_QTY_C_Rd__c}" headerValue="QTY(C)"/>
+                    <apex:column value="{!order.Inspect_QTY_D_Rd__c}" headerValue="QTY(D)"/>
+                    <apex:column value="{!order.Inbound_QTY__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:tab>
+        <!-- =================================
+            状态:Completed
+        ================================== -->
+        <apex:tab label="召回流程完成 ({!orders_Completed_Cnt})" rendered="{!orders_Completed_Cnt > 0}">
+            <apex:pageBlock title="RTV Orders">
+                <!-- button -->
+                <apex:pageBlockButtons location="top" style="text-align: right;">
+                    <!-- 下载inspection -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RMS_DTC_Summary_Inspection&fv0={!summary.Id}&fv1=-9999">
+                        导出质检报告
+                    </apex:outputLink>
+                    
+                   <!-- 下载SAP CSV(A) -->
+                   <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RTV_SAP_A&fv0={!summary.Id}"
+                        rendered="{!summary.CS_Inbound_Date__c != null && (loginUser.isCS || loginUser.isAdmin)}">
+                        导出 SAP (A)
+                    </apex:outputLink>
+                    
+                    <!-- 下载SAP CSV(B) -->
+                    <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank"
+                        value="/apex/RMS_Redirect_To_Report?reportName=RTV_SAP_B&fv0={!summary.Id}"
+                        rendered="{!summary.CS_Inbound_Date__c != null && (loginUser.isCS || loginUser.isAdmin)}">
+                        导出 SAP (B)
+                    </apex:outputLink>
+                </apex:pageBlockButtons>
+                <!-- table -->
+                <apex:pageBlockTable value="{!orders_Completed}" var="order">
+                    <apex:column headerValue="Order Code">
+                        <apex:outputLink value="/{!order.Id}">{!order.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!order.Ship_To__r.Name}" rendered="{!summary.DTC_Type__c=='Digital'}"/>
+                    <apex:column value="{!order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
+                    <apex:column value="{!order.Inspect_QTY_A_Rd__c}" headerValue="QTY(A)"/>
+                    <apex:column value="{!order.Inspect_QTY_B_Rd__c}" headerValue="QTY(B)"/>
+                    <apex:column value="{!order.Inspect_QTY_C_Rd__c}" headerValue="QTY(C)"/>
+                    <apex:column value="{!order.Inspect_QTY_D_Rd__c}" headerValue="QTY(D)"/>
+                    <apex:column value="{!order.Inbound_QTY__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:form>
+
+<!-- =================================
+    表单: 创建 Order
+================================== -->
+<apex:form rendered="{!createOrderForm.isOpening}">
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+    <div class="slds-modal__container">
+        <header class="slds-modal__header">
+            <h2 class="slds-modal__title slds-hyphenate">创建订单</h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_medium">
+            <!-- input.storeCode -->
+            <apex:outputPanel rendered="{!summary.DTC_Type__c=='CFS'}">
+                <div style="margin-bottom: 1rem" >
+                    <div>Store Code</div>
+                    <apex:inputText value="{!createOrderForm.inputStoreCode}" />
+                </div>
+            </apex:outputPanel>
+            <!-- input.ship-to -->
+            <apex:outputPanel rendered="{!summary.DTC_Type__c=='Digital'}">
+                <div style="margin-bottom: 1rem" >
+                    <div>Ship to</div>
+                    <apex:inputText value="{!createOrderForm.inputShipToCode}" />
+                </div>
+            </apex:outputPanel>
+            <!-- error信息 -->
+            <apex:outputPanel rendered="{!createOrderForm.error != null}">
+                <div class="slds-text-color_error">{!createOrderForm.error}</div>
+            </apex:outputPanel>
+        </div>
+        <footer class="slds-modal__footer">
+            <apex:commandButton styleClass="slds-button slds-button_brand" value="提交" action="{!createOrderForm.submit}"/>
+            <apex:commandButton styleClass="slds-button slds-button_neutral" value="Cancel" action="{!createOrderForm.close}"/>
+        </footer>
+    </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</apex:form>
+
+<!-- =================================
+    表单: 提交待审批
+================================== -->
+<apex:form rendered="{!appSubmitForm.isOpening}">
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+    <div class="slds-modal__container">
+        <header class="slds-modal__header">
+            <h2 class="slds-modal__title slds-hyphenate">提交待审批</h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_medium">
+            <!-- input.comment -->
+            <div style="margin-bottom: 1rem">
+                <div>备注</div>
+                <apex:inputTextarea styleClass="slds-textarea" value="{!appSubmitForm.comment}" />
+            </div>
+            <!-- input.submit checkbox -->
+            <div style="margin-bottom: 1rem">
+                <div>质检结果已确认</div>
+                <apex:inputCheckbox value="{!appSubmitForm.isSubmiterChecked}"/>
+                <span style="font-size: small">质检结果已确认无误（包括差异的部分）</span>
+            </div>
+            <!-- error信息 -->
+            <apex:outputText rendered="{!appSubmitForm.error != null}">
+                <span class="slds-text-color_error">{!appSubmitForm.error}</span>
+            </apex:outputText>
+        </div>
+        <footer class="slds-modal__footer">
+            <apex:commandButton styleClass="slds-button slds-button_brand" value="Submit" action="{!appSubmitForm.submit}"/>
+            <apex:commandButton styleClass="slds-button slds-button_neutral" value="Cancel" action="{!appSubmitForm.close}" immediate="true"/>
+        </footer>
+    </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</apex:form>
+
+<!-- =================================
+    表单: 审批
+================================== -->
+<apex:form rendered="{!approveForm.isOpening}">
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+    <div class="slds-modal__container">
+        <header class="slds-modal__header">
+            <h2 class="slds-modal__title slds-hyphenate">批量审批</h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_medium">
+            <!-- input.comment -->
+            <div style="margin-bottom: 1rem">
+                <div>备注</div>
+                <apex:inputTextarea styleClass="slds-textarea" value="{!approveForm.comment}" />
+            </div>
+            <!-- error信息 -->
+            <apex:outputText rendered="{!approveForm.error != null}">
+                <span class="slds-text-color_error">{!approveForm.error}</span>
+            </apex:outputText>
+            <!-- input.comment -->
+            <div style="margin-bottom: 1rem">
+                <div>待审批订单</div>
+                <apex:dataTable value="{!approveForm.workItems}" var="workItem">
+                    <apex:column value="{!workItem.ProcessInstance.TargetObjectId}"/>
+                </apex:dataTable>
+            </div>
+        </div>
+        <footer class="slds-modal__footer">
+            <apex:commandButton styleClass="slds-button slds-button_brand" value="Approve" action="{!approveForm.approve}"/>
+            <apex:commandButton styleClass="slds-button slds-button_text-destructive" value="Reject" action="{!approveForm.reject}"/>
+            <apex:commandButton styleClass="slds-button slds-button_neutral" value="Cancel" action="{!approveForm.close}" immediate="true"/>
+        </footer>
+    </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</apex:form>
+
+<style type="text/css">
+        body .pbHeader .pbTitle {
+            width: 10%;    
+        }
+</style>
+</apex:page>

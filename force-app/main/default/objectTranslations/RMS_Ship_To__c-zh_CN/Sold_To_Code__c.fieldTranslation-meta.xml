@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Sold to编号</label>
+    <name>Sold_To_Code__c</name>
+    <relationshipLabel><!-- RMS Ship To List --></relationshipLabel>
+</CustomFieldTranslation>

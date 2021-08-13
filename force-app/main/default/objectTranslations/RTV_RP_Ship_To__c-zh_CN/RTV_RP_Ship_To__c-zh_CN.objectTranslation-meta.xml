@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RTV RP Ship to白名单</value>
+    </caseValues>
+    <layouts>
+        <layout>Normal</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Record Number --></nameFieldLabel>
+    <webLinks>
+        <label>导出授权码</label>
+        <name>Report_Order_Code</name>
+    </webLinks>
+    <webLinks>
+        <label>导出Shipto网点</label>
+        <name>Report_Ship_To</name>
+    </webLinks>
+    <webLinks>
+        <label>导出Shipto网点汇总</label>
+        <name>Report_Ship_To_For_Summary</name>
+    </webLinks>
+    <webLinks>
+        <label>上传Shipto有效范围</label>
+        <name>Upload_From_Summary</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Upload_Store --></label>
+        <name>Upload_Store</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Upload_WSL_Ship_To --></label>
+        <name>Upload_WSL_Ship_To</name>
+    </webLinks>
+</CustomObjectTranslation>

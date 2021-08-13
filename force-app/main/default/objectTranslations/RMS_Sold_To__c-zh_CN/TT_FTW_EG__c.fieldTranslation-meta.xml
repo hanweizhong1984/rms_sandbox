@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Trading Term(FW-AS CORE) --></help>
+    <label>协议折扣（FW-AS CORE常青款）</label>
+    <name>TT_FTW_EG__c</name>
+</CustomFieldTranslation>

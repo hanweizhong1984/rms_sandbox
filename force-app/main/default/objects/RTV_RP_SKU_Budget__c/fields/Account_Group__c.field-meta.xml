@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Group__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Account Group 维度的 Product 预算</description>
+    <externalId>false</externalId>
+    <label>Account Group</label>
+    <referenceTo>RMS_Account_Group__c</referenceTo>
+    <relationshipLabel>RTV RP SKU Budget</relationshipLabel>
+    <relationshipName>RTV_RP_SKU_Budget</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,6 @@
+<apex:page >
+    <script>
+        window.opener.top.location.reload('/Home');
+        window.close();
+        </script>
+</apex:page>

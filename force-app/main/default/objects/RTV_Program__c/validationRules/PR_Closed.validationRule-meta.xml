@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR_Closed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( TEXT(Program_Status__c) == &apos;Close&apos; ,
+ISCHANGED( Expiration_Date__c )
+ )</errorConditionFormula>
+    <errorMessage>The current program status is close, field cannot be modified</errorMessage>
+</ValidationRule>

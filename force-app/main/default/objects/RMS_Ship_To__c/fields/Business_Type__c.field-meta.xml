@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Type__c</fullName>
+    <description>business type</description>
+    <externalId>false</externalId>
+    <label>Business Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CC</fullName>
+                <default>false</default>
+                <label>CC</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Partner-HQ</fullName>
+                <default>false</default>
+                <label>Partner-HQ</label>
+            </value>
+            <value>
+                <fullName>Partner-Multi</fullName>
+                <default>false</default>
+                <label>Partner-Multi</label>
+            </value>
+            <value>
+                <fullName>Sub-partner</fullName>
+                <default>false</default>
+                <label>Sub-partner</label>
+            </value>
+            <value>
+                <fullName>Wholesale.com</fullName>
+                <default>false</default>
+                <label>Wholesale.com</label>
+            </value>
+            <value>
+                <fullName>Wholesale.com-close out</fullName>
+                <default>false</default>
+                <label>Wholesale.com-close out</label>
+            </value>
+            <value>
+                <fullName>Wholesale.com-JD</fullName>
+                <default>false</default>
+                <label>Wholesale.com-JD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

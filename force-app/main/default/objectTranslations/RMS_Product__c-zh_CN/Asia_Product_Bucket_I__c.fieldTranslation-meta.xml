@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Asia Product Bucket I --></label>
+    <name>Asia_Product_Bucket_I__c</name>
+    <picklistValues>
+        <masterLabel>Core</masterLabel>
+        <translation><!-- Core --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cut &amp; Sew</masterLabel>
+        <translation><!-- Cut &amp; Sew --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Essential</masterLabel>
+        <translation><!-- Essential --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FOS</masterLabel>
+        <translation><!-- FOS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seasonal</masterLabel>
+        <translation><!-- Seasonal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seasonal Core</masterLabel>
+        <translation><!-- Seasonal Core --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seasonal Graphic</masterLabel>
+        <translation><!-- Seasonal Graphic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seasonal Material</masterLabel>
+        <translation><!-- Seasonal Material --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seasonal Others</masterLabel>
+        <translation><!-- Seasonal Others --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

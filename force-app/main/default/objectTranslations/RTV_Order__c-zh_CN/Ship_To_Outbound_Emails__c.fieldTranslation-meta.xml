@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 请输入Ship-To外部Email地址（逗号分割的1~5个地址） --></help>
+    <label><!-- Ship-To Outbound Emails --></label>
+    <name>Ship_To_Outbound_Emails__c</name>
+</CustomFieldTranslation>

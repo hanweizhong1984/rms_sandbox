@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Type__c</fullName>
+    <description>WSL Takeback OR DTC Takeback</description>
+    <externalId>false</externalId>
+    <label>Order Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>WSL Takeback</fullName>
+                <default>true</default>
+                <label>WSL Takeback</label>
+            </value>
+            <value>
+                <fullName>RTV Defective</fullName>
+                <default>false</default>
+                <label>RTV Defective</label>
+            </value>
+            <value>
+                <fullName>CFS DTC Takeback</fullName>
+                <default>false</default>
+                <label>CFS DTC Takeback</label>
+            </value>
+            <value>
+                <fullName>Digital DTC Takeback</fullName>
+                <default>false</default>
+                <label>Digital DTC Takeback</label>
+            </value>
+            <value>
+                <fullName>CFS DTC Defective</fullName>
+                <default>false</default>
+                <label>CFS DTC Defective</label>
+            </value>
+            <value>
+                <fullName>Digital DTC Defective</fullName>
+                <default>false</default>
+                <label>Digital DTC Defective</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

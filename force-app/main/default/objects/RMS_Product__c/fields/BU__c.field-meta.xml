@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BU__c</fullName>
+    <description>bu_all_all_gl</description>
+    <externalId>false</externalId>
+    <label>BU</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FW</fullName>
+                <default>false</default>
+                <label>FW</label>
+            </value>
+            <value>
+                <fullName>APP/ACC</fullName>
+                <default>false</default>
+                <label>APP/ACC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

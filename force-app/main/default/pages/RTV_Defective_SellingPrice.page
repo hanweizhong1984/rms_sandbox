@@ -1,0 +1,53 @@
+<apex:page controller="RTV_Defective_SellingPrice" lightningStylesheets="True">
+<head>
+    <apex:slds /> <!-- 用<apex:slds>标签引入lightning的css -->
+</head>
+<apex:outputPanel id="_body">
+    
+    <!-- 表单 -->
+    <apex:form >
+        <apex:pageBlock title="Mapping Selling Price">
+            <!-- 税率输入框 -->
+            <apex:pageBlockSection >
+                <apex:pageBlockSection >
+                    <apex:inputText label="TaxRate(1.XX):" size="5" value="{!TaxRate}"></apex:inputText>
+                </apex:pageBlockSection>
+            </apex:pageBlockSection>
+            <!-- 按钮 -->
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Mapping Selling Price" action="{!startBatch}" rendered="{!orderListCnt > 0}"/>
+                <apex:commandButton value="Close" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>          
+    </apex:form>
+    
+    <!-- Message -->
+    <apex:pageMessages />
+    
+    <!-- order列表 -->
+    <apex:pageBlock title="RTV Orders">
+        <apex:pageBlockTable value="{!orderList}" var="order">
+            <apex:column value="{!order.Name}"></apex:column>  
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+    <!-- 用Ajax检查上传结果（间隔5s） -->
+    <apex:form >
+        <apex:actionPoller enabled="{!isLoading}" action="{!checkResult}" reRender="_body" interval="5" />
+    </apex:form>
+    
+    <!-- Loading -->
+    <apex:outputPanel layout="block" rendered="{!isLoading}">
+        <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.75;width:100%;">
+            <div class="waitingHolder" style="top: 100px; width: 91px;">
+                <img class="waitingImage" src="/img/loading.gif" title="Please Wait..."  style="width: 40;height:40;"/>
+                <span class="waitingDescription">Loading({!loadingPercent}%)...</span>
+                <div class="slds-progress-bar slds-progress-bar_large" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{!loadingPercent}" role="progressbar">
+                    <span class="slds-progress-bar__value slds-progress-bar__value_success" style="width: {!loadingPercent}%"/>
+                </div>
+            </div>
+        </div>
+    </apex:outputPanel>
+
+</apex:outputPanel>
+</apex:page>

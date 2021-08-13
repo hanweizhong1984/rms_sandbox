@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>RTV_Program__c</entityName>
+    <fieldName>Program_Status__c</fieldName>
+    <masterLabel>RTV_Program_Digital_DTC_Tackback</masterLabel>
+    <recordTypeName>Digital_DTC_Takeback</recordTypeName>
+</PathAssistant>

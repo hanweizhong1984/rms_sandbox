@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sold_To__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Sold To 维度的 Product 预算</description>
+    <externalId>false</externalId>
+    <label>Sold-To</label>
+    <referenceTo>RMS_Sold_To__c</referenceTo>
+    <relationshipLabel>RTV RP SKU Budget</relationshipLabel>
+    <relationshipName>RTV_RP_SKU_Budget</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

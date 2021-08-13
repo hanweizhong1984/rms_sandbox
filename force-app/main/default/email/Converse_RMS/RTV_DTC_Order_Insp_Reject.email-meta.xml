@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV DTC Order Insp Reject</name>
+    <style>none</style>
+    <subject>[RMS-Inspection-Reject] 退货/召回订单汇总{!RTV_Order__c.Name}，客户{!RTV_Order__c.ShipTo_Or_Store_Code__c}，质检结果客户提出异议，请登录系统查看原因</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

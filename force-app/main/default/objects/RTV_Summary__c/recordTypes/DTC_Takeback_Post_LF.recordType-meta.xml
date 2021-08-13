@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DTC_Takeback_Post_LF</fullName>
+    <active>true</active>
+    <description>dtc takebake, status = post to LF</description>
+    <label>DTC Takeback Post LF</label>
+    <picklistValues>
+        <picklist>Next_Step__c</picklist>
+        <values>
+            <fullName>CS Confirm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS Inbound</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LF D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LF Inbound %28AB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LF Inbound %28C%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LF Insp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSL Confirm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSL Kickoff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSL PKL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sales_Channel__c</picklist>
+        <values>
+            <fullName>CFS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DIG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSL</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST to LF</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Summary_Type__c</picklist>
+        <values>
+            <fullName>DTC Takeback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSL Takeback</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

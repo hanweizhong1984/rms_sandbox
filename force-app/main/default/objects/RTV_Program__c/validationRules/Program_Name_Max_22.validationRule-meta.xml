@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Program_Name_Max_22</fullName>
+    <active>false</active>
+    <description>The Program Name can only have 22 characters at most</description>
+    <errorConditionFormula>LEN(Name) &gt; 22</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>The Program Name can only have 22 characters at most</errorMessage>
+</ValidationRule>

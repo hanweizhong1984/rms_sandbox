@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>LF运输入库日期</label>
+    <name>LF_DELY_Inbound_Date__c</name>
+</CustomFieldTranslation>

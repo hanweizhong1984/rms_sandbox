@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Building_Block_Mens__c</fullName>
+    <description>building_block_mens_all_all_rl</description>
+    <externalId>false</externalId>
+    <label>Building Block Mens</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>XS</fullName>
+                <default>false</default>
+                <label>XS</label>
+            </value>
+            <value>
+                <fullName>S</fullName>
+                <default>false</default>
+                <label>S</label>
+            </value>
+            <value>
+                <fullName>M</fullName>
+                <default>false</default>
+                <label>M</label>
+            </value>
+            <value>
+                <fullName>L</fullName>
+                <default>false</default>
+                <label>L</label>
+            </value>
+            <value>
+                <fullName>XL</fullName>
+                <default>false</default>
+                <label>XL</label>
+            </value>
+            <value>
+                <fullName>XL (North)</fullName>
+                <default>false</default>
+                <label>XL (North)</label>
+            </value>
+            <value>
+                <fullName>XL (South)</fullName>
+                <default>false</default>
+                <label>XL (South)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

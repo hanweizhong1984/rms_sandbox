@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsDTC__c</fullName>
+    <externalId>false</externalId>
+    <formula>ISPICKVAL(Order_Type__c, &apos;CFS DTC Takeback&apos;) || 
+ISPICKVAL(Order_Type__c, &apos;Digital DTC Takeback&apos;) || 
+ISPICKVAL(Order_Type__c, &apos;CFS DTC Defective&apos;) || 
+ISPICKVAL(Order_Type__c, &apos;Digital DTC Defective&apos;)</formula>
+    <label>IsDTC</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>BU</label>
+    <name>BU__c</name>
+    <picklistValues>
+        <masterLabel>APP/ACC</masterLabel>
+        <translation><!-- APP/ACC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FW</masterLabel>
+        <translation><!-- FW --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

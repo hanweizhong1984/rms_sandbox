@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Date range for get level(D) in the takeback process --></help>
+    <label>TB归结结束日期</label>
+    <name>TakeBack_Till_Date__c</name>
+</CustomFieldTranslation>

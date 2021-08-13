@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Asia Category --></label>
+    <name>Asia_Category__c</name>
+    <picklistValues>
+        <masterLabel>BAGS</masterLabel>
+        <translation><!-- BAGS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CAPS</masterLabel>
+        <translation><!-- CAPS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FLEECE</masterLabel>
+        <translation><!-- FLEECE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OUTERWEAR</masterLabel>
+        <translation><!-- OUTERWEAR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SOCKS</masterLabel>
+        <translation><!-- SOCKS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TEE</masterLabel>
+        <translation><!-- TEE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRACK</masterLabel>
+        <translation><!-- TRACK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WOVEN</masterLabel>
+        <translation><!-- WOVEN --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

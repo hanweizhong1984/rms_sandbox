@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShipTo_Or_Store_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(DTC_Type__c==&apos;CFS&apos;, Ship_To__r.DTC_Code__c,
+IF(DTC_Type__c==&apos;Digital&apos;, Ship_To__r.Name,
+&apos;&apos;))</formula>
+    <label>Ship-To / Store Code</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

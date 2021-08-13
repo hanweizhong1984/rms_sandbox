@@ -1,0 +1,1621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Summary_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Summary_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Program_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Program__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Program_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Program__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Order_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Order__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Order_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Order__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Defective_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Defective__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Defective_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Defective__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RMS_Account_Group_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RMS_Account_Group__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RMS_Account_Group_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RMS_Account_Group__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RMS_Sold_To_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RMS_Sold_To__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RMS_Sold_To_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RMS_Sold_To__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_RP_Summary_Budget_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_RP_Summary_Budget__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_RP_Summary_Budget_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_RP_Summary_Budget__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Order_Item_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Order_Item__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Order_Item_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Order_Item__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Order_Inspection_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Order_Inspection__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_Order_Inspection_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_Order_Inspection__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RMS_Ship_To_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RMS_Ship_To__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RMS_Ship_To_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RMS_Ship_To__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RMS_Product_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RMS_Product__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RMS_Product_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RMS_Product__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_RP_SKU_Budget_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_RP_SKU_Budget__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_RP_SKU_Budget_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_RP_SKU_Budget__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_RP_Ship_To_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_RP_Ship_To__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_RP_Ship_To_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_RP_Ship_To__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>RMS_Home</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_POS_Data_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_POS_Data__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_POS_Data_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_POS_Data__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_DEF_Summary_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_DEF_Summary_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_LF_Order_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_LF_Order__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RTV_LF_Order_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>RTV_LF_Order__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Converse Return Management System</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Converse RMS</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL BP</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL HQ</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL HQ</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Reg Branch</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Reg Branch</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Sold To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Sold To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To -Only DEF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To -Only DEF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To -Only DEF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To -Only DEF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To -Only DEF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To -Only DEF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To -Only DEF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To -Only DEF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL DTC PLANNER</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL DTC PLANNER</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Store</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CV Office User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Store</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CV Office User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS IDC LF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS IDC LF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL BP</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL BP</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL HQ</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL HQ</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Reg Branch</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Reg Branch</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS IDC LF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS IDC LF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL BP</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL BP</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL HQ</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL HQ</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Reg Branch</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Reg Branch</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Sold To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Sold To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Store</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Store</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CV Office User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CV Office User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS IDC LF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS IDC LF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Sold To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Sold To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Store</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Store</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CV Office User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CV Office User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL BP</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Store</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Store</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CV Office User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CV Office User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Logistic Confirm</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Ship To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Reg Branch</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Reg Branch</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL HQ</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL HQ</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL BP</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL BP</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL DTC PLANNER</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Remove</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL DTC PLANNER</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL DTC PLANNER</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL DTC PLANNER</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CFS Planner</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS IDC LF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS IDC LF</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Sold To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL Sold To</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL DTC PLANNER</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS WSL DTC PLANNER</profile>
+    </profileActionOverrides>
+    <setupExperience>all</setupExperience>
+    <tabs>standard-home</tabs>
+    <tabs>RTV_Program__c</tabs>
+    <tabs>RTV_DEF_Summary__c</tabs>
+    <tabs>RTV_Defective__c</tabs>
+    <tabs>RTV_Summary__c</tabs>
+    <tabs>RTV_Order__c</tabs>
+    <tabs>RMS_Product__c</tabs>
+    <tabs>RMS_Sold_To__c</tabs>
+    <tabs>RMS_Ship_To__c</tabs>
+    <tabs>RTV_POS_Data__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>RTV_Help</tabs>
+    <tabs>RTV_BaoZun_Seeding__c</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

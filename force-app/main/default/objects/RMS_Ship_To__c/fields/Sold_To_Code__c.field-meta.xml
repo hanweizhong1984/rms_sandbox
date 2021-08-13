@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sold_To_Code__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>关联Sold-to</description>
+    <externalId>false</externalId>
+    <label>Sold To Code</label>
+    <referenceTo>RMS_Sold_To__c</referenceTo>
+    <relationshipLabel>RMS Ship To List</relationshipLabel>
+    <relationshipName>RMS_Ship_To_List</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

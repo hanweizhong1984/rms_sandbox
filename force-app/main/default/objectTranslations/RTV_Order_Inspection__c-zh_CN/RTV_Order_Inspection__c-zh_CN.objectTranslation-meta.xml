@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RTV 检验单</value>
+    </caseValues>
+    <layouts>
+        <layout>Normal</layout>
+        <sections>
+            <label>A 品</label>
+            <section>A Rank</section>
+        </sections>
+        <sections>
+            <label>B 品</label>
+            <section>B Rank</section>
+        </sections>
+        <sections>
+            <label>C 品</label>
+            <section>C Rank</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>C 品</label>
+            <section>D Rank</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Inspect Code --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Normal --></label>
+        <name>Normal</name>
+    </recordTypes>
+</CustomObjectTranslation>

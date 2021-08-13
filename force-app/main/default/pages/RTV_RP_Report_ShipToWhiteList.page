@@ -1,0 +1,28 @@
+<apex:page controller="RTV_RP_Report_ShipToWhiteList"
+    contentType="application/vnd.ms-excel#Ship-To WhiteList.xls" readOnly="True"> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/HTML;charset=UTF-8"/>
+    </head>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!results}" var="res" rowClasses="odd,even" border="1">
+            <apex:column value="{!res.Order_Auth_Code__c}" rendered="{!isRender}">
+                <apex:facet name="header">授权码</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Order_Auth_Code__c}FW" rendered="{!isRender}">
+                <apex:facet name="header">授权码(FW)</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Order_Auth_Code__c}AP" rendered="{!isRender}">
+                <apex:facet name="header">授权码(AP)</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Order_Auth_Code__c}AC" rendered="{!isRender}">
+                <apex:facet name="header">授权码(AC)</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Sold_To__r.Name}" rendered="{!isRender}">
+                <apex:facet name="header">Sold To</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Ship_To__r.Name}">
+                <apex:facet name="header">Ship To</apex:facet>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

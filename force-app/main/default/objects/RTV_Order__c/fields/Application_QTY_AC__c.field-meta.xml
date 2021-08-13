@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_QTY_AC__c</fullName>
+    <description>AC的申请数量</description>
+    <externalId>false</externalId>
+    <inlineHelpText>AC的申请数量</inlineHelpText>
+    <label>Application QTY (AC)</label>
+    <summarizedField>RTV_Order_Item__c.Application_QTY__c</summarizedField>
+    <summaryFilterItems>
+        <field>RTV_Order_Item__c.BU_2__c</field>
+        <operation>equals</operation>
+        <value>AC</value>
+    </summaryFilterItems>
+    <summaryForeignKey>RTV_Order_Item__c.RTV_Order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

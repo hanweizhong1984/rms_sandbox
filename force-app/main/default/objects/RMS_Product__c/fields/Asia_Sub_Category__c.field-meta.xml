@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asia_Sub_Category__c</fullName>
+    <description>sub_category_all_cn_rl</description>
+    <externalId>false</externalId>
+    <label>Asia Sub Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Backpack</fullName>
+                <default>false</default>
+                <label>Backpack</label>
+            </value>
+            <value>
+                <fullName>Baseball</fullName>
+                <default>false</default>
+                <label>Baseball</label>
+            </value>
+            <value>
+                <fullName>CROSSBODY</fullName>
+                <default>false</default>
+                <label>CROSSBODY</label>
+            </value>
+            <value>
+                <fullName>DUFFEL</fullName>
+                <default>false</default>
+                <label>DUFFEL</label>
+            </value>
+            <value>
+                <fullName>FLEECE BOTTOM</fullName>
+                <default>false</default>
+                <label>FLEECE BOTTOM</label>
+            </value>
+            <value>
+                <fullName>FLEECE TOP</fullName>
+                <default>false</default>
+                <label>FLEECE TOP</label>
+            </value>
+            <value>
+                <fullName>FOOTIES</fullName>
+                <default>false</default>
+                <label>FOOTIES</label>
+            </value>
+            <value>
+                <fullName>HIDDENS</fullName>
+                <default>false</default>
+                <label>HIDDENS</label>
+            </value>
+            <value>
+                <fullName>LS TEE</fullName>
+                <default>false</default>
+                <label>LS TEE</label>
+            </value>
+            <value>
+                <fullName>Messenger</fullName>
+                <default>false</default>
+                <label>Messenger</label>
+            </value>
+            <value>
+                <fullName>NON PADDED</fullName>
+                <default>false</default>
+                <label>NON PADDED</label>
+            </value>
+            <value>
+                <fullName>POUCH</fullName>
+                <default>false</default>
+                <label>POUCH</label>
+            </value>
+            <value>
+                <fullName>SLEEVELESS</fullName>
+                <default>false</default>
+                <label>SLEEVELESS</label>
+            </value>
+            <value>
+                <fullName>Snapback</fullName>
+                <default>false</default>
+                <label>Snapback</label>
+            </value>
+            <value>
+                <fullName>SS TEE</fullName>
+                <default>false</default>
+                <label>SS TEE</label>
+            </value>
+            <value>
+                <fullName>TEE DRESS</fullName>
+                <default>false</default>
+                <label>TEE DRESS</label>
+            </value>
+            <value>
+                <fullName>Totes</fullName>
+                <default>false</default>
+                <label>Totes</label>
+            </value>
+            <value>
+                <fullName>TRACK BOTTOM</fullName>
+                <default>false</default>
+                <label>TRACK BOTTOM</label>
+            </value>
+            <value>
+                <fullName>TRACK TOP</fullName>
+                <default>false</default>
+                <label>TRACK TOP</label>
+            </value>
+            <value>
+                <fullName>Waist Bag</fullName>
+                <default>false</default>
+                <label>Waist Bag</label>
+            </value>
+            <value>
+                <fullName>WOVEN BOTTOM</fullName>
+                <default>false</default>
+                <label>WOVEN BOTTOM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

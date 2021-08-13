@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Trading Term(APP/ ACC) --></help>
+    <label>协议折扣（APP/ACC）</label>
+    <name>TT_APP_ACC__c</name>
+</CustomFieldTranslation>

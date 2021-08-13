@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- RTV Baozun Seeding --></value>
+    </caseValues>
+    <layouts>
+        <layout>RTV Baozun Seeding Layout In Process</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Baozun Seeding Layout Pending</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- RTV BaoZun Seeding Name --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- RTV Baozun Seeding Inprocess --></label>
+        <name>RTV_Baozun_Seeding_Inprocess</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Baozun Seeding Pending --></label>
+        <name>RTV_Baozun_Seeding_Pending</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Seeding name can not be changed! --></errorMessage>
+        <name>SeedingNameCanNotChange</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Inbound --></label>
+        <name>Inbound</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Report_Orders --></label>
+        <name>Report_Orders</name>
+    </webLinks>
+</CustomObjectTranslation>

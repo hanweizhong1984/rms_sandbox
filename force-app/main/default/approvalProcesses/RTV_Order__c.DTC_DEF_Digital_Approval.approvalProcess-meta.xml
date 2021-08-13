@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <submitter>RMS_IDC_LF</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Inspect_QTY_D__c</field>
+        <field>Inspect_Amount_D__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>RMS_Digital_Logistic</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Digital Logistic Check</label>
+        <name>Digital_Logistic_Check</name>
+    </approvalStep>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>IsDTC__c == true &amp;&amp;
+RTV_DEF_Summary__c != null &amp;&amp;
+ISPICKVAL(Status__c,&apos;Inspected&apos;) &amp;&amp;
+ISPICKVAL(Order_Type__c, &apos;Digital DTC Defective&apos;)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Insp_WSL_Confirm_Date</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>RTV_DTC_DEF_Order_Insp_Approved_To_LF</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Status_Insp_Confirmed</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>RTV_DTC_DEF_Order_Insp_Reject_To_LF</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Status_Inspected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>RTV_DTC_DEF_Order_Insp_Submit_To_DIG</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Status_Insp_Wait_Approve</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>DTC DEF Digital Approval</label>
+    <processOrder>5</processOrder>
+    <recallActions>
+        <action>
+            <name>Status_Inspected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

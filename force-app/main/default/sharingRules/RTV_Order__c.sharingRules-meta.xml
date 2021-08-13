@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>ShareToConverse</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>所有Converse内部人员都可以读写（如果Profile允许的话）</description>
+        <label>ShareToConverse</label>
+        <sharedTo>
+            <roleAndSubordinates>RMS_Converse</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value/>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ToLF</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ToLF</label>
+        <sharedTo>
+            <roleAndSubordinates>RMS_IDC_LF</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value/>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

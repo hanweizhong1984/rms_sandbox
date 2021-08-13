@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DEF Order CS Approval</description>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV DEF Order Apprpval(CS)</name>
+    <style>none</style>
+    <subject>[RMS-Inspection-Confirm] 退残订单{!RTV_Order__c.Name}，客户{!RTV_Order__c.Ship_To__c}，货品已完成检验，请登录系统查看并核实报告</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

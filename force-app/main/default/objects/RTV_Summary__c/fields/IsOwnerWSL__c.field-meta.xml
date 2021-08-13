@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsOwnerWSL__c</fullName>
+    <externalId>false</externalId>
+    <formula>Owner:User.Profile.Name == &apos;RMS WSL HQ&apos; ||
+Owner:User.Profile.Name == &apos;RMS WSL Reg Branch&apos; ||
+Owner:User.Profile.Name == &apos;RMS WSL Sold To&apos; ||
+Owner:User.Profile.Name == &apos;RMS WSL Ship To&apos; ||
+Owner:User.Profile.Name == &apos;RMS WSL Ship To -Only DEF&apos;</formula>
+    <label>Is Owner WSL?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

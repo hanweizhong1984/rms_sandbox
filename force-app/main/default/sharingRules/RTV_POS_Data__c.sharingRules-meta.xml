@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>DIG_4691</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DIG 4691</label>
+        <sharedTo>
+            <roleAndSubordinates>RMS_DIG_Logistic_Confirm</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>equals</operation>
+            <value>4691</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

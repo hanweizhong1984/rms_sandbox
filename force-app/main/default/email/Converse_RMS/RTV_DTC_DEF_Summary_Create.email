@@ -1,0 +1,62 @@
+<messaging:emailTemplate recipientType="User" relatedToType="RTV_DEF_Summary__c"
+    subject="[RMS] 退残流程{!relatedTo.Name}已经发起，请查收"
+    renderUsingSystemContextWithoutSharing="True">
+<messaging:htmlEmailBody >
+<html>
+    <head>
+        <style type="text/css">
+            table { border-collapse: collapse; }
+            td { border:1px solid silver;  padding: 1px 7px 1px 7px;}
+        </style>
+    </head>
+    <body>
+        <div>Hi, ALL</div><br/>
+        <div>订单汇总{!relatedTo.Name}已经发起，请并尽快确认授权码，具体信息可进入RMS系统查看。</div>
+        <br/>
+        <div>订单汇总年份：{!relatedTo.Year__c}</div>
+        <div>订单汇总月份：<apex:outputText value="{0,number,##}"><apex:param value="{!relatedTo.Month__c}"/></apex:outputText></div>
+        <div>详细信息：<apex:outputLink value="https://na127.lightning.force.com/{!relatedTo.Id}">login.salesforce.com</apex:outputLink></div>
+        <br/>
+        <div>订单授权码：</div>
+        <table>
+            <tr>
+                <td>
+                    <apex:outputText rendered="{!relatedTo.DTC_Type__c=='CFS'}">Store</apex:outputText>
+                    <apex:outputText rendered="{!relatedTo.DTC_Type__c!='CFS'}">Ship-To</apex:outputText>
+                </td>
+                <td>授权码(FW)</td>
+                <td>授权码(AP)</td>
+                <td>授权码(AC)</td>
+            </tr>
+            <apex:repeat var="order" value="{!relatedTo.RTV_Orders__r}">
+                <!-- 收件人是CfsStore或DigUser时，只能显示shipTo.Owner是该收件人的订单 -->
+                <apex:outputText rendered="{!
+                    recipient.Id == order.Ship_To__r.OwnerId || 
+                    (recipient.Profile.Name != 'RMS CFS Store' && recipient.Profile.Name != 'RMS DIG User')
+                }">
+                    <!-- 当order是Ready时 -->
+                    <apex:outputText rendered="{!order.Status__c == 'Ready'}">
+                        <tr>
+                            <td>
+                                <apex:outputText rendered="{!relatedTo.DTC_Type__c=='CFS'}">{!order.Ship_To__r.DTC_Code__c}</apex:outputText>
+                                <apex:outputText rendered="{!relatedTo.DTC_Type__c!='CFS'}">{!order.Ship_To__r.Name}</apex:outputText>
+                            </td>
+                            <td>{!order.Name}FW</td>
+                            <td>{!order.Name}AP</td>
+                            <td>{!order.Name}AC</td>
+                        </tr>
+                    </apex:outputText>
+                </apex:outputText>
+            </apex:repeat>
+        </table>
+        <br/>
+        <!-- 详细信息：{!relatedTo.Link} -->
+        <br/>
+        <br/>
+        <div>特此通知。</div>
+        <div>Best regards</div>
+        <div>Converse - RMS 系统运维</div>
+    </body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

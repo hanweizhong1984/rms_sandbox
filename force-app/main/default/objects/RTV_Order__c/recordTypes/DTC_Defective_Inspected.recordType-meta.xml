@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DTC_Defective_Inspected</fullName>
+    <active>true</active>
+    <label>DTC Defective Inspected</label>
+    <picklistValues>
+        <picklist>External_State__c</picklist>
+        <values>
+            <fullName>Not</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Notified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Type__c</picklist>
+        <values>
+            <fullName>CFS DTC Takeback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital DTC Takeback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTV Defective</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSL Takeback</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Seeding_Status__c</picklist>
+        <values>
+            <fullName>Inbound</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST to LF</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ship_To_Out_Emails_Status__c</picklist>
+        <values>
+            <fullName>Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insp Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insp Wait Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inspected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST to LF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

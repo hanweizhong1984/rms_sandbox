@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>质检检出数量（B）</label>
+    <name>Inspect_QTY_B_Rd__c</name>
+</CustomFieldTranslation>

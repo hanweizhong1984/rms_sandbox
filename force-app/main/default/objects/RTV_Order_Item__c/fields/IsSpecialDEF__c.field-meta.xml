@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsSpecialDEF__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>是否为&quot;特批&quot;退残</description>
+    <externalId>false</externalId>
+    <inlineHelpText>是否为&quot;特批&quot;退残</inlineHelpText>
+    <label>IsSpecialDEF</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

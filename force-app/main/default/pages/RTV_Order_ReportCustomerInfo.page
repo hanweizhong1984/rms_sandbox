@@ -1,0 +1,46 @@
+<apex:page controller="RTV_Order_ReportCustomerInfoCtrl" cache="true"
+    contentType="application/vnd.ms-excel#CustomerInfo.xls" readOnly="True"> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/HTML;charset=UTF-8"/>
+    </head>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!results}" var="res" rowClasses="odd,even" border="1">
+            <apex:column value="{!res.Name}">
+                <apex:facet name="header">Order Code</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Sold_To__r.Name}">
+                <apex:facet name="header">Sold To Code</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Ship_To__r.Name}" rendered="{!summary.Sales_Channel__c != 'CFS'}">
+                <apex:facet name="header">Ship To Code</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Ship_To__r.DTC_Code__c}" rendered="{!summary.Sales_Channel__c == 'CFS'}">
+                <apex:facet name="header">Store id</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Earliest_Delivery_Date__c}">
+                <apex:facet name="header">Earliest Delivery Date</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Ship_To_Contact__c}">
+                <apex:facet name="header">Ship-To Contact</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Ship_To_Phone1__c}">
+                <apex:facet name="header">Ship-To Phone1</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Ship_To_Phone2__c}">
+                <apex:facet name="header">Ship-To Phone2</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Ship_To_Address__c}">
+                <apex:facet name="header">Ship-To Address</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.AP_Boxes__c}">
+                <apex:facet name="header">AP Boxes</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.AC_Boxes__c}">
+                <apex:facet name="header">AC Boxes</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.FW_Boxes__c}">
+                <apex:facet name="header">FW Boxes</apex:facet>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

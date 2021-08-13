@@ -1,0 +1,54 @@
+<apex:page controller="RTV_Defective_Upload_Inspect_DTC" lightningStylesheets="True">
+    <!-- 上传表单 -->
+    <apex:form >
+        <apex:pageBlock title="上传质检报告(.CSV)" mode="edit">
+            <!-- input:上传部分 -->
+            <apex:pageBlockSection columns="1">
+                <apex:inputFile value="{!fileUploadBody}" fileName="{!fileUploadName}" accept=".csv"/>
+                <apex:selectRadio value="{!fileCharset}" layout="pageDirection">
+                    <apex:selectOptions value="{!fileCharsetOpts}"/>
+                </apex:selectRadio>
+            </apex:pageBlockSection>
+            
+            <!-- 提示 -->
+            <apex:outputText >
+                <span style="font-weight:bold;">Note:<br/></span>
+                质检报告中，如果有装箱单中没有的商品，<br/>
+                请在质检报告中另起一行，并填写新的商品信息和"序号"。<br/>
+                同时勾选:
+                <span style="color:black">
+                    自动创建差异商品 <apex:inputCheckbox style="margin-left:0.5rem" value="{!createItemIfNotFound}"/>
+                </span><br/>
+                <br/>
+                <span style="font-weight:bold;">Note:<br/></span>
+                如果仅仅是"季节码"或"箱号"与装箱单不一致，<br/>
+                您可以直接修正质检报告中错误的值，系统不会视其为差异，而是将正确的值更新到订单中。
+            </apex:outputText>
+            <!-- input:允许创建不存在的Item -->
+            <apex:pageBlockSection columns="2">
+            </apex:pageBlockSection>
+            <!-- 按钮 -->
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Upload and Inspected" action="{!upload}" onclick="startLoading()"/>
+                <apex:commandButton value="Close" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <!-- 显示message -->
+    <apex:pageMessages />
+
+    <!-- Loading -->
+    <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.75;width:100%;display: none">
+        <div class="waitingHolder" style="top: 100px; width: 91px;">
+            <img class="waitingImage" src="/img/loading.gif" title="Please Wait..."  style="width: 40;height:40;"/>
+            <span class="waitingDescription">Loading...</span>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function startLoading() {
+            document.getElementById("el_loading").style.display = 'inline';
+        }
+    </script>
+</apex:page>

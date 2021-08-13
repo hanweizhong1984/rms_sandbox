@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>RTV_Program_Completed</fullName>
+        <description>RTV Program Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_WSL_BP</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Program_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Program_Off_Policy</fullName>
+        <description>RTV Program Off Policy</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_WSL_Belle</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Program_Off_Policy</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Close_Program</fullName>
+        <field>Program_Status__c</field>
+        <literalValue>Completed</literalValue>
+        <name>Close_Program</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Discount_Record_Type_Change</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>WSL_Discourt_Takeback_Off_Policy</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Discount Record Type Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Expiration_Date_Change</fullName>
+        <description>截止时间默认为off policy之后6个月</description>
+        <field>Expiration_Date__c</field>
+        <formula>DATE(
+  YEAR(  TODAY()  ) + FLOOR( ( MONTH (  TODAY()  ) + 6 - 1 ) / 12 ),
+  MOD( MONTH (  TODAY()  ) + 6 - 1 + 
+    IF( DAY (  TODAY()  ) &gt; CASE( MOD( MONTH(  TODAY()  ) + 6 - 1, 12 ) + 1, 
+      2, 28,
+      4, 30,
+      6, 30,
+      9, 30, 
+      11, 30,
+      31 ), 1, 0 ), 12 ) + 1,
+    IF( DAY(  TODAY()  ) &gt; CASE( MOD( MONTH(  TODAY()  ) + 6 - 1, 12 ) + 1,
+      2, 28, 
+      4, 30, 
+      6, 30, 
+      9, 30, 
+      11, 30, 
+      31 ), 
+    1, DAY( TODAY()  )
+  )
+)</formula>
+        <name>Expiration Date Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Full_RP_Remove</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Full_RP_Romoved</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Full_RP_Remove</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Full_Record_Type_Change</fullName>
+        <description>当状态变为off policy之后，修改record type，进而更改页面布局</description>
+        <field>RecordTypeId</field>
+        <lookupValue>WSL_Full_Takeback_Off_Policy</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Full Record Type Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Gold_Record_Type_Change</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>WSL_Gold_Store_Off_Policy</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Gold Record Type Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RP_Discount_Program_Romove</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Discount_RP_Removed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RP_Discount_Program_Romove</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>RTV Program Completed</fullName>
+        <actions>
+            <name>RTV_Program_Completed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_Program__c.Program_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_Program__c.DTC_Type__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>当proram completed时，发送邮件给BP,CS</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV_Close_Program</fullName>
+        <actions>
+            <name>Close_Program</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>当截止日期等于今天时，close program</description>
+        <formula>AND(Expiration_Date__c  =  TODAY() ,  OR (RecordType.Name  = &apos;WSL Discount Takeback Off Policy&apos;,  RecordType.Name  = &apos;WSL Full Takeback Off Policy&apos;,  RecordType.Name  = &apos;WSL Gold Store Off Policy&apos;,  RecordType.Name  = &apos;CFS DTC Takeback Kick Off&apos;,  RecordType.Name  = &apos;Digital DTC Takeback Kick Off&apos;) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 实收差异 --></help>
+    <label><!-- Actual Diff QTY --></label>
+    <name>Actual_Diff_QTY__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Pyramid__c</fullName>
+    <description>digital_pyramid_all_cn_rl</description>
+    <externalId>false</externalId>
+    <label>Digital Pyramid</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CONCEPT MAP</fullName>
+                <default>false</default>
+                <label>CONCEPT MAP</label>
+            </value>
+            <value>
+                <fullName>DTC EXCLUSIVE</fullName>
+                <default>false</default>
+                <label>DTC EXCLUSIVE</label>
+            </value>
+            <value>
+                <fullName>FW SNL</fullName>
+                <default>false</default>
+                <label>FW SNL</label>
+            </value>
+            <value>
+                <fullName>INCUBATE</fullName>
+                <default>false</default>
+                <label>INCUBATE</label>
+            </value>
+            <value>
+                <fullName>SEASONAL</fullName>
+                <default>false</default>
+                <label>SEASONAL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

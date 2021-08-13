@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Lookup Product</description>
+    <externalId>false</externalId>
+    <label>Product</label>
+    <referenceTo>RMS_Product__c</referenceTo>
+    <relationshipLabel>RTV Order Items</relationshipLabel>
+    <relationshipName>Return_Order_Items</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

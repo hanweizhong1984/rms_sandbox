@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RP_Pending_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(TEXT(Program_Status__c)== &apos;Close&apos;,
+OR( RecordType.Name == &apos;WSL Gold Store&apos; ,
+RecordType.Name == &apos;WSL Discount Takebacke&apos;,
+RecordType.Name == &apos;WSL Full Takeback&apos;,
+RecordType.Name == &apos;CFS DTC Takeback&apos;,
+RecordType.Name == &apos;Digital DTC Takeback&apos;)
+)</errorConditionFormula>
+    <errorMessage>When the program status is pending, the program cannot be closed</errorMessage>
+</ValidationRule>

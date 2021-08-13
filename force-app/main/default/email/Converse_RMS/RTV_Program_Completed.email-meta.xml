@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV Program Completed</name>
+    <style>none</style>
+    <subject>[RMS-Program-Completed] 退货/召回流程{!RTV_Program__c.Name}项目已完成，请登录系统查看报表</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 下一个步骤 --></help>
+    <label><!-- Next Step --></label>
+    <name>Next_Step__c</name>
+    <picklistValues>
+        <masterLabel>CS Confirm</masterLabel>
+        <translation><!-- CS Confirm --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CS Inbound</masterLabel>
+        <translation><!-- CS Inbound --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LF D</masterLabel>
+        <translation><!-- LF D --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LF Inbound (AB)</masterLabel>
+        <translation><!-- LF Inbound (AB) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LF Inbound (C)</masterLabel>
+        <translation><!-- LF Inbound (C) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LF Insp</masterLabel>
+        <translation><!-- LF Insp --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WSL Confirm</masterLabel>
+        <translation><!-- WSL Confirm --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WSL Kickoff</masterLabel>
+        <translation><!-- WSL Kickoff --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WSL PKL</masterLabel>
+        <translation><!-- WSL PKL --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

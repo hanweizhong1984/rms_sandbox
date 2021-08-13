@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>ToConverse</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>共享给所有Converse内部员工</description>
+        <label>ToConverse</label>
+        <sharedTo>
+            <roleAndSubordinates>RMS_Converse</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value/>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

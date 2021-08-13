@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Dropped Label --></label>
+    <name>Dropped_Label__c</name>
+    <picklistValues>
+        <masterLabel>真</masterLabel>
+        <translation><!-- 真 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

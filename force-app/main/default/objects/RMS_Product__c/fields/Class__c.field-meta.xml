@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class__c</fullName>
+    <description>class_all_all_gl</description>
+    <externalId>false</externalId>
+    <label>Class</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>6 Panel</fullName>
+                <default>false</default>
+                <label>6 Panel</label>
+            </value>
+            <value>
+                <fullName>Crew</fullName>
+                <default>false</default>
+                <label>Crew</label>
+            </value>
+            <value>
+                <fullName>Full Zip</fullName>
+                <default>false</default>
+                <label>Full Zip</label>
+            </value>
+            <value>
+                <fullName>Hooded</fullName>
+                <default>false</default>
+                <label>Hooded</label>
+            </value>
+            <value>
+                <fullName>Long</fullName>
+                <default>false</default>
+                <label>Long</label>
+            </value>
+            <value>
+                <fullName>Long Sleeve</fullName>
+                <default>false</default>
+                <label>Long Sleeve</label>
+            </value>
+            <value>
+                <fullName>Short</fullName>
+                <default>false</default>
+                <label>Short</label>
+            </value>
+            <value>
+                <fullName>Short Sleeve</fullName>
+                <default>false</default>
+                <label>Short Sleeve</label>
+            </value>
+            <value>
+                <fullName>Sleeveless</fullName>
+                <default>false</default>
+                <label>Sleeveless</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

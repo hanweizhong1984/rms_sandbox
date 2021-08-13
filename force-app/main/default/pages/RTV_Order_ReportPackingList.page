@@ -1,0 +1,43 @@
+<apex:page controller="RTV_Order_ReportPackingListCtrl"
+    contentType="application/vnd.ms-excel#PackingList.xls" readOnly="True"> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/HTML;charset=UTF-8"/>
+    </head>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!results}" var="res" rowClasses="odd,even" border="1">
+            <apex:column value="{!res.RTV_Order_Item__r.RTV_Order__r.Name}{!res.RTV_Order_Item__r.BU_2__c}">
+                <apex:facet name="header">授权码</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Box_Code__c}">
+                <apex:facet name="header">箱号</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.Material_Code__c}">
+                <apex:facet name="header">货品号</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.BU_2__c}">
+                <apex:facet name="header">BU</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.SKU_Size_US__c}">
+                <apex:facet name="header">尺寸(美码)</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.SKU_Size_Asia__c}">
+                <apex:facet name="header">尺寸(亚码)</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.Season_Code_CN__c}">
+                <apex:facet name="header">季节码</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Application_QTY__c}">
+                <apex:facet name="header">数量</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.RTV_Order__r.Sold_To__r.Name}">
+                <apex:facet name="header">Sold To</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.RTV_Order__r.Ship_To__r.Name}">
+                <apex:facet name="header">Ship To</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.RTV_Order__r.Earliest_Delivery_Date__c}">
+                <apex:facet name="header">最早提货日</apex:facet>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

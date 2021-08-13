@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>最终价格 A(CNY/excl.VAT)</label>
+    <name>Final_Price_A__c</name>
+</CustomFieldTranslation>

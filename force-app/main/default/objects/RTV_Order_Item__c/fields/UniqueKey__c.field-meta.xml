@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UniqueKey__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>Unique Key  = order.name + item.Material_Code__c + item.BU_2__c + item.SKU_Size_US__c + item.Season_Code_CN__c</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Unique Key  = order.name + item.Material_Code__c + item.BU_2__c + item.SKU_Size_US__c + item.Season_Code_CN__c</inlineHelpText>
+    <label>Unique Key</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

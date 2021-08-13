@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Summary</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Group__c</columns>
+    <columns>Sales_Channel__c</columns>
+    <columns>Year__c</columns>
+    <columns>Month__c</columns>
+    <columns>Status__c</columns>
+    <columns>Active_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Channel__c</field>
+        <operation>equals</operation>
+        <value>DIG</value>
+    </filters>
+    <label>Digital Summary</label>
+    <sharedTo>
+        <roleAndSubordinates>RMS_Converse</roleAndSubordinates>
+        <roleAndSubordinates>RMS_DIG_Logistic_Confirm</roleAndSubordinates>
+        <roleAndSubordinates>RMS_IDC_LF</roleAndSubordinates>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 明细行数 --></help>
+    <label><!-- Item Count --></label>
+    <name>Item_Count__c</name>
+</CustomFieldTranslation>

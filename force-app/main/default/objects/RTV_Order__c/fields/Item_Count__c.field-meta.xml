@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Count__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>明细行数</inlineHelpText>
+    <label>Item Count</label>
+    <summaryForeignKey>RTV_Order_Item__c.RTV_Order__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

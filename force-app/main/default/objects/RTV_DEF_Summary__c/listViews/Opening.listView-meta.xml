@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opening</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Group__c</columns>
+    <columns>Year__c</columns>
+    <columns>Month__c</columns>
+    <columns>Status__c</columns>
+    <columns>Apply_Open_Date__c</columns>
+    <columns>Apply_Close_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active_Status__c</field>
+        <operation>equals</operation>
+        <value>Opening</value>
+    </filters>
+    <label>可申请退残（当月汇总）</label>
+</ListView>

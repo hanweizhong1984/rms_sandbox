@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>BU（中国）</label>
+    <name>BUCN__c</name>
+    <picklistValues>
+        <masterLabel>ACC</masterLabel>
+        <translation><!-- ACC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>APP</masterLabel>
+        <translation><!-- APP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FTW-Core</masterLabel>
+        <translation><!-- FTW-Core --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FTW-Seasonal</masterLabel>
+        <translation><!-- FTW-Seasonal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NULL</masterLabel>
+        <translation><!-- NULL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SS TEE</masterLabel>
+        <translation><!-- SS TEE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WOVEN BOTTOM</masterLabel>
+        <translation><!-- WOVEN BOTTOM --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

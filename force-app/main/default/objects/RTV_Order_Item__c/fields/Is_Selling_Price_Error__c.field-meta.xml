@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Selling_Price_Error__c</fullName>
+    <description>存在A,B,D品时，SellingPrice必须有值</description>
+    <externalId>false</externalId>
+    <formula>IF (Selling_Unit_Price__c == 0 &amp;&amp; (Inspect_QTY_A__c&gt;0 || Inspect_QTY_B__c&gt;0 || Inspect_QTY_D__c&gt;0), true, false)</formula>
+    <inlineHelpText>If QTY(A,B,D) is not 0, the Selling Unit Price can not be 0</inlineHelpText>
+    <label>Is Selling Price Error ?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

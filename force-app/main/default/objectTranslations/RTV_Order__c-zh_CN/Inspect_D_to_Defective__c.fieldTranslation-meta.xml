@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Transfer Inspection (D) of Takeback  to Defective process. --></help>
+    <label>转DEF退残次商品数量</label>
+    <name>Inspect_D_to_Defective__c</name>
+    <relationshipLabel><!-- RTV Orders (Inspect(D) to Defective) --></relationshipLabel>
+</CustomFieldTranslation>

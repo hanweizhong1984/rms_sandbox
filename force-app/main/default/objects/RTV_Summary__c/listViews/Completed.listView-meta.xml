@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Completed</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Group__c</columns>
+    <columns>Program_Finance_Code__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </filters>
+    <label>已完成</label>
+    <sharedTo>
+        <roleAndSubordinates>RMS_Converse</roleAndSubordinates>
+        <roleAndSubordinates>RMS_IDC_LF</roleAndSubordinates>
+        <roleAndSubordinates>RMS_WSL</roleAndSubordinates>
+    </sharedTo>
+</ListView>

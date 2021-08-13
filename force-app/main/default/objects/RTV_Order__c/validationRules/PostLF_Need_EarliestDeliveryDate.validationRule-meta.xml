@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PostLF_Need_EarliestDeliveryDate</fullName>
+    <active>true</active>
+    <description>Earliest Delivery Date is required when POST to LF</description>
+    <errorConditionFormula>IsDTC__c == false &amp;&amp;
+ISCHANGED(Status__c) &amp;&amp;
+ISPICKVAL(Status__c, &apos;POST to LF&apos;) &amp;&amp;
+ISNULL(Earliest_Delivery_Date__c) &amp;&amp;
+Application_QTY__c !=0</errorConditionFormula>
+    <errorMessage>[Earliest Delivery Date] is required</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DEF_Need_Outbound_Emails</fullName>
+    <active>true</active>
+    <description>请输入Ship-To外部Email地址（逗号分割的1~5个地址）</description>
+    <errorConditionFormula>IsDTC__c == false &amp;&amp;
+ISCHANGED(Status__c) &amp;&amp;
+ISPICKVAL(Status__c, &apos;POST to LF&apos;) &amp;&amp;
+RTV_DEF_Summary__c != null &amp;&amp;
+NOT(REGEX(Ship_To_Outbound_Emails__c,&apos;^([a-zA-Z0-9._]+@\\w+(\\.\\w+){1,3}(,|$)\\s*){1,5}&apos;))</errorConditionFormula>
+    <errorMessage>请输入Ship-To外部Email地址（逗号分割的1~5个地址）</errorMessage>
+</ValidationRule>

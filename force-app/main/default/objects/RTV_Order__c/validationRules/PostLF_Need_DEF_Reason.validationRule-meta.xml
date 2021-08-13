@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PostLF_Need_DEF_Reason</fullName>
+    <active>true</active>
+    <description>PostLF前需要填写退残原因</description>
+    <errorConditionFormula>IsDTC__c &amp;&amp;
+RTV_DEF_Summary__c != null &amp;&amp;
+ISCHANGED(Status__c) &amp;&amp;
+ISPICKVAL(Status__c, &apos;POST to LF&apos;) &amp;&amp;
+Items_Without_DEF_Reason__c &gt; 0</errorConditionFormula>
+    <errorMessage>请先上传商品退残原因</errorMessage>
+</ValidationRule>

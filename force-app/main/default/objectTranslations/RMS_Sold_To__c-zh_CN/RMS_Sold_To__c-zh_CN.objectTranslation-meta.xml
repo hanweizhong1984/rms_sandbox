@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- RMS Sold To --></value>
+    </caseValues>
+    <layouts>
+        <layout>Empty</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Normal</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Channel --></label>
+            <section>Channel</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- DELY Information --></label>
+            <section>DELY Information</section>
+        </sections>
+        <sections>
+            <label><!-- SAP Information --></label>
+            <section>SAP Information</section>
+        </sections>
+        <sections>
+            <label><!-- Trading Term --></label>
+            <section>Trading Term</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Sold To Code --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Normal --></label>
+        <name>Normal</name>
+    </recordTypes>
+</CustomObjectTranslation>

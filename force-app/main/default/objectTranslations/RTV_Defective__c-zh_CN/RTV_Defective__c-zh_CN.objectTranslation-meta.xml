@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RTV 退残次</value>
+    </caseValues>
+    <layouts>
+        <layout>RTV Defective Off Policy</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Ready</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Defective Name --></nameFieldLabel>
+    <quickActions>
+        <label><!-- Off Policy --></label>
+        <name>Off_Policy</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Refresh --></label>
+        <name>Refresh</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- RTV Defective Off Policy --></label>
+        <name>RTV_Defective_Off_Policy</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Defective Ready --></label>
+        <name>RTV_Defective_Ready</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Can Not Change Date Information After Insert! --></errorMessage>
+        <name>CanNotChangeDateAfterInsert</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Defective Name Can Not Change! --></errorMessage>
+        <name>DefectiveNameCanNotChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The start date cannot be less than the end date! --></errorMessage>
+        <name>StartDateCanNotBeLessThanEndDate</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Export_PDF --></label>
+        <name>Export_PDF</name>
+    </webLinks>
+</CustomObjectTranslation>

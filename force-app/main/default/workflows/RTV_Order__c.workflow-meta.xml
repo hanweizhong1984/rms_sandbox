@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>RTV_DEF_Order_Approval_To_CS</fullName>
+        <description>RTV DEF Order Approval To CS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Order_Apprpval_WSL</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DEF_Order_Insp_Approval</fullName>
+        <description>RTV DEF Order Insp Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Order_Insp_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DEF_Order_PTLF</fullName>
+        <ccEmails>LunaLuS@lflogistics.com</ccEmails>
+        <description>RTV DEF Order PTLF</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Order_PTLF</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DEF_Order_Reject_To_CS</fullName>
+        <description>RTV DEF Order Reject To CS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Order_Reject_WSL</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DEF_Order_Reject_To_LF</fullName>
+        <description>RTV DEF Order Reject To LF</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DEF_Order_Reject_CS</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_DEF_Order_Completed_To_CS</fullName>
+        <description>RTV DTC DEF Order Completed (To CS)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DTC_DEF_Order_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_DEF_Order_Insp_Approved_To_LF</fullName>
+        <description>RTV DTC DEF Order Insp Approved (To LF)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DTC_DEF_Order_Insp_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_DEF_Order_Insp_Reject_To_LF</fullName>
+        <description>RTV DTC DEF Order Insp Reject (To LF)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DTC_DEF_Order_Insp_Reject</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_DEF_Order_Insp_Submit_To_CFS</fullName>
+        <description>RTV DTC DEF Order Insp Submit (To CFS)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CFS_Logistic_Confirm</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DTC_DEF_Order_Insp_Submit</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_DEF_Order_Insp_Submit_To_DIG</fullName>
+        <description>RTV DTC DEF Order Insp Submit (To DIG)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_DIG_Logistic_Confirm</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DTC_DEF_Order_Insp_Submit</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_DEF_Order_PTLF</fullName>
+        <description>RTV DTC DEF Order PTLF</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>noreply@converse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Converse_RMS/RTV_DTC_DEF_Order_PTLF</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_Order_Completed_To_CS</fullName>
+        <description>RTV DTC Order Completed (To CS)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DTC_Order_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_Order_Insp_Approved_To_LF</fullName>
+        <description>RTV DTC Order Insp Approved (To LF)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DTC_Order_Insp_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_Order_Insp_Reject_To_LF</fullName>
+        <description>RTV DTC Order Insp Reject (To LF)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DTC_Order_Insp_Reject</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_Order_Insp_Submit_To_CFS</fullName>
+        <description>RTV DTC Order Insp Submit (To CFS)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CFS_Logistic_Confirm</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DTC_Order_Insp_Submit</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_Order_Insp_Submit_To_DIG</fullName>
+        <description>RTV DTC Order Insp Submit (To DIG)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_DIG_Logistic_Confirm</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_DTC_Order_Insp_Submit</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_DTC_Order_PTLF</fullName>
+        <description>RTV DTC Order PTLF</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>noreply@converse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Converse_RMS/RTV_DTC_Order_PTLF</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Insp_CS_Approve_Time</fullName>
+        <field>Insp_CS_Approve_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Insp CS Approve Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Insp_WSL_Confirm_Date</fullName>
+        <field>Actual_Date_Of_WSL_Confirmed__c</field>
+        <formula>Today()</formula>
+        <name>Insp WSL Confirm Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Insp_Confirmed</fullName>
+        <field>Status__c</field>
+        <literalValue>Insp Confirmed</literalValue>
+        <name>Status (Insp Confirmed)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Insp_Wait_Approve</fullName>
+        <field>Status__c</field>
+        <literalValue>Insp Wait Approval</literalValue>
+        <name>Status (Insp Wait Approve)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Inspected</fullName>
+        <field>Status__c</field>
+        <literalValue>Inspected</literalValue>
+        <name>Status (Inspected)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>RTV DEF Order PTLF</fullName>
+        <actions>
+            <name>RTV_DEF_Order_PTLF</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>DEF Order Post to LF,发送邮件给LF</description>
+        <formula>RTV_DEF_Summary__c != null &amp;&amp; ISPICKVAL(Status__c, &apos;POST to LF&apos;) &amp;&amp; ISBLANK(TEXT(RTV_DEF_Summary__r.DTC_Type__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DTC DEF Order Completed%28To CS%29</fullName>
+        <actions>
+            <name>RTV_DTC_DEF_Order_Completed_To_CS</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>DTC》DEF》Order在Completed时：发送邮件给CS</description>
+        <formula>IsDTC__c == true &amp;&amp; RTV_DEF_Summary__c != null &amp;&amp; ISPICKVAL(Status__c, &apos;Completed&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DTC DEF Order PTLF</fullName>
+        <actions>
+            <name>RTV_DTC_DEF_Order_PTLF</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>DTC》DEF》Order在PostLF时：发送邮件给LF</description>
+        <formula>IsDTC__c == true &amp;&amp; RTV_DEF_Summary__c != null &amp;&amp; ISPICKVAL(Status__c, &apos;POST to LF&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DTC Order Completed%28To CS%29</fullName>
+        <actions>
+            <name>RTV_DTC_Order_Completed_To_CS</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>DTC》TB》Order在Completed时：发送邮件给CS</description>
+        <formula>IsDTC__c == true &amp;&amp; Return_Summary__c != null &amp;&amp; ISPICKVAL(Status__c, &apos;Completed&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV DTC Order PTLF</fullName>
+        <actions>
+            <name>RTV_DTC_Order_PTLF</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>DTC》TB》Order在PostLF时：发送邮件给LF</description>
+        <formula>IsDTC__c == true &amp;&amp; Return_Summary__c != null &amp;&amp; ISPICKVAL(Status__c, &apos;POST to LF&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

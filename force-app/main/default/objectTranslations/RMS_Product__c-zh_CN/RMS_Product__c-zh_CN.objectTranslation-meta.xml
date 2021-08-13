@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RMS 产品主档</value>
+    </caseValues>
+    <layouts>
+        <layout>Empty</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Normal</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Normal(All)</layout>
+        <sections>
+            <label><!-- Category --></label>
+            <section>Category</section>
+        </sections>
+        <sections>
+            <label><!-- Colorway --></label>
+            <section>Colorway</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Digital --></label>
+            <section>Digital</section>
+        </sections>
+        <sections>
+            <label><!-- Others --></label>
+            <section>Others</section>
+        </sections>
+        <sections>
+            <label><!-- Size --></label>
+            <section>Size</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Product Code --></nameFieldLabel>
+    <webLinks>
+        <label><!-- Batch_Insert --></label>
+        <name>Batch_Insert</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- fortest --></label>
+        <name>fortest</name>
+    </webLinks>
+</CustomObjectTranslation>

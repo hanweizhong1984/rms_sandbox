@@ -1,0 +1,15 @@
+Hi,All
+
+退残订单汇总{!RTV_DEF_Summary__c.Name}入库状态已全部完成，请登录RMS系统，建立DEF PROGRAM。
+
+订单汇总名称：{!RTV_DEF_Summary__c.Name}			
+客户名称：{!RTV_DEF_Summary__c.Account_Group__c}			
+订单汇总年份：{!RTV_DEF_Summary__c.Year__c}			
+订单汇总月份：{!RTV_DEF_Summary__c.Month__c}			
+详细信息：{!RTV_DEF_Summary__c.Link}			
+
+
+特此通知。
+Best regards
+
+Converse - RMS 系统运维

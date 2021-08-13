@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_B__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+ ISNULL(RTV_Order_Item__r.RTV_Order__r.Insp_CS_Approve_Time__c) &amp;&amp;
+ (
+  $Profile.Name = &apos;RMS WSL HQ&apos; ||
+  $Profile.Name = &apos;RMS WSL Reg Branch&apos; ||
+  $Profile.Name = &apos;RMS WSL Sold To&apos; ||
+  $Profile.Name = &apos;RMS WSL Ship To&apos; ||
+  $Profile.Name = &apos;RMS WSL Ship To -Only DEF&apos; 
+ ),
+ &apos;&apos;,
+ (
+  IF(B1__c &gt; 0, &apos;B1*&apos; + TEXT(B1__c) +&apos;;&apos;, &apos;&apos;) +
+  IF(B2__c &gt; 0, &apos;B2*&apos; + TEXT(B2__c) +&apos;;&apos;, &apos;&apos;) +
+  IF(B2_1__c &gt; 0, &apos;B2-1*&apos; + TEXT(B2_1__c) +&apos;; &apos;, &apos;&apos;) +
+  IF(B3__c &gt; 0, &apos;B3*&apos; + TEXT(B3__c) +&apos;; &apos;, &apos;&apos;) +
+  IF(B4__c &gt; 0, &apos;B4*&apos; + TEXT(B4__c) +&apos;; &apos;, &apos;&apos;) +
+  IF(B5__c &gt; 0, &apos;B5*&apos; + TEXT(B5__c) +&apos;; &apos;, &apos;&apos;) +
+  IF(B6__c &gt; 0, &apos;B6*&apos; + TEXT(B6__c) + &apos;; &apos;, &apos;&apos;) +
+  IF(B7__c &gt; 0, &apos;B7*&apos; + TEXT(B7__c) + &apos;; &apos;, &apos;&apos;)
+ )
+)</formula>
+    <label>Reason B</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

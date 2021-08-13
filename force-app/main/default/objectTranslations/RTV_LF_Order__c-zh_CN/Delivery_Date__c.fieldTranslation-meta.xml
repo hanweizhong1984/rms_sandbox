@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 提货日 --></help>
+    <label>提货日期</label>
+    <name>Delivery_Date__c</name>
+</CustomFieldTranslation>

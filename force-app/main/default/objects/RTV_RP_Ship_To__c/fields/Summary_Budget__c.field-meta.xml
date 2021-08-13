@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Summary_Budget__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Lookup Summary Budget</description>
+    <externalId>false</externalId>
+    <label>Summary Budget</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>RTV_RP_Summary_Budget__c.Return_Program__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.RTV_Program__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>RTV_RP_Summary_Budget__c</referenceTo>
+    <relationshipLabel>RTV RP Ship To White List</relationshipLabel>
+    <relationshipName>RTV_RP_Ship_To_List</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

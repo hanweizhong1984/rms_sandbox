@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asia_Product_Bucket_I__c</fullName>
+    <externalId>false</externalId>
+    <label>Asia Product Bucket I</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core</fullName>
+                <default>false</default>
+                <label>Core</label>
+            </value>
+            <value>
+                <fullName>Cut &amp; Sew</fullName>
+                <default>false</default>
+                <label>Cut &amp; Sew</label>
+            </value>
+            <value>
+                <fullName>Essential</fullName>
+                <default>false</default>
+                <label>Essential</label>
+            </value>
+            <value>
+                <fullName>FOS</fullName>
+                <default>false</default>
+                <label>FOS</label>
+            </value>
+            <value>
+                <fullName>Seasonal</fullName>
+                <default>false</default>
+                <label>Seasonal</label>
+            </value>
+            <value>
+                <fullName>Seasonal Core</fullName>
+                <default>false</default>
+                <label>Seasonal Core</label>
+            </value>
+            <value>
+                <fullName>Seasonal Graphic</fullName>
+                <default>false</default>
+                <label>Seasonal Graphic</label>
+            </value>
+            <value>
+                <fullName>Seasonal Material</fullName>
+                <default>false</default>
+                <label>Seasonal Material</label>
+            </value>
+            <value>
+                <fullName>Seasonal Others</fullName>
+                <default>false</default>
+                <label>Seasonal Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 去除脏但无原鞋盒 --></help>
+    <label>质检数量 B5</label>
+    <name>B5__c</name>
+</CustomFieldTranslation>

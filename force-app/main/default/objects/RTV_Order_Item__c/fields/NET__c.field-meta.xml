@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NET__c</fullName>
+    <description>$NET = MSRP * TradeTerm / TaxRate / ExRate * Discount</description>
+    <externalId>false</externalId>
+    <inlineHelpText>$NET = MSRP * TradeTerm / TaxRate / ExRate * Discount</inlineHelpText>
+    <label>Application Unit Price (USD/excl.VAT)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

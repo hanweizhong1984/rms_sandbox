@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- = Inspect Amount (A) + Inspect Amount (B) + Inspect Amount (D) --></help>
+    <label>实际退货金额(CNY/excl.VAT)</label>
+    <name>Actual_Amount_Rd__c</name>
+</CustomFieldTranslation>

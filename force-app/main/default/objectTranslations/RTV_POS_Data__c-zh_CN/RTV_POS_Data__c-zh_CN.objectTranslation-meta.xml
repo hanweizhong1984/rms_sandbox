@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RTV POS Data</value>
+    </caseValues>
+    <layouts>
+        <layout>Completed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Pending</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>发货门店</nameFieldLabel>
+    <recordTypes>
+        <description><!-- 已处理 --></description>
+        <label><!-- Completed --></label>
+        <name>Completed</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- 待处理 --></description>
+        <label><!-- Pending --></label>
+        <name>Pending</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- ClearData --></label>
+        <name>ClearData</name>
+    </webLinks>
+</CustomObjectTranslation>

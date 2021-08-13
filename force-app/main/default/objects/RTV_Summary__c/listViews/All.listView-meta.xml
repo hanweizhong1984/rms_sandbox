@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Sales_Channel__c</columns>
+    <columns>Account_Group__c</columns>
+    <columns>RTV_Program__c</columns>
+    <columns>Program_Finance_Code__c</columns>
+    <columns>Status__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Next_Step__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <sharedTo>
+        <roleAndSubordinates>RMS_Converse</roleAndSubordinates>
+        <roleAndSubordinates>RMS_IDC_LF</roleAndSubordinates>
+        <roleAndSubordinates>RMS_WSL</roleAndSubordinates>
+    </sharedTo>
+</ListView>

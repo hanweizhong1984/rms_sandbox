@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inbound</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Sold_To__c</columns>
+    <columns>Ship_To__c</columns>
+    <columns>Inbound_QTY__c</columns>
+    <columns>Inbound_Amount__c</columns>
+    <columns>Inspect_QTY_D__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Inbound</value>
+    </filters>
+    <label>[4] Inbound</label>
+</ListView>

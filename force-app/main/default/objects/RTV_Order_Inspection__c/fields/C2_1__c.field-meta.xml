@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C2_1__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>试穿破损(APP/ACC)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>试穿破损(APP/ACC)</inlineHelpText>
+    <label>C2-1</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

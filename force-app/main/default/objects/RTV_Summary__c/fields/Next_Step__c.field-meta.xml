@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Step__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>下一个步骤</inlineHelpText>
+    <label>Next Step</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>WSL Kickoff</fullName>
+                <default>false</default>
+                <label>WSL Kickoff</label>
+            </value>
+            <value>
+                <fullName>WSL PKL</fullName>
+                <default>false</default>
+                <label>WSL PKL</label>
+            </value>
+            <value>
+                <fullName>LF D</fullName>
+                <default>false</default>
+                <label>LF D</label>
+            </value>
+            <value>
+                <fullName>LF Insp</fullName>
+                <default>false</default>
+                <label>LF Insp</label>
+            </value>
+            <value>
+                <fullName>CS Confirm</fullName>
+                <default>false</default>
+                <label>CS Confirm</label>
+            </value>
+            <value>
+                <fullName>WSL Confirm</fullName>
+                <default>false</default>
+                <label>WSL Confirm</label>
+            </value>
+            <value>
+                <fullName>LF Inbound (AB)</fullName>
+                <default>false</default>
+                <label>LF Inbound (AB)</label>
+            </value>
+            <value>
+                <fullName>CS Inbound</fullName>
+                <default>false</default>
+                <label>CS Inbound</label>
+            </value>
+            <value>
+                <fullName>LF Inbound (C)</fullName>
+                <default>false</default>
+                <label>LF Inbound (C)</label>
+            </value>
+            <value>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inbound</label>
+            </value>
+            <value>
+                <fullName>LF Inbound</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>LF Inbound</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

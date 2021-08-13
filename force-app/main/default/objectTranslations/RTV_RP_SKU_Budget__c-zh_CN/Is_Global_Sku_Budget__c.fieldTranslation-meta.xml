@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 没有指定AccountGroup以下范围的SkuBudget --></help>
+    <label><!-- Is Global Sku Budget --></label>
+    <name>Is_Global_Sku_Budget__c</name>
+</CustomFieldTranslation>

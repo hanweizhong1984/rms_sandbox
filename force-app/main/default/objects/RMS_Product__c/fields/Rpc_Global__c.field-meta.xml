@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rpc_Global__c</fullName>
+    <description>rpc_global_all_cn_rl</description>
+    <externalId>false</externalId>
+    <label>Rpc Global</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AC</fullName>
+                <default>false</default>
+                <label>AC</label>
+            </value>
+            <value>
+                <fullName>AP</fullName>
+                <default>false</default>
+                <label>AP</label>
+            </value>
+            <value>
+                <fullName>APAC GLOBAL</fullName>
+                <default>false</default>
+                <label>APAC GLOBAL</label>
+            </value>
+            <value>
+                <fullName>ASIA REQUESTED</fullName>
+                <default>false</default>
+                <label>ASIA REQUESTED</label>
+            </value>
+            <value>
+                <fullName>GLOBAL</fullName>
+                <default>false</default>
+                <label>GLOBAL</label>
+            </value>
+            <value>
+                <fullName>INLINE</fullName>
+                <default>false</default>
+                <label>INLINE</label>
+            </value>
+            <value>
+                <fullName>Men</fullName>
+                <default>false</default>
+                <label>Men</label>
+            </value>
+            <value>
+                <fullName>REGIONAL</fullName>
+                <default>false</default>
+                <label>REGIONAL</label>
+            </value>
+            <value>
+                <fullName>Regional Product Create</fullName>
+                <default>false</default>
+                <label>Regional Product Create</label>
+            </value>
+            <value>
+                <fullName>RPC</fullName>
+                <default>false</default>
+                <label>RPC</label>
+            </value>
+            <value>
+                <fullName>SMU</fullName>
+                <default>false</default>
+                <label>SMU</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

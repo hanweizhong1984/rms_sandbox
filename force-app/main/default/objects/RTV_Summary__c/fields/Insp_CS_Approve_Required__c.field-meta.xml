@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insp_CS_Approve_Required__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>检验报告是否需要CS审批</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is inspection list need CS user to approve ?</inlineHelpText>
+    <label>Insp CS Approve Required</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

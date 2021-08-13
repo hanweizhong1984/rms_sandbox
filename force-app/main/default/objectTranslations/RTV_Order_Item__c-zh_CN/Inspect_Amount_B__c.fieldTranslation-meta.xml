@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- = Inspect QTY(B) * ( Selling Unit Price - Cost/1.13 ) --></help>
+    <label>质检退货总金额(B)(CNY/excl.VAT)</label>
+    <name>Inspect_Amount_B__c</name>
+</CustomFieldTranslation>

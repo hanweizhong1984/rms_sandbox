@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Digital Owner --></label>
+    <name>Digital_Owner__c</name>
+    <relationshipLabel><!-- RMS Account Group (Digital Owner) --></relationshipLabel>
+</CustomFieldTranslation>

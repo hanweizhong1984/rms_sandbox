@@ -1,0 +1,16 @@
+Hi,All					
+					
+退残订单汇总{!RTV_DEF_Summary__c.Name}已经启动，请尽快登入RMS系统，完成packing list上传。					
+					
+					
+订单汇总名称：{!RTV_DEF_Summary__c.Name}					
+客户名称：{!RTV_DEF_Summary__c.Account_Group__c}					
+订单汇总年份：{!RTV_DEF_Summary__c.Year__c}		
+订单汇总月份：{!RTV_DEF_Summary__c.Month__c}			
+详细信息：{!RTV_DEF_Summary__c.Link}					
+					
+					
+特此通知。					
+Best regards					
+					
+Converse - RMS 系统运维

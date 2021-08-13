@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sap_In_Store_Date__c</fullName>
+    <description>sap_in_store_date_all_all_gl</description>
+    <externalId>false</externalId>
+    <label>Sap In Store Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

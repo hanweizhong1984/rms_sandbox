@@ -1,0 +1,25 @@
+<apex:page controller="RMS_Home_MySubmitApproval" lightningStylesheets="true">
+<head>
+    <apex:slds />
+</head>
+<body>
+    <apex:repeat value="{!approvalInfos}" var="info">
+    <div style="margin-bottom: 0.5rem;">
+        <apex:outputLink value="/{!info.currentStepId}">
+            {!info.process.TargetObject.Name}
+        </apex:outputLink><br/>
+        
+        <apex:outputText rendered="{!info.process.Status='Pending'}">
+            Confirming... 
+        </apex:outputText>
+        <apex:outputText rendered="{!info.process.Status='Approved'}">
+            <span class="slds-text-color_success">Approved</span>
+        </apex:outputText>
+        <apex:outputText rendered="{!info.process.Status='Rejected'}">
+            <span class="slds-text-color_error">Rejected</span>
+        </apex:outputText>
+        by {!info.currentApproverName}
+    </div>
+    </apex:repeat>
+</body>
+</apex:page>

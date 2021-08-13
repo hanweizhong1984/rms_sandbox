@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <version>50.0</version>
+    <!-- Applications -->
+    <types>
+        <members>Converse_RMS</members>
+        <name>CustomApplication</name>
+    </types>
+    <!-- ApprovalProcess -->
+    <types>
+        <!-- 注释内容为不需要的代码：-->
+        <!-- <members>RTV_DEF_Summary__c.DEF_Inspect_Approval</members> -->
+        <!-- <members>RTV_Order__c.DEF_Insp_Approval</members> -->
+        <members>RTV_Order__c.DTC_DEF_CFS_Approval</members>
+        <members>RTV_Order__c.DTC_DEF_Digital_Approval</members>
+        <members>RTV_Order__c.DTC_TB_CFS_Approval</members>
+        <members>RTV_Order__c.DTC_TB_Digital_Approval</members>
+        <!-- <members>RTV_Order__c.Inspection_Confirm</members> -->
+        <members>RTV_Order__c.RTV_DEF_Insp_Approval</members>
+        <members>RTV_Order__c.RTV_DTC_Takeback_Approval</members>
+        <!-- <members>RTV_Program__c.Takeback</members> -->
+        <members>RTV_Summary__c.Inspect_Approval</members>
+        <!-- <members>RTV_Summary__c.Inspection_Approval</members> -->
+        <name>ApprovalProcess</name>
+    </types>
+    <!-- classes (ApexClasses) -->
+    <types>
+        <!-- 注释内容为不需要的代码：-->
+        <!-- <members>RMS_Batch_Product_Handler</members> -->
+        <!-- <members>RMS_CSVIterator</members> -->
+        <!-- <members>RMS_CSVReader</members> -->
+        <members>RMS_CSV_Iterator</members>
+        <members>RMS_CommonUtil</members>
+        <members>RMS_DeleteRecord_Batch</members>
+        <!-- <members>RMS_EmailManager</members> -->
+        <members>RMS_Home_MySubmitApproval</members>
+        <!-- <members>RMS_Que_DeleteRecord</members> -->
+        <!-- <members>RMS_Queue_CsvOperation_Job</members> -->
+        <!-- <members>RMS_Queue_Product_Job</members> -->
+        <!-- <members>RMS_ReadAndPopulateBatch</members> -->
+        <members>RMS_Redirect_To_Report</members>
+        <!-- <members>RMS_SP_Delete_Batch</members> -->
+        <!-- <members>RMS_Sch_Product</members> -->
+        <!-- <members>RMS_Utility_RowIterator</members> -->
+        <members>RTV_Baozun_Inbound</members>
+        <members>RTV_Baozun_Order_Inbound</members>
+        <members>RTV_Bth_SKU_KPI</members>
+        <members>RTV_Bth_SKU_KPI_Del</members>
+        <members>RTV_DEF_Approve_Email_Batch</members>
+        <members>RTV_DEF_AutoApprove_Batch</members>
+        <members>RTV_DEF_OffPolicy_Export</members>
+        <members>RTV_DEF_Summary</members>
+        <members>RTV_DEF_Summary_DTC</members>
+        <members>RTV_DEF_Summary_Inbound</members>
+        <members>RTV_DEF_Summary_MassCreate</members>
+        <members>RTV_DTC_DEF_Summary_Inbound</members>
+        <members>RTV_DTC_DEF_Upload_Reason</members>
+        <members>RTV_DTC_Summary_Inbound</members>
+        <members>RTV_DTC_Summary_Inbound_ToDef_Batch</members>
+        <members>RTV_Defective_ReportDeliveryAuth</members>
+        <members>RTV_Defective_ReportPackingList</members>
+        <members>RTV_Defective_ReportPacking_A</members>
+        <members>RTV_Defective_ReportPacking_F</members>
+        <members>RTV_Defective_Report_Inspect</members>
+        <members>RTV_Defective_SellingPrice</members>
+        <members>RTV_Defective_SellingPrice_Batch</members>
+        <members>RTV_Defective_UploadDeliveryCtrl</members>
+        <members>RTV_Defective_UploadPackingListCtrl</members>
+        <members>RTV_Defective_UploadSellingPrice</members>
+        <members>RTV_Defective_Upload_Inspect</members>
+        <members>RTV_Defective_Upload_Inspect_DTC</members>
+        <members>RTV_DeliveryPDF_Export</members>
+        <members>RTV_FileDownloadController</members>
+        <members>RTV_OffPolicy_Export</members>
+        <members>RTV_OrderItem_ZDSI_Batch</members>
+        <members>RTV_Order_ClearData</members>
+        <!-- <members>RTV_Order_InboundCtrl</members> -->
+        <members>RTV_Order_ReportAuthCode</members>
+        <members>RTV_Order_ReportAuthCode_Email</members>
+        <members>RTV_Order_ReportCustomerInfoCtrl</members>
+        <members>RTV_Order_ReportDeliveryAuth</members>
+        <!-- <members>RTV_Order_ReportDeliveryAuthItem</members> -->
+        <members>RTV_Order_ReportPackingListCtrl</members>
+        <!-- <members>RTV_Order_Report_Inspect</members> -->
+        <!-- <members>RTV_Order_SellingPrice</members> -->
+        <members>RTV_Order_UploadCustomerInfoCtrl</members>
+        <members>RTV_Order_UploadDeliveryCtrl</members>
+        <members>RTV_Order_UploadFOB</members>
+        <members>RTV_Order_UploadInspectCtrl</members>
+        <members>RTV_Order_UploadInspectCtrl_DTC</members>
+        <members>RTV_Order_UploadPackingCtrl</members>
+        <members>RTV_Order_UploadPacking_Batch</members>
+        <members>RTV_Order_UploadSellingPriceCtrl</members>
+        <members>RTV_POSDataController</members>
+        <members>RTV_RP_Report_ShipToWhiteList</members>
+        <members>RTV_RP_UploadSKUBudget_Batch</members>
+        <members>RTV_RP_UploadSKUBudgetController</members>
+        <members>RTV_RP_UploadWholesaleBudgetController</members>
+        <members>RTV_Sch_DeleteTemporaryRecord</members>
+        <members>RTV_Sch_SKU_KPI</members>
+        <members>RTV_SummaryCtrl</members>
+        <members>RTV_SummaryCtrl_DTC</members>
+        <members>RTV_Summary_ClearData</members>
+        <members>RTV_Summary_Inbound</members>
+        <members>RTV_Summary_Inbound_ToDef_Batch</members>
+        <members>RTV_Summary_SellingPrice</members>
+        <members>RTV_Summary_SellingPrice_Batch</members>
+        <members>RTV_UploadRPWhiteListController</members>
+        <members>RTV_UploadRPWhiteListCtrlForSummary</members>
+        <members>RTV_UploadStoreListController</members>
+        <members>Test_RMS_CSV_Iterator</members>
+        <members>Test_RMS_CommonUtil</members>
+        <members>Test_RMS_DeleteRecord_Batch</members>
+        <members>Test_RMS_Home_MySubmitApproval</members>
+        <!-- <members>Test_RMS_MasterData</members> -->
+        <members>Test_RMS_Redirect_To_Report</members>
+        <members>Test_RTV_Baozun_Inbound</members>
+        <members>Test_RTV_Baozun_Order_Inbound</members>
+        <members>Test_RTV_DEF_Approve_Email_Batch</members>
+        <members>Test_RTV_DEF_AutoApprove_Batch</members>
+        <members>Test_RTV_DEF_OffPolicy_Export</members>
+        <members>Test_RTV_DEF_Summary</members>
+        <members>Test_RTV_DEF_Summary_DTC</members>
+        <members>Test_RTV_DEF_Summary_Inbound</members>
+        <members>Test_RTV_DEF_Summary_MassCreate</members>
+        <members>Test_RTV_DTC_DEF_Summary_Inbound</members>
+        <members>Test_RTV_DTC_DEF_Upload_Reason</members>
+        <members>Test_RTV_DTC_Summary_Inbound</members>
+        <members>Test_RTV_Defective_ReportDeliveryAuth</members>
+        <members>Test_RTV_Defective_ReportPackingList</members>
+        <members>Test_RTV_Defective_ReportPacking_A</members>
+        <members>Test_RTV_Defective_ReportPacking_F</members>
+        <members>Test_RTV_Defective_Report_Inspect</members>
+        <members>Test_RTV_Defective_SellingPrice</members>
+        <members>Test_RTV_Defective_UploadDeliveryCtrl</members>
+        <members>Test_RTV_Defective_UploadPackingListCtrl</members>
+        <members>Test_RTV_Defective_UploadSellingPrice</members>
+        <members>Test_RTV_Defective_Upload_Inspect</members>
+        <members>Test_RTV_Defective_Upload_Inspect_DTC</members>
+        <members>Test_RTV_DeliveryPDF_Export</members>
+        <members>Test_RTV_FileDownloadController</members>
+        <members>Test_RTV_OffPolicy_Export</members>
+        <members>Test_RTV_OrderItem_ZDSI_Batch</members>
+        <members>Test_RTV_Order_ClearData</members>
+        <!-- <members>Test_RTV_Order_InboundCtrl</members> -->
+        <members>Test_RTV_Order_ReportAuthCode</members>
+        <members>Test_RTV_Order_ReportAuthCode_Email</members>
+        <members>Test_RTV_Order_ReportCustomerInfo</members>
+        <members>Test_RTV_Order_ReportDeliveryAuth</members>
+        <!-- <members>Test_RTV_Order_ReportDeliveryAuthItem</members> -->
+        <members>Test_RTV_Order_ReportPackingListCtrl</members>
+        <!-- <members>Test_RTV_Order_Report_Inspect</members> -->
+        <!-- <members>Test_RTV_Order_SellingPrice</members> -->
+        <members>Test_RTV_Order_UploadCustomerInfoCtrl</members>
+        <members>Test_RTV_Order_UploadDeliveryCtrl</members>
+        <members>Test_RTV_Order_UploadFOB</members>
+        <members>Test_RTV_Order_UploadInspectCtrl</members>
+        <members>Test_RTV_Order_UploadInspectCtrl_DTC</members>
+        <members>Test_RTV_Order_UploadPackingCtrl</members>
+        <members>Test_RTV_Order_UploadSellingPrice</members>
+        <members>Test_RTV_POSDataController</members>
+        <members>Test_RTV_RP_Report_ShipToWhiteList</members>
+        <members>Test_RTV_RP_UploadSKUBudget</members>
+        <members>Test_RTV_RP_UploadWholesaleBudget</members>
+        <members>Test_RTV_Sch_DeleteTemporaryRecord</members>
+        <members>Test_RTV_Sch_SKU_KPI</members>
+        <members>Test_RTV_SummaryCtrl</members>
+        <members>Test_RTV_SummaryCtrl_DTC</members>
+        <members>Test_RTV_Summary_ClearData</members>
+        <members>Test_RTV_Summary_Inbound</members>
+        <members>Test_RTV_Summary_SellingPrice</members>
+        <members>Test_RTV_UploadRPWhiteList</members>
+        <members>Test_RTV_UploadRPWhiteListCtrlForSummary</members>
+        <members>Test_RTV_UploadStoreListController</members>
+        <members>Test_Trigger_RMS_Access_DEF_Summary</members>
+        <members>Test_Trigger_RMS_Access_DEF_Summary_DTC</members>
+        <members>Test_Trigger_RMS_Access_Order_DTC</members>
+        <members>Test_Trigger_RMS_Access_POSData</members>
+        <members>Test_Trigger_RMS_Access_RP_SkuBudget</members>
+        <members>Test_Trigger_RMS_Access_Summary</members>
+        <members>Test_Trigger_RMS_Access_SummaryBudget</members>
+        <members>Test_Trigger_RMS_Access_Summary_DTC</members>
+        <members>Test_Trigger_RMS_Baozun_Seeding</members>
+        <members>Test_Trigger_RMS_DEF_Summary</members>
+        <members>Test_Trigger_RMS_DEF_Summary_DTC</members>
+        <members>Test_Trigger_RMS_DEF_Summary_KPI</members>
+        <members>Test_Trigger_RMS_Defective</members>
+        <members>Test_Trigger_RMS_OrderInsp_Total</members>
+        <members>Test_Trigger_RMS_OrderItem_ComputePrice</members>
+        <members>Test_Trigger_RMS_OrderItem_DEF_AddDetail</members>
+        <members>Test_Trigger_RMS_OrderItem_RecordType</members>
+        <members>Test_Trigger_RMS_OrderItem_Total</members>
+        <members>Test_Trigger_RMS_OrderItem_TotalBudget</members>
+        <members>Test_Trigger_RMS_OrderLF_Total</members>
+        <members>Test_Trigger_RMS_Order_CurSta_QTY</members>
+        <members>Test_Trigger_RMS_Order_DEFDetail_Total</members>
+        <members>Test_Trigger_RMS_Order_DTC_PostLF</members>
+        <members>Test_Trigger_RMS_Order_DTC_Summary_KPI</members>
+        <members>Test_Trigger_RMS_Order_Date_Compute</members>
+        <members>Test_Trigger_RMS_Order_KPI</members>
+        <members>Test_Trigger_RMS_Order_PostLF</members>
+        <members>Test_Trigger_RMS_Order_SaveCustomerInfo</members>
+        <members>Test_Trigger_RMS_Order_StatusChange</members>
+        <members>Test_Trigger_RMS_Order_StatusChange_DEF</members>
+        <members>Test_Trigger_RMS_Order_Total</members>
+        <members>Test_Trigger_RMS_Order_UnDeleted</members>
+        <members>Test_Trigger_RMS_Owner_AccountGroup</members>
+        <members>Test_Trigger_RMS_Owner_SoldTo</members>
+        <members>Test_Trigger_RMS_RP_Off_Policy</members>
+        <members>Test_Trigger_RMS_RP_SummaryBudget_Total</members>
+        <members>Test_Trigger_RMS_Summary_Date_Comp_DTC</members>
+        <members>Test_Trigger_RMS_Summary_Date_Compute</members>
+        <members>Test_Trigger_RMS_Summary_InspApproval</members>
+        <members>Test_Trigger_RMS_Summary_Ready_PostLF</members>
+        <members>Test_Trigger_RMS_Summary_StatusChange</members>
+        <members>Test_Trigger_RMS_Summary_Total</members>
+        <members>Test_Trigger_RTV_ContentDocument</members>
+        <members>Test_Trigger_RTV_POS_Data_AuthCodeChange</members>
+        <members>Test_Trigger_RTV_Program_InitRebuy</members>
+        <name>ApexClass</name>
+    </types>
+    <!-- Dashboard -->
+    <types>
+        <members>RMSOnlyInConverse/HPpXIDRlXfvjfPYuMGydCugYqiSZBF</members>
+        <name>Dashboard</name>
+    </types>
+    <!-- email (Email Template) -->
+    <types>
+        <members>Converse_RMS/RTV_DEF_Order_Apprpval_CS</members>
+        <members>Converse_RMS/RTV_DEF_Order_Apprpval_WSL</members>
+        <members>Converse_RMS/RTV_DEF_Order_Insp_Approval</members>
+        <members>Converse_RMS/RTV_DEF_Order_PTLF</members>
+        <members>Converse_RMS/RTV_DEF_Order_Reject_CS</members>
+        <members>Converse_RMS/RTV_DEF_Order_Reject_WSL</members>
+        <members>Converse_RMS/RTV_DEF_Outbound_Approve</members>
+        <members>Converse_RMS/RTV_DEF_Program_Created</members>
+        <members>Converse_RMS/RTV_DEF_Program_Off_Policy</members>
+        <members>Converse_RMS/RTV_DEF_Summary_Completed</members>
+        <members>Converse_RMS/RTV_DEF_Summary_Create</members>
+        <members>Converse_RMS/RTV_DEF_Summary_Inbound</members>
+        
+        <members>Converse_RMS/RTV_DTC_DEF_Order_Completed</members>
+        <members>Converse_RMS/RTV_DTC_DEF_Order_Insp_Approved</members>
+        <members>Converse_RMS/RTV_DTC_DEF_Order_Insp_Reject</members>
+        <members>Converse_RMS/RTV_DTC_DEF_Order_Insp_Submit</members>
+        <members>Converse_RMS/RTV_DTC_DEF_Order_PTLF</members>
+        <members>Converse_RMS/RTV_DTC_DEF_Summary_Create</members>
+        <members>Converse_RMS/RTV_DTC_Order_Completed</members>
+        <members>Converse_RMS/RTV_DTC_Order_Insp_Approved</members>
+        <members>Converse_RMS/RTV_DTC_Order_Insp_Reject</members>
+        <members>Converse_RMS/RTV_DTC_Order_Insp_Submit</members>
+        <members>Converse_RMS/RTV_DTC_Order_PTLF</members>
+        <members>Converse_RMS/RTV_DTC_POS_Data_Create</members>
+        <members>Converse_RMS/RTV_DTC_Summary_Create</members>
+        
+        <members>Converse_RMS/RTV_Program_Completed</members>
+        <members>Converse_RMS/RTV_Program_Off_Policy</members>
+        <members>Converse_RMS/RTV_Summary_Apprpval_CS</members>
+        <members>Converse_RMS/RTV_Summary_Apprpval_WSL</members>
+        <members>Converse_RMS/RTV_Summary_Completed</members>
+        <members>Converse_RMS/RTV_Summary_Create</members>
+        <members>Converse_RMS/RTV_Summary_Inbound</members>
+        <members>Converse_RMS/RTV_Summary_Insp_Approval</members>
+        <members>Converse_RMS/RTV_Summary_PTLF</members>
+        <members>Converse_RMS/RTV_Summary_Ready</members>
+        <members>Converse_RMS/RTV_Summary_Reject_CS</members>
+        <members>Converse_RMS/RTV_Summary_Reject_WSL</members>
+        <name>EmailTemplate</name>
+    </types>
+    <!-- flexipages (Lighting Pages) -->
+    <types>
+        <members>RMS_Account_Group_Record_Page</members>
+        <members>RMS_Help</members>
+        <members>RMS_Home</members>
+        <members>RMS_Product_Record_Page</members>
+        <members>RMS_Ship_To_Record_Page</members>
+        <members>RMS_Sold_To_Record_Page</members>
+        <members>RTV_Baozun_Seeding_Record_Page</members>
+        <members>RTV_Baozun_Seeding_Record_Page1</members>
+        <members>RTV_DEF_Summary_DTC_Record_Page</members>
+        <members>RTV_DEF_Summary_Record_Page</members>
+        <members>RTV_Defective_Record_Page</members>
+        <members>RTV_LF_Order_Record_Page</members>
+        <members>RTV_Order_Inspection_Record_Page</members>
+        <members>RTV_Order_Item_Record_Page</members>
+        <members>RTV_Order_Record_Page</members>
+        <members>RTV_POS_Data_Record_Page</members>
+        <members>RTV_Program_Record_Page</members>
+        <members>RTV_RP_SKU_Budget_Record_Page</members>
+        <members>RTV_RP_Ship_To_Record_Page</members>
+        <members>RTV_RP_Summary_Budget_Record_Page</members>
+        <members>RTV_Summary_DTC_Record_Page</members>
+        <members>RTV_Summary_Record_Page</members>
+        <name>FlexiPage</name>
+    </types>
+    <!-- layouts -->
+    <types>
+        <!-- 注释内容为不需要的代码：-->
+        <members>ContentVersion-General</members>
+        <!-- <members>RMS_APPACC_SellingPrice__c-RMS APPACC SellingPrice Layout</members> -->
+        <members>RMS_Account_Group__c-Empty</members>
+        <members>RMS_Account_Group__c-Normal</members>
+        <members>RMS_CFS__c-RMS CFS Layout</members>
+        <members>RMS_FTW_Core_List__c-FTW Core List Layout</members>
+        <!-- <members>RMS_FTW_SellingPrice__c-RMS FTW SellingPrice Layout</members> -->
+        <members>RMS_Help__c-RMS Help Layout</members>
+        <members>RMS_Product__c-Empty</members>
+        <members>RMS_Product__c-Normal</members>
+        <members>RMS_Product__c-Normal%28All%29</members>
+        <members>RMS_SP_Season_Code__c-RMS SP Season Code Layout</members>
+        <members>RMS_Ship_To__c-Empty</members>
+        <members>RMS_Ship_To__c-Normal</members>
+        <members>RMS_Sold_To__c-Empty</members>
+        <members>RMS_Sold_To__c-Normal</members>
+        <members>RMS_TradingTerm__c-RMS TradingTerm Layout</members>
+        <members>RMS_US_Size__c-US Size Layout</members>
+        <members>RTV_BaoZun_Seeding__c-RTV Baozun Seeding Layout In Process</members>
+        <members>RTV_BaoZun_Seeding__c-RTV Baozun Seeding Layout Pending</members>
+        <members>RTV_DEF_Expected_Result__c-RTV DEF Expected Result Layout</members>
+        <members>RTV_DEF_Summary__c-DTC</members>
+        <members>RTV_DEF_Summary__c-Normal</members>
+        <members>RTV_Defective__c-RTV Defective Off Policy</members>
+        <members>RTV_Defective__c-RTV Defective Ready</members>
+        <members>RTV_LF_Order__c-Normal</members>
+        <members>RTV_Log__c-Log Layout</members>
+        <members>RTV_Order_Inspection__c-Normal</members>
+        <members>RTV_Order_Item_DEF_Detail__c-Defective</members>
+        <members>RTV_Order_Item__c-Baozun Seeding</members>
+        <members>RTV_Order_Item__c-DTC</members>
+        <members>RTV_Order_Item__c-DTC Defective</members>
+        <members>RTV_Order_Item__c-Defective</members>
+        <members>RTV_Order_Item__c-Defective With Price</members>
+        <members>RTV_Order_Item__c-Takeback</members>
+        <members>RTV_Order_Item__c-Takeback With Price</members>
+        <members>RTV_Order_Packing__c-Normal</members>
+        <members>RTV_Order__c-DTC Defective Completed</members>
+        <members>RTV_Order__c-DTC Defective Delivered</members>
+        <members>RTV_Order__c-DTC Defective Inbound</members>
+        <members>RTV_Order__c-DTC Defective Insp Confirmed</members>
+        <members>RTV_Order__c-DTC Defective Insp Confirmed For LF</members>
+        <members>RTV_Order__c-DTC Defective Insp Wait Approval</members>
+        <members>RTV_Order__c-DTC Defective Inspected</members>
+        <members>RTV_Order__c-DTC Defective Inspected For LF</members>
+        <members>RTV_Order__c-DTC Defective Post LF</members>
+        <members>RTV_Order__c-DTC Defective Ready</members>
+        <members>RTV_Order__c-DTC Takeback Completed</members>
+        <members>RTV_Order__c-DTC Takeback Delivered</members>
+        <members>RTV_Order__c-DTC Takeback Inbound</members>
+        <members>RTV_Order__c-DTC Takeback Insp Confirmed</members>
+        <members>RTV_Order__c-DTC Takeback Insp Confirmed For LF</members>
+        <members>RTV_Order__c-DTC Takeback Insp Wait Approval</members>
+        <members>RTV_Order__c-DTC Takeback Inspected</members>
+        <members>RTV_Order__c-DTC Takeback Inspected For LF</members>
+        <members>RTV_Order__c-DTC Takeback Post LF</members>
+        <members>RTV_Order__c-DTC Takeback Ready</members>
+        <members>RTV_Order__c-RTV Baozun Order</members>
+        <members>RTV_Order__c-RTV Baozun Order Inbound</members>
+        <members>RTV_Order__c-RTV Defective Completed</members>
+        <members>RTV_Order__c-RTV Defective Delivered</members>
+        <members>RTV_Order__c-RTV Defective Inbound</members>
+        <members>RTV_Order__c-RTV Defective Insp Confirmed</members>
+        <members>RTV_Order__c-RTV Defective Insp Confirmed For LF</members>
+        <members>RTV_Order__c-RTV Defective Insp Wait Approval</members>
+        <members>RTV_Order__c-RTV Defective Inspected</members>
+        <members>RTV_Order__c-RTV Defective Inspected For LF</members>
+        <members>RTV_Order__c-RTV Defective Post LF</members>
+        <members>RTV_Order__c-RTV Defective Ready</members>
+        <members>RTV_Order__c-Remove</members>
+        <members>RTV_Order__c-WSL Takeback Completed</members>
+        <members>RTV_Order__c-WSL Takeback Delivered</members>
+        <members>RTV_Order__c-WSL Takeback Inbound</members>
+        <members>RTV_Order__c-WSL Takeback Insp Confirmed</members>
+        <members>RTV_Order__c-WSL Takeback Insp Confirmed For LF</members>
+        <members>RTV_Order__c-WSL Takeback Insp Wait Approval</members>
+        <members>RTV_Order__c-WSL Takeback Inspected</members>
+        <members>RTV_Order__c-WSL Takeback Inspected For LF</members>
+        <members>RTV_Order__c-WSL Takeback Post LF</members>
+        <members>RTV_Order__c-WSL Takeback Post LF readonly</members>
+        <members>RTV_Order__c-WSL Takeback Ready</members>
+        <members>RTV_Order__c-WSL Takeback Ready -CanPostLF</members>
+        <members>RTV_POS_Data__c-Completed</members>
+        <members>RTV_POS_Data__c-Pending</members>
+        <members>RTV_POS_Item__c-RTV POS Item Layout</members>
+        <members>RTV_Program__c-CFS DTC Takeback</members>
+        <members>RTV_Program__c-CFS_DTC_Takeback_Off_Policy</members>
+        <members>RTV_Program__c-Digital DTC Takeback</members>
+        <members>RTV_Program__c-Digital_DTC_Takeback_Off_Policy</members>
+        <members>RTV_Program__c-Discount</members>
+        <members>RTV_Program__c-Discount RP Removed</members>
+        <members>RTV_Program__c-Discount_Off_Policy</members>
+        <members>RTV_Program__c-Discount_Off_Policy%28Clear%29</members>
+        <members>RTV_Program__c-Empty</members>
+        <members>RTV_Program__c-Full</members>
+        <members>RTV_Program__c-Full RP Removed</members>
+        <members>RTV_Program__c-Full_Off_Policy</members>
+        <members>RTV_Program__c-Full_Off_Policy%28Clear%29</members>
+        <members>RTV_Program__c-Gold Full</members>
+        <members>RTV_Program__c-Gold_Full_Off_Policy</members>
+        <members>RTV_Program__c-Gold_Full_Off_Policy%28Clear%29</members>
+        <members>RTV_RP_SKU_Budget__c-RP SKU Budget</members>
+        <members>RTV_RP_Ship_To__c-Normal</members>
+        <members>RTV_RP_Summary_Budget__c-Normal</members>
+        <members>RTV_SKU_KPI__c-RTV SKU KPI Layout</members>
+        <members>RTV_Summary__c-DTC Tackback Remove</members>
+        <members>RTV_Summary__c-DTC Takeback Post LF</members>
+        <members>RTV_Summary__c-DTC Takeback Ready</members>
+        <members>RTV_Summary__c-Remove</members>
+        <members>RTV_Summary__c-WSL Takeback Pending</members>
+        <members>RTV_Summary__c-WSL Takeback Pending Edit</members>
+        <members>RTV_Summary__c-WSL Takeback Post LF</members>
+        <members>RTV_Summary__c-WSL Takeback Ready</members>
+        <members>RTV_Summary__c-WSL Takeback Ready Edit</members>
+        <members>RTV_Summary__c-WSL Takeback Ready For ShipTo</members>
+        <name>Layout</name>
+    </types>
+    <!-- objects -->
+    <types>
+        <!-- 注释内容为不需要的代码：-->
+        <members>ConverseRMS__c</members>
+        <!-- <members>RMS_APPACC_SellingPrice__c</members> -->
+        <members>RMS_Account_Group__c</members>
+        <members>RMS_CFS__c</members>
+        <members>RMS_FTW_Core_List__c</members>
+        <!-- <members>RMS_FTW_SellingPrice__c</members> -->
+        <members>RMS_Help__c</members>
+        <members>RMS_Product__c</members>
+        <members>RMS_SP_Season_Code__c</members>
+        <!-- <members>RMS_SellingPrice__b</members> -->
+        <members>RTV_SellingPrices__b</members>
+        <!-- <members>RMS_SellingPrices__b</members> -->
+        <members>RMS_Ship_To__c</members>
+        <members>RMS_Sold_To__c</members>
+        <members>RMS_TradingTerm__c</members>
+        <members>RMS_US_Size__c</members>
+        <members>RTV_BaoZun_Seeding__c</members>
+        <members>RTV_DEF_Expected_Result__c</members>
+        <members>RTV_DEF_Summary__c</members>
+        <members>RTV_Defective__c</members>
+        <members>RTV_LF_Order__c</members>
+        <members>RTV_Log__c</members>
+        <members>RTV_Order_Inspection__c</members>
+        <members>RTV_Order_Item_DEF_Detail__c</members>
+        <members>RTV_Order_Item__c</members>
+        <members>RTV_Order_Packing__c</members>
+        <members>RTV_Order__c</members>
+        <members>RTV_POS_Data__c</members>
+        <members>RTV_POS_Item__c</members>
+        <members>RTV_Program__c</members>
+        <members>RTV_RP_SKU_Budget__c</members>
+        <members>RTV_RP_Ship_To__c</members>
+        <members>RTV_RP_Summary_Budget__c</members>
+        <members>RTV_SKU_KPI__c</members>
+        <members>RTV_Summary__c</members>
+        <name>CustomObject</name>
+    </types>
+    <!-- pages (Visualforce Pages) -->
+    <types>
+        <members>RMS_Closerefreshparent</members>
+        <members>RMS_Home_MySubmitApproval</members>
+        <members>RMS_Redirect_To_Report</members>
+        <members>RTV_Baozun_Inbound</members>
+        <members>RTV_Baozun_Order_Inbound</members>
+        <members>RTV_DEF_OffPolicy_Export</members>
+        <members>RTV_DEF_Summary</members>
+        <members>RTV_DEF_Summary_DTC</members>
+        <members>RTV_DEF_Summary_Inbound</members>
+        <members>RTV_DEF_Summary_MassCreate</members>
+        <members>RTV_DTC_DEF_Summary_Inbound</members>
+        <members>RTV_DTC_DEF_Upload_Reason</members>
+        <members>RTV_DTC_Summary_Inbound</members>
+        <members>RTV_Defective_ReportDeliveryAuth</members>
+        <members>RTV_Defective_ReportPackingList</members>
+        <members>RTV_Defective_ReportPacking_A</members>
+        <members>RTV_Defective_ReportPacking_F</members>
+        <members>RTV_Defective_Report_Inspect</members>
+        <members>RTV_Defective_SellingPrice</members>
+        <members>RTV_Defective_UploadDelivery</members>
+        <members>RTV_Defective_UploadPackingList</members>
+        <members>RTV_Defective_UploadSellingPrice</members>
+        <members>RTV_Defective_Upload_Inspect</members>
+        <members>RTV_Defective_Upload_Inspect_DTC</members>
+        <members>RTV_DeliveryPDF_Export</members>
+        <members>RTV_Help_Text</members>
+        <members>RTV_OffPolicy_Export</members>
+        <members>RTV_Order_ClearData</members>
+        <!-- <members>RTV_Order_Inbound</members> 不再使用的功能 -->
+        <members>RTV_Order_ReportAuthCode</members>
+        <members>RTV_Order_ReportCustomerInfo</members>
+        <members>RTV_Order_ReportDeliveryAuth</members>
+        <!-- <members>RTV_Order_ReportDeliveryAuthItem</members> 不再使用的功能 -->
+        <members>RTV_Order_ReportPackingList</members>
+        <!-- <members>RTV_Order_Report_Inspect</members> 不再使用的功能 -->
+        <!-- <members>RTV_Order_SellingPrice</members> 不再使用的功能 -->
+        <members>RTV_Order_UploadCustomerInfo</members>
+        <members>RTV_Order_UploadDelivery</members>
+        <members>RTV_Order_UploadFOB</members>
+        <members>RTV_Order_UploadInspect</members>
+        <members>RTV_Order_UploadInspect_DTC</members>
+        <members>RTV_Order_UploadPackingList</members>
+        <members>RTV_Order_UploadSellingPrice</members>
+        <members>RTV_POS_Data_Delete</members>
+        <members>RTV_RP_Report_ShipToWhiteList</members>
+        <members>RTV_RP_UploadSKUBudget</members>
+        <members>RTV_RP_UploadWholesaleBudget</members>
+        <members>RTV_Summary</members>
+        <members>RTV_Summary_ClearData</members>
+        <members>RTV_Summary_DTC</members>
+        <members>RTV_Summary_Inbound</members>
+        <members>RTV_Summary_SellingPrice</members>
+        <members>RTV_UploadRPWhiteList</members>
+        <members>RTV_UploadRPWhiteListForSummary</members>
+        <members>RTV_UploadStoreList</members>
+        <name>ApexPage</name>
+    </types>
+    <!-- pathAssistant (lighting页面中这样的组件[...>...>...]) -->
+    <types>
+        <members>RTV_Baozun_Seeding_InProcess</members>
+        <members>RTV_Baozun_Seeding_Pending</members>
+        <members>RTV_DEF_Order_Completed</members>
+        <members>RTV_DEF_Order_Delivered</members>
+        <members>RTV_DEF_Order_Inbound</members>
+        <members>RTV_DEF_Order_Insp_Confirmed</members>
+        <members>RTV_DEF_Order_Insp_Wait_Approval</members>
+        <members>RTV_DEF_Order_Inspected</members>
+        <members>RTV_DEF_Order_Post_LF</members>
+        <members>RTV_DEF_Order_Ready</members>
+        <members>RTV_DEF_Program_Off_Policy</members>
+        <members>RTV_DEF_Program_Pending</members>
+        <members>RTV_DEF_Summary_DTC</members>
+        <members>RTV_DEF_Summary_Normal</members>
+        <members>RTV_Order_DTC_Defective_Completed</members>
+        <members>RTV_Order_DTC_Defective_Delivered</members>
+        <members>RTV_Order_DTC_Defective_Inbound</members>
+        <members>RTV_Order_DTC_Defective_Insp_Confirmed</members>
+        <members>RTV_Order_DTC_Defective_Insp_Wait_Approv</members>
+        <members>RTV_Order_DTC_Defective_Inspected</members>
+        <members>RTV_Order_DTC_Defective_Post_LF</members>
+        <members>RTV_Order_DTC_Defective_Ready</members>
+        <members>RTV_Order_DTC_Takeback_Completed</members>
+        <members>RTV_Order_DTC_Takeback_Delivered</members>
+        <members>RTV_Order_DTC_Takeback_Inbound</members>
+        <members>RTV_Order_DTC_Takeback_Insp_Confirmed</members>
+        <members>RTV_Order_DTC_Takeback_Insp_Wait_Approva</members>
+        <members>RTV_Order_DTC_Takeback_Inspected</members>
+        <members>RTV_Order_DTC_Takeback_Post_LF</members>
+        <members>RTV_Order_DTC_Takeback_Ready</members>
+        <members>RTV_Order_Remove</members>
+        <members>RTV_Order_WSL_Takeback_Completed</members>
+        <members>RTV_Order_WSL_Takeback_Delivered</members>
+        <members>RTV_Order_WSL_Takeback_Inbound</members>
+        <members>RTV_Order_WSL_Takeback_Insp_Confirmed</members>
+        <members>RTV_Order_WSL_Takeback_Insp_Wait_Approva</members>
+        <members>RTV_Order_WSL_Takeback_Inspected</members>
+        <members>RTV_Order_WSL_Takeback_Post_LF</members>
+        <members>RTV_Order_WSL_Takeback_Ready</members>
+        <members>RTV_Program_CFS_DTC_Tackback_Off_Policy</members>
+        <members>RTV_Program_CFS_DTC_Tackback</members>
+        <members>RTV_Program_Digital_DTC_Tackback</members>
+        <members>RTV_Program_Digt_DTC_Tackback_Off_Policy</members>
+        <members>RTV_Program_Discount_Remove</members>
+        <members>RTV_Program_Discount_Takeback_Off_Policy</members>
+        <members>RTV_Program_Discount_Takeback</members>
+        <members>RTV_Program_Full_Remove</members>
+        <members>RTV_Program_Full_Takeback_Off_Policy</members>
+        <members>RTV_Program_Full_Takeback</members>
+        <members>RTV_Program_Gold_Store_Off_Policy</members>
+        <members>RTV_Program_Gold_Store</members>
+        <members>RTV_Summary_DTC_Takeback_Post_LF</members>
+        <members>RTV_Summary_DTC_Takeback_Ready</members>
+        <members>RTV_Summary_DTC_Takeback_Remove</members>
+        <members>RTV_Summary_Removed</members>
+        <members>RTV_Summary_WSL_Takeback_Pending_To_WSL</members>
+        <members>RTV_Summary_WSL_Takeback_Pending</members>
+        <members>RTV_Summary_WSL_Takeback_Post_LF</members>
+        <members>RTV_Summary_WSL_Takeback_Ready_To_WSL</members>
+        <members>RTV_Summary_WSL_Takeback_Ready</members>
+        <name>PathAssistant</name>
+    </types>
+    <!-- profiles -->
+    <!-- (需要和object,layout,app,tab,class,page一起部署) -->
+    <types>
+        <members>Admin</members>
+        <members>RMS Admin</members>
+        <members>RMS CFS Logistic Confirm</members>
+        <members>RMS CFS Planner</members>
+        <members>RMS CFS Store</members>
+        <members>RMS CS</members>
+        <members>RMS CV Office User</members>
+        <members>RMS DIG Logistic Confirm</members>
+        <members>RMS DIG Planner</members>
+        <members>RMS DIG User</members>
+        <members>RMS IDC LF</members>
+        <members>RMS WSL DTC PLANNER</members>
+        <members>RMS WSL HQ</members>
+        <members>RMS WSL Reg Branch</members>
+        <members>RMS WSL BP</members>
+        <members>RMS WSL Ship To</members>
+        <members>RMS WSL Ship To -Only DEF</members>
+        <members>RMS WSL Sold To</members>
+        <name>Profile</name>
+    </types>
+    <!--queues (用户Team) -->
+    <types>
+        <members>RMS_CFS_Logistic</members>
+        <members>RMS_CS_Team</members>
+        <members>RMS_Digital_Logistic</members>
+        <name>Queue</name>
+    </types>
+    <!-- Public Group-->
+    <types>
+        <members>RMS_WSL_TB_Team</members>
+        <name>Group</name>
+    </types>
+    <!-- quickActions -->
+    <types>
+        <members>RTV_Defective__c.Off_Policy</members>
+        <members>RTV_Defective__c.Refresh</members>
+        <members>RTV_Order__c.Inbound</members>
+        <members>RTV_Order__c.POST_TO_LF</members>
+        <members>RTV_Order__c.POST_TO_LF_YY</members>
+        <members>RTV_Program__c.Completed</members>
+        <members>RTV_Program__c.Kick_Off</members>
+        <members>RTV_Program__c.Off_Policy</members>
+        <members>RTV_Program__c.Remove</members>
+        <members>RTV_Summary__c.Create</members>
+        <members>RTV_Summary__c.Remove</members>
+        <members>RTV_Summary__c.Submit_Kick_Off</members>
+        <members>RTV_Summary__c.Submit_POST_to_LF</members>
+        <name>QuickAction</name>
+    </types>
+    <!-- Report -->
+    <types>
+        <!-- RMSOnlyCS -->
+        <members>RMSOnlyCS/DEF_SAP_CSV</members>
+        <members>RMSOnlyCS/RTV_DEF_Summary_Selling_Price_From_TB</members>
+        <members>RMSOnlyCS/RTV_DEF_Summary_Selling_Price_Mgl</members>
+        <members>RMSOnlyCS/RTV_Inspection_A_Report</members>
+        <members>RMSOnlyCS/RTV_Inspection_B_Report</members>
+        <members>RMSOnlyCS/RTV_Mapping_Selling_Price_Report_4WH</members>
+        <members>RMSOnlyCS/RTV_SAP_A</members>
+        <members>RMSOnlyCS/RTV_SAP_B</members>
+        <members>RMSOnlyCS/RTV_SAP_D</members>
+        <members>RMSOnlyCS/RTV_Summary_Selling_Price</members>
+        <!-- RMSOnlyDTC -->
+        <members>RMSOnlyDTC/RMS_DTC_DEF_Summary_KPI_Report</members>
+        <members>RMSOnlyDTC/RMS_DTC_Order_KPI_Report</members>
+        <members>RMSOnlyDTC/RMS_DTC_Program_Sku_Budget</members>
+        <members>RMSOnlyDTC/RMS_DTC_Summary_KPI_Report</members>
+        <!-- RMSOnlyDTCLF -->
+        <members>RMSOnlyDTCLF/RMS_DTC_DEF_Packing_List</members>
+        <members>RMSOnlyDTCLF/RMS_DTC_DEF_Summary_Delivery_Item</members>
+        <members>RMSOnlyDTCLF/RMS_DTC_DEF_Summary_Inspection</members>
+        <members>RMSOnlyDTCLF/RMS_DTC_DEF_Summary_Packing_List</members>
+        <members>RMSOnlyDTCLF/RMS_DTC_PackingList_Report1</members>
+        <members>RMSOnlyDTCLF/RMS_DTC_Summary_Delivery_Item</members>
+        <members>RMSOnlyDTCLF/RMS_DTC_Summary_Inspection</members>
+        <members>RMSOnlyDTCLF/RTV_Baozun_Seeding_Report</members>
+        <!-- RMSOnlyInConverse -->
+        <members>RMSOnlyInConverse/RTV_DEF_ProgramAC_Report</members>
+        <members>RMSOnlyInConverse/RTV_DEF_ProgramFW_Report</members>
+        <!-- RMSOnlyInConverseWSL(TB) -->
+        <members>RMSOnlyInConverseWSLTB/RTV_Packinglist_Item_Report_kcv</members>
+        <members>RMSOnlyInConverseWSLTB/RTV_Program_Sku_Budget_mno</members>
+        <members>RMSOnlyInConverseWSLTB/RTV_Summary_Customer_Information_Report</members>
+        <members>RMSOnlyInConverseWSLTB/RTV_Summary_Sku_Budget_hgi</members>
+        <!-- RMSPublic -->
+        <members>RMSPublic/RTV_DEF_Inspection_by_Month</members>
+        <members>RMSPublic/RTV_DEF_Summary_Delivery_Item_A</members>
+        <members>RMSPublic/RTV_DEF_Summary_Inspection</members>
+        <members>RMSPublic/RTV_DEF_Summary_Packing_List1</members>
+        <!-- RMSPublic(TB) -->
+        <members>RMSPublicTB/RTV_Inspection_Report_harry_pAs</members>
+        <members>RMSPublicTB/RTV_Inspection_Report_vfd</members>
+        <members>RMSPublicTB/RTV_PackingList_Report_WhD</members>
+        <members>RMSPublicTB/RTV_Summary_Delivery_Item</members>
+        <members>RMSPublicTB/RTV_Summary_Inspection</members>
+        <!-- RMSWSLKPIReport -->
+        <members>RMSWSLKPIReport/RTV_DEF_Summary_KPI_Report_Kaa</members>
+        <members>RMSWSLKPIReport/RTV_Order_KPI_Report_Lof</members>
+        <members>RMSWSLKPIReport/RTV_Summary_KPI_Report_e9m</members>
+        <members>RMSWSLKPIReport/SKU_KPI_Report</members>
+        <name>Report</name>
+    </types>
+    <!-- ReportType -->
+    <types>
+        <members>DEF_SAP_CSV</members>
+        <members>RMS_DTC_DEF_Inspection</members>
+        <members>RMS_DTC_DEF_PackingList</members>
+        <members>RMS_DTC_Order_KPI</members>
+        <members>RMS_DTC_PackingList</members>
+        <members>RMS_DTC_Summary_Inspection</members>
+        <members>RMS_DTC_Summary_KPI</members>
+        <members>RMS_SAP_CSV</members>
+        <members>RTV_Baozun_Seeding</members>
+        <members>RTV_DEF_Delivery_Item</members>
+        <members>RTV_DEF_Inspection</members>
+        <members>RTV_DEF_Mapping_Selling_Price</members>
+        <members>RTV_DEF_PackingList</members>
+        <members>RTV_DEF_Program_AC</members>
+        <members>RTV_DEF_Program_FW</members>
+        <members>RTV_DEF_Summary_KPI</members>
+        <members>RTV_Inspection</members>
+        <members>RTV_Mapping_Selling_Price</members>
+        <members>RTV_PackingList</members>
+        <members>RTV_Packinglist_Item</members>
+        <members>RTV_Program_Sku_Budget</members>
+        <members>RTV_SAP_A_CSV</members>
+        <members>RTV_SAP_B_CSV</members>
+        <members>RTV_SAP_D_CSV</members>
+        <members>RTV_SKU_KPI</members>
+        <members>RTV_Summary_Delivery_Item</members>
+        <members>RTV_Summary_Inspection</members>
+        <members>RTV_Summary_KPI</members>
+        <members>RTV_Summary_Orders</members>
+        <name>ReportType</name>
+    </types>
+    <!-- 静态资源 -->
+    <types>
+        <members>Barcode</members>
+        <members>jquery</members>
+        <name>StaticResource</name>
+    </types>
+    <!-- roles -->
+    <types>
+        <members>RMS_Admin</members>
+        <members>RMS_CFS_Logistic_Confirm</members>
+        <members>RMS_CFS_Planner</members>
+        <members>RMS_CFS_Store</members>
+        <members>RMS_Converse</members>
+        <members>RMS_CS</members>
+        <members>RMS_CV_Officer</members>
+        <members>RMS_DIG_Logistic_Confirm</members>
+        <members>RMS_DIG_Planner</members>
+        <members>RMS_DIG_User</members>
+        <members>RMS_DTC</members>
+        <members>RMS_IDC_LF</members>
+        <members>RMS_WSL</members>
+        <members>RMS_WSL_BP</members>
+        <members>RMS_WSL_Belle</members>
+        <members>RMS_WSL_Belle_Reg1</members>
+        <members>RMS_WSL_Belle_Sold_to</members>
+        <members>RMS_WSL_Belle_Ship_to</members>
+        <members>RMS_WSL_YY_HQ</members>
+        <members>RMS_WSL_YY_Reg1</members>
+        <members>RMS_WSL_YY_Sold_to</members>
+        <members>RMS_WSL_YY_Ship_to</members>
+        <members>RMS_WSL_DTC_PLANNER</members>
+        <members>RMS_WSL</members>
+        <name>Role</name>
+    </types>
+    <!-- Sharing Rules -->
+    <types>
+        <!-- 注释内容为不需要的代码：-->
+        <members>RTV_BaoZun_Seeding__c</members>
+        <members>RTV_DEF_Summary__c</members>
+        <members>RTV_Order__c</members>
+        <members>RTV_POS_Data__c</members>
+        <members>RTV_RP_SKU_Budget__c</members>
+        <members>RTV_RP_Ship_To__c</members>
+        <members>RTV_RP_Summary_Budget__c</members>
+        <members>RTV_SKU_KPI__c</members>
+        <members>RTV_Summary__c</members>
+        <name>SharingRules</name>
+    </types>
+    <!-- Tabs -->
+    <types>
+        <members>RMS_Account_Group__c</members>
+        <members>RMS_FTW_Core_List__c</members>
+        <members>RMS_Product__c</members>
+        <members>RMS_SP_Season_Code__c</members>
+        <members>RMS_Ship_To__c</members>
+        <members>RMS_Sold_To__c</members>
+        <members>RMS_TradingTerm__c</members>
+        <members>RMS_US_Size__c</members>
+        <members>RTV_BaoZun_Seeding__c</members>
+        <members>RTV_DEF_Summary__c</members>
+        <members>RTV_Defective__c</members>
+        <members>RTV_Help</members>
+        <members>RTV_LF_Order__c</members>
+        <members>RTV_Log__c</members>
+        <members>RTV_Order_Item_DEF_Detail__c</members>
+        <members>RTV_Order_Item__c</members>
+        <members>RTV_Order__c</members>
+        <members>RTV_POS_Data__c</members>
+        <members>RTV_Program__c</members>
+        <members>RTV_Summary__c</members>
+        <name>CustomTab</name>
+    </types>
+    <!-- Triggers -->
+    <types>
+        <members>RMS_Access_DEF_Summary</members>
+        <members>RMS_Access_DEF_Summary_DTC</members>
+        <members>RMS_Access_Order_DTC</members>
+        <members>RMS_Access_POSData</members>
+        <members>RMS_Access_RP_SkuBudget</members>
+        <members>RMS_Access_Summary</members>
+        <members>RMS_Access_SummaryBudget</members>
+        <members>RMS_Access_Summary_DTC</members>
+        <members>RMS_Baozun_Seeding</members>
+        <members>RMS_DEF_Summary</members>
+        <members>RMS_DEF_Summary_DTC</members>
+        <members>RMS_DEF_Summary_KPI</members>
+        <members>RMS_Defective</members>
+        <members>RMS_OrderInsp_Total</members>
+        <members>RMS_OrderItem_ComputePrice</members>
+        <members>RMS_OrderItem_DEF_AddDetail</members>
+        <members>RMS_OrderItem_RecordType</members>
+        <members>RMS_OrderItem_Total</members>
+        <members>RMS_OrderItem_TotalBudget</members>
+        <members>RMS_OrderLF_Total</members>
+        <members>RMS_Order_Current_Status_QTY</members>
+        <members>RMS_Order_DEFDetail_Total</members>
+        <members>RMS_Order_DTC_PostLF</members>
+        <members>RMS_Order_DTC_Summary_KPI</members>
+        <members>RMS_Order_Date_Compute</members>
+        <members>RMS_Order_KPI</members>
+        <members>RMS_Order_PostLF</members>
+        <members>RMS_Order_SaveCustomerInfo</members>
+        <members>RMS_Order_StatusChange</members>
+        <members>RMS_Order_StatusChange_DEF</members>
+        <members>RMS_Order_Total</members>
+        <members>RMS_Order_UnDeleted</members>
+        <members>RMS_Owner_AccountGroup</members>
+        <members>RMS_Owner_SoldTo</members>
+        <!-- <members>RMS_RP_Off_Policy</members> -->
+        <members>RMS_RP_Off_Policy_After_DTC</members>
+        <members>RMS_RP_Off_Policy_After_WSL</members>
+        <members>RMS_RP_Off_Policy_Before</members>
+        <members>RMS_RP_SummaryBudget_Total</members>
+        <members>RMS_Summary_Date_Compute</members>
+        <members>RMS_Summary_Date_Compute_DTC</members>
+        <members>RMS_Summary_InspApproval</members>
+        <members>RMS_Summary_Ready_PostLF</members>
+        <members>RMS_Summary_StatusChange</members>
+        <members>RMS_Summary_Total</members>
+        <members>RTV_ContentDocument</members>
+        <members>RTV_POS_Data_AuthCodeChange</members>
+        <members>RTV_Program_InitRebuy</members>
+        <name>ApexTrigger</name>
+    </types>
+    <!-- Workflows -->
+    <types>
+        <members>RTV_BaoZun_Seeding__c</members>
+        <members>RTV_DEF_Summary__c</members>
+        <members>RTV_Defective__c</members>
+        <members>RTV_Order__c</members>
+        <members>RTV_POS_Data__c</members>
+        <members>RTV_Program__c</members>
+        <members>RTV_Summary__c</members>
+        <name>Workflow</name>
+    </types>
+    <!-- 对象翻译 -->
+    <!-- (需要和object一起部署) -->
+    <types>
+        <members>ConverseRMS__c-zh_CN</members>
+        <members>RMS_Account_Group__c-zh_CN</members>
+        <members>RMS_CFS__c-zh_CN</members>
+        <members>RMS_FTW_Core_List__c-zh_CN</members>
+        <members>RMS_Help__c-zh_CN</members>
+        <members>RMS_Product__c-zh_CN</members>
+        <members>RMS_SP_Season_Code__c-zh_CN</members>
+        <members>RMS_Ship_To__c-zh_CN</members>
+        <members>RMS_Sold_To__c-zh_CN</members>
+        <members>RMS_TradingTerm__c-zh_CN</members>
+        <members>RMS_US_Size__c-zh_CN</members>
+        <members>RTV_BaoZun_Seeding__c-zh_CN</members>
+        <members>RTV_DEF_Expected_Result__c-zh_CN</members>
+        <members>RTV_DEF_Summary__c-zh_CN</members>
+        <members>RTV_Defective__c-zh_CN</members>
+        <members>RTV_LF_Order__c-zh_CN</members>
+        <members>RTV_Log__c-zh_CN</members>
+        <members>RTV_Order_Inspection__c-zh_CN</members>
+        <members>RTV_Order_Item_DEF_Detail__c-zh_CN</members>
+        <members>RTV_Order_Item__c-zh_CN</members>
+        <members>RTV_Order_Packing__c-zh_CN</members>
+        <members>RTV_Order__c-zh_CN</members>
+        <members>RTV_POS_Data__c-zh_CN</members>
+        <members>RTV_POS_Item__c-zh_CN</members>
+        <members>RTV_Program__c-zh_CN</members>
+        <members>RTV_RP_SKU_Budget__c-zh_CN</members>
+        <members>RTV_RP_Ship_To__c-zh_CN</members>
+        <members>RTV_RP_Summary_Budget__c-zh_CN</members>
+        <members>RTV_SKU_KPI__c-zh_CN</members>
+        <members>RTV_Summary__c-zh_CN</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <!-- 翻译 -->
+    <!-- (需要和reportType,tab,app一起部署) -->
+    <types>
+        <members>*</members>
+        <name>Translations</name>
+    </types>
+    <!-- 另外以下内容请手动在SalesForce页面上配置 -->
+    <!-- 1.Setup / Custom Settings / ConverseRMS / TaxRate 和 ExRate -->
+    <!-- 2.Setup / Chatter / Feed Tracking -->
+    <!-- 3.Setup / Queue / RMS_CS_Team: 加上CS的用户 -->
+    <!-- 4.SharingRules建议从页面上修改 -->
+    <!-- 5.Workflow建议从页面上修改 -->
+    <!-- 6.Report,Dashboard,Email的文件夹需要在页面上创建和设置Share -->
+</Package>

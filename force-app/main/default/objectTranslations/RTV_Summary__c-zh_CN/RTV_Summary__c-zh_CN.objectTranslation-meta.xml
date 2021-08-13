@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RTV订单汇总</value>
+    </caseValues>
+    <layouts>
+        <layout>DTC Tackback Remove</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Post LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Ready</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Remove</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Pending</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Pending Edit</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Post LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>完成日期</label>
+            <section>Date Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Ready</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Ready Edit</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Ready For ShipTo</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Summary Name --></nameFieldLabel>
+    <quickActions>
+        <label><!-- Create New RTV Order --></label>
+        <name>Create</name>
+    </quickActions>
+    <quickActions>
+        <label>移除</label>
+        <name>Remove</name>
+    </quickActions>
+    <quickActions>
+        <label>正式发行</label>
+        <name>Submit_Kick_Off</name>
+    </quickActions>
+    <quickActions>
+        <label>正式提交申请</label>
+        <name>Submit_POST_to_LF</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- dtc takebake, status = post to LF --></description>
+        <label><!-- DTC Takeback Post LF --></label>
+        <name>DTC_Takeback_Post_LF</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- dtc takeback, status = Ready --></description>
+        <label><!-- DTC Takeback Ready --></label>
+        <name>DTC_Takeback_Ready</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- dtc takeback, status = Remove --></description>
+        <label><!-- DTC Takeback Remove --></label>
+        <name>DTC_Takeback_Remove</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Removed --></description>
+        <label><!-- Remove --></label>
+        <name>Remove</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- wholesale takeback, status = Pending --></description>
+        <label>待集团总部发行</label>
+        <name>WSL_Takeback_Pending</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Summary的Owner转给WSL时 --></description>
+        <label><!-- WSL Takeback Pending To WSL --></label>
+        <name>WSL_Takeback_Pending_To_WSL</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- wholesale takebake, status = post to LF --></description>
+        <label>集团总部正式提交申请</label>
+        <name>WSL_Takeback_Post_LF</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- wholesale takebake, status = Ready --></description>
+        <label>集团总部已发起</label>
+        <name>WSL_Takeback_Ready</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Summary的Owner转给WSL时 --></description>
+        <label><!-- WSL Takeback Ready To WSL --></label>
+        <name>WSL_Takeback_Ready_To_WSL</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- 质检完成后，请不要再更改【预计完成质检日】! --></errorMessage>
+        <name>ExpectedInsDateCanNotChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>RTV订单汇总名不可修改。</errorMessage>
+        <name>NotChangeName</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>请不要提交空白的召回项目，请创建订单并保证申请数量&gt;0</errorMessage>
+        <name>PostLF_Need_Application</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- ClearData --></label>
+        <name>ClearData</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Report_Customer_Info --></label>
+        <name>Report_Customer_Info</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Upload_Customer_Info --></label>
+        <name>Upload_Customer_Info</name>
+    </webLinks>
+</CustomObjectTranslation>

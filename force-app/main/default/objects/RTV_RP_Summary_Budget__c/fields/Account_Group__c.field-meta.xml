@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Group__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Lookup Account Group</description>
+    <externalId>false</externalId>
+    <label>Account Group</label>
+    <referenceTo>RMS_Account_Group__c</referenceTo>
+    <relationshipLabel>RTV RP Summary Budgets</relationshipLabel>
+    <relationshipName>RTV_RP_Summary_Budgets</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

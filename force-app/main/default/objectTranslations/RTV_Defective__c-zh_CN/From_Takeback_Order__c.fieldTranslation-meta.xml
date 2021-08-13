@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This Defective is created from a Takeback order --></help>
+    <label><!-- From Takeback Order --></label>
+    <name>From_Takeback_Order__c</name>
+    <relationshipLabel><!-- RTV DEF Program --></relationshipLabel>
+</CustomFieldTranslation>

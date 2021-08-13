@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Gender Class --></label>
+    <name>Gender_Class__c</name>
+    <picklistValues>
+        <masterLabel>Crib</masterLabel>
+        <translation><!-- Crib --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Infant</masterLabel>
+        <translation><!-- Infant --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Junior</masterLabel>
+        <translation><!-- Junior --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kid</masterLabel>
+        <translation><!-- Kid --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Men</masterLabel>
+        <translation><!-- Men --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unisex</masterLabel>
+        <translation><!-- Unisex --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Women</masterLabel>
+        <translation><!-- Women --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Youth</masterLabel>
+        <translation><!-- Youth --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,106 @@
+<apex:page controller="RTV_Defective_Report_Inspect" 
+    contentType="application/vnd.ms-excel#质检结果.xls" readOnly="True"> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/HTML;charset=UTF-8" />
+    </head>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!results}" var="res" rowClasses="odd,even" border="1">
+            <apex:column value="{!res.BU_2__c}">
+                <apex:facet name="header">类别</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Customer_Abbreviation__c}">
+                <apex:facet name="header">客户简称</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.RTV_Order__r.Sold_To__r.Name}">
+                <apex:facet name="header">soldto</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.RTV_Order__r.Ship_To__r.Name}">
+                <apex:facet name="header">shipto</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Customer_Name__c}">
+                <apex:facet name="header">客户全称</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.RTV_Order__r.Name}">
+                <apex:facet name="header">授权码</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.LF_Order_Auth_Code__c}">
+                <apex:facet name="header">退残编号</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Detail_Number__c}">
+                <apex:facet name="header">序号</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.Material_Code__c}">
+                <apex:facet name="header">MATERIAL</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.SKU_Style__c}">
+                <apex:facet name="header">Style</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.SKU_Color__c}">
+                <apex:facet name="header">Color</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.SKU_Size_US__c}">
+                <apex:facet name="header">尺寸(美码)</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.SKU_Size_Asia__c}">
+                <apex:facet name="header">尺码(亚码)</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.Season_Code_CN__c}">
+                <apex:facet name="header">季节码</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Application_QTY__c}">
+                <apex:facet name="header">申请数量</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Defective_Reason__c}">
+                <apex:facet name="header">退货理由（WSL）</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Defective_Source__c}">
+                <apex:facet name="header">客/原残（WSL）</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Defective_Reason_LF__c}">
+                <apex:facet name="header">退货理由（LF）</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Defective_Source_LF__c}">
+                <apex:facet name="header">客/原残（LF）</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Factory_Code__c}">
+                <apex:facet name="header">工厂代码</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Actual_QTY__c}">
+                <apex:facet name="header">实收数量</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Acceptable_Return_QTY__c}">
+                <apex:facet name="header">可接受退货数量</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Specialcase_DEF_CC__c}">
+                <apex:facet name="header">specialcase退CC</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.DEF_12M_18M__c}">
+                <apex:facet name="header">&gt;12M&lt;18M</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Reject_QTY__c}">
+                <apex:facet name="header">拒收件数</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Reject_Reason__c}">
+                <apex:facet name="header">拒收原因</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.Defective_Box_Code__c}">
+                <apex:facet name="header">箱号</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Code__c}">
+                <apex:facet name="header">代码</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.Application_Remark__c}">
+                <apex:facet name="header">备注</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.Actual_Diff_QTY__c}">
+                <apex:facet name="header">实收差异</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.Selling_Unit_Price__c}">
+                <apex:facet name="header">退货销售单价(CNY/excl.VAT)</apex:facet>
+            </apex:column>
+            <apex:column value="{!res.RTV_Order_Item__r.Selling_Unit_Price_CNY_inV__c}">
+                <apex:facet name="header">退货销售单价(CNY/incl.VAT)</apex:facet>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

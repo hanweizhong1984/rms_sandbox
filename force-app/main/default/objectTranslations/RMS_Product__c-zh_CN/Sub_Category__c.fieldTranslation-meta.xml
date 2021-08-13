@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sub Category --></label>
+    <name>Sub_Category__c</name>
+    <picklistValues>
+        <masterLabel>Backpacks</masterLabel>
+        <translation><!-- Backpacks --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Baseball</masterLabel>
+        <translation><!-- Baseball --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Crews</masterLabel>
+        <translation><!-- Crews --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cross Body</masterLabel>
+        <translation><!-- Cross Body --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dresses</masterLabel>
+        <translation><!-- Dresses --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Duffel/Barrel Bags</masterLabel>
+        <translation><!-- Duffel/Barrel Bags --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Footies</masterLabel>
+        <translation><!-- Footies --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jackets</masterLabel>
+        <translation><!-- Jackets --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No-Show</masterLabel>
+        <translation><!-- No-Show --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pants</masterLabel>
+        <translation><!-- Pants --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Small Cases</masterLabel>
+        <translation><!-- Small Cases --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sweat Shirts</masterLabel>
+        <translation><!-- Sweat Shirts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tees</masterLabel>
+        <translation><!-- Tees --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Totes</masterLabel>
+        <translation><!-- Totes --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

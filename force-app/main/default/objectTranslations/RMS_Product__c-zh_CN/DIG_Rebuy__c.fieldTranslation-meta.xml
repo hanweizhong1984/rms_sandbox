@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>电商 回购黑名单</label>
+    <name>DIG_Rebuy__c</name>
+    <picklistValues>
+        <masterLabel>Rebuy</masterLabel>
+        <translation><!-- Rebuy --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

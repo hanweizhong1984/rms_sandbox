@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending</fullName>
+    <columns>NAME</columns>
+    <columns>Auth_Code__c</columns>
+    <columns>Order_No__c</columns>
+    <columns>Transfer_Time__c</columns>
+    <columns>Owner_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>RTV_POS_Data__c.Pending</value>
+    </filters>
+    <label>Pending</label>
+</ListView>

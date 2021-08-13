@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Unique Key  = order.name + item.Material_Code__c + item.BU_2__c + item.SKU_Size_US__c + item.Season_Code_CN__c --></help>
+    <label><!-- Unique Key --></label>
+    <name>UniqueKey__c</name>
+</CustomFieldTranslation>

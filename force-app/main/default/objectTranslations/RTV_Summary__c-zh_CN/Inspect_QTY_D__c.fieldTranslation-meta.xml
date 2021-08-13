@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>D品检出数量的合计。</help>
+    <label>D品检出数量</label>
+    <name>Inspect_QTY_D__c</name>
+</CustomFieldTranslation>

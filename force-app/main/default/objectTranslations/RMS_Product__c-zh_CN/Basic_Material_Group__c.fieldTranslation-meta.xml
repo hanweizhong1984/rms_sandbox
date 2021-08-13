@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Basic Material Group --></label>
+    <name>Basic_Material_Group__c</name>
+    <picklistValues>
+        <masterLabel>Canvas</masterLabel>
+        <translation><!-- Canvas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cotton Ripstop</masterLabel>
+        <translation><!-- Cotton Ripstop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cotton Twill</masterLabel>
+        <translation><!-- Cotton Twill --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>French Terry</masterLabel>
+        <translation><!-- French Terry --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jersey</masterLabel>
+        <translation><!-- Jersey --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mesh</masterLabel>
+        <translation><!-- Mesh --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nylon Ripstop</masterLabel>
+        <translation><!-- Nylon Ripstop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pique</masterLabel>
+        <translation><!-- Pique --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Polyester Ripstop</masterLabel>
+        <translation><!-- Polyester Ripstop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Polyester Taffeta</masterLabel>
+        <translation><!-- Polyester Taffeta --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Polyester Tricot</masterLabel>
+        <translation><!-- Polyester Tricot --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

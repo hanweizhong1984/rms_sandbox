@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POS_Transfer_Time__c</fullName>
+    <description>POS机的调拨时间</description>
+    <externalId>false</externalId>
+    <inlineHelpText>POS机的调拨时间</inlineHelpText>
+    <label>POS Transfer Time</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

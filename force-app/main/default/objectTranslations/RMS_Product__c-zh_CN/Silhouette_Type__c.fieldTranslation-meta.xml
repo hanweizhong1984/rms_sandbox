@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Silhouette Type --></label>
+    <name>Silhouette_Type__c</name>
+    <picklistValues>
+        <masterLabel>Boots</masterLabel>
+        <translation><!-- Boots --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Male</masterLabel>
+        <translation><!-- Male --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sandals</masterLabel>
+        <translation><!-- Sandals --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sneakers</masterLabel>
+        <translation><!-- Sneakers --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

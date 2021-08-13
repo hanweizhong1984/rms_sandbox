@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Division__c</fullName>
+    <description>division_all_all_gl</description>
+    <externalId>false</externalId>
+    <label>Division</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AC</fullName>
+                <default>false</default>
+                <label>AC</label>
+            </value>
+            <value>
+                <fullName>AP</fullName>
+                <default>false</default>
+                <label>AP</label>
+            </value>
+            <value>
+                <fullName>FT</fullName>
+                <default>false</default>
+                <label>FT</label>
+            </value>
+            <value>
+                <fullName>Global</fullName>
+                <default>false</default>
+                <label>Global</label>
+            </value>
+            <value>
+                <fullName>Incubate</fullName>
+                <default>false</default>
+                <label>Incubate</label>
+            </value>
+            <value>
+                <fullName>Inline</fullName>
+                <default>false</default>
+                <label>Inline</label>
+            </value>
+            <value>
+                <fullName>Regional Product Create</fullName>
+                <default>false</default>
+                <label>Regional Product Create</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

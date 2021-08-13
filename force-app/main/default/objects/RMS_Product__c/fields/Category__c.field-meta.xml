@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <description>category_all_all_gl</description>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bags</fullName>
+                <default>false</default>
+                <label>Bags</label>
+            </value>
+            <value>
+                <fullName>Bottoms</fullName>
+                <default>false</default>
+                <label>Bottoms</label>
+            </value>
+            <value>
+                <fullName>Hats</fullName>
+                <default>false</default>
+                <label>Hats</label>
+            </value>
+            <value>
+                <fullName>Small Accessories</fullName>
+                <default>false</default>
+                <label>Small Accessories</label>
+            </value>
+            <value>
+                <fullName>Socks</fullName>
+                <default>false</default>
+                <label>Socks</label>
+            </value>
+            <value>
+                <fullName>Tops</fullName>
+                <default>false</default>
+                <label>Tops</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

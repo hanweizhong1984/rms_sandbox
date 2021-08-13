@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Building Block Mens --></label>
+    <name>Building_Block_Mens__c</name>
+    <picklistValues>
+        <masterLabel>L</masterLabel>
+        <translation><!-- L --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>M</masterLabel>
+        <translation><!-- M --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>S</masterLabel>
+        <translation><!-- S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XL</masterLabel>
+        <translation><!-- XL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XL (North)</masterLabel>
+        <translation><!-- XL (North) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XL (South)</masterLabel>
+        <translation><!-- XL (South) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XS</masterLabel>
+        <translation><!-- XS --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Gender Group Rl --></label>
+    <name>Gender_Group_Rl__c</name>
+    <picklistValues>
+        <masterLabel>FEMALE</masterLabel>
+        <translation><!-- FEMALE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JUNIOR</masterLabel>
+        <translation><!-- JUNIOR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MALE</masterLabel>
+        <translation><!-- MALE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MEN</masterLabel>
+        <translation><!-- MEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNISEX</masterLabel>
+        <translation><!-- UNISEX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WOMEN</masterLabel>
+        <translation><!-- WOMEN --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>退单汇总</label>
+    <name>Return_Summary__c</name>
+    <relationshipLabel><!-- RTV Orders --></relationshipLabel>
+</CustomFieldTranslation>

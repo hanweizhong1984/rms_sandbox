@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>状态</label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Completed</masterLabel>
+        <translation>召回流程完成</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delivered</masterLabel>
+        <translation>已提货</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inbound</masterLabel>
+        <translation>最终入库</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Insp Confirmed</masterLabel>
+        <translation>检验结果已确认</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Insp Wait Approval</masterLabel>
+        <translation>检验结果待审核</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inspected</masterLabel>
+        <translation>质检完成</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>POST to LF</masterLabel>
+        <translation>提交LF</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ready</masterLabel>
+        <translation>备货中</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>状态</label>
+    <name>Program_Status__c</name>
+    <picklistValues>
+        <masterLabel>Completed</masterLabel>
+        <translation>完成</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kick Off</masterLabel>
+        <translation><!-- Kick Off --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Off Policy</masterLabel>
+        <translation><!-- Off Policy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending</masterLabel>
+        <translation>待定</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Remove</masterLabel>
+        <translation>删除</translation>
+    </picklistValues>
+</CustomFieldTranslation>

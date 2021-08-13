@@ -1,0 +1,13 @@
+Hi, ALL
+
+退货/召回订单汇总{!RTV_Order__c.Name}质检报告已经被确认入库，请登录系统查看明细。
+
+订单名称：{!RTV_Order__c.Name}
+客户名称：{!RTV_Order__c.ShipTo_Or_Store_Code__c}
+详细信息：{!RTV_Summary__c.Link}
+
+
+特此通知。
+Best regards
+
+Converse - RMS 系统运维

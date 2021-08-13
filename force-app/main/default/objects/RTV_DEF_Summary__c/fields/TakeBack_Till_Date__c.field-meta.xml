@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TakeBack_Till_Date__c</fullName>
+    <description>召回过程中获取D品的日期范围</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date range for get level(D) in the takeback process</inlineHelpText>
+    <label>TakeBack Till Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

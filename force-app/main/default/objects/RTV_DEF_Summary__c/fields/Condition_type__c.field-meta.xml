@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Condition_type__c</fullName>
+    <defaultValue>&apos;ZDSI&apos;</defaultValue>
+    <description>SAP CSV</description>
+    <externalId>false</externalId>
+    <label>Condition_type</label>
+    <length>4</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

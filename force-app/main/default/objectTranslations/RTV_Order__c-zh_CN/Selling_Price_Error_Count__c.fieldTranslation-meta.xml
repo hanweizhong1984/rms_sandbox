@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Number of Selling Price errors. 
+( When Selling Type of Item is not empty, there can not have quantity of A and B ) --></help>
+    <label>SellingPrice匹配错误件数</label>
+    <name>Selling_Price_Error_Count__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PostLF_Need_BoxCount</fullName>
+    <active>true</active>
+    <description>DTC时，DEF的Order在POST LF时需要填箱号</description>
+    <errorConditionFormula>IsDTC__c &amp;&amp;
+ISCHANGED(Status__c) &amp;&amp;
+ISPICKVAL(Status__c, &apos;POST to LF&apos;) &amp;&amp; 
+(
+  ISNULL(AC_Boxes__c) ||
+  ISNULL(AP_Boxes__c) ||
+  ISNULL(FW_Boxes__c) ||
+  (Application_QTY_AC__c &gt; 0 &amp;&amp; AC_Boxes__c &lt;=0) ||
+  (Application_QTY_AP__c &gt; 0 &amp;&amp; AP_Boxes__c &lt;=0) ||
+  (Application_QTY_FW__c &gt; 0 &amp;&amp; FW_Boxes__c &lt;=0)
+)</errorConditionFormula>
+    <errorMessage>请填写AC/AP/FW的箱数</errorMessage>
+</ValidationRule>

@@ -1,0 +1,34 @@
+<apex:page controller="RTV_DEF_Summary_MassCreate" lightningStylesheets="true">
+<head>
+    <apex:slds /> <!-- 用<apex:slds>标签引入lightning的css -->
+</head>
+<body>
+    <!-- 表单 -->
+    <apex:form >
+        <apex:pageBlock title="Mass Create RTV DEF Summary">
+            <table style="width: 40%;">
+                <tr>
+                    <td>Year</td>
+                    <td><apex:inputText value="{!inputYear}" /></td>
+                </tr>
+                <tr>
+                    <td>Month</td>
+                    <td><apex:inputText value="{!inputMonthFrom}" /></td>
+                    <td>~</td>
+                    <td><apex:inputText value="{!inputMonthTill}" /></td>
+                </tr>
+            </table>
+            <!-- 按钮 -->
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="创建范围的 DEF Summary" action="{!massCreate}"/>
+                <apex:commandButton value="Close" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <div style="float: right;">
+            <apex:commandButton value="删除范围内没有订单的 DEF Summary" action="{!deleteNoOrderSummary}" rendered="{!loginUser.isAdmin}"/>
+        </div>
+    </apex:form>
+    <!-- 消息 -->
+    <apex:pageMessages />
+</body>
+</apex:page>

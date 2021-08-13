@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 鞋盒破损（可换） --></help>
+    <label>质检数量 B6</label>
+    <name>B6__c</name>
+</CustomFieldTranslation>

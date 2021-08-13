@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Date of close application. --></help>
+    <label>申请开始日期</label>
+    <name>Apply_Open_Date__c</name>
+</CustomFieldTranslation>

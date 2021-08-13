@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV Summary Apprpval(CS)</name>
+    <style>none</style>
+    <subject>[RMS-Inspection-Confirm] 退货/召回订单汇总{!RTV_Summary__c.Name}，{!RTV_Summary__c.Account_Group__c}，质检结果已完成，请登录系统查看并核实报告</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

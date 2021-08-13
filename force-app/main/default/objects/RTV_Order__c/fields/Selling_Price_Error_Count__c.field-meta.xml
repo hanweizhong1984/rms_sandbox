@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selling_Price_Error_Count__c</fullName>
+    <description>是否有Selling Price错误（当Selling Type不为空时，不能有A品和B品的数量）</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of Selling Price errors. 
+( When Selling Type of Item is not empty, there can not have quantity of A and B )</inlineHelpText>
+    <label>Selling Price Error Count</label>
+    <summaryFilterItems>
+        <field>RTV_Order_Item__c.Is_Selling_Price_Error__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>RTV_Order_Item__c.RTV_Order__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 缺少退残原因的明细数量 --></help>
+    <label><!-- Items Without DEF Reason --></label>
+    <name>Items_Without_DEF_Reason__c</name>
+</CustomFieldTranslation>

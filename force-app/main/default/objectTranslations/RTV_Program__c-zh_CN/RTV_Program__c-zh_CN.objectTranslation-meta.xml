@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RTV 召回程序</value>
+    </caseValues>
+    <layouts>
+        <layout>CFS DTC Takeback</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CFS_DTC_Takeback_Off_Policy</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Digital DTC Takeback</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Digital_DTC_Takeback_Off_Policy</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Discount</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Discount RP Removed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Discount_Off_Policy</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Discount_Off_Policy(Clear)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Empty</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Full</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Full RP Removed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Full_Off_Policy</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Full_Off_Policy(Clear)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Gold Full</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Gold_Full_Off_Policy</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Gold_Full_Off_Policy(Clear)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Program Name --></nameFieldLabel>
+    <quickActions>
+        <label><!-- Completed --></label>
+        <name>Completed</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Kick Off --></label>
+        <name>Kick_Off</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Off Policy --></label>
+        <name>Off_Policy</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Remove --></label>
+        <name>Remove</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- DTC Takeback --></description>
+        <label><!-- CFS DTC Takeback --></label>
+        <name>CFS_DTC_Takeback</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- DTC Takeback Kick Off --></description>
+        <label><!-- CFS DTC Takeback Kick Off --></label>
+        <name>CFS_DTC_Takeback_Kick_Off</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- DTC Takeback --></description>
+        <label><!-- Digital DTC Takeback --></label>
+        <name>Digital_DTC_Takeback</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- DTC Takeback Kick Off --></description>
+        <label><!-- Digital DTC Takeback Kick Off --></label>
+        <name>Digital_DTC_Takeback_Kick_Off</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Discount RP Removed --></label>
+        <name>Discount_RP_Removed</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Full RP Romoved --></label>
+        <name>Full_RP_Romoved</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- 非金店折扣召回 --></description>
+        <label><!-- WSL Discount Takeback --></label>
+        <name>WSL_Discount_Takeback</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- 非金店折扣召回Off-Policy --></description>
+        <label><!-- WSL Discount Takeback Off Policy --></label>
+        <name>WSL_Discourt_Takeback_Off_Policy</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- 非金店全价召回 --></description>
+        <label><!-- WSL Full Takeback --></label>
+        <name>WSL_Full_Takeback</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- 非金店全价召回Off-Policy --></description>
+        <label><!-- WSL Full Takeback Off Policy --></label>
+        <name>WSL_Full_Takeback_Off_Policy</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- 金店 --></description>
+        <label><!-- WSL Gold Store --></label>
+        <name>WSL_Gold_Store</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- 金店Off-Policy --></description>
+        <label><!-- WSL Gold Store Off Policy --></label>
+        <name>WSL_Gold_Store_Off_Policy</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>过期日期需要在系统日期后</errorMessage>
+        <name>ExpirationDateMustAfterToday</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>新建的召回项目的状态必须为“待定”</errorMessage>
+        <name>New_Status_Pending</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>该召回项目已经结束，请不要在修改其中的字段</errorMessage>
+        <name>PR_Closed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>召回项目的名称最多支持22个字符</errorMessage>
+        <name>Program_Name_Max_22</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>请不要修改召回项目名</errorMessage>
+        <name>Program_Name_Unchanged</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 当Program状态为Off Policy时，不能将状态改为Pending或Remove --></errorMessage>
+        <name>RP_Off_Policy_Status</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>项目需要在“OffPolicy”后才能结束，请不要结束“待定”的项目</errorMessage>
+        <name>RP_Pending_Status</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Export_PDF --></label>
+        <name>Export_PDF</name>
+    </webLinks>
+</CustomObjectTranslation>

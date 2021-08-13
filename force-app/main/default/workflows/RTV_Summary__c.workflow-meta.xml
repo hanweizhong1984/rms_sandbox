@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>RTV_Summary_Approval_To_CS</fullName>
+        <description>RTV Summary Approval To CS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Apprpval_WSL</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Approval_To_WSL_BELLE</fullName>
+        <ccEmails>zhang.j@topsports.com.cn,</ccEmails>
+        <ccEmails>xu.yq@topsports.com.cn,</ccEmails>
+        <ccEmails>chen.sl@topsports.com.cn</ccEmails>
+        <description>RTV Summary Approval To WSL (BELLE)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_WSL_Belle</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Apprpval_CS</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Approval_To_WSL_YY</fullName>
+        <description>RTV Summary Approval To WSL (YY)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_WSL_YY_HQ</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Apprpval_CS</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Completed_BELLE</fullName>
+        <ccEmails>zhang.j@topsports.com.cn</ccEmails>
+        <ccEmails>xu.yq@topsports.com.cn</ccEmails>
+        <ccEmails>chen.sl@topsports.com.cn</ccEmails>
+        <description>RTV Summary Completed(BELLE)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_WSL_Belle</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Completed_YY</fullName>
+        <description>RTV Summary Completed(YY)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_WSL_YY_HQ</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Create_Belle</fullName>
+        <ccEmails>zhang.j@topsports.com.cn,</ccEmails>
+        <ccEmails>xu.yq@topsports.com.cn,</ccEmails>
+        <ccEmails>chen.sl@topsports.com.cn</ccEmails>
+        <ccEmails>Eva.Du@converse.com</ccEmails>
+        <description>RTV Summary Create (BELLE)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_WSL_Belle</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Create</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Create_YY</fullName>
+        <description>RTV Summary Create (YY)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_WSL_YY_HQ</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Create</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Inbound</fullName>
+        <description>RTV Summary Inbound</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Inbound</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Insp_Approval</fullName>
+        <description>RTV Summary Insp Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Insp_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_PTLF</fullName>
+        <description>RTV Summary PTLF</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_PTLF</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Ready</fullName>
+        <description>RTV Summary Ready</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Ready</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Reject_To_CS</fullName>
+        <description>RTV Summary Reject To CS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CS</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Reject_WSL</template>
+    </alerts>
+    <alerts>
+        <fullName>RTV_Summary_Reject_To_LF</fullName>
+        <description>RTV Summary Reject To LF</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Summary_Reject_CS</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Insp_CS_Approve_Required_False</fullName>
+        <field>Insp_CS_Approve_Required__c</field>
+        <literalValue>0</literalValue>
+        <name>Insp CS Approve Required (False)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Insp_CS_Approve_Time</fullName>
+        <field>Insp_CS_Approve_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Insp CS Approve Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Insp_Final_Approve_Time</fullName>
+        <field>Insp_Final_Approve_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Insp Final Approve Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Insp_Final_Reject_Time</fullName>
+        <field>Insp_Final_Reject_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Insp Final Reject Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Insp_Submit_Time</fullName>
+        <field>Insp_Submit_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Insp Submit_Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>RTV Summary CS Approval%28BELLE%29</fullName>
+        <actions>
+            <name>RTV_Summary_Approval_To_WSL_BELLE</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>当CS通过LF提交的审批，发送邮件给HQ</description>
+        <formula>(ISCHANGED(Insp_CS_Approve_Time__c) &amp;&amp; Account_Group__r.Name ==&apos;02)Belle&apos;) || (ISCHANGED(Insp_Submit_Time__c) &amp;&amp; Insp_CS_Approve_Required__c == false &amp;&amp; Account_Group__r.Name ==&apos;02)Belle&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV Summary CS Approval%28YY%29</fullName>
+        <actions>
+            <name>RTV_Summary_Approval_To_WSL_YY</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>当CS通过LF提交的审批，发送邮件给HQ</description>
+        <formula>(   ISCHANGED(Insp_CS_Approve_Time__c) &amp;&amp;    Account_Group__r.Name ==&apos;01)YY&apos; ) || (   ISCHANGED(Insp_Submit_Time__c) &amp;&amp;    Insp_CS_Approve_Required__c == false &amp;&amp;    Account_Group__r.Name ==&apos;01)YY&apos; )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV Summary Completed%28BELLE%29</fullName>
+        <actions>
+            <name>RTV_Summary_Completed_BELLE</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>当summary completed时，发送邮件给BELLE和CS</description>
+        <formula>AND(Account_Group__r.Name ==&apos;02)Belle&apos;, TEXT(Status__c) ==&apos;Completed&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV Summary Completed%28YY%29</fullName>
+        <actions>
+            <name>RTV_Summary_Completed_YY</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>当summary completed时，发送邮件给YY和CS</description>
+        <formula>AND(Account_Group__r.Name ==&apos;01)YY&apos;, TEXT(Status__c) ==&apos;Completed&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV Summary Create%28BELLE%29</fullName>
+        <actions>
+            <name>RTV_Summary_Create_Belle</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>当summary created时，发送邮件给Belle</description>
+        <formula>AND( Account_Group__r.Name ==&apos;02)Belle&apos;,TEXT(Status__c)==&apos;Pending&apos;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV Summary Create%28YY%29</fullName>
+        <actions>
+            <name>RTV_Summary_Create_YY</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>当summary created时，发送邮件给Belle</description>
+        <formula>AND( Account_Group__r.Name ==&apos;01)YY&apos;,TEXT(Status__c)==&apos;Pending&apos;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV Summary Inbound</fullName>
+        <actions>
+            <name>RTV_Summary_Inbound</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_Summary__c.LF_WH_Inbound_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_Summary__c.CS_Inbound_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_Summary__c.DTC_Type__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>当LF第一次Inbound之后，发送邮件给CS</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV Summary PTLF</fullName>
+        <actions>
+            <name>RTV_Summary_PTLF</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_Summary__c.Status__c</field>
+            <operation>equals</operation>
+            <value>POST to LF</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_Summary__c.DTC_Type__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>当summary post to lf之后，发送邮件给LF</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV Summary Ready</fullName>
+        <actions>
+            <name>RTV_Summary_Ready</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_Summary__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Ready</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_Summary__c.DTC_Type__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>当summary kick off之后，发送邮件给CS</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

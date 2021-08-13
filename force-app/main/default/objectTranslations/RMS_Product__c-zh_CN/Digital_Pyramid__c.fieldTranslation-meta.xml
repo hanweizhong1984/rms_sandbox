@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Digital Pyramid --></label>
+    <name>Digital_Pyramid__c</name>
+    <picklistValues>
+        <masterLabel>CONCEPT MAP</masterLabel>
+        <translation><!-- CONCEPT MAP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DTC EXCLUSIVE</masterLabel>
+        <translation><!-- DTC EXCLUSIVE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FW SNL</masterLabel>
+        <translation><!-- FW SNL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INCUBATE</masterLabel>
+        <translation><!-- INCUBATE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SEASONAL</masterLabel>
+        <translation><!-- SEASONAL --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

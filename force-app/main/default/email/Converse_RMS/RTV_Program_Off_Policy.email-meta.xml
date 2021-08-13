@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV Program Off Policy</name>
+    <style>none</style>
+    <subject>[RMS-OffPolicy] 退货/召回流程{!RTV_Program__c.Name}已经发起，请查收退货项目范围</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <available>true</available>
+    <encodingKey>GB2312</encodingKey>
+    <name>RTV DTC DEF Summary Create</name>
+    <style>none</style>
+    <subject>[RMS] 退残流程{!relatedTo.Name}已经发起，请查收</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,38 @@
+<apex:page controller="RTV_UploadStoreListController" lightningStylesheets="True">
+    <apex:form >
+        <apex:pageBlock title="Upload White List">         
+            <apex:pageBlockSection columns="1">
+                <!-- 上传文件 -->
+                <apex:inputFile value="{!fileUploadBody}" fileName="{!fileUploadName}" accept=".csv"/>
+                <!-- 选择编码 -->
+                <apex:selectRadio value="{!fileCharset}" layout="pageDirection">
+                    <apex:selectOptions value="{!fileCharsetOpts}"/>
+                </apex:selectRadio>
+                <!-- 是否删除其它的shipto白名单 -->
+                <apex:inputCheckbox value="{!isDeleteOtherShipToWL}">
+                    <span style="padding-left: 1rem;">Delete the other Whilte List out of CSV?</span> 
+                </apex:inputCheckbox>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <!-- 按钮 -->
+                <apex:commandButton value="Upload" action="{!uploadFile}" onclick="startLoading()"/>
+                <apex:commandButton value="Close"  action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <apex:pageMessages />
+
+    <!-- Loading -->
+    <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.75;width:100%;display: none">
+        <div class="waitingHolder" style="top: 100px; width: 91px;">
+            <img class="waitingImage" src="/img/loading.gif" title="Please Wait..."  style="width: 40;height:40;"/>
+            <span class="waitingDescription">Loading...</span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function startLoading() {
+            document.getElementById("el_loading").style.display = 'inline';
+        }
+    </script>
+</apex:page>

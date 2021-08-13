@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RTV订单</value>
+    </caseValues>
+    <layouts>
+        <layout>DTC Defective Completed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inbound Information --></label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label><!-- Inspecation Information --></label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Off Policy Information --></label>
+            <section>Off Policy Information</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Defective Delivered</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Defective Inbound</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inbound Information --></label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label><!-- Inspecation Information --></label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Off Policy Information --></label>
+            <section>Off Policy Information</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Defective Insp Confirmed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inspecation Information --></label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Off Policy Information --></label>
+            <section>Off Policy Information</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Defective Insp Confirmed For LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inspecation Information --></label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Off Policy Information --></label>
+            <section>Off Policy Information</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Defective Insp Wait Approval</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inspection Information --></label>
+            <section>Inspection Information</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Defective Inspected</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inspecation Information --></label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Defective Inspected For LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inspecation Information --></label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Defective Post LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Defective Ready</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Completed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Delivered</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Inbound</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Insp Confirmed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Insp Confirmed For LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Insp Wait Approval</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Inspected</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Inspected For LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Post LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DTC Takeback Ready</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Baozun Order</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Baozun Order Inbound</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Completed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Off Policy Information --></label>
+            <section>Off Policy Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Delivered</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Inbound</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Off Policy Information --></label>
+            <section>Off Policy Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Insp Confirmed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Off Policy Information --></label>
+            <section>Off Policy Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Insp Confirmed For LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Off Policy Information --></label>
+            <section>Off Policy Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Insp Wait Approval</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspection Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Inspected</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Inspected For LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Post LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RTV Defective Ready</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Remove</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>运输信息</label>
+            <section>Delivery Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Completed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Delivered</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Inbound</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>入库信息</label>
+            <section>Inbound Information</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Insp Confirmed</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Insp Confirmed For LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Insp Wait Approval</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Inspected</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Inspected For LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>质检信息</label>
+            <section>Inspecation Information</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Post LF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Post LF readonly</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Ready</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>装箱信息</label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WSL Takeback Ready -CanPostLF</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Packing Information --></label>
+            <section>Packing Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Order Code --></nameFieldLabel>
+    <quickActions>
+        <label><!-- Inbound --></label>
+        <name>Inbound</name>
+    </quickActions>
+    <quickActions>
+        <label>POST TO LF</label>
+        <name>POST_TO_LF</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- POST TO LF --></label>
+        <name>POST_TO_LF_YY</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- DTC Defective Completed --></label>
+        <name>DTC_Defective_Completed</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DTC Defective Delivered --></label>
+        <name>DTC_Defective_Delivered</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DTC Defective Inbound --></label>
+        <name>DTC_Defective_Inbound</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DTC Defective Insp Confirmed --></label>
+        <name>DTC_Defective_Insp_Confirmed</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DTC Defective Insp Wait Approval --></label>
+        <name>DTC_Defective_Insp_Wait_Approval</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DTC Defective Inspected --></label>
+        <name>DTC_Defective_Inspected</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DTC Defective Post LF --></label>
+        <name>DTC_Defective_Post_LF</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DTC Defective Ready --></label>
+        <name>DTC_Defective_Ready</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- dtc takeback, status = Completed --></description>
+        <label><!-- DTC Takeback Completed --></label>
+        <name>DTC_Takeback_Completed</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- dtc takeback, status = Delivered --></description>
+        <label><!-- DTC Takeback Delivered --></label>
+        <name>DTC_Takeback_Delivered</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- dtc takeback, status = Inbound --></description>
+        <label><!-- DTC Takeback Inbound --></label>
+        <name>DTC_Takeback_Inbound</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- dtc takeback, status = Insp Confirmed --></description>
+        <label><!-- DTC Takeback Insp Confirmed --></label>
+        <name>DTC_Takeback_Insp_Confirmed</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DTC Takeback Insp Wait Approval --></label>
+        <name>DTC_Takeback_Insp_Wait_Approval</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- dtc takeback, status = Inspected --></description>
+        <label><!-- DTC Takeback Inspected --></label>
+        <name>DTC_Takeback_Inspected</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- dtc takeback, status = Post LF --></description>
+        <label><!-- DTC Takeback Post LF --></label>
+        <name>DTC_Takeback_Post_LF</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- dtc takeback, status = Ready --></description>
+        <label><!-- DTC Takeback Ready --></label>
+        <name>DTC_Takeback_Ready</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Baozun Order --></label>
+        <name>RTV_Baozun_Order</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Baozun Order Inbound --></label>
+        <name>RTV_Baozun_Order_Inbound</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Defective Completed --></label>
+        <name>RTV_Defective_Completed</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Defective Delivered --></label>
+        <name>RTV_Defective_Delivered</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Defective Inbound --></label>
+        <name>RTV_Defective_Inbound</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Defective Insp Confirmed --></label>
+        <name>RTV_Defective_Insp_Confirmed</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Defective Insp Wait Approval --></label>
+        <name>RTV_Defective_Insp_Wait_Approval</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Defective Inspected --></label>
+        <name>RTV_Defective_Inspected</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Defective Post LF --></label>
+        <name>RTV_Defective_Post_LF</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RTV Defective Ready --></label>
+        <name>RTV_Defective_Ready</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Removed --></description>
+        <label><!-- Remove --></label>
+        <name>Remove</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- wholesale takeback - Completed --></description>
+        <label><!-- WSL Takeback Completed --></label>
+        <name>WSL_Takeback_Completed</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- wholesale takeback - Delivered --></description>
+        <label><!-- WSL Takeback Delivered --></label>
+        <name>WSL_Takeback_Delivered</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- wholesale takeback - Inbound --></description>
+        <label><!-- WSL Takeback Inbound --></label>
+        <name>WSL_Takeback_Inbound</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- wholesale takeback - Insp Confirmed --></description>
+        <label><!-- WSL Takeback Insp Confirmed --></label>
+        <name>WSL_Takeback_Insp_Confirmed</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- WSL Takeback Insp Wait Approval --></label>
+        <name>WSL_Takeback_Insp_Wait_Approval</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- wholesale takeback - Inspected --></description>
+        <label><!-- WSL Takeback Inspected --></label>
+        <name>WSL_Takeback_Inspected</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- WSL Takeback Post LF --></description>
+        <label><!-- WSL Takeback Post LF --></label>
+        <name>WSL_Takeback_Post_LF</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- WSL Takeback Ready --></description>
+        <label><!-- WSL Takeback Ready --></label>
+        <name>WSL_Takeback_Ready</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- 请输入Ship-To外部Email地址（逗号分割的1~5个地址） --></errorMessage>
+        <name>DEF_Need_Outbound_Emails</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>最早提货日需要在系统时间后</errorMessage>
+        <name>EarliestDeliveryDateMustAfterToday</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>请不要修改订单名称</errorMessage>
+        <name>NotChangeName</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>请不要修改关联的订单汇总</errorMessage>
+        <name>NotChangeSummary</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 请输入正确的电话号码！ --></errorMessage>
+        <name>Phone_Number_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>请填写ShipTo地址</errorMessage>
+        <name>PostLF_Need_Address</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 申请数量为0！请在 POST To LF 前先上传装箱单 --></errorMessage>
+        <name>PostLF_Need_ApplyQTY</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 请填写AC/AP/FW的箱数 --></errorMessage>
+        <name>PostLF_Need_BoxCount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>请填写ShipTo的联系人和电话</errorMessage>
+        <name>PostLF_Need_Contact</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 请先上传商品退残原因 --></errorMessage>
+        <name>PostLF_Need_DEF_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>请填写最早提货日</errorMessage>
+        <name>PostLF_Need_EarliestDeliveryDate</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- ClearData --></label>
+        <name>ClearData</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Export_Auth_Code --></label>
+        <name>Export_Auth_Code</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Export_Order_Deail_AC --></label>
+        <name>Export_Order_Deail_AC</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Export_Order_Deail_FW --></label>
+        <name>Export_Order_Deail_FW</name>
+    </webLinks>
+    <webLinks>
+        <label>获取过往销售价格</label>
+        <name>Get_Selling_Price</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Inbound --></label>
+        <name>Inbound</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Report_BaoZun_Orders --></label>
+        <name>Report_BaoZun_Orders</name>
+    </webLinks>
+    <webLinks>
+        <label>导出客户详细信息</label>
+        <name>Report_Customer_Info</name>
+    </webLinks>
+    <webLinks>
+        <label>导出退残提货委托书</label>
+        <name>Report_Delivery_Auth_For_Defective</name>
+    </webLinks>
+    <webLinks>
+        <label>导出退残提货明细</label>
+        <name>Report_Delivery_Auth_Item_For_Defective</name>
+    </webLinks>
+    <webLinks>
+        <label>导出提货委托书</label>
+        <name>Report_Delivery_Form</name>
+    </webLinks>
+    <webLinks>
+        <label>导出提货委托明细</label>
+        <name>Report_Delivery_Item_Form</name>
+    </webLinks>
+    <webLinks>
+        <label>导出装箱单</label>
+        <name>Report_Packing_List</name>
+    </webLinks>
+    <webLinks>
+        <label>导出装箱单</label>
+        <name>Report_Packing_List_Item</name>
+    </webLinks>
+    <webLinks>
+        <label>提交入库</label>
+        <name>Submit_Inbound</name>
+    </webLinks>
+    <webLinks>
+        <label>上传客户详细信息</label>
+        <name>Upload_Customer_Info</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Upload_FOB --></label>
+        <name>Upload_FOB</name>
+    </webLinks>
+    <webLinks>
+        <label>上传质检报告</label>
+        <name>Upload_Inspection</name>
+    </webLinks>
+    <webLinks>
+        <label>上传质检报告</label>
+        <name>Upload_Inspection_For_Defective</name>
+    </webLinks>
+    <webLinks>
+        <label>上传装箱单</label>
+        <name>Upload_Packing_List</name>
+    </webLinks>
+</CustomObjectTranslation>
