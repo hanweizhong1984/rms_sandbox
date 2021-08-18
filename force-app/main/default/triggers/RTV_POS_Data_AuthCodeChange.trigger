@@ -8,10 +8,19 @@ trigger RTV_POS_Data_AuthCodeChange on RTV_POS_Data__c (after update) {
     // 宝尊
     RTV_BaoZun_Seeding__c baozunSeeding = null;
     List<RTV_Order__c> baozOrders = new List<RTV_Order__c>();
-    DateTime today = DateTime.now();
-    List<RTV_BaoZun_Seeding__c> baozunSeedings = [SELECT Id, Seeding_Auth_Code__c FROM RTV_BaoZun_Seeding__c WHERE Year__c = :today.year() AND Month__c = :today.month()];
-    if(baozunSeedings != null && baozunSeedings.size() > 0){
-        baozunSeeding = baozunSeedings.get(0);
+    // DateTime today = DateTime.now();
+    // List<RTV_BaoZun_Seeding__c> baozunSeedings = [SELECT Id, Seeding_Auth_Code__c FROM RTV_BaoZun_Seeding__c WHERE Year__c = :today.year() AND Month__c = :today.month()];
+    // if(baozunSeedings != null && baozunSeedings.size() > 0){
+    //     baozunSeeding = baozunSeedings.get(0);
+    // }
+    Map<String,List<RTV_BaoZun_Seeding__c>> baozunSeedingMap = new Map<String,List<RTV_BaoZun_Seeding__c>>();
+    for(RTV_Baozun_Seeding__c bs : [SELECT Id,Year__c,Month__c,Seeding_Auth_Code__c FROM RTV_BaoZun_Seeding__c]){
+        List<RTV_BaoZun_Seeding__c> baozunSeedingList = new List<RTV_BaoZun_Seeding__c>();
+        String y = String.valueOf(bs.Year__c);
+        String m = String.valueOf(bs.Month__c);
+        String ym = y + m;
+        baozunSeedingList.add(bs);
+        baozunSeedingMap.put(ym,baozunSeedingList);
     }
 
     // 检索allRecordTypes
@@ -28,6 +37,13 @@ trigger RTV_POS_Data_AuthCodeChange on RTV_POS_Data__c (after update) {
 
                 //宝尊虚拟退库
                 if(newdata.Auth_Code__c.startsWith('SEEDBZ')){
+                    Integer year = (olddata.Transfer_Time__c).year();
+                    Integer month = (olddata.Transfer_Time__c).month();
+                    String ym = String.valueOf(year)+String.valueOf(month);
+                    List<RTV_BaoZun_Seeding__c> baozunSeedings = baozunSeedingMap.get(ym);
+                    if(baozunSeedings != null && baozunSeedings.size() > 0){
+                        baozunSeeding = baozunSeedings.get(0);
+                    }
                     if(baozunSeeding != null && newdata.Auth_Code__c == baozunSeeding.Seeding_Auth_Code__c){
                         RTV_Order__c order = new RTV_Order__c();
                         Integer randomInt = (Math.random()*1000000).intValue();

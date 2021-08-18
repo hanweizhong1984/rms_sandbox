@@ -194,6 +194,17 @@
         <senderType>OrgWideEmailAddress</senderType>
         <template>Converse_RMS/RTV_DTC_Order_PTLF</template>
     </alerts>
+    <alerts>
+        <fullName>RTV_Order_PTLF</fullName>
+        <description>RTV Order PTLF</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_IDC_LF</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Converse_RMS/RTV_Order_PTLF</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Insp_CS_Approve_Time</fullName>
         <field>Insp_CS_Approve_Time__c</field>
@@ -297,6 +308,17 @@
         <active>true</active>
         <description>DTC》TB》Order在PostLF时：发送邮件给LF</description>
         <formula>IsDTC__c == true &amp;&amp; Return_Summary__c != null &amp;&amp; ISPICKVAL(Status__c, &apos;POST to LF&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RTV Order PTLF</fullName>
+        <actions>
+            <name>RTV_Order_PTLF</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>WSL(YY,BELLE)分批上传的Order在PostLF时：发送邮件给LF</description>
+        <formula>IsDTC__c == false &amp;&amp; Return_Summary__c != null &amp;&amp; ISPICKVAL(Status__c, &apos;POST to LF&apos;) &amp;&amp; (Return_Summary__r.Account_Group__r.Name=&apos;01)YY&apos; || Return_Summary__r.Account_Group__r.Name=&apos;02)BELLE&apos;)</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>

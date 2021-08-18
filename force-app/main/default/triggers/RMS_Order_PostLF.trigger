@@ -36,7 +36,7 @@ trigger RMS_Order_PostLF on RTV_Order__c (before update,after update) {
         for(RTV_Order__c order:[SELECT ID,Return_Summary__r.Account_Group__r.name, IsDTC__c 
                                 FROM RTV_Order__c WHERE ID IN :orderMap.keySet()])
         {
-            // WSL中，只有'YY'允许单独PostLF
+            // WSL中，只有'YY' 和'BELLE'允许单独PostLF
             if(order.Return_Summary__r.Account_Group__r.name == '01)YY'|| order.Return_Summary__r.Account_Group__r.name == '02)BELLE')
             {
                 orderMap.get(order.ID).Status__c = 'POST to LF';

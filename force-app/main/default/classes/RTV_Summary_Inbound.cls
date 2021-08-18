@@ -329,7 +329,7 @@ public with sharing class RTV_Summary_Inbound {
             if (loginUser.isCS) {
                 attachuser = 'CS';
                 share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
-                // share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
             } else if (loginUser.isLF){
                 if(this.summary.CS_Inbound_Date__c == null){
                     attachuser = 'LFWH';
@@ -339,7 +339,7 @@ public with sharing class RTV_Summary_Inbound {
                 }
                 share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_LF, 'V');
                 share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V'); 
-                // share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
         
             } else if(loginUser.isAdmin) {
                 ContentDocument cd = [SELECT Id FROM ContentDocument WHERE Id= :cv.ContentDocumentId LIMIT 1];
@@ -350,14 +350,14 @@ public with sharing class RTV_Summary_Inbound {
                     attachuser = 'LFWH';
                     share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_LF, 'V');
                     share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
-                    // share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                    share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
                 }else if(this.summary.CS_Inbound_Date__c == null){
                     // CS
                     User user = [SELECT Id FROM User WHERE Profile.Name IN:loginUser.Profiles_CS LIMIT 1];
                     cd.OwnerId = user.Id;
                     attachuser = 'CS';
                     share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
-                    // share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                    share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
                 }else {
                     // LFDELY
                     User user = [SELECT Id FROM User WHERE Profile.Name IN:loginUser.Profiles_LF LIMIT 1];
@@ -366,7 +366,7 @@ public with sharing class RTV_Summary_Inbound {
                     share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_LF, 'V');
                     share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
                     share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_WSL, 'V');
-                    // share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                    share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
                 }
                 // 管理员上传Owner变更处理
                 update cd;

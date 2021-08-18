@@ -265,6 +265,7 @@
         <members>Converse_RMS/RTV_Summary_Ready</members>
         <members>Converse_RMS/RTV_Summary_Reject_CS</members>
         <members>Converse_RMS/RTV_Summary_Reject_WSL</members>
+        <members>Converse_RMS/RTV_Order_PTLF</members>
         <name>EmailTemplate</name>
     </types>
     <!-- flexipages (Lighting Pages) -->
