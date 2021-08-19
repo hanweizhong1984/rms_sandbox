@@ -4829,7 +4829,7 @@
         <layout>RTV_Order__c-WSL Takeback Ready</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>RTV_Order__c-WSL Takeback Ready -CanPostLF</layout>
+        <layout>RTV_Order__c-WSL Takeback Ready</layout>
         <recordType>RTV_Order__c.WSL_Takeback_Ready</recordType>
     </layoutAssignments>
     <layoutAssignments>
