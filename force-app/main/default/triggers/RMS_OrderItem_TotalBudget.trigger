@@ -33,21 +33,28 @@ trigger RMS_OrderItem_TotalBudget on RTV_Order_Item__c (after insert, after upda
         //获取summary budget为条件的预算金额，因为相同meterial会有重复数据，所以需要按meterial将其数量和金额汇总，在上传pk时，去和order item的金额（汇总）进行对比判断是否超额 （2021/8/8修改）
         List<RTV_RP_SKU_Budget__c> skubudgets = [SELECT Summary_Budget__c FROM RTV_RP_SKU_Budget__c WHERE Id IN :updSkuBudgets.keyset()];
         Map<String, Decimal> budgetNetMap = new Map<String, Decimal>();
-        Map<String, Long> budgetQTYMap = new Map<String, Long>();
+        Map<String, Decimal> budgetQTYMap = new Map<String, Decimal>();
         for(AggregateResult obj:[
             SELECT SKU_Material_Code__c,
+            Return_Program__r.RecordType.Name recordType,
             Summary_Budget__c, 
             SUM(Budget_NET__c) budgetNet,  
-            SUM(Budget_QTY__c) budgetQTY 
+            SUM(Budget_QTY__c) budgetQTY,
+            MIN(Return_Program__r.Tolerance__c) tolerance 
             FROM RTV_RP_SKU_Budget__c 
             WHERE Summary_Budget__c = :skubudgets[0].Summary_Budget__c
-            GROUP BY Summary_Budget__c, SKU_Material_Code__c
+            GROUP BY Return_Program__r.RecordType.Name,Summary_Budget__c,SKU_Material_Code__c
         ]){
-
             Decimal budgetNet = (Decimal)obj.get('budgetNet') != null? 
                 ((Decimal)obj.get('budgetNet')).setScale(2, System.RoundingMode.HALF_UP): 0;
-            Long budgetQty = (Decimal)obj.get('budgetQty') != null? 
-                ((Decimal)obj.get('budgetQty')).round(): 0;   
+            Decimal budgetQty = (Decimal)obj.get('budgetQty') != null? 
+                (Decimal)obj.get('budgetQty'): 0;
+            String recordType = obj.get('recordType')!=null?(String)obj.get('recordType'):'';
+            Decimal tolerance = (Decimal)obj.get('tolerance')!=null?((Decimal)obj.get('tolerance')).setScale(2, System.RoundingMode.HALF_UP):0;
+            //非金的退货商品数量可以+10%的buffer
+            if(recordType!=''&&(recordType=='WSL Discount Takeback Off Policy'||(String)obj.get('recordType')=='WSL Full Takeback Off Policy')){
+                budgetQty=budgetQty*(1+tolerance);
+            }
             budgetNetMap.put((String)obj.get('SKU_Material_Code__c'), budgetNet);
             budgetQTYMap.put((String)obj.get('SKU_Material_Code__c'), budgetQTY);
         }
@@ -94,23 +101,19 @@ trigger RMS_OrderItem_TotalBudget on RTV_Order_Item__c (after insert, after upda
             
             String Material = (String)grp.get('Material_Code__c');
             Decimal budgetNet = budgetNetMap.get(Material);
-            Long budgetQty = budgetQTYMap.get(Material);
+            Decimal budgetQty = budgetQTYMap.get(Material);
             // QTY超出预算时
             if (budgetQty > 0 && sumApplyQty > budgetQty) {
-                workingItems[0].addError('已超出预算 ' 
-                    + '(预算QTY=' + budgetQty + ')'
-                    + '(实际QTY=' + sumApplyQty + ')'
-                    + '(货品号=' + (String)grp.get('Material_Code__c') + ')'
-                );
+                workingItems[0].addError('(货品号=' + (String)grp.get('Material_Code__c') + ')已超出预算数量');
             }
             // $NET(乘以QTY的总金额)超出预算时
-            if (budgetNet > 0 && sumApplyNet > budgetNet) {
-                workingItems[0].addError('已超出预算 ' 
-                    + '(预算总金额=' + budgetNet + ')'
-                    + '(实际总金额=' + sumApplyNet + ')'
-                    + '(货品号=' + (String)grp.get('Material_Code__c') + ')'
-                );
-            }
+            // if (budgetNet > 0 && sumApplyNet > budgetNet) {
+            //     workingItems[0].addError('已超出预算 ' 
+            //         + '(预算总金额=' + budgetNet + ')'
+            //         + '(实际总金额=' + sumApplyNet + ')'
+            //         + '(货品号=' + (String)grp.get('Material_Code__c') + ')'
+            //     );
+            // }
             
             // 更新skuBudget
             RTV_RP_Sku_Budget__c skuBudget = updSkuBudgets.get((Id)grp.get('SKU_Budget__c'));

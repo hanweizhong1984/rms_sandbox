@@ -22,7 +22,7 @@ public with sharing class RTV_Defective_Upload_Inspect_DTC {
 
     // csv中必须的列
     private static String[] CSV_FIELDS = new String[]{
-        '类别','客户简称','soldto','shipto','客户全称','退残编号','序号', 'MATERIAL', 'Style', 'Color', '尺码','季节码','申请数量', '退货理由（WSL）', '客/原残（WSL）', 
+        '类别','客户简称','soldto','shipto','客户全称','退残编号','序号', 'MATERIAL', 'Style', 'Color', '尺码','季节码','申请数量', '退货理由（申请人）', '客/原残（申请人）', 
         '退货理由（LF）','客/原残（LF）','工厂代码', '实收数量', '可接受退货数量', 'specialcase退CC','>12M<18M','拒收件数', '拒收原因', '箱号','代码','备注', 'Bar Code'
     };
     
@@ -329,8 +329,8 @@ public with sharing class RTV_Defective_Upload_Inspect_DTC {
             detail.Customer_Name__c = tr.get('客户全称');
             detail.Order_Auth_Code__c = tr.get('退残编号');
             detail.Detail_Number__c = Decimal.valueOf(tr.get('序号'));
-            detail.Defective_Reason__c = tr.get('退货理由（WSL）');
-            detail.Defective_Source__c = tr.get('客/原残（WSL）');
+            detail.Defective_Reason__c = tr.get('退货理由（申请人）');
+            detail.Defective_Source__c = tr.get('客/原残（申请人）');
             detail.Name = tr.get('序号');
             detail.Application_QTY__c = 0;
             detail.isDiff__c = true;
@@ -352,6 +352,8 @@ public with sharing class RTV_Defective_Upload_Inspect_DTC {
         detail.Defective_Reason_LF__c = tr.get('退货理由（LF）');
         detail.Defective_Source_LF__c = tr.get('客/原残（LF）');
         detail.Actual_QTY__c = tr.getDecimal('实收数量', 0);
+        detail.FactoryReturnQTY__c = tr.getDecimal('实际退工厂数量', 0);
+        detail.Destroy_QTY__c = tr.getDecimal('销毁数量', 0);
         detail.Acceptable_Return_QTY__c = tr.getDecimal('可接受退货数量', 0);
         detail.Specialcase_DEF_CC__c = tr.get('specialcase退CC');
         detail.DEF_12M_18M__c = tr.get('>12M<18M');
@@ -387,7 +389,7 @@ public with sharing class RTV_Defective_Upload_Inspect_DTC {
         item.IsSpecialDEF__c = RMS_CommonUtil.item_Def_IsSepical(item.Application_Remark__c);
         
         // item.退货理由
-        item.Defective_Reason__c = tr.get('退货理由（WSL）');
+        item.Defective_Reason__c = tr.get('退货理由（申请人）');
         if (String.isBlank(item.Defective_Reason__c)) {
             item.Defective_Reason__c = tr.get('退货理由（LF）');
         }
@@ -398,7 +400,7 @@ public with sharing class RTV_Defective_Upload_Inspect_DTC {
         }
         
         // item.原残/客残
-        item.Defective_Source__c = tr.get('客/原残（WSL）');
+        item.Defective_Source__c = tr.get('客/原残（申请人）');
         item.Application_QTY__c = 0;
         
         // item.商品信息
@@ -438,15 +440,16 @@ public with sharing class RTV_Defective_Upload_Inspect_DTC {
         // item.Style和Color
         updItem.SKU_Style__c = tr.get('Style');
         updItem.SKU_Color__c = tr.get('Color');
-        item.Bar_Code__c = tr.get('Bar Code');
-        
+        updItem.Bar_Code__c = tr.get('Bar Code');
+        updItem.SKU_Size_US__c = tr.get('尺码');
+        updItem.POS_SKU__c = tr.get('POS SKU');
         // item.商品信息
         if (product != null) {
-            item.Product__c = product.Id;
-            item.SKU_BU__c = product.BUCN__c;
+            updItem.Product__c = product.Id;
+            updItem.SKU_BU__c = product.BUCN__c;
         }
         
-        upsertItems.put(item.UniqueKey__c, updItem);
+        upsertItems.put(item.id, updItem);
         return updItem;
     }
     

@@ -2686,8 +2686,18 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Order_Item_DEF_Detail__c.Destroy_QTY__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Order_Item_DEF_Detail__c.Detail_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Order_Item_DEF_Detail__c.FactoryReturnQTY__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3798,6 +3808,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>RTV_Program__c.TaxRate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Program__c.Tolerance__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

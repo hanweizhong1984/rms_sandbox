@@ -61,10 +61,6 @@ ISPICKVAL(Order_Type__c, &apos;CFS DTC Takeback&apos;)</formula>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
-            <name>RTV_DTC_Order_Insp_Submit_To_CFS</name>
-            <type>Alert</type>
-        </action>
-        <action>
             <name>Status_Insp_Wait_Approve</name>
             <type>FieldUpdate</type>
         </action>

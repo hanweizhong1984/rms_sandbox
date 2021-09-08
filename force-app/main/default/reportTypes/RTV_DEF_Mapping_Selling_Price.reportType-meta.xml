@@ -352,4 +352,17 @@
         </columns>
         <masterLabel>RTV Order Items</masterLabel>
     </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FactoryReturnQTY__c</field>
+            <table>RTV_Order_Item__c.RTV_Order_Item_DEF_Details__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Destroy_QTY__c</field>
+            <table>RTV_Order_Item__c.RTV_Order_Item_DEF_Details__r</table>
+        </columns>
+        <masterLabel>RTV Order Item DEF Detail</masterLabel>
+    </sections>
 </ReportType>

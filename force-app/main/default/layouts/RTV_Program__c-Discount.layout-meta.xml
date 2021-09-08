@@ -48,6 +48,10 @@
                 <field>Rebuy__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Tolerance__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Request_by__c</field>
             </layoutItems>

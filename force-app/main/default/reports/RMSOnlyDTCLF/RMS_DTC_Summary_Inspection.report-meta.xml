@@ -64,6 +64,9 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Inspect_QTY_Difference__c</field>
     </columns>
+    <columns>
+        <field>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Insp_WSL_Remark__c</field>
+    </columns>
     <currency>CNY</currency>
     <description>验收明细表（可选“只有差异”）
 情况1： Packing List 有，Inspection没有；
@@ -75,7 +78,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value/>
+            <value>a4Y6w000000VjWq</value>
         </criteriaItems>
         <criteriaItems>
             <column>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Inspect_QTY_Difference__c</column>
@@ -89,7 +92,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Inspected,Insp Wait Approval,Insp Confirmed,Inbound,Completed</value>
+            <value>Inspected</value>
         </criteriaItems>
         <criteriaItems>
             <column>RTV_Summary__c$Sales_Channel__c</column>

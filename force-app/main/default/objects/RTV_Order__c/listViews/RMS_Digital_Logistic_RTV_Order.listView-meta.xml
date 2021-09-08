@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RMS_Digital_Logistic_RTV_Order</fullName>
+    <filterScope>Queue</filterScope>
+    <label>RMS Digital Logistic</label>
+    <queue>RMS_Digital_Logistic</queue>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

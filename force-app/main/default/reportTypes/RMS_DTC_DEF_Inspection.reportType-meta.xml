@@ -186,6 +186,18 @@
             <field>RTV_Order_Item__c.Bar_Code__c</field>
             <table>RTV_Order_Item_DEF_Detail__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>实际退工厂数量</displayNameOverride>
+            <field>FactoryReturnQTY__c</field>
+            <table>RTV_Order_Item_DEF_Detail__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>销毁数量</displayNameOverride>
+            <field>Destroy_QTY__c</field>
+            <table>RTV_Order_Item_DEF_Detail__c</table>
+        </columns>
         <masterLabel>DEF Order Item Detail</masterLabel>
     </sections>
     <sections>

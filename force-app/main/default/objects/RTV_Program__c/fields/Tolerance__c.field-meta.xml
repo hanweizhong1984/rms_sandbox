@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tolerance__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>原来的sku预算数量上，可以增加的buffer比例数，范围0~1，如0.1代表10% ，1代表100%，默认为0</description>
+    <externalId>false</externalId>
+    <label>Tolerance</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

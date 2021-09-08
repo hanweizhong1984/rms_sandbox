@@ -15,6 +15,14 @@
                 <behavior>Required</behavior>
                 <field>RTV_Order_Item__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>FactoryReturnQTY__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Destroy_QTY__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

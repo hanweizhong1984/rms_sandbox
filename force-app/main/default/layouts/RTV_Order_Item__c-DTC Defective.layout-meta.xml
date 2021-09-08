@@ -55,6 +55,10 @@
                 <behavior>Readonly</behavior>
                 <field>SKU_Size_US__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SKU_Size_Asia__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

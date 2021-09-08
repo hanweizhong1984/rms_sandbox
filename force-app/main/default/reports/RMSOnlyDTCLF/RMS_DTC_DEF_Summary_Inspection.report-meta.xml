@@ -43,6 +43,7 @@
         <field>RTV_Order_Item_DEF_Detail__c$RTV_Order_Item__c.SKU_Size_US__c</field>
     </columns>
     <columns>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>RTV_Order_Item_DEF_Detail__c$Application_QTY__c</field>
     </columns>
     <columns>
@@ -64,7 +65,16 @@
         <field>RTV_Order_Item_DEF_Detail__c$Factory_Code__c</field>
     </columns>
     <columns>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>RTV_Order_Item_DEF_Detail__c$Actual_QTY__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>RTV_Order_Item_DEF_Detail__c$FactoryReturnQTY__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>RTV_Order_Item_DEF_Detail__c$Destroy_QTY__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -104,7 +114,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>a4w6w000000IbnP</value>
+            <value>a4w6w000000Ie89</value>
         </criteriaItems>
         <criteriaItems>
             <column>RTV_Order_Item_DEF_Detail__c$RTV_Order_Item__c.RTV_Order__c.Status__c</column>

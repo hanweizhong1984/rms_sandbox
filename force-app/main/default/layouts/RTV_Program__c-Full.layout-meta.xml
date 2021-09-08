@@ -90,6 +90,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Tolerance__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Job_Title__c</field>
             </layoutItems>
             <layoutItems>

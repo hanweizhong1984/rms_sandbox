@@ -68,30 +68,30 @@ public class Test_RTV_Defective_Upload_Inspect_DTC {
         // 错误
         ctrl.createItemIfNotFound = false;
         ctrl.fileUploadBody = Blob.valueof('\r'
-            +'Bar Code,类别,客户简称,soldto,shipto,客户全称,退残编号,序号,MATERIAL,Style,Color,尺码,季节码,申请数量,退货理由（WSL）,客/原残（WSL）,退货理由（LF）,客/原残（LF）,工厂代码,实收数量,可接受退货数量,specialcase退CC,>12M<18M,拒收件数,拒收原因,箱号,代码,备注\r'
-            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[order错误],1,[material],Style,Color,XL,21Q1,1,[退货理由WSL],[客/原残WSL],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
-            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,1,[product错误],Style,Color,XL,21Q1,1,[退货理由WSL],[客/原残WSL],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
-            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,1,[material],Style,Color,XL,季节码错误,1,[退货理由WSL],[客/原残WSL],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
-            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,1,[material],,Color,XL,季节码错误,1,[退货理由WSL],[客/原残WSL],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
-            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,1,[material],Style,,XL,季节码错误,1,[退货理由WSL],[客/原残WSL],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
+            +'Bar Code,类别,客户简称,soldto,shipto,客户全称,退残编号,序号,MATERIAL,Style,Color,尺码,季节码,申请数量,退货理由（申请人）,客/原残（申请人）,退货理由（LF）,客/原残（LF）,工厂代码,实收数量,可接受退货数量,specialcase退CC,>12M<18M,拒收件数,拒收原因,箱号,代码,备注\r'
+            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[order错误],1,[material],Style,Color,XL,21Q1,1,[退货理由申请人],[客/原残申请人],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
+            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,1,[product错误],Style,Color,XL,21Q1,1,[退货理由申请人],[客/原残申请人],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
+            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,1,[material],Style,Color,XL,季节码错误,1,[退货理由申请人],[客/原残申请人],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
+            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,1,[material],,Color,XL,季节码错误,1,[退货理由申请人],[客/原残申请人],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
+            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,1,[material],Style,,XL,季节码错误,1,[退货理由申请人],[客/原残申请人],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
         );
         ctrl.upload();
         
         // 新增记录错误
         ctrl.createItemIfNotFound = false;
         ctrl.fileUploadBody = Blob.valueof('\r'
-            +'Bar Code,类别,客户简称,soldto,shipto,客户全称,退残编号,序号,MATERIAL,Style,Color,尺码,季节码,申请数量,退货理由（WSL）,客/原残（WSL）,退货理由（LF）,客/原残（LF）,工厂代码,实收数量,可接受退货数量,specialcase退CC,>12M<18M,拒收件数,拒收原因,箱号,代码,备注\r'
+            +'Bar Code,类别,客户简称,soldto,shipto,客户全称,退残编号,序号,MATERIAL,Style,Color,尺码,季节码,申请数量,退货理由（申请人）,客/原残（申请人）,退货理由（LF）,客/原残（LF）,工厂代码,实收数量,可接受退货数量,specialcase退CC,>12M<18M,拒收件数,拒收原因,箱号,代码,备注\r'
             +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,2,[material],Style,Color,XL,21Q1,1,创建新item,,[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
-            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,3,[material],Style,Color,XL,21Q1,1,创建新item,[客/原残WSL],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
+            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,3,[material],Style,Color,XL,21Q1,1,创建新item,[客/原残申请人],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
         );
         ctrl.upload();
         
         // 正确
         ctrl.createItemIfNotFound = true;
         ctrl.fileUploadBody = Blob.valueof('\r'
-            +'Bar Code,类别,客户简称,soldto,shipto,客户全称,退残编号,序号,MATERIAL,Style,Color,尺码,季节码,申请数量,退货理由（WSL）,客/原残（WSL）,退货理由（LF）,客/原残（LF）,工厂代码,实收数量,可接受退货数量,specialcase退CC,>12M<18M,拒收件数,拒收原因,箱号,代码,备注\r'
-            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,1,[material],Style,Color,XL,21Q1,1,[退货理由WSL],[客/原残WSL],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
-            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,2,[material],Style,Color,XL,21Q1,1,创建新item,[客/原残WSL],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
+            +'Bar Code,类别,客户简称,soldto,shipto,客户全称,退残编号,序号,MATERIAL,Style,Color,尺码,季节码,申请数量,退货理由（申请人）,客/原残（申请人）,退货理由（LF）,客/原残（LF）,工厂代码,实收数量,可接受退货数量,specialcase退CC,>12M<18M,拒收件数,拒收原因,箱号,代码,备注\r'
+            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,1,[material],Style,Color,XL,21Q1,1,[退货理由申请人],[客/原残申请人],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
+            +'Bar Code,AP,[客户简称],[soldto],[shipto],[客户全称],[Order1]AP,2,[material],Style,Color,XL,21Q1,1,创建新item,[客/原残申请人],[退货理由LF],[客/原残LF],[工厂代码],1,1,,,0,[拒收原因],[box],[code],特批\r'
         );
         ctrl.upload();
         

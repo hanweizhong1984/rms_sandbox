@@ -151,6 +151,10 @@
                 <name>实收数量</name>
             </columns>
             <columns>
+                <label><!-- 实际退工厂数量 --></label>
+                <name>实际退工厂数量</name>
+            </columns>
+            <columns>
                 <label><!-- 客/原残（LF） --></label>
                 <name>客/原残（LF）</name>
             </columns>
@@ -217,6 +221,10 @@
             <columns>
                 <label><!-- 退货理由（申请人） --></label>
                 <name>退货理由（申请人）</name>
+            </columns>
+            <columns>
+                <label><!-- 销毁数量 --></label>
+                <name>销毁数量</name>
             </columns>
             <label><!-- DEF Order Item Detail --></label>
             <name>DEF Order Item Detail</name>
@@ -353,6 +361,10 @@
             </columns>
             <label><!-- DEF Summary --></label>
             <name>DEF Summary</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Order Item DEF Detail --></label>
+            <name>RTV Order Item DEF Detail</name>
         </sections>
     </reportTypes>
     <reportTypes>
@@ -733,6 +745,10 @@
             <label><!-- DEF Summary --></label>
             <name>DEF Summary</name>
         </sections>
+        <sections>
+            <label><!-- RTV Order Item DEF Detail --></label>
+            <name>RTV Order Item DEF Detail</name>
+        </sections>
     </reportTypes>
     <reportTypes>
         <description><!-- DEF Inspection --></description>
@@ -930,6 +946,10 @@
             <label><!-- DEF Summary --></label>
             <name>DEF Summary</name>
         </sections>
+        <sections>
+            <label><!-- RTV Order Item DEF Detail --></label>
+            <name>RTV Order Item DEF Detail</name>
+        </sections>
     </reportTypes>
     <reportTypes>
         <description><!-- DEF Mapping Selling Price --></description>
@@ -1042,6 +1062,10 @@
             </columns>
             <label><!-- DEF Summary --></label>
             <name>DEF Summary</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Order Item DEF Detail --></label>
+            <name>RTV Order Item DEF Detail</name>
         </sections>
         <sections>
             <label><!-- RTV Order Items --></label>

@@ -267,6 +267,10 @@
         <errorMessage>项目需要在“OffPolicy”后才能结束，请不要结束“待定”的项目</errorMessage>
         <name>RP_Pending_Status</name>
     </validationRules>
+    <validationRules>
+        <errorMessage><!-- The tolerance value range must be greater than or equal to 0 or less than or equal to 1 --></errorMessage>
+        <name>ToleranceScope</name>
+    </validationRules>
     <webLinks>
         <label><!-- Export_PDF --></label>
         <name>Export_PDF</name>

@@ -21,6 +21,8 @@ public class Test_RTV_Order_UploadInspectCtrl_DTC {
         item.BU_2__c = 'AP';
         item.SKU_Size_US__c = 'XL';
         item.POS_SKU__c = product.SKU__c + item.SKU_Size_US__c;
+        item.Insp_Actual_QTY__c=1;
+        item.Insp_WSL_Remark__c='aa';
         insert item;
         
         item = [SELECT LF_Order_Auth_Code__c FROM RTV_Order_Item__c WHERE id = :item.Id];
@@ -49,28 +51,30 @@ public class Test_RTV_Order_UploadInspectCtrl_DTC {
         // 上传
         ctrl.createItemIfNotFound = true;
         ctrl.fileUploadBody = Blob.valueof('\r'
-            + '退货授权号,Bar Code,Material code,Style,Color,Size,季节码,申请数量,实收,差异,A,B,C,D,Reason code\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,A\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,B1\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,B2\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,B3\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,B4\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,B5\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,B6\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,B7\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,C1\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,C2-1\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,C2-2\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,C2-3\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,C2-4\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,C2-5\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,C2-6\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,C2-7\r'
-            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,0,1,1,1,1,D\r'
+            + '退货授权号,Bar Code,Material code,Style,Color,Size,季节码,申请数量,实收,备注,差异,A,B,C,D,Reason code\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,A\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,B1\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,B2\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,B3\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,B4\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,B5\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,B6\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,B7\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,C1\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,C2-1\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,C2-2\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,C2-3\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,C2-4\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,C2-5\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,C2-6\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,C2-7\r'
+            + item.LF_Order_Auth_Code__c + ',[Bar Code],[material],style,color,XL,20Q1,3,3,aa,0,1,1,1,1,D\r'
         );
         ctrl.upload();
         
         // 更新
         ctrl.upload();
+
+        RTV_Order_UploadInspectCtrl_DTC.lieToTest();
     }
 }

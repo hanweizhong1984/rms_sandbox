@@ -151,6 +151,7 @@ trigger RMS_Order_StatusChange on RTV_Order__c (before insert, before update, af
     else if (Trigger.isUpdate && Trigger.isAfter) {
 
         List<RTV_Order__c> uporders = new List<RTV_Order__c>();
+        Map<Id,RTV_Summary__c> upsummaries = new Map<Id,RTV_Summary__c>();
         List<RTV_Order_Item__c> upitems = new List<RTV_Order_Item__c>();
 
         for (RTV_Order__c newOrd: Trigger.new) {
@@ -187,6 +188,11 @@ trigger RMS_Order_StatusChange on RTV_Order__c (before insert, before update, af
                     }
 
                     upitems.addAll(items);
+                }else if(oldOrd.Status__c == 'Inspected' && newOrd.Status__c == 'Insp Wait Approval' && newOrd.Return_Summary__c != null){
+                    RTV_Summary__c summary = new RTV_Summary__c();
+                    summary.Id = newOrd.Return_Summary__c;
+                    summary.Insp_Submit_Time__c=DateTime.now().date();
+                    upsummaries.put(summary.Id,summary);
                 }
                 
             }
@@ -196,6 +202,9 @@ trigger RMS_Order_StatusChange on RTV_Order__c (before insert, before update, af
             //TODO:联系人电话
             //update uporders;
             update upitems;
+        }
+        if(upsummaries.size() > 0){
+            update upsummaries.values();
         }
     }
     

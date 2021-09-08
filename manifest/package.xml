@@ -837,6 +837,7 @@
         <members>RTV_ContentDocument</members>
         <members>RTV_POS_Data_AuthCodeChange</members>
         <members>RTV_Program_InitRebuy</members>
+        <members>RMS_OrderItem_Size_DTC</members>
         <name>ApexTrigger</name>
     </types>
     <!-- Workflows -->

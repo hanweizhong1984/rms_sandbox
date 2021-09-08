@@ -103,6 +103,11 @@
             <field>Currency__c</field>
             <table>RTV_Program__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Tolerance__c</field>
+            <table>RTV_Program__c</table>
+        </columns>
         <masterLabel>RTV Programs</masterLabel>
     </sections>
     <sections>

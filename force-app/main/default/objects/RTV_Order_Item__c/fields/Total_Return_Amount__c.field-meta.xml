@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Return_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Inbound_QTY__c == 0, 0, Inspect_Amount_A__c + Inspect_Amount_B__c + Inspect_Amount_D__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>= Inspect Amount (A) + Inspect Amount (B) + Inspect Amount (D)</inlineHelpText>
+    <label>Actual Amount (CNY/excl.VAT)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

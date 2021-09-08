@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>RTV_Summary_Approval_To_CFS_Logistics</fullName>
+        <description>RTV Summary Approval To CFS Logistics</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RMS_CFS_Logistic_Confirm</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>noreply@converse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Converse_RMS/RTV_Summary_Apprpval_CS</template>
+    </alerts>
+    <alerts>
         <fullName>RTV_Summary_Approval_To_CS</fullName>
         <description>RTV Summary Approval To CS</description>
         <protected>false</protected>
@@ -225,6 +237,25 @@
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
+    <rules>
+        <fullName>RTV Summary CFS Approval</fullName>
+        <actions>
+            <name>RTV_Summary_Approval_To_CFS_Logistics</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>RTV_Summary__c.Program_Type__c</field>
+            <operation>equals</operation>
+            <value>CFS DTC Takeback Kick Off</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RTV_Summary__c.Insp_Submit_Time__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>当summary中的Insp_Submit_Time__c发生改变时，代表LF提交审核给CFS Logistics,发送邮件给CFS Logistics</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
     <rules>
         <fullName>RTV Summary CS Approval%28BELLE%29</fullName>
         <actions>
