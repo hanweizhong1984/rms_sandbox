@@ -443,6 +443,7 @@ public with sharing class RTV_Defective_Upload_Inspect_DTC {
         updItem.Bar_Code__c = tr.get('Bar Code');
         updItem.SKU_Size_US__c = tr.get('尺码');
         updItem.POS_SKU__c = tr.get('POS SKU');
+        updItem.Defective_Box_Code__c = tr.get('箱号');
         // item.商品信息
         if (product != null) {
             updItem.Product__c = product.Id;
