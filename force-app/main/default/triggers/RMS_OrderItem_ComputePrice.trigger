@@ -23,7 +23,7 @@ trigger RMS_OrderItem_ComputePrice on RTV_Order_Item__c (before insert, before u
                 }
             }
             // --变更时
-            else if (Trigger.isUpdate &&item.IsPreInbound__c==false) {
+            else if (Trigger.isUpdate) {
                 RTV_Order_Item__c itemOld = Trigger.oldMap.get(item.Id);
                 if (item.Selling_Unit_Price__c != itemOld.Selling_Unit_Price__c
                     || item.SP_TaxRate__c != itemOld.SP_TaxRate__c

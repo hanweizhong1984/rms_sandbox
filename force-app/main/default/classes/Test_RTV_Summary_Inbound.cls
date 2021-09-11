@@ -181,5 +181,6 @@ public with sharing class Test_RTV_Summary_Inbound {
             ctrl.summary.CS_Inbound_Date__c = null;
             ctrl.deleteAttach();
         } catch(Exception err) {}
+        
     }
 }

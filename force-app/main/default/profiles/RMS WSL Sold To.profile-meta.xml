@@ -250,6 +250,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>RTV_Summary_InboundAB_Batch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RTV_Summary_InboundD_Batch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RTV_Summary_Inbound_ToDef_Batch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -3008,11 +3016,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Order_Item__c.IsMaterial__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>RTV_Order_Item__c.IsPreInbound__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

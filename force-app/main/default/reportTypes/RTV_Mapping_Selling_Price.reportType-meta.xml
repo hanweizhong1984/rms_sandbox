@@ -497,11 +497,6 @@
             <field>POS_SKU__c</field>
             <table>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>IsPreInbound__c</field>
-            <table>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r</table>
-        </columns>
         <masterLabel>RTV Order Items</masterLabel>
     </sections>
 </ReportType>

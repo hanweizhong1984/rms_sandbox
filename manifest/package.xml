@@ -103,6 +103,8 @@
         <members>RTV_Summary_ClearData</members>
         <members>RTV_Summary_Inbound</members>
         <members>RTV_Summary_Inbound_ToDef_Batch</members>
+        <members>RTV_Summary_InboundAB_Batch</members>
+        <members>RTV_Summary_InboundD_Batch</members>
         <members>RTV_Summary_SellingPrice</members>
         <members>RTV_Summary_SellingPrice_Batch</members>
         <members>RTV_UploadRPWhiteListController</members>
