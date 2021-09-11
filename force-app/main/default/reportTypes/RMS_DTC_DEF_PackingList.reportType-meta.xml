@@ -191,4 +191,12 @@
         </columns>
         <masterLabel>RTV Order Item DEF Detail</masterLabel>
     </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsPreInbound__c</field>
+            <table>RTV_Order_Item__c</table>
+        </columns>
+        <masterLabel>RTV Order Items</masterLabel>
+    </sections>
 </ReportType>

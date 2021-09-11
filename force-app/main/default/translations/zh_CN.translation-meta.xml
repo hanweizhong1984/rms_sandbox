@@ -366,6 +366,10 @@
             <label><!-- RTV Order Item DEF Detail --></label>
             <name>RTV Order Item DEF Detail</name>
         </sections>
+        <sections>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
+        </sections>
     </reportTypes>
     <reportTypes>
         <description><!-- RMS DTC Order KPI --></description>
@@ -1163,6 +1167,10 @@
             </columns>
             <label><!-- DEF Summary --></label>
             <name>DEF Summary</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Order Items --></label>
+            <name>RTV Order Items</name>
         </sections>
     </reportTypes>
     <reportTypes>

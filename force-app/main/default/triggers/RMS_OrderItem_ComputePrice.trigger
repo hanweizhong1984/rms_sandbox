@@ -16,7 +16,6 @@ trigger RMS_OrderItem_ComputePrice on RTV_Order_Item__c (before insert, before u
         // 查找inspect或selling变更的item
         for (RTV_Order_Item__c item: Trigger.new) {
             Boolean isInspChanged = false;
-            
             // --新增时 (包括TB转DEF时新增的Item)
             if (Trigger.isInsert) {
                 if (item.Selling_Unit_Price__c != null) {
@@ -24,7 +23,7 @@ trigger RMS_OrderItem_ComputePrice on RTV_Order_Item__c (before insert, before u
                 }
             }
             // --变更时
-            else if (Trigger.isUpdate) {
+            else if (Trigger.isUpdate &&item.IsPreInbound__c==false) {
                 RTV_Order_Item__c itemOld = Trigger.oldMap.get(item.Id);
                 if (item.Selling_Unit_Price__c != itemOld.Selling_Unit_Price__c
                     || item.SP_TaxRate__c != itemOld.SP_TaxRate__c

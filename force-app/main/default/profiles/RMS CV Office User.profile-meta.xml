@@ -3013,6 +3013,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>RTV_Order_Item__c.IsPreInbound__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>RTV_Order_Item__c.IsSpecialDEF__c</field>
         <readable>true</readable>
     </fieldPermissions>
