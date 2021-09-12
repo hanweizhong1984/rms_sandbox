@@ -10,6 +10,7 @@ trigger RMS_OrderInsp_Total on RTV_Order_Inspection__c (after insert, after upda
             item.Inspect_QTY_B__c = insp.B__c;
             item.Inspect_QTY_C__c = insp.C__c;
             item.Inspect_QTY_D__c = insp.D__c;
+            item.Insp_Actual_QTY__c = insp.Delivery_QTY__c;
             itemList.add(item);
         }
     }
