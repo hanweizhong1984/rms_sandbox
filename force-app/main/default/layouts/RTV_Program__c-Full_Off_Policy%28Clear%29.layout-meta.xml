@@ -188,6 +188,8 @@
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>Account_Group__c</fields>
+        <fields>Status__c</fields>
+        <fields>Next_Step__c</fields>
         <fields>OWNER.ALIAS</fields>
         <relatedList>RTV_Summary__c.RTV_Program__c</relatedList>
     </relatedLists>
