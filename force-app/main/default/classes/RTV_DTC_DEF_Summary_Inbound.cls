@@ -218,7 +218,7 @@ public with sharing class RTV_DTC_DEF_Summary_Inbound {
             if (loginUser.isLF){
                 share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_LF, 'V');
                 // share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
-                share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
             } else if(loginUser.isAdmin) {
                 ContentDocument cd = [SELECT Id FROM ContentDocument WHERE Id= :cv.ContentDocumentId LIMIT 1];
                 // LFWH
@@ -227,7 +227,7 @@ public with sharing class RTV_DTC_DEF_Summary_Inbound {
                 // attachuser = 'LFWH';
                 share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_LF, 'V');
                 // share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
-                share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
                 
                 // 管理员上传Owner变更处理
                 update cd;

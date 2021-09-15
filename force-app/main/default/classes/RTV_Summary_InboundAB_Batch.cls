@@ -1,8 +1,8 @@
 public class RTV_Summary_InboundAB_Batch implements Database.Batchable<SObject>, Database.Stateful{
     
-    private final Set<Id> orderIds;
-    public RTV_Summary_InboundAB_Batch(Set<Id> orderIds) {
-        this.orderIds = orderIds;
+    private final Id orderId;
+    public RTV_Summary_InboundAB_Batch(Id orderId) {
+        this.orderId = orderId;
     }
 
     /** 开始 */
@@ -10,7 +10,7 @@ public class RTV_Summary_InboundAB_Batch implements Database.Batchable<SObject>,
         return Database.getQueryLocator([
             SELECT Id, Inspect_QTY_A__c, Inspect_QTY_B__c, Inspect_QTY_D__c
             FROM RTV_Order_Item__c
-            WHERE RTV_Order__c IN :this.orderIds
+            WHERE RTV_Order__c = :this.orderId
         ]);
     }
 

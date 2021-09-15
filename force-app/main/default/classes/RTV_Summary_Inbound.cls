@@ -132,9 +132,11 @@ public with sharing class RTV_Summary_Inbound {
     /** 入库A、B品 */
     public void inboundAB() {
         if(this.workOrdersIds.size() > 0){
-            RTV_Summary_InboundAB_Batch batch = new RTV_Summary_InboundAB_Batch(this.workOrdersIds);
-            this.job = new AsyncApexJob();
-            this.job.Id = Database.executeBatch(batch, 100); // 一次处理100个item
+            for(Id order:this.workOrdersIds){
+                RTV_Summary_InboundAB_Batch batch = new RTV_Summary_InboundAB_Batch(order);
+                this.job = new AsyncApexJob();
+                this.job.Id = Database.executeBatch(batch, 100); // 一次处理100个item
+            }
         }else {
             this.isBatchLoading = false;
             ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.ERROR, '订单不存在，不能执行入库操作！'));
@@ -199,9 +201,11 @@ public with sharing class RTV_Summary_Inbound {
         //D品入库
         else {
             if(this.workOrdersIds.size() > 0){
-                RTV_Summary_InboundD_Batch batch = new RTV_Summary_InboundD_Batch(this.workOrdersIds);
-                this.job = new AsyncApexJob();
-                this.job.Id = Database.executeBatch(batch, 100); // 一次处理100个item
+                for(Id order:this.workOrdersIds){
+                    RTV_Summary_InboundD_Batch batch = new RTV_Summary_InboundD_Batch(order);
+                    this.job = new AsyncApexJob();
+                    this.job.Id = Database.executeBatch(batch, 100); // 一次处理100个item
+                 }
             }else {
                 this.isBatchLoading = false;
                 ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.ERROR, '订单不存在，不能执行入库操作！'));
@@ -346,17 +350,17 @@ public with sharing class RTV_Summary_Inbound {
             if (loginUser.isCS) {
                 attachuser = 'CS';
                 share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
-                share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
             } else if (loginUser.isLF){
                 if(this.summary.CS_Inbound_Date__c == null){
                     attachuser = 'LFWH';
                 }else {
                     attachuser = 'LFDELY';
-                    share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_WSL, 'V');
+                    //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_WSL, 'V');
                 }
                 share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_LF, 'V');
-                share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V'); 
-                share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V'); 
+                //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
         
             } else if(loginUser.isAdmin) {
                 ContentDocument cd = [SELECT Id FROM ContentDocument WHERE Id= :cv.ContentDocumentId LIMIT 1];
@@ -366,24 +370,24 @@ public with sharing class RTV_Summary_Inbound {
                     cd.OwnerId = user.Id;
                     attachuser = 'LFWH';
                     share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_LF, 'V');
-                    share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
-                    share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                    //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
+                    //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
                 }else if(this.summary.CS_Inbound_Date__c == null){
                     // CS
                     User user = [SELECT Id FROM User WHERE Profile.Name IN:loginUser.Profiles_CS LIMIT 1];
                     cd.OwnerId = user.Id;
                     attachuser = 'CS';
                     share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
-                    share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                    //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
                 }else {
                     // LFDELY
                     User user = [SELECT Id FROM User WHERE Profile.Name IN:loginUser.Profiles_LF LIMIT 1];
                     cd.OwnerId = user.Id;
                     attachuser = 'LFDELY';
                     share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_LF, 'V');
-                    share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
-                    share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_WSL, 'V');
-                    share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
+                    //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_CS, 'V');
+                    //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_WSL, 'V');
+                    //share2OtherUser(cv.ContentDocumentId, loginUser.Profiles_Admin, 'C');
                 }
                 // 管理员上传Owner变更处理
                 update cd;
