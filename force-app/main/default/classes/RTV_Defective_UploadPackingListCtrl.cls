@@ -132,7 +132,7 @@ public with sharing class RTV_Defective_UploadPackingListCtrl {
                 
                 // 页面显示结果
                 this.resErrorCsv = '';
-                RMS_CommonUtil.pageAddMessage(ApexPages.severity.CONFIRM, '上传成功');
+                RMS_CommonUtil.pageAddMessage(ApexPages.severity.CONFIRM, '上传成功，如本次申请信息已完成，请返回订单页并点击右上角"Post TO LF"完成本次申请');
             } 
             else if(isNeedErrorCsv){
                 RMS_CommonUtil.pageAddMessage(ApexPages.severity.INFO, 'Packinglist上传失败！请参考返回的错误信息文件。');
