@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "outcome": "Passed",
+    "testsRan": 1,
+    "passing": 1,
+    "failing": 0,
+    "skipped": 0,
+    "passRate": "100%",
+    "failRate": "0%",
+    "skipRate": "0%",
+    "testStartTime": "Sat Sep 11 2021 下午8:45:36",
+    "testExecutionTimeInMs": 10915,
+    "testTotalTimeInMs": 10915,
+    "commandTimeInMs": 670,
+    "hostname": "https://converse-sandbox-rms--rms.my.salesforce.com",
+    "orgId": "00D6w0000008aXSEAY",
+    "username": "tech.support@converse.com.rms",
+    "testRunId": "7076w00000WxR9B",
+    "userId": "0056w000000YKdbAAG"
+  },
+  "tests": [
+    {
+      "id": "07M6w000002LXO6EAO",
+      "queueItemId": "7096w000000CI1LAAW",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7076w00000WxR9BAAV",
+      "methodName": "test",
+      "outcome": "Pass",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p6w0000005KbSAAU",
+        "name": "Test_RTV_Summary_Inbound",
+        "namespacePrefix": null,
+        "fullName": "Test_RTV_Summary_Inbound"
+      },
+      "runTime": 10915,
+      "testTimestamp": "2021-09-11T12:47:42.000+0000",
+      "fullName": "Test_RTV_Summary_Inbound.test"
+    }
+  ]
+}

@@ -1,2 +1,12 @@
 .sfdx/tools/apex.db
 .sfdx/typings/lwc/lds.d.ts
+.sfdx/orgs/tech.support@converse.com.rms/metadata/EmailFolder.json
+.sfdx/orgs/tech.support@converse.com.rms/metadata/EmailTemplate_Converse_RMS.json
+.sfdx/tools/apex.db
+.sfdx/tools/debug/logs/07L6w000004ulGPEAY.log
+.sfdx/tools/debug/logs/07L6w000004unbJEAQ.log
+.sfdx/tools/testresults/apex/test-result-7076w00000UA59Z.json
+.sfdx/tools/testresults/apex/test-result-7076w00000UB9Sn.json
+.sfdx/tools/testresults/apex/test-result.json
+.sfdx/tools/testresults/apex/test-run-id.txt
+.vscode/launch.json
