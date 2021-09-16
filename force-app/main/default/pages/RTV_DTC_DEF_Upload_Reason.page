@@ -71,6 +71,9 @@
     function startLoading() {
         document.getElementById("el_loading").style.display = 'inline';
     }
+    if('{!showMessage}'=='True'){
+        alert('特别提醒：您还未正式提交本次退残申请，如本次申请信息已完成，请返回订单页并点击右上角“Post TO LF”完成本次申请');
+    }
 </script>
 
 <!-- 错误信息文件下载 -->

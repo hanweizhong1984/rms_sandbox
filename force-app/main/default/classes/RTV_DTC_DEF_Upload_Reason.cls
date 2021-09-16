@@ -34,7 +34,7 @@ public with sharing class RTV_DTC_DEF_Upload_Reason {
     public static final String[] Unaccept_Reason_Words = new String[]{
         '鞋盒', '盒', '样品', '包装破损', '做工不良', '陈列', '陈列鞋', '眼扣损坏', '磨损', '脏污', '褪色', '退色'
     };
-    
+    public String showMessage{get; set;}
     /**
      * 构造方法
      */
@@ -65,6 +65,7 @@ public with sharing class RTV_DTC_DEF_Upload_Reason {
         // 判断文件内容是否为空
         if(this.fileUploadBody == null) {
             RMS_CommonUtil.pageAddMessage(ApexPages.severity.ERROR, '请先选择上传文件！');
+            this.showMessage='';
             return;
         }
         
@@ -83,14 +84,17 @@ public with sharing class RTV_DTC_DEF_Upload_Reason {
                 
                 // 页面显示结果
                 this.resErrorCsv = '';
-                RMS_CommonUtil.pageAddMessage(ApexPages.severity.CONFIRM, '上传成功，如本次申请信息已完成，请返回订单页并点击右上角"Post TO LF"完成本次申请');
+                RMS_CommonUtil.pageAddMessage(ApexPages.severity.CONFIRM, '上传成功');
+                this.showMessage='True';
             } 
             else if(isNeedErrorCsv){
                 RMS_CommonUtil.pageAddMessage(ApexPages.severity.INFO, 'Packinglist上传失败！请参考返回的错误信息文件。');
+                this.showMessage='';
             }
         } catch (Exception e) {
             ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, '上传失败！ '+ e.getMessage()));
             Database.rollback(savePot);
+            this.showMessage='';
         }
     }
     
