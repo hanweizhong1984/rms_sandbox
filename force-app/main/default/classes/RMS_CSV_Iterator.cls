@@ -218,7 +218,8 @@ public with sharing class RMS_CSV_Iterator {
             return tr.get(key.toLowerCase());
         }
         public Decimal getDecimal(String key, Integer defVal) {
-            return RMS_CommonUtil.str2Decimal(this.get(key), defVal);
+            String k = this.get(key).contains(',')?this.get(key).replace(',',''):this.get(key);
+            return RMS_CommonUtil.str2Decimal(k, defVal);
         }
         public void put(String key, String value) {
             tr.put(key.toLowerCase(), value);

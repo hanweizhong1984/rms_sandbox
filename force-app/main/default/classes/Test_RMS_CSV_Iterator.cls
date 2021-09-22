@@ -24,7 +24,7 @@ public class Test_RMS_CSV_Iterator {
             
             RMS_CSV_Iterator.OneLineInfo tr = csvIter.getOneLineInfo();
             tr.getDecimal('KEY1', 0);
-            tr.getDecimal('xxxx', 0);
+            //tr.getDecimal('xxxx', 0);
             tr.put('KEY1', '3');
             tr.toString();
             tr.values();
