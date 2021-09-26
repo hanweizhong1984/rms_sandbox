@@ -1,4 +1,4 @@
-trigger RMS_Order_DEFDetail_Total on RTV_Order_Item_DEF_Detail__c (after update) {
+trigger RMS_Order_DEFDetail_Total on RTV_Order_Item_DEF_Detail__c (after insert,after update) {
     List<RTV_Order_Item_DEF_Detail__c> workingItems = Trigger.isDelete? trigger.old: trigger.new;
     
     // 待更新的item
@@ -11,10 +11,10 @@ trigger RMS_Order_DEFDetail_Total on RTV_Order_Item_DEF_Detail__c (after update)
         RTV_Order_Item_DEF_Detail__c oldDetail = Trigger.isUpdate? trigger.oldMap.get(detail.Id): null;
         
         // 或者更新: 接收数量，拒绝数量 时
-        if (Trigger.isUpdate
+        if (Trigger.isInsert||(Trigger.isUpdate
             || detail.Acceptable_Return_QTY__c != oldDetail.Acceptable_Return_QTY__c
             || detail.Reject_QTY__c != oldDetail.Reject_QTY__c
-        ) {
+        )) {
             // 准备更新关联的SkuBudget
             RTV_Order_Item__c item = new RTV_Order_Item__c();
             item.Id = detail.RTV_Order_Item__c;
@@ -23,6 +23,7 @@ trigger RMS_Order_DEFDetail_Total on RTV_Order_Item_DEF_Detail__c (after update)
             updItems.put(item.Id, item);
         }
     }
+    System.debug('updItems.KeySet():'+updItems.KeySet());
     // --------------------------
     // 重新统计item的inspectQty(C,D)
     // --------------------------

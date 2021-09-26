@@ -258,8 +258,8 @@ public with sharing class RTV_DEF_Summary_DTC {
                 
                 // 获取orderType
                 String orderType = 
-                    this.ctrl.summary.DTC_Type__c == 'CFS'? 'CFS DTC Takeback': 
-                    this.ctrl.summary.DTC_Type__c == 'DIG'? 'Digital DTC Takeback': '';
+                    this.ctrl.summary.DTC_Type__c == 'CFS'? 'CFS DTC Defective': 
+                    this.ctrl.summary.DTC_Type__c == 'DIG'? 'Digital DTC Defective': '';
                 if (orderType == '') {
                     throw new RMS_CommonUtil.RMSException('异常! Summary.DTC_Type__c的值错误!');
                 }
