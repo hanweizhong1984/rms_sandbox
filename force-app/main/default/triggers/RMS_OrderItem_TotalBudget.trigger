@@ -104,7 +104,12 @@ trigger RMS_OrderItem_TotalBudget on RTV_Order_Item__c (after insert, after upda
             Decimal budgetQty = budgetQTYMap.get(Material);
             // QTY超出预算时
             if (budgetQty > 0 && sumApplyQty > budgetQty) {
-                workingItems[0].addError('(货品号=' + (String)grp.get('Material_Code__c') + ')已超出预算数量');
+                workingItems[0].addError('已超出预算数量 ' 
+                     + '(预算数量=' + budgetQty + ')'
+                     + '(实际数量=' + sumApplyQty + ')'
+                     + '(货品号=' + (String)grp.get('Material_Code__c') + ')'
+                 );
+                //workingItems[0].addError('(货品号=' + (String)grp.get('Material_Code__c') + ')已超出预算数量');
             }
             // $NET(乘以QTY的总金额)超出预算时
             // if (budgetNet > 0 && sumApplyNet > budgetNet) {
