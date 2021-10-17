@@ -1,4 +1,4 @@
-public with sharing class RTV_Bth_SKU_KPI_Del implements Database.Batchable<sObject>, Database.Stateful {
+public with sharing class RTV_Bth_SKU_KPI_Del implements Database.Batchable<sObject> {
 
     final String query;
     

@@ -34,6 +34,7 @@ trigger RMS_OrderItem_Total on RTV_Order_Item__c (after insert, after update, af
         // 使用groupby合计
         for(AggregateResult inspGroup: [
                 SELECT RTV_Order__c orderId,
+                    RTV_Order__r.Name,
                     SUM(Application_QTY__c) Application_QTY__c,
                     SUM(Application_Amount__c) Application_Amount__c,
                     SUM(Inspect_QTY_A__c) Inspect_QTY_A__c,
@@ -42,7 +43,7 @@ trigger RMS_OrderItem_Total on RTV_Order_Item__c (after insert, after update, af
                     SUM(Inspect_QTY_D__c) Inspect_QTY_D__c
                 FROM RTV_Order_Item__c
                 WHERE RTV_Order__c IN :orderIds
-                GROUP BY RTV_Order__c
+                GROUP BY RTV_Order__c,RTV_Order__r.Name
             ]) {
             RTV_Order__c updO = new RTV_Order__c();
             updO.Id = (Id)inspGroup.get('orderId');

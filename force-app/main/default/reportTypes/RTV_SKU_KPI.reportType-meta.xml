@@ -198,6 +198,11 @@
             <field>Summary__c.RTV_Program__c.Name</field>
             <table>RTV_SKU_KPI__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Size__c</field>
+            <table>RTV_SKU_KPI__c</table>
+        </columns>
         <masterLabel>RTV SKU KPI</masterLabel>
     </sections>
 </ReportType>
