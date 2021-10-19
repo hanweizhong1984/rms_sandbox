@@ -454,6 +454,7 @@
         <members>RTV_RP_Summary_Budget__c</members>
         <members>RTV_SKU_KPI__c</members>
         <members>RTV_Summary__c</members>
+        <members>RTV_POS_ERROR__c</members>
         <name>CustomObject</name>
     </types>
     <!-- pages (Visualforce Pages) -->

@@ -3640,6 +3640,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RTV_POS_ERROR__c.ERR_DATE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_POS_ERROR__c.ERR_FILE_NAME__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_POS_ERROR__c.ERR_MSG__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RTV_POS_Item__c.BU__c</field>
         <readable>true</readable>
     </fieldPermissions>
