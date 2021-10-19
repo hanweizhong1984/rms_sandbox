@@ -18,6 +18,10 @@
                 <behavior>Edit</behavior>
                 <field>Size__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>OrderItemId__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

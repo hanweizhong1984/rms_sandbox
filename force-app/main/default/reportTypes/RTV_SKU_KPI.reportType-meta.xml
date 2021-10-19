@@ -203,6 +203,11 @@
             <field>Size__c</field>
             <table>RTV_SKU_KPI__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OrderItemId__c</field>
+            <table>RTV_SKU_KPI__c</table>
+        </columns>
         <masterLabel>RTV SKU KPI</masterLabel>
     </sections>
 </ReportType>

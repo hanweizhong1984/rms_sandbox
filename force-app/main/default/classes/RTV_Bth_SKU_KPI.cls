@@ -1,4 +1,4 @@
-public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.Stateful, Database.AllowsCallouts {
+public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.AllowsCallouts {
     
     Map<String, RTV_SKU_KPI__c> skuMap = new Map<String, RTV_SKU_KPI__c>();
     Set<Id> thisSummaryIds = new Set<Id>();
@@ -15,7 +15,8 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.St
             'RTV_Order__r.Return_Summary__r.DTC_Type__c, ' +
             'RTV_Order__r.Return_Summary__r.OwnerId, ' +
             'RTV_Order__r.Status__c, ' +
-            'Material_Code__c, BU_2__c, SKU_Style__c, SKU_Color__c, ' +
+            'Id, ' +
+            'Material_Code__c, BU_2__c, SKU_Style__c, SKU_Color__c, SKU_Size_US__c,' +
             'Inbound_QTY__c, Application_QTY__c, Inspect_QTY_A__c, Inspect_QTY_B__c, Inspect_QTY_C__c, Inspect_QTY_D__c ' +
             'FROM RTV_Order_Item__c WHERE RTV_Order__r.Return_Summary__c != NULL';
         return Database.getQueryLocator(query);
@@ -35,24 +36,24 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.St
             }
         }
 
-        List<AggregateResult>  temps = [
-            SELECT SummaryId__c, Current_Status__c FROM RTV_SKU_KPI__c
-            WHERE SummaryId__c IN :orderItemMap.keySet() AND Current_Status__c = 'Completed' 
-            GROUP BY SummaryId__c, Current_Status__c
-        ];
-        for (AggregateResult obj : temps) {
-            String summaryId = (String)obj.get('SummaryId__c');
-            String status = (String)obj.get('Current_Status__c');
-            if (orderItemMap.containsKey(summaryId) && thisSummaryIds.contains(summaryId) == false) {
-                orderItemMap.remove(summaryId);
-            }
-        }
+        // List<AggregateResult>  temps = [
+        //     SELECT SummaryId__c, Current_Status__c FROM RTV_SKU_KPI__c
+        //     WHERE SummaryId__c IN :orderItemMap.keySet() AND Current_Status__c = 'Completed' 
+        //     GROUP BY SummaryId__c, Current_Status__c
+        // ];
+        // for (AggregateResult obj : temps) {
+        //     String summaryId = (String)obj.get('SummaryId__c');
+        //     String status = (String)obj.get('Current_Status__c');
+        //     if (orderItemMap.containsKey(summaryId) && thisSummaryIds.contains(summaryId) == false) {
+        //         orderItemMap.remove(summaryId);
+        //     }
+        // }
         // 一个Summary的数据多次处理需要累计结果
         String key = null;
         Map<String, RTV_SKU_KPI__c> tempSkuMap = new Map<String, RTV_SKU_KPI__c>();
         for (List<RTV_Order_Item__c> items : orderItemMap.values()) {
             for (RTV_Order_Item__c obj : items) {
-                key = obj.RTV_Order__r.Return_Summary__c + obj.Material_Code__c + obj.BU_2__c + obj.SKU_Style__c + obj.SKU_Color__c;
+                key = obj.RTV_Order__r.Return_Summary__c + obj.Material_Code__c + obj.BU_2__c + obj.SKU_Style__c + obj.SKU_Color__c + obj.SKU_Size_US__c+ obj.Id;
                 RTV_SKU_KPI__c skuItem = new RTV_SKU_KPI__c();
                 // 初始化
                 skuItem.Inbound_QTY__c = 0;
@@ -71,6 +72,7 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.St
                 skuItem.OwnerId = obj.RTV_Order__r.Return_Summary__r.OwnerId;
                 skuItem.Summary__c = obj.RTV_Order__r.Return_Summary__c;
                 skuItem.SummaryId__c = obj.RTV_Order__r.Return_Summary__c;
+                skuItem.OrderItemId__c = obj.Id;
                 skuItem.Finance_Code__c = obj.RTV_Order__r.Return_Summary__r.RTV_Program__r.Finance_Code__c;
                 skuItem.Account_Group__c = obj.RTV_Order__r.Return_Summary__r.Account_Group__r.Name;
                 skuItem.Name = obj.RTV_Order__r.Return_Summary__r.Name;
@@ -79,7 +81,8 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.St
                 skuItem.BU__c = obj.BU_2__c;
                 skuItem.Material_Code__c = obj.Material_Code__c;
                 skuItem.Style__c = obj.SKU_Style__c;
-                skuItem.Color__c = obj.SKU_Color__c;
+                skuItem.Color__c = obj.SKU_Color__c != null ? obj.SKU_Color__c.leftPad(3,'0') : obj.SKU_Color__c;
+                skuItem.Size__c = obj.SKU_Size_US__c;
     
                 skuItem.Inbound_QTY__c += obj.Inbound_QTY__c == null ? 0 : obj.Inbound_QTY__c;
                 skuItem.Inspect_QTY_A__c += obj.Inspect_QTY_A__c == null ? 0 : obj.Inspect_QTY_A__c;
@@ -99,10 +102,10 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.St
                 }else if(obj.RTV_Order__r.Status__c == 'Delivered'){
                     //TODO:一个SKU的提货数量
                     skuItem.Current_Status_QTY__c += obj.Application_QTY__c == null ? 0 : obj.Application_QTY__c;
-                }else if(obj.RTV_Order__r.Status__c == 'Completed'){
-                    skuItem.Current_Status_QTY__c += skuItem.Inbound_QTY__c;
+                }else if(obj.RTV_Order__r.Status__c == 'Completed'||obj.RTV_Order__r.Status__c == 'Inbound'){
+                    skuItem.Current_Status_QTY__c += obj.Inbound_QTY__c;
                 }else {
-                    skuItem.Current_Status_QTY__c += (skuItem.Inspect_QTY_A__c + skuItem.Inspect_QTY_B__c + skuItem.Inspect_QTY_C__c + skuItem.Inspect_QTY_D__c);
+                    skuItem.Current_Status_QTY__c += (obj.Inspect_QTY_A__c + obj.Inspect_QTY_B__c + obj.Inspect_QTY_C__c + obj.Inspect_QTY_D__c);
                 }
     
                 skuItem.Expected_Date_Of_Inbound__c = obj.RTV_Order__r.Return_Summary__r.Expected_Date_Of_Inbound__c;
@@ -128,10 +131,11 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.St
 
         if(!tempSkuMap.isEmpty()) {
             List<RTV_SKU_KPI__c> tempSkus = tempSkuMap.values();
+            system.debug('tempSkusCount:'+tempSkus.Size());
             upsert tempSkus;
 
             for (RTV_SKU_KPI__c obj : tempSkus) {
-                key = obj.SummaryId__c + obj.Material_Code__c + obj.BU__c + obj.Style__c + obj.Color__c;
+                key = obj.SummaryId__c + obj.Material_Code__c + obj.BU__c + obj.Style__c + obj.Color__c + obj.Size__c+obj.OrderItemId__c;
                 skuMap.put(key, obj);
             }
         }

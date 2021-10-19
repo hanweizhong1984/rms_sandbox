@@ -4135,6 +4135,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RTV_SKU_KPI__c.OrderItemId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RTV_SKU_KPI__c.Size__c</field>
         <readable>true</readable>
     </fieldPermissions>
