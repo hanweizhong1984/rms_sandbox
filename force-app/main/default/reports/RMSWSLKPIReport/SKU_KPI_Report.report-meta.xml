@@ -16,6 +16,9 @@
         <field>RTV_SKU_KPI__c$Name</field>
     </columns>
     <columns>
+        <field>RTV_SKU_KPI__c$OrderName__c</field>
+    </columns>
+    <columns>
         <field>RTV_SKU_KPI__c$Current_Status__c</field>
     </columns>
     <columns>
