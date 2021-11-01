@@ -318,7 +318,6 @@ public with sharing class RTV_Order_UploadInspectCtrl_DTC {
         // ----------------------------
         String posSku;
         String size;
-        system.debug(tr.get('Material code'));
         RMS_Product__c pdt = this.products.get(tr.get('Material code'));
         if (pdt != null) {
             size = RMS_CommonUtil.size_Us2Asia(tr.get('Size'),itemBu2); //美码转亚码
@@ -361,18 +360,17 @@ public with sharing class RTV_Order_UploadInspectCtrl_DTC {
                 
                 // item.商品信息
                 item.POS_SKU__c = posSku;
-                system.debug(tr.get('Material code'));
                 item.Material_Code__c = tr.get('Material code');
                 item.BU_2__c = itemBu2;
                 item.Season_Code_CN__c = tr.get('季节码');
                 item.SKU_Style__c = tr.get('Style');
-                item.SKU_Color__c = tr.get('Color').leftPad(3,'0');
+                item.SKU_Color__c = tr.get('Color');
                 item.Bar_Code__c = tr.get('Bar code');
                 //item.Insp_Actual_QTY__c = tr.getDecimal('实收', 0);
                 item.Insp_WSL_Remark__c =tr.get('备注');
                 
                 // item记录中的Size = inseption中(FW的)尺码除以10
-                //item.SKU_Size_US__c = RMS_CommonUtil.size_lfUs2Us(size, itemBu2);
+                item.SKU_Size_US__c = RMS_CommonUtil.size_lfUs2Us(size, itemBu2);
                 
                 // item.商品对象信息
                 if (pdt != null) {
@@ -397,20 +395,18 @@ public with sharing class RTV_Order_UploadInspectCtrl_DTC {
             if (!this.upsertInspects.containsKey(itemUniqueKey)) {
                 // 更新item信息
                 item.UniqueKey__c = itemUniqueKey;
-                system.debug(tr.get('Material code'));
                 item.Material_Code__c = tr.get('Material Code');
                 item.SKU_Style__c = tr.get('Style');
-                item.SKU_Color__c = tr.get('Color').leftPad(3,'0');
+                item.SKU_Color__c = tr.get('Color');
                 item.Bar_Code__c = tr.get('Bar code');
                 //item.Insp_Actual_QTY__c = tr.getDecimal('实收', 0);
                 item.Insp_WSL_Remark__c =tr.get('备注');
                 // item记录中的Size = inseption中(FW的)尺码除以10
-                //item.SKU_Size_US__c = RMS_CommonUtil.size_lfUs2Us(size, itemBu2);
+                item.SKU_Size_US__c = RMS_CommonUtil.size_lfUs2Us(size, itemBu2);
                 
                 // 添加到待更新（只添加需要更新的字段）
                 this.upsertItems.put(item.UniqueKey__c, new RTV_Order_Item__c(
                     Id = item.Id,
-                    Material_Code__c = item.Material_Code__c,
                     UniqueKey__c = item.UniqueKey__c,
                     SKU_Style__c = item.SKU_Style__c,
                     SKU_Color__c = item.SKU_Color__c,
