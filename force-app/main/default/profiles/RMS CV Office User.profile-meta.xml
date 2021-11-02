@@ -4021,6 +4021,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RTV_SKU_KPI__c.Actual_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_SKU_KPI__c.Actual_Amount_inV__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RTV_SKU_KPI__c.Actual_Date_Of_CS_Confirmed__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4062,6 +4072,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>RTV_SKU_KPI__c.BU__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_SKU_KPI__c.BudgetAmount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_SKU_KPI__c.BudgetQTY__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
