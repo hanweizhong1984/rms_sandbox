@@ -17,8 +17,8 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.Al
             'RTV_Order__r.Status__c, ' +
             'RTV_Order__r.Name, ' +
             'Id, ' +
-            'SKU_Budget__r.Budget_QTY__c, ' +
-            'SKU_Budget__r.Budget_NET__c, ' +
+            'BudgetQTY__c, ' +
+            'BudgetAmount__c, ' +
             'Actual_Amount__c, ' +
             'Actual_Amount_inV__c, ' +
             'Material_Code__c, BU_2__c, SKU_Style__c, SKU_Color__c, SKU_Size_US__c,' +
@@ -79,8 +79,8 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.Al
                 skuItem.SummaryId__c = obj.RTV_Order__r.Return_Summary__c;
                 skuItem.OrderName__c = obj.RTV_Order__r.Name;
                 skuItem.OrderItemId__c = obj.Id;
-                skuItem.BudgetQTY__c = obj.SKU_Budget__r.Budget_QTY__c;
-                skuItem.BudgetAmount__c = obj.SKU_Budget__r.Budget_NET__c;
+                skuItem.BudgetQTY__c = obj.BudgetQTY__c;
+                skuItem.BudgetAmount__c = obj.BudgetAmount__c;
                 skuItem.Actual_Amount__c = obj.Actual_Amount__c;
                 skuItem.Actual_Amount_inV__c = obj.Actual_Amount_inV__c;
 

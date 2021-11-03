@@ -560,6 +560,16 @@
             <field>IsDTC__c</field>
             <table>RTV_BaoZun_Seeding__c.RTV_Orders__r.RTV_Order_Items__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>BudgetQTY__c</field>
+            <table>RTV_BaoZun_Seeding__c.RTV_Orders__r.RTV_Order_Items__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>BudgetAmount__c</field>
+            <table>RTV_BaoZun_Seeding__c.RTV_Orders__r.RTV_Order_Items__r</table>
+        </columns>
         <masterLabel>RTV Order Items</masterLabel>
     </sections>
 </ReportType>

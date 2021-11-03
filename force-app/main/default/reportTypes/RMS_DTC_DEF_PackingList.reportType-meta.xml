@@ -192,6 +192,16 @@
         <masterLabel>RTV Order Item DEF Detail</masterLabel>
     </sections>
     <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>BudgetQTY__c</field>
+            <table>RTV_Order_Item__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>BudgetAmount__c</field>
+            <table>RTV_Order_Item__c</table>
+        </columns>
         <masterLabel>RTV Order Items</masterLabel>
     </sections>
 </ReportType>
