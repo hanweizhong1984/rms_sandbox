@@ -10,3 +10,6 @@
 .sfdx/tools/testresults/apex/test-result.json
 .sfdx/tools/testresults/apex/test-run-id.txt
 .vscode/launch.json
+.sfdx/orgs/amber.wang@converse.com/sourcePathInfos.json
+.sfdx/tools/apex.db
+.sfdx/tools/debug/logs/07L3x00004ujdLUEAY.log
