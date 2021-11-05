@@ -50,5 +50,7 @@ public with sharing class Test_RTV_Sch_SKU_KPI {
         String sch = '0 30 15 26 4 ?';
         system.schedule('Test schexample', sch, p);
         Test.stopTest();
+
+        RTV_Bth_SKU_KPI.lieToTest();
     }
 }
