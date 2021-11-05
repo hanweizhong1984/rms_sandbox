@@ -1,0 +1,23 @@
+{
+  "name": "rms_sandbox",
+  "version": "1.0.0",
+  "description": "Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanweizhong1984/rms_sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanweizhong1984/rms_sandbox/issues"
+  },
+  "homepage": "https://github.com/hanweizhong1984/rms_sandbox#readme",
+  "devDependencies": {
+    "prettier": "2.4.1",
+    "prettier-plugin-apex": "1.10.0"
+  }
+}
