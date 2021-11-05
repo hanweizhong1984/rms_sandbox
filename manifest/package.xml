@@ -96,8 +96,10 @@
         <members>RTV_RP_UploadSKUBudget_Batch</members>
         <members>RTV_RP_UploadSKUBudgetController</members>
         <members>RTV_RP_UploadWholesaleBudgetController</members>
+        <members>RTV_OrderItem_getBudget</members>
         <members>RTV_Sch_DeleteTemporaryRecord</members>
         <members>RTV_Sch_SKU_KPI</members>
+        <members>RTV_Sch_OrderItem_getBudget</members>
         <members>RTV_SummaryCtrl</members>
         <members>RTV_SummaryCtrl_DTC</members>
         <members>RTV_Summary_ClearData</members>
@@ -219,6 +221,10 @@
         <members>Test_Trigger_RTV_ContentDocument</members>
         <members>Test_Trigger_RTV_POS_Data_AuthCodeChange</members>
         <members>Test_Trigger_RTV_Program_InitRebuy</members>
+        <members>Test_RTV_Sch_OrderItem_getBudget</members>
+        <members>BudgetAggregateBatch</members>
+        <members>SearchResultIterable</members>
+        <members>SearchResultIterator</members>
         <name>ApexClass</name>
     </types>
     <!-- Dashboard -->

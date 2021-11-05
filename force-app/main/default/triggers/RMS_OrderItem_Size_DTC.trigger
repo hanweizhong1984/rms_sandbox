@@ -1,11 +1,11 @@
 trigger RMS_OrderItem_Size_DTC on RTV_Order_Item__c (before insert) {
     Set<String> APACMaterialSet = new Set<String>();
-    Set<String> ALLMaterialSet = new Set<String>();
-    Set<Id> ALLOrderSet = new Set<Id>();
-    Set<String> ProgramNameSet = new Set<String>();
-    Map<String,Id> SkuBudgetMap = new Map<String,Id>();
+    // Set<String> ALLMaterialSet = new Set<String>();
+    // Set<Id> ALLOrderSet = new Set<Id>();
+    // Set<String> ProgramNameSet = new Set<String>();
+    // Map<String,Id> SkuBudgetMap = new Map<String,Id>();
     Map<String,RMS_Product__c> productMap =new Map<String,RMS_Product__c>();
-    Map<Id,RTV_Order__c> orderMap = new Map<Id,RTV_Order__c>();
+    // Map<Id,RTV_Order__c> orderMap = new Map<Id,RTV_Order__c>();
     for (RTV_Order_Item__c item: Trigger.new) {
         if(item.IsDTC__c==true &&(item.BU_2__c=='AP'||item.BU_2__c=='AC')){
             APACMaterialSet.add(item.Material_Code__c);
@@ -35,97 +35,97 @@ trigger RMS_OrderItem_Size_DTC on RTV_Order_Item__c (before insert) {
             if(productMap.get(item.Material_Code__c)!=null){
                 item.Material_Code__c= productMap.get(item.Material_Code__c).Material_Code__c;
             }
-            ALLOrderSet.add(item.RTV_Order__c);
-            ALLMaterialSet.add(item.Material_Code__c);
+            // ALLOrderSet.add(item.RTV_Order__c);
+            // ALLMaterialSet.add(item.Material_Code__c);
         }
     }
     
-    if(!ALLOrderSet.isEmpty()){
-        for(RTV_Order__c order:[
-            SELECT Id, Return_Summary__r.Program_Name__c, Store_Code__c 
-            FROM RTV_Order__c 
-            WHERE Id IN :ALLOrderSet
-        ]){
-            if(!orderMap.containsKey(order.Id))
-            {
-                orderMap.put(order.Id,order);
-            }
-            ProgramNameSet.add(order.Return_Summary__r.Program_Name__c);
-        }
-        system.debug('orderMap'+orderMap);
-    }
+    // if(!ALLOrderSet.isEmpty()){
+    //     for(RTV_Order__c order:[
+    //         SELECT Id, Return_Summary__r.Program_Name__c, Store_Code__c 
+    //         FROM RTV_Order__c 
+    //         WHERE Id IN :ALLOrderSet
+    //     ]){
+    //         if(!orderMap.containsKey(order.Id))
+    //         {
+    //             orderMap.put(order.Id,order);
+    //         }
+    //         ProgramNameSet.add(order.Return_Summary__r.Program_Name__c);
+    //     }
+    //     system.debug('orderMap'+orderMap);
+    // }
 
-    if(!ALLMaterialSet.isEmpty()&&!ProgramNameSet.isEmpty()){
-        for(RTV_RP_SKU_Budget__c sku:[
-            SELECT Id, Return_Program__r.Name,SKU_Material_Code__c, Store__c, Size__c 
-            FROM RTV_RP_SKU_Budget__c
-            WHERE SKU_Material_Code__c IN : ALLMaterialSet
-            AND Return_Program__r.Name IN : ProgramNameSet
-        ]){
-            String Key='';
-            if(sku.Size__c!=null){
-                if(sku.Store__c==null){
-                    Key = sku.Return_Program__r.Name+sku.SKU_Material_Code__c+sku.Size__c;
-                    if(!SkuBudgetMap.containsKey(Key))
-                    {
-                        SkuBudgetMap.put(Key,sku.Id);
-                    }
-                }else{
-                    Key = sku.Return_Program__r.Name+sku.SKU_Material_Code__c+sku.Store__c+sku.Size__c;
-                    if(!SkuBudgetMap.containsKey(Key))
-                    {
-                        SkuBudgetMap.put(Key,sku.Id);
-                    }
-                }
-            }else{
-                if(sku.Store__c==null){
-                    Key = sku.Return_Program__r.Name+sku.SKU_Material_Code__c;
-                    if(!SkuBudgetMap.containsKey(Key))
-                    {
-                        SkuBudgetMap.put(Key,sku.Id);
-                    }
-                }else{
-                    Key = sku.Return_Program__r.Name+sku.SKU_Material_Code__c+sku.Store__c;
-                    if(!SkuBudgetMap.containsKey(Key))
-                    {
-                        SkuBudgetMap.put(Key,sku.Id);
-                    }
-                }
-            }
-        }
-        system.debug('SkuBudgetMap'+SkuBudgetMap);
-    }
+    // if(!ALLMaterialSet.isEmpty()&&!ProgramNameSet.isEmpty()){
+    //     for(RTV_RP_SKU_Budget__c sku:[
+    //         SELECT Id, Return_Program__r.Name,SKU_Material_Code__c, Store__c, Size__c 
+    //         FROM RTV_RP_SKU_Budget__c
+    //         WHERE SKU_Material_Code__c IN : ALLMaterialSet
+    //         AND Return_Program__r.Name IN : ProgramNameSet
+    //     ]){
+    //         String Key='';
+    //         if(sku.Size__c!=null){
+    //             if(sku.Store__c==null){
+    //                 Key = sku.Return_Program__r.Name+sku.SKU_Material_Code__c+sku.Size__c;
+    //                 if(!SkuBudgetMap.containsKey(Key))
+    //                 {
+    //                     SkuBudgetMap.put(Key,sku.Id);
+    //                 }
+    //             }else{
+    //                 Key = sku.Return_Program__r.Name+sku.SKU_Material_Code__c+sku.Store__c+sku.Size__c;
+    //                 if(!SkuBudgetMap.containsKey(Key))
+    //                 {
+    //                     SkuBudgetMap.put(Key,sku.Id);
+    //                 }
+    //             }
+    //         }else{
+    //             if(sku.Store__c==null){
+    //                 Key = sku.Return_Program__r.Name+sku.SKU_Material_Code__c;
+    //                 if(!SkuBudgetMap.containsKey(Key))
+    //                 {
+    //                     SkuBudgetMap.put(Key,sku.Id);
+    //                 }
+    //             }else{
+    //                 Key = sku.Return_Program__r.Name+sku.SKU_Material_Code__c+sku.Store__c;
+    //                 if(!SkuBudgetMap.containsKey(Key))
+    //                 {
+    //                     SkuBudgetMap.put(Key,sku.Id);
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     system.debug('SkuBudgetMap'+SkuBudgetMap);
+    // }
     
-    for (RTV_Order_Item__c item: Trigger.new) {
-        if (item.IsDTC__c == true || item.RTV_BaoZun_Seeding__c!=null){
-            //item绑定对应的SKU_Budget__c
-            String programName ='';
-            String storecode ='';
-            if(orderMap.get(item.RTV_Order__c)!=null){
-                RTV_Order__c order = orderMap.get(item.RTV_Order__c);
-                programName = order.Return_Summary__r.Program_Name__c;
-                storecode = order.Store_Code__c;
-            }
-            //cfs :skubudget表中material+store+size的场合
-            String key =programName+item.Material_Code__c+storecode+item.SKU_Size_Asia__c;
-            if(SkuBudgetMap.get(key)!=null){
-                item.SKU_Budget__c = SkuBudgetMap.get(key);
-            }
-            //cfs :skubudget表中material+store的场合
-            String key2 =programName+item.Material_Code__c+storecode;
-            if(SkuBudgetMap.get(key2)!=null){
-                item.SKU_Budget__c = SkuBudgetMap.get(key2);
-            }
-            //dig :skubudget表中material+size的场合
-            String key3 = programName+item.Material_Code__c+item.SKU_Size_Asia__c;
-            if(SkuBudgetMap.get(key3)!=null){
-                item.SKU_Budget__c = SkuBudgetMap.get(key3);
-            }
-            //dig :skubudget表中material的场合
-            String key4 = programName+item.Material_Code__c;
-            if(SkuBudgetMap.get(key4)!=null){
-                item.SKU_Budget__c = SkuBudgetMap.get(key4);
-            }
-        }
-    }
+    // for (RTV_Order_Item__c item: Trigger.new) {
+    //     if (item.IsDTC__c == true || item.RTV_BaoZun_Seeding__c!=null){
+    //         //item绑定对应的SKU_Budget__c
+    //         String programName ='';
+    //         String storecode ='';
+    //         if(orderMap.get(item.RTV_Order__c)!=null){
+    //             RTV_Order__c order = orderMap.get(item.RTV_Order__c);
+    //             programName = order.Return_Summary__r.Program_Name__c;
+    //             storecode = order.Store_Code__c;
+    //         }
+    //         //cfs :skubudget表中material+store+size的场合
+    //         String key =programName+item.Material_Code__c+storecode+item.SKU_Size_Asia__c;
+    //         if(SkuBudgetMap.get(key)!=null){
+    //             item.SKU_Budget__c = SkuBudgetMap.get(key);
+    //         }
+    //         //cfs :skubudget表中material+store的场合
+    //         String key2 =programName+item.Material_Code__c+storecode;
+    //         if(SkuBudgetMap.get(key2)!=null){
+    //             item.SKU_Budget__c = SkuBudgetMap.get(key2);
+    //         }
+    //         //dig :skubudget表中material+size的场合
+    //         String key3 = programName+item.Material_Code__c+item.SKU_Size_Asia__c;
+    //         if(SkuBudgetMap.get(key3)!=null){
+    //             item.SKU_Budget__c = SkuBudgetMap.get(key3);
+    //         }
+    //         //dig :skubudget表中material的场合
+    //         String key4 = programName+item.Material_Code__c;
+    //         if(SkuBudgetMap.get(key4)!=null){
+    //             item.SKU_Budget__c = SkuBudgetMap.get(key4);
+    //         }
+    //     }
+    // }
 }
