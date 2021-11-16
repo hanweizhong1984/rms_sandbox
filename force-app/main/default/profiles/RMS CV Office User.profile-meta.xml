@@ -6,6 +6,10 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>BudgetAggregateBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RMS_CSV_Iterator</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -150,6 +154,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>RTV_OrderItem_getBudget</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RTV_Order_ClearData</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -230,6 +238,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>RTV_Sch_OrderItem_getBudget</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RTV_Sch_SKU_KPI</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -279,6 +291,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>RTV_UploadStoreListController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SearchResultIterable</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SearchResultIterator</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -479,6 +499,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Test_RTV_Sch_DeleteTemporaryRecord</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Test_RTV_Sch_OrderItem_getBudget</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4077,6 +4101,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>RTV_SKU_KPI__c.Actual_Date_Of_WSL_Confirmed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_SKU_KPI__c.Applied_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
