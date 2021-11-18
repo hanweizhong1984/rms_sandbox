@@ -443,6 +443,11 @@
             <field>BudgetAmount__c</field>
             <table>RTV_Order__c.RTV_Order_Items__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Order_Season__c</field>
+            <table>RTV_Order__c.RTV_Order_Items__r</table>
+        </columns>
         <masterLabel>RTV Order Items</masterLabel>
     </sections>
     <sections>

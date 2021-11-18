@@ -1,6 +1,7 @@
 global class BudgetAggregateBatch implements Database.Batchable<AggregateResult>,Database.Stateful {
     public Map<String,Decimal> budgetQtyMap;
     public Map<String,Decimal> budgetNetMap;
+    public Map<String,String> orderSeasonMap;
     public String programName;
     private String query;
     public String pType;
@@ -10,6 +11,7 @@ global class BudgetAggregateBatch implements Database.Batchable<AggregateResult>
         pType = t;
         budgetQtyMap = new Map<String,Decimal>();
         budgetNetMap = new Map<String,Decimal>();
+        orderSeasonMap = new Map<String,String>();
         programName = '';
     }
     // The batch job starts
@@ -42,6 +44,7 @@ global class BudgetAggregateBatch implements Database.Batchable<AggregateResult>
       }else {
           Decimal budgetQty = (Decimal)obj.get('budgetQty') != null? (Decimal)obj.get('budgetQty'): 0;
           Decimal budgetNet = (Decimal)obj.get('budgetNet') != null? ((Decimal)obj.get('budgetNet')).setScale(2, System.RoundingMode.HALF_UP): 0;
+          String orderSeason = obj.get('orderSeason') != null? (String)obj.get('orderSeason'):'';
           programName = obj.get('programName')!=null?(String)obj.get('programName'):'';
           String accountName = obj.get('accountName')!=null?(String)obj.get('accountName'):'';
           String material = obj.get('SKU_Material_Code__c')!=null?(String)obj.get('SKU_Material_Code__c'):'';
@@ -50,6 +53,7 @@ global class BudgetAggregateBatch implements Database.Batchable<AggregateResult>
           {
               budgetQtyMap.put(key,budgetQty);
               budgetNetMap.put(key,budgetNet);
+              orderSeasonMap.put(key,orderSeason);
           }        
       }
     }
@@ -57,7 +61,7 @@ global class BudgetAggregateBatch implements Database.Batchable<AggregateResult>
   // The batch job finishes
   global void finish(Database.BatchableContext bc){
           //更新item的BudgetQty
-          RTV_OrderItem_getBudget bth = new RTV_OrderItem_getBudget(budgetQtyMap,budgetNetMap,programName);
+          RTV_OrderItem_getBudget bth = new RTV_OrderItem_getBudget(budgetQtyMap,budgetNetMap,orderSeasonMap,programName);
           Database.executebatch(bth, 500);
    }
    // 用于跳过代码覆盖率测试

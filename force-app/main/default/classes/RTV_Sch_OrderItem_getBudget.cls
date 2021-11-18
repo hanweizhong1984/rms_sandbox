@@ -17,10 +17,11 @@ global class RTV_Sch_OrderItem_getBudget implements Schedulable {
                     'SKU_Material_Code__c,'+
                     'Return_Program__r.Name programName,'+
                     'SUM(Budget_NET__c) budgetNet,'+    
-                    'SUM(Budget_QTY__c) budgetQTY '+ 
+                    'SUM(Budget_QTY__c) budgetQTY,'+
+                    'Order_Season__c orderSeason '+ 
                     'FROM RTV_RP_SKU_Budget__c '+ 
                     'WHERE Return_Program__r.Name = \''+ program.Name +'\'' +
-                    'GROUP BY Return_Program__r.Name,SKU_Material_Code__c,Account_Group__r.Name';
+                    'GROUP BY Return_Program__r.Name,SKU_Material_Code__c,Account_Group__r.Name,Order_Season__c';
             }
             BudgetAggregateBatch bth = new BudgetAggregateBatch(query,ptype);
             Database.executebatch(bth, 200);

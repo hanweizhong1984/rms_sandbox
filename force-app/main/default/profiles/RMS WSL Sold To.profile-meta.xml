@@ -3083,6 +3083,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Order_Item__c.Order_Season__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Order_Item__c.Outside_Range__c</field>
         <readable>true</readable>
@@ -4220,6 +4225,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>RTV_SKU_KPI__c.OrderName__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_SKU_KPI__c.Order_Season__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

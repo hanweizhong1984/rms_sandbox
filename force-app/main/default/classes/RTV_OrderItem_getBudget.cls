@@ -1,11 +1,13 @@
 public with sharing class RTV_OrderItem_getBudget implements Database.Batchable<sObject>, Database.AllowsCallouts {
     public Map<String,Decimal> budgetQtyMap;
     public Map<String,Decimal> budgetNetMap;
+    public Map<String,String> orderSeasonMap;
     public String programName;
 
-    public RTV_OrderItem_getBudget(Map<String,Decimal> bqm,Map<String,Decimal> bnm,String pn) {
+    public RTV_OrderItem_getBudget(Map<String,Decimal> bqm,Map<String,Decimal> bnm,Map<String,String> osm,String pn) {
         budgetQtyMap = bqm;
         budgetNetMap = bnm;
+        orderSeasonMap = osm;
         programName = pn;
     }
 
@@ -13,7 +15,7 @@ public with sharing class RTV_OrderItem_getBudget implements Database.Batchable<
         system.debug('start process ' + programName + ' orderitem updatting!!');
         String query = 'SELECT Id, Name, RTV_Order__r.Return_Summary__r.RTV_Program__r.DTC_Type__c,'+
         'RTV_Order__r.Return_Summary__r.Account_Group__r.Name,RTV_Order__r.Store_Code__c,'+
-        'Material_Code__c, IsDTC__c, BudgetAmount__c, BudgetQTY__c '+ 
+        'Material_Code__c, IsDTC__c, BudgetAmount__c, BudgetQTY__c,Order_Season__c '+ 
         'FROM RTV_Order_Item__c '+ 
         'WHERE RTV_Order__r.Return_Summary__r.RTV_Program__r.Name = \''+ programName +'\'';
         return Database.getQueryLocator(query);
@@ -59,6 +61,7 @@ public with sharing class RTV_OrderItem_getBudget implements Database.Batchable<
                     updItem.Id = item.Id;
                     updItem.BudgetQTY__c = budgetQtyMap.get(key);
                     updItem.BudgetAmount__c = budgetNetMap.get(key);
+                    updItem.Order_Season__c = orderSeasonMap.get(key);
                     updDatas.add(updItem);
                 }
             }
