@@ -3914,6 +3914,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RTV_RP_SKU_Budget__c.Order_Season__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RTV_RP_SKU_Budget__c.RP_Ship_To__c</field>
         <readable>true</readable>
     </fieldPermissions>

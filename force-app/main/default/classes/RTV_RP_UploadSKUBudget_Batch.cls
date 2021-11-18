@@ -3,7 +3,7 @@ implements Database.Batchable<RMS_CSV_Iterator.OneLineInfo>, Database.Stateful {
     //PS: 不设置with sharing属性，即操作者可以不考虑权限处理任意记录
     
     /** 静态参数:CSV必须列标题 */ 
-    public final static String[] CSV_FIELDS = new String[]{'sku', 'Account Group', 'Sold To', 'Ship To', 'QTY', 'MSRP', '$NET'};
+    public final static String[] CSV_FIELDS = new String[]{'sku', 'Account Group', 'Sold To', 'Ship To', 'QTY', 'MSRP', '$NET','order season'};
     public final static String[] CFS_CSV_FIELDS = new String[]{'sku', 'Size', 'Account Group', 'Sold To', 'Store Id', 'QTY', 'MSRP', '$NET'};
     public final static String[] DIG_CSV_FIELDS = new String[]{'sku', 'Size', 'Account Group', 'Sold To', 'Ship To', 'QTY', 'MSRP', '$NET'};
     
@@ -161,6 +161,7 @@ implements Database.Batchable<RMS_CSV_Iterator.OneLineInfo>, Database.Stateful {
             skuBudget.Budget_QTY__c = tr.getDecimal('QTY', 0);
             skuBudget.Budget_MSRP__c = tr.getDecimal('MSRP', 0);
             skuBudget.Budget_NET__c = tr.getDecimal('$NET', 0);
+            skuBudget.Order_Season__c = tr.get('order season') == null ? '' : tr.get('order season');
             
             // DTC时上传size
             if (this.program.IsDTC__c != null) {

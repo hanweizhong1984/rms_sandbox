@@ -44,10 +44,10 @@ public with sharing class Test_RTV_RP_UploadSKUBudget {
             
             // 上传:soldto级别
             ctrl.fileUploadBody = Blob.valueof(
-                'SKU,Account Group,Sold To,Ship To,QTY,MSRP,$NET\r'+
-                '00168C035,,,,0,0,0\r'+ 
-                '00168C035_rebuy,,,,0,0,0\r'+ 
-                'error,,,,0,0,0\r'
+                'SKU,Account Group,Sold To,Ship To,QTY,MSRP,$NET,order season\r'+
+                '00168C035,,,,0,0,0,21Q2\r'+ 
+                '00168C035_rebuy,,,,0,0,0,21Q2\r'+ 
+                'error,,,,0,0,0,21Q2\r'
             );
             ctrl.fileUploadName = 'xxxx';
             ctrl.setFileCharset('UTF-8');
@@ -59,22 +59,22 @@ public with sharing class Test_RTV_RP_UploadSKUBudget {
             
             // accountGroup级别
             ctrl.fileUploadBody = Blob.valueof(
-                'SKU,Account Group,Sold To,Ship To,QTY,MSRP,$NET\r'+
-                '00168C035,' + acgroup.Name + ',,,0,0,0\r'
+                'SKU,Account Group,Sold To,Ship To,QTY,MSRP,$NET,order season\r'+
+                '00168C035,' + acgroup.Name + ',,,0,0,0,21Q2\r'
             );
             ctrl.uploadFile();
             
             // soldto级别
             ctrl.fileUploadBody = Blob.valueof(
-                'SKU,Account Group,Sold To,Ship To,QTY,MSRP,$NET\r'+
-                '00168C035,,' + soldto.Name + ',,0,0,0\r'
+                'SKU,Account Group,Sold To,Ship To,QTY,MSRP,$NET,order season\r'+
+                '00168C035,,' + soldto.Name + ',,0,0,0,21Q2\r'
             );
             ctrl.uploadFile();
             
             // shipto级别
             ctrl.fileUploadBody = Blob.valueof(
-                'SKU,Account Group,Sold To,Ship To,QTY,MSRP,$NET\r'+
-                '00168C035,,,' + shipto.Name + ',0,0,0\r'
+                'SKU,Account Group,Sold To,Ship To,QTY,MSRP,$NET,order season\r'+
+                '00168C035,,,' + shipto.Name + ',0,0,0,21Q2\r'
             );
             ctrl.uploadFile();
         } finally {
