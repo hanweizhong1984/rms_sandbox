@@ -119,6 +119,7 @@ public with sharing class Test_RTV_DTC_Summary_Inbound {
         
         // lf inbound ABD
         Test.startTest();
+        RTV_DTC_Summary_Inbound.lieToTest();
         try {
             order.To_DEF_Order__c = null;
             update order;
