@@ -264,7 +264,7 @@ public with sharing class RTV_Order_UploadInspectCtrl_DTC {
         // --------- 由于DTC的Inspect没有季节码，所以匹配不到商品 -----------------
         // 检索csv中提到的Product
         for (RMS_Product__c pdt: [
-            SELECT Id, SKU__c, Material_Code__c, Season_Code_CN__c,MSRP__c,BUCN__c
+            SELECT Id, SKU__c, Material_Code__c, Season_Code_CN__c,MSRP__c,BUCN__c,BU__c
             FROM RMS_Product__c 
             WHERE Material_Code__c IN :csvMaterialCodes
         ]) {

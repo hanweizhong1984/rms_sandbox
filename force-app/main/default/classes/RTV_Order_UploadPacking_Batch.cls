@@ -352,7 +352,7 @@ implements Database.Batchable<RMS_CSV_Iterator.OneLineInfo>, Database.Stateful {
         // item.基础信息
         // ----------------------------
         RTV_Order_Item__c item = new RTV_Order_Item__c();
-        item.Material_Code__c = tr.get('货品号');
+        item.Material_Code__c = tr.get('货品号').toUpperCase();
         item.BU_2__c = RMS_CommonUtil.item_getBu2(tr.get('BU'));
         item.Season_Code_CN__c = tr.get('季节码');
         

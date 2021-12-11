@@ -79,8 +79,11 @@ public class RMS_CommonUtil {
     
     /** 静态方法：（DTC）item.POS_SKU */
     public static String item_getPosSku(RMS_Product__c pdt, String size) {
+        String posSize = size;
+        if(pdt.BU__c=='FT'){
         // size为数字时，需要补0到4位
-        String posSize = size.isNumeric()? size.leftPad(4, '0'): size; 
+        posSize = size.isNumeric()? size.leftPad(4, '0'): size; 
+        }
         // pos_sku
         return pdt.SKU__c + posSize;
     }
@@ -374,7 +377,11 @@ public class RMS_CommonUtil {
         'XL/XXL'    => 'XXL/XXXL',
         'XXL/XXXL'  => 'XXXL/XXXXL',
         'XXXL/XXXXL'=> 'XXXXL/XXXXXL',
-        'OS'        => 'OSFA'
+        'OS'        => 'OSFA',
+        'I'         => 'XXS/XS',
+        'II'        => 'S/M',
+        'III'       => 'L/XL',
+        'IIII'      => 'XXL3X'
     };
     /** 美码转亚码 */
     public static String size_Us2Asia(String usSize, String bu) {
