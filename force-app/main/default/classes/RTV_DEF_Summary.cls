@@ -2,6 +2,7 @@ public inherited sharing class RTV_DEF_Summary {
     // DEF_Summary
     public final Id summaryId {get; set;}
     public RTV_DEF_Summary__c summary {get; set;}
+    public Date Today { get { return Date.today(); }} //当前日期
 
     // 是否入库判断
     public Boolean inboundFlg {get; set;}
@@ -71,7 +72,7 @@ public inherited sharing class RTV_DEF_Summary {
     public void loadPage() {
         this.summary = [
             SELECT Id, Name, Active_Status__c, Account_Group__c, Account_Group__r.Name, 
-                Insp_Submit_Time__c, Insp_CS_Approve_Time__c,
+                Insp_Submit_Time__c, Insp_CS_Approve_Time__c,Apply_Close_Date__c, Apply_Open_Date__c,
                 LF_WH_Inbound_Date__c, CS_Inbound_Date__c, LF_DELY_Inbound_Date__c
             FROM RTV_DEF_Summary__c WHERE Id = :this.summaryId
         ];
