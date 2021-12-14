@@ -127,21 +127,31 @@ public with sharing class RTV_DTC_Summary_Inbound {
     
     /** 入库A、B、C品 */
     public void inboundABC() {
-        List<RTV_Order_Item__c> upItems = new List<RTV_Order_Item__c>();
+        // List<RTV_Order_Item__c> upItems = new List<RTV_Order_Item__c>();
         
-        // 合计inboundQTY 
-        for (RTV_Order_Item__c item: [
-            SELECT Id, Inspect_QTY_A__c, Inspect_QTY_B__c, Inspect_QTY_C__c
-            FROM RTV_Order_Item__c
-            WHERE RTV_Order__c IN :this.workOrdersIds
-        ]) {
-            // 设置inboundQty
-            RTV_Order_Item__c upItem = new RTV_Order_Item__c();
-            upItem.Id = item.Id;
-            upItem.Inbound_QTY__c =  item.Inspect_QTY_A__c + item.Inspect_QTY_B__c + item.Inspect_QTY_C__c;
-            upItems.add(upItem);
+        // // 合计inboundQTY 
+        // for (RTV_Order_Item__c item: [
+        //     SELECT Id, Inspect_QTY_A__c, Inspect_QTY_B__c, Inspect_QTY_C__c
+        //     FROM RTV_Order_Item__c
+        //     WHERE RTV_Order__c IN :this.workOrdersIds
+        // ]) {
+        //     // 设置inboundQty
+        //     RTV_Order_Item__c upItem = new RTV_Order_Item__c();
+        //     upItem.Id = item.Id;
+        //     upItem.Inbound_QTY__c =  item.Inspect_QTY_A__c + item.Inspect_QTY_B__c + item.Inspect_QTY_C__c;
+        //     upItems.add(upItem);
+        // }
+        // update upItems;
+        if(this.workOrdersIds.size() > 0){
+            RTV_DTC_Summary_InboundABC_Batch batch = new RTV_DTC_Summary_InboundABC_Batch(this.workOrdersIds);
+                this.job = new AsyncApexJob();
+                this.job.Id = Database.executeBatch(batch, 1000); // 一次处理100个item
+            
+        }else {
+            this.isBatchLoading = false;
+            ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.ERROR, '订单不存在，不能执行入库操作！'));
         }
-        update upItems;
+
     }
     
     /** 入库D品 */

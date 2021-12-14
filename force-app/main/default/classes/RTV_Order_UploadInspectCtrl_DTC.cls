@@ -180,7 +180,11 @@ public with sharing class RTV_Order_UploadInspectCtrl_DTC {
             }
             if (remarks.size()>0) {
                 for(String r : remarks) {
-                    remark+=r;
+                    if(remark==r){
+                        remark=r;
+                    }else{
+                        remark+=r;
+                    }
                 }
             }
             if(item!=null){
