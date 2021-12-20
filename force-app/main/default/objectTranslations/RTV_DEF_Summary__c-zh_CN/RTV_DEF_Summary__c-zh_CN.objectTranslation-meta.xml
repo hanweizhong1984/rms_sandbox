@@ -41,6 +41,10 @@
         <name>NotChangeName</name>
     </validationRules>
     <webLinks>
+        <label><!-- Mass_Calc_Selling --></label>
+        <name>Mass_Calc_Selling</name>
+    </webLinks>
+    <webLinks>
         <label><!-- Mass_New --></label>
         <name>Mass_New</name>
     </webLinks>

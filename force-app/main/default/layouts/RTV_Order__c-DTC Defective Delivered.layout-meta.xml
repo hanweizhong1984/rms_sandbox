@@ -29,6 +29,10 @@
                 <behavior>Readonly</behavior>
                 <field>Owner_Name__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>MSRP_CNY_incl_VAT__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -116,6 +120,7 @@
         <fields>BU_2__c</fields>
         <fields>Application_QTY__c</fields>
         <fields>IsMaterial__c</fields>
+        <fields>IsSpecialDEF__c</fields>
         <relatedList>RTV_Order_Item__c.RTV_Order__c</relatedList>
     </relatedLists>
     <relatedLists>

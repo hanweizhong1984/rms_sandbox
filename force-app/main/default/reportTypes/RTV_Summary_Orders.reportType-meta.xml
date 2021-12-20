@@ -368,6 +368,11 @@
             <field>Seeding_Status__c</field>
             <table>RTV_Summary__c.RTV_Orders__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MSRP_CNY_incl_VAT__c</field>
+            <table>RTV_Summary__c.RTV_Orders__r</table>
+        </columns>
         <masterLabel>RTV Orders</masterLabel>
     </sections>
 </ReportType>

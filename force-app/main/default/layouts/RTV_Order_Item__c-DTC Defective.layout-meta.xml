@@ -36,6 +36,10 @@
                 <behavior>Edit</behavior>
                 <field>Order_Season__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>msrp_formula__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

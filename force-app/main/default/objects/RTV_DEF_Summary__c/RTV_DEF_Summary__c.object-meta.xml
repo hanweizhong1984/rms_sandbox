@@ -169,12 +169,14 @@
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>IsotopeSubscription</excludedStandardButtons>
         <listViewButtons>Mass_New</listViewButtons>
+        <listViewButtons>Mass_Calc_Selling</listViewButtons>
         <searchResultsAdditionalFields>Account_Group__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Year__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Month__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Active_Status__c</searchResultsAdditionalFields>
         <searchResultsCustomButtons>Mass_New</searchResultsCustomButtons>
+        <searchResultsCustomButtons>Mass_Calc_Selling</searchResultsCustomButtons>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>

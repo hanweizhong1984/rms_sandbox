@@ -25,6 +25,10 @@
                 <behavior>Readonly</behavior>
                 <field>Owner_Name__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>MSRP_CNY_incl_VAT__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

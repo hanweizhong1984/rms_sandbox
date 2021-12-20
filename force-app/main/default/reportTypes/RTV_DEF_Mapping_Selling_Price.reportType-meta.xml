@@ -223,6 +223,12 @@
             <field>Application_Remark__c</field>
             <table>RTV_Order_Item__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>特批</displayNameOverride>
+            <field>IsSpecialDEF__c</field>
+            <table>RTV_Order_Item__c</table>
+        </columns>
         <masterLabel>DEF Order Item</masterLabel>
     </sections>
     <sections>
@@ -363,6 +369,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Order_Season__c</field>
+            <table>RTV_Order_Item__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>msrp_formula__c</field>
             <table>RTV_Order_Item__c</table>
         </columns>
         <masterLabel>RTV Order Items</masterLabel>

@@ -388,6 +388,10 @@
             <name>Orders</name>
         </sections>
         <sections>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
+        </sections>
+        <sections>
             <columns>
                 <label><!-- Finance Code --></label>
                 <name>Finance Code</name>
@@ -1044,6 +1048,10 @@
                 <label><!-- Size (US) --></label>
                 <name>Size (US)</name>
             </columns>
+            <columns>
+                <label><!-- 特批 --></label>
+                <name>特批</name>
+            </columns>
             <label><!-- DEF Order Item --></label>
             <name>DEF Order Item</name>
         </sections>
@@ -1184,6 +1192,10 @@
         <sections>
             <label><!-- RTV Order Items --></label>
             <name>RTV Order Items</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Orders --></label>
+            <name>RTV Orders</name>
         </sections>
         <sections>
             <columns>

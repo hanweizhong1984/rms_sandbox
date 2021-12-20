@@ -876,6 +876,19 @@
             <field>Order_Season__c</field>
             <table>RTV_Defective__c.RTV_Orders__r.RTV_Order_Items__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>msrp_formula__c</field>
+            <table>RTV_Defective__c.RTV_Orders__r.RTV_Order_Items__r</table>
+        </columns>
         <masterLabel>RTV Order Items</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MSRP_CNY_incl_VAT__c</field>
+            <table>RTV_Defective__c.RTV_Orders__r</table>
+        </columns>
+        <masterLabel>RTV Orders</masterLabel>
     </sections>
 </ReportType>

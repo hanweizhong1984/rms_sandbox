@@ -58,6 +58,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>RTV_DEF_SellingPrice_All</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RTV_DEF_Summary</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -74,6 +78,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>RTV_DEF_UploadSellingPrice_All_Batch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RTV_DTC_DEF_Summary_Inbound</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -84,6 +92,10 @@
     <classAccesses>
         <apexClass>RTV_DTC_Summary_Inbound</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RTV_DTC_Summary_InboundABC_Batch</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>RTV_DTC_Summary_Inbound_ToDef_Batch</apexClass>
@@ -339,6 +351,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Test_RTV_DEF_OffPolicy_Export</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Test_RTV_DEF_SellingPrice_All</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3208,6 +3224,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Order_Item__c.msrp_formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>RTV_Order_Packing__c.Application_QTY__c</field>
         <readable>true</readable>
@@ -3470,6 +3491,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>RTV_Order__c.LF_WH_Inbound_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Order__c.MSRP_CNY_incl_VAT__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5322,6 +5348,10 @@
     <pageAccesses>
         <apexPage>RTV_DEF_OffPolicy_Export</apexPage>
         <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>RTV_DEF_SellingPrice_All</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>RTV_DEF_Summary</apexPage>

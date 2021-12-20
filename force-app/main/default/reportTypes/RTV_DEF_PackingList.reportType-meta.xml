@@ -157,6 +157,11 @@
             <field>Order_Season__c</field>
             <table>RTV_Order_Item__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>msrp_formula__c</field>
+            <table>RTV_Order_Item__c</table>
+        </columns>
         <masterLabel>RTV Order Items</masterLabel>
     </sections>
 </ReportType>
