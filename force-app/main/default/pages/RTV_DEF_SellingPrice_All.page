@@ -1,0 +1,112 @@
+<apex:page Controller="RTV_DEF_SellingPrice_All" lightningStylesheets="True" action="{!loadPage}">
+<head>
+    <apex:slds /> <!-- 用<apex:slds>标签引入lightning的css -->
+</head>
+<apex:outputPanel id="_body">
+    
+    <!-- 表单 -->
+    <apex:form >
+        <apex:pageBlock title="批量处理Selling Price(执行顺序：1.计算-->2.导出-->3.上传-->4.批量审批)">
+            <!-- 税率输入框 -->
+            <apex:pageBlockSection >
+                <apex:inputText label="TaxRate(1.XX):" size="5" value="{!TaxRate}"></apex:inputText>
+            </apex:pageBlockSection>
+            <!-- 按钮 -->
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="1.计算" action="{!startBatch}" rendered="{!orderListCnt > 0}"/>
+                <apex:outputLink styleClass="slds-button slds-button_neutral" target="_blank" style="margin-left:0.5rem"
+                    value="/apex/RMS_Redirect_To_Report?reportName=ALL_DEF_Selling_Price_Report_jKu">
+                    2.导出
+                </apex:outputLink>
+                <apex:commandButton value="关闭" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>          
+
+    <!-- 上传表单 -->
+        <apex:pageBlock title="上传SellingPrice CSV" mode="edit">
+            <!-- input:上传部分 -->
+            <apex:pageBlockSection columns="1">
+                <apex:inputFile value="{!fileUploadBody}" fileName="{!fileUploadName}" accept=".csv"/>
+                <apex:selectRadio value="{!fileCharset}" layout="pageDirection">
+                    <apex:selectOptions value="{!fileCharsetOpts}"/>
+                </apex:selectRadio>
+            </apex:pageBlockSection>
+            <!-- 按钮 -->
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="3.上传" action="{!upload}"/>
+                <!-- 批量审批Inspect -->
+                <apex:commandLink styleClass="slds-button slds-button_neutral"
+                action="{!approveForm.open}" value="4.批量审批"
+                />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    <!-- Message -->
+    <apex:pageMessages />
+
+    <!-- order列表 -->
+    <apex:pageBlock title="{!orderListTitle}">
+    <apex:pageBlockTable value="{!orderMap}" var="order">
+        <apex:column value="{!order.RTV_DEF_Summary__r.Name}"></apex:column>  
+        <apex:column value="{!order.Name}"></apex:column>  
+        <apex:column value="{!order.TBD_Count__c}" headerValue="T.B.D"></apex:column> 
+        <apex:column value="{!order.Not_Found_Count__c}" headerValue="NOT FOUND"></apex:column>
+        <apex:column value="{!listSizeMap[order]}" headerValue="特批"></apex:column>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+    <!-- 用Ajax检查上传结果（间隔5s） -->
+    <apex:form >
+        <apex:actionPoller enabled="{!isLoading}" action="{!checkResult}" reRender="_body" interval="5" />
+    </apex:form>
+    
+    <!-- Loading -->
+    <apex:outputPanel layout="block" rendered="{!isLoading}">
+        <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.75;width:100%;">
+            <div class="waitingHolder" style="top: 100px; width: 91px;">
+                <img class="waitingImage" src="/img/loading.gif" title="Please Wait..."  style="width: 40;height:40;"/>
+                <span class="waitingDescription">Loading({!loadingPercent}%)...</span>
+                <div class="slds-progress-bar slds-progress-bar_large" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{!loadingPercent}" role="progressbar">
+                    <span class="slds-progress-bar__value slds-progress-bar__value_success" style="width: {!loadingPercent}%"/>
+                </div>
+            </div>
+        </div>
+    </apex:outputPanel>
+</apex:outputPanel>
+<!-- =================================
+    表单: 审批
+================================== -->
+<apex:form rendered="{!approveForm.isOpening}">
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+    <div class="slds-modal__container">
+        <header class="slds-modal__header">
+            <h2 class="slds-modal__title slds-hyphenate">批量审批</h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_medium">
+            <!-- input.comment -->
+            <div style="margin-bottom: 1rem">
+                <div>备注</div>
+                <apex:inputTextarea styleClass="slds-textarea" value="{!approveForm.comment}" />
+            </div>
+            <!-- error信息 -->
+            <apex:outputText rendered="{!approveForm.error != null}">
+                <span class="slds-text-color_error">{!approveForm.error}</span>
+            </apex:outputText>
+            <!-- input.comment -->
+            <div style="margin-bottom: 1rem">
+                <div>待审批订单</div>
+                <apex:dataTable value="{!approveForm.workItems}" var="workItem">
+                    <apex:column value="{!workItem.ProcessInstance.TargetObjectId}"/>
+                </apex:dataTable>
+            </div>
+        </div>
+        <footer class="slds-modal__footer">
+            <apex:commandButton styleClass="slds-button slds-button_brand" value="Approve" action="{!approveForm.approve}"/>
+            <apex:commandButton styleClass="slds-button slds-button_text-destructive" value="Reject" action="{!approveForm.reject}"/>
+            <apex:commandButton styleClass="slds-button slds-button_neutral" value="Cancel" action="{!approveForm.close}" immediate="true"/>
+        </footer>
+    </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</apex:form>
+</apex:page>

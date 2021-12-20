@@ -61,19 +61,13 @@
     <columns>
         <field>RTV_Order_Item__c$SP_TaxRate__c</field>
     </columns>
+    <currency>CNY</currency>
     <description>Defective比价报表</description>
     <filter>
         <criteriaItems>
             <column>RTV_Order_Item__c$RTV_Order__c.RTV_DEF_Summary__c.Id</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value/>
-        </criteriaItems>
-        <criteriaItems>
-            <column>RTV_Order_Item__c$RTV_Order__c.From_TakeBack_Order__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
             <value/>
         </criteriaItems>
