@@ -3376,7 +3376,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Order__c.Inbound_Amount__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -3661,7 +3661,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Order__c.Takeback_NET__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>

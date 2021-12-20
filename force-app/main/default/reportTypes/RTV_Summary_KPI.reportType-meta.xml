@@ -624,6 +624,11 @@
             <field>Inspect_QTY_C_Rd__c</field>
             <table>RTV_Program__c.RTV_RP_Summary_Budgets__r.RTV_Summaries__r.RTV_Orders__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Earliest_Delivery_Date__c</field>
+            <table>RTV_Program__c.RTV_RP_Summary_Budgets__r.RTV_Summaries__r.RTV_Orders__r</table>
+        </columns>
         <masterLabel>RTV Order</masterLabel>
     </sections>
     <sections>
