@@ -2042,6 +2042,10 @@
                 <name>Program Name</name>
             </columns>
             <columns>
+                <label><!-- Program Status --></label>
+                <name>Program Status</name>
+            </columns>
+            <columns>
                 <label><!-- Sales Channel --></label>
                 <name>Sales Channel</name>
             </columns>

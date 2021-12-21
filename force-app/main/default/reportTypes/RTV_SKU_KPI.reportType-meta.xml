@@ -53,6 +53,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Status</displayNameOverride>
             <field>Current_Status__c</field>
             <table>RTV_SKU_KPI__c</table>
         </columns>
