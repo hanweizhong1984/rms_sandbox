@@ -4256,6 +4256,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RTV_SKU_KPI__c.OrderStatus__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RTV_SKU_KPI__c.Order_Season__c</field>
         <readable>true</readable>
     </fieldPermissions>

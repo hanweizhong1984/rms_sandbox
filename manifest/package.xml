@@ -112,6 +112,8 @@
         <members>RTV_UploadRPWhiteListController</members>
         <members>RTV_UploadRPWhiteListCtrlForSummary</members>
         <members>RTV_UploadStoreListController</members>
+        <members>RTV_DEF_SellingPrice_All</members>
+        <members>RTV_DEF_UploadSellingPrice_All_Batch</members>
         <members>Test_RMS_CSV_Iterator</members>
         <members>Test_RMS_CommonUtil</members>
         <members>Test_RMS_DeleteRecord_Batch</members>
@@ -222,9 +224,11 @@
         <members>Test_Trigger_RTV_POS_Data_AuthCodeChange</members>
         <members>Test_Trigger_RTV_Program_InitRebuy</members>
         <members>Test_RTV_Sch_OrderItem_getBudget</members>
+        <members>Test_RTV_DEF_SellingPrice_All</members>
         <members>BudgetAggregateBatch</members>
         <members>SearchResultIterable</members>
         <members>SearchResultIterator</members>
+        <members>RTV_DTC_Summary_InboundABC_Batch</members>
         <name>ApexClass</name>
     </types>
     <!-- Dashboard -->
@@ -520,6 +524,7 @@
         <members>RTV_UploadRPWhiteList</members>
         <members>RTV_UploadRPWhiteListForSummary</members>
         <members>RTV_UploadStoreList</members>
+        <members>RTV_DEF_SellingPrice_All</members>
         <name>ApexPage</name>
     </types>
     <!-- pathAssistant (lighting页面中这样的组件[...>...>...]) -->

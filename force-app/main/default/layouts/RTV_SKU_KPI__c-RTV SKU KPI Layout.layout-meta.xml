@@ -50,6 +50,10 @@
                 <behavior>Edit</behavior>
                 <field>Order_Season__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>OrderStatus__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

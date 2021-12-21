@@ -126,6 +126,7 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.Al
                 skuItem.Actual_Date_Of_CS_Confirmed__c = obj.RTV_Order__r.Return_Summary__r.Actual_Date_Of_CS_Confirmed__c;
                 skuItem.Expected_Date_Of_WSL_Confirmed__c = obj.RTV_Order__r.Return_Summary__r.Expected_Date_Of_WSL_Confirmed__c;
                 skuItem.Actual_Date_Of_WSL_Confirmed__c = obj.RTV_Order__r.Return_Summary__r.Actual_Date_Of_WSL_Confirmed__c;
+                skuItem.OrderStatus__c = obj.RTV_Order__r.Status__c;
     
                 tempSkuMap.put(key, skuItem);
                 thisSummaryIds.add(skuItem.SummaryId__c);
