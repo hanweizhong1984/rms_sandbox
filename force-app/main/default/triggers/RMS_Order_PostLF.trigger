@@ -36,8 +36,9 @@ trigger RMS_Order_PostLF on RTV_Order__c (before update,after update) {
         for(RTV_Order__c order:[SELECT ID,Return_Summary__r.Account_Group__r.name, IsDTC__c 
                                 FROM RTV_Order__c WHERE ID IN :orderMap.keySet()])
         {
-            // WSL中，只有'YY' 和'BELLE'允许单独PostLF
-            if(order.Return_Summary__r.Account_Group__r.name == '01)YY'|| order.Return_Summary__r.Account_Group__r.name == '02)BELLE')
+            // WSL中，只有'YY' 和'BELLE' 和'BJKT' 和'BaoShang'允许单独PostLF
+            if(order.Return_Summary__r.Account_Group__r.name == '01)YY'|| order.Return_Summary__r.Account_Group__r.name == '02)BELLE'
+                 || order.Return_Summary__r.Account_Group__r.name == '03)BJKT' || order.Return_Summary__r.Account_Group__r.name == '06)Baoshang')
             {
                 orderMap.get(order.ID).Status__c = 'POST to LF';
                 orderMap.get(order.ID).RecordTypeId = allTypes.get('WSL Takeback Post LF').id;
