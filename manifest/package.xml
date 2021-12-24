@@ -229,6 +229,10 @@
         <members>SearchResultIterable</members>
         <members>SearchResultIterator</members>
         <members>RTV_DTC_Summary_InboundABC_Batch</members>
+        <members>Test_RTV_Sch_Summary_getBudget</members>
+        <members>RTV_Sch_Summary_getBudget</members>
+        <members>RTV_Bth_SB_Del</members>
+        <members>RTV_Bth_Summary_Budget</members>
         <name>ApexClass</name>
     </types>
     <!-- Dashboard -->
@@ -424,6 +428,7 @@
         <members>RTV_Summary__c-WSL Takeback Ready</members>
         <members>RTV_Summary__c-WSL Takeback Ready Edit</members>
         <members>RTV_Summary__c-WSL Takeback Ready For ShipTo</members>
+        <members>RTV_Summary_Sku_Budget__c-RTV Summary Sku Budget Layout</members>
         <name>Layout</name>
     </types>
     <!-- objects -->
@@ -465,6 +470,7 @@
         <members>RTV_SKU_KPI__c</members>
         <members>RTV_Summary__c</members>
         <members>RTV_POS_ERROR__c</members>
+        <members>RTV_Summary_Sku_Budget__c</members>
         <name>CustomObject</name>
     </types>
     <!-- pages (Visualforce Pages) -->

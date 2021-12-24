@@ -38,11 +38,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>RTV_Bth_SB_Del</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RTV_Bth_SKU_KPI</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>RTV_Bth_SKU_KPI_Del</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RTV_Bth_Summary_Budget</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -255,6 +263,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>RTV_Sch_SKU_KPI</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RTV_Sch_Summary_getBudget</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -523,6 +535,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Test_RTV_Sch_SKU_KPI</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Test_RTV_Sch_Summary_getBudget</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4310,6 +4326,61 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.AccountGroup__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.BudgetAmount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.BudgetQTY__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.FinanceCode__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.MaterialCode__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.ProgramName__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.SalesChannel__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.Size__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.StoreCode__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.SummaryName__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary_Sku_Budget__c.SummaryStatus__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>RTV_Summary__c.Account_Group__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5070,6 +5141,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>RTV_SKU_KPI__c-RTV SKU KPI Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>RTV_Summary_Sku_Budget__c-RTV Summary Sku Budget Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>RTV_Summary__c-DTC Tackback Remove</layout>
