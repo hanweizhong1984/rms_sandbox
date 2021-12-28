@@ -322,6 +322,11 @@
             <field>RTV_Order__c.TBD_Count__c</field>
             <table>RTV_Order_Item__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RTV_Order__c.Insp_CS_Approved__c</field>
+            <table>RTV_Order_Item__c</table>
+        </columns>
         <masterLabel>DEF Order</masterLabel>
     </sections>
     <sections>
