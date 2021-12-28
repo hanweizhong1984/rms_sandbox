@@ -45,15 +45,29 @@
     <apex:pageMessages />
 
     <!-- order列表 -->
+    <apex:form >
     <apex:pageBlock title="{!orderListTitle}">
+    <apex:outputPanel id="showpanel">
     <apex:pageBlockTable value="{!orderMap}" var="order">
         <apex:column value="{!order.RTV_DEF_Summary__r.Name}"></apex:column>  
         <apex:column value="{!order.Name}"></apex:column>  
         <apex:column value="{!order.TBD_Count__c}" headerValue="T.B.D"></apex:column> 
         <apex:column value="{!order.Not_Found_Count__c}" headerValue="NOT FOUND"></apex:column>
         <apex:column value="{!listSizeMap[order]}" headerValue="特批"></apex:column>
+        <apex:facet name="footer">第{!pageNumber}/{!totalPages}页 共计{!total_size}条</apex:facet>
     </apex:pageBlockTable>
+    </apex:outputPanel>
+    <apex:pageBlockButtons location="bottom" style="text-align: center;">
+    <!-- 按钮显示效果 -->
+    <apex:outputPanel id="buttons">
+        <apex:commandButton action="{!First}" title="First" value="首页" disabled="{!disablePrevious}" reRender="showpanel,buttons"/>
+        <apex:commandButton action="{!Previous}" title="Previous" value="上一页" disabled="{!disablePrevious}" reRender="showpanel,buttons"/>
+        <apex:commandButton action="{!Next}" title="Next" value="下一页" disabled="{!disableNext}" reRender="showpanel,buttons"/>
+        <apex:commandButton action="{!End}" title="End" value="尾页" disabled="{!disableNext}" reRender="showpanel,buttons"/>
+    </apex:outputPanel>
+    </apex:pageBlockButtons>
 </apex:pageBlock>
+</apex:form>
 
     <!-- 用Ajax检查上传结果（间隔5s） -->
     <apex:form >

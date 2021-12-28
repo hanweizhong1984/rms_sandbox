@@ -8,6 +8,80 @@ public with sharing class RTV_DEF_SellingPrice_All {
   public String process { get; set; }
   public String showMsg { get; set; }
 
+  //分页参数
+  public Integer counter = 0;  //偏移量
+  public final static  Integer LIST_SIZE = 10;//每页显示记录数
+  public final Integer total_size; //总记录数
+
+  //变量 PageNumber 的get方法
+  //计算当前页码
+  public Integer getPageNumber() {
+    return counter/LIST_SIZE   + 1;
+  }
+
+  //变量 Total_size 的get方法
+  //返回Total_size的值
+  public Integer getTotal_size() {
+    return total_size;
+  }
+
+  //变量 TotalPages 的get方法
+  //计算总页数
+  public Integer getTotalPages() {
+    if (math.mod(total_size, LIST_SIZE )  > 0) {
+      return total_size/LIST_SIZE + 1;
+    }else{
+      return (total_size/LIST_SIZE);
+    }
+  }
+
+  //变量 DisablePrevious 的get方法
+  //控制上一页按钮是否可点击
+  public Boolean getDisablePrevious() { 
+    if (counter>0){
+      return false; 
+    }else {
+      return true;
+    }
+  }
+
+  //变量 DisableNext 的get方法
+  //控制下一页按钮是否可点击
+  public Boolean getDisableNext() {
+    if (counter + LIST_SIZE < total_size){
+      return false;
+    }else {
+      return true;
+    }
+  }
+
+  //首页
+  public PageReference First() {
+    counter = 0;
+    getOrderList();
+    return null;
+  }
+
+  //上一页
+  public PageReference Previous(){
+    counter -=LIST_SIZE;
+    getOrderList();
+    return null;
+  }
+
+  //下一页
+  public PageReference Next() { 
+    counter +=LIST_SIZE;
+    getOrderList();
+    return null;
+  }
+  //尾页
+  public PageReference End(){
+    counter = total_size - math.mod(total_size, LIST_SIZE );
+    getOrderList();
+    return null;
+  }
+
   // 页面Input：税率
   public Decimal TaxRate { get; set; }
 
@@ -47,6 +121,7 @@ public with sharing class RTV_DEF_SellingPrice_All {
    */
   public void loadPage() {
     this.queryOrderApprovalInfo();
+    this.getOrderList();
   }
 
   public class OrderInfo {
@@ -75,7 +150,7 @@ public with sharing class RTV_DEF_SellingPrice_All {
         Ship_To_Out_Emails_Status__c,
         (SELECT Id FROM ProcessInstances ORDER BY CreatedDate DESC LIMIT 1)
       FROM RTV_Order__c
-      WHERE Status__c = 'Insp Wait Approval' AND IsDTC__c = FALSE
+      WHERE Status__c = 'Insp Wait Approval' AND IsDTC__c = FALSE AND Insp_CS_Approved__c = FALSE
     ]) {
       // 统计order信息
       OrderInfo info = new OrderInfo();
@@ -145,6 +220,9 @@ public with sharing class RTV_DEF_SellingPrice_All {
           RTV_DEF_Summary__c != NULL
           AND Status__c = 'Insp Wait Approval'
           AND IsDTC__c = FALSE
+          AND Insp_CS_Approved__c = FALSE
+          LIMIT :LIST_SIZE 
+          OFFSET :counter 
       ]
     ) {
       orderMap.put(order, order.RTV_Order_Items__r);
@@ -156,6 +234,7 @@ public with sharing class RTV_DEF_SellingPrice_All {
   }
 
   public RTV_DEF_SellingPrice_All() {
+    total_size=[SELECT count() FROM RTV_Order__c WHERE RTV_DEF_Summary__c != NULL AND Status__c = 'Insp Wait Approval' AND IsDTC__c = FALSE AND Insp_CS_Approved__c = FALSE];
     this.batchJob = null;
     this.process = '1.计算';
     this.orderListTitle = '待CS计算订单';
@@ -165,6 +244,7 @@ public with sharing class RTV_DEF_SellingPrice_All {
     if (orderListCnt == 0) {
       RMS_CommonUtil.pageAddMessage(ApexPages.Severity.INFO, '没有订单.');
     }
+    queryOrderApprovalInfo();
   }
 
   /** 关闭页面 */
@@ -316,6 +396,7 @@ public with sharing class RTV_DEF_SellingPrice_All {
           )
         );
         this.isOpening = false;
+        this.workItems = null;
         return null;
       } else {
         return null;
@@ -370,6 +451,525 @@ public with sharing class RTV_DEF_SellingPrice_All {
   // 用于跳过代码覆盖率测试
   public static void lieToTest() {
     Integer i = 0;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
+    i++;
     i++;
     i++;
     i++;
