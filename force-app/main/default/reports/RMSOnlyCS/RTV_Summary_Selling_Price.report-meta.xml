@@ -76,13 +76,13 @@
     <currency>CNY</currency>
     <description>比价报表</description>
     <filter>
-        <booleanFilter>(1 AND 2 AND 3) AND (4 OR 5 OR 6)</booleanFilter>
+        <booleanFilter>(1 AND 2 AND 3) AND (4 OR 5 OR 6) AND 7</booleanFilter>
         <criteriaItems>
             <column>RTV_Summary__c$Id</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>a4Y6w000000W2yK</value>
+            <value>a4Y6w000000W2yL</value>
         </criteriaItems>
         <criteriaItems>
             <column>RTV_Summary__c.RTV_Orders__r$Status__c</column>
@@ -118,6 +118,13 @@
             <isUnlocked>false</isUnlocked>
             <operator>greaterThan</operator>
             <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Selling_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value/>
         </criteriaItems>
         <language>en_US</language>
     </filter>
