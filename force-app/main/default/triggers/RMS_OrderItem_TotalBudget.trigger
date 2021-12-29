@@ -14,7 +14,9 @@ trigger RMS_OrderItem_TotalBudget on RTV_Order_Item__c (after insert, after upda
         (Trigger.isUpdate && (
             item.Application_QTY__c != oldItem.Application_QTY__c ||
             item.Application_Amount__c != oldItem.Application_Amount__c ||
-            item.MSRP__c != oldItem.MSRP__c
+            item.MSRP__c != oldItem.MSRP__c 
+            //||
+            //item.Selling_Unit_Price__c != oldItem.Selling_Unit_Price__c
         ))) {
             // 准备更新关联的SkuBudget
             if (item.Sku_Budget__c != null && item.IsDTC__c==false) {
@@ -65,6 +67,8 @@ trigger RMS_OrderItem_TotalBudget on RTV_Order_Item__c (after insert, after upda
         for (AggregateResult grp: [
             SELECT SKU_Budget__c,
                 Material_Code__c,
+                // SUM(Selling_Unit_Price__c) sumSelling,
+                // MIN(SKU_Budget__r.Return_Program__r.ExRate__c) exrate,
                 SKU_Budget__r.RP_Ship_To__r.Ship_To__r.Name ShipToName,
                 SKU_Budget__r.Sold_To__r.Name SoldToName,
                 SKU_Budget__r.Account_Group__r.Name AccGrpName,
@@ -100,6 +104,11 @@ trigger RMS_OrderItem_TotalBudget on RTV_Order_Item__c (after insert, after upda
             Decimal sumApplyNet = (Decimal)grp.get('sumApplyNet') != null? 
                 ((Decimal)grp.get('sumApplyNet')).setScale(2, System.RoundingMode.HALF_UP): 0;
             
+            // Decimal sellingprice = (Decimal)grp.get('sumSelling') != null? 
+            // ((Decimal)grp.get('sumSelling')).setScale(2, System.RoundingMode.HALF_UP): 0; 
+            
+            // Decimal exrate = (Decimal)grp.get('exrate') != null? 
+            // ((Decimal)grp.get('exrate')).setScale(2, System.RoundingMode.HALF_UP): 0; 
             String Material = (String)grp.get('Material_Code__c');
             Decimal budgetNet = budgetNetMap.get(Material);
             Decimal budgetQty = budgetQTYMap.get(Material);
@@ -112,6 +121,19 @@ trigger RMS_OrderItem_TotalBudget on RTV_Order_Item__c (after insert, after upda
                  );
                 //workingItems[0].addError('(货品号=' + (String)grp.get('Material_Code__c') + ')已超出预算数量');
             }
+
+            // if(budgetNet > 0 && budgetQty > 0 && exrate > 0){
+            //     Decimal budgetSelling = budgetNet / budgetQty * exrate;
+
+            //     if (budgetSelling > 0 &&  sellingprice > budgetSelling) {
+            //         workingItems[0].addError('已超出预算 ' 
+            //             + '(预算金额=' + budgetSelling + ')'
+            //             + '(实际金额=' + sellingprice + ')'
+            //             + '(货品号=' + (String)grp.get('Material_Code__c') + ')'
+            //         );
+            //     }
+            // }
+
             // $NET(乘以QTY的总金额)超出预算时
             // if (budgetNet > 0 && sumApplyNet > budgetNet) {
             //     workingItems[0].addError('已超出预算 ' 

@@ -195,7 +195,7 @@ public with sharing class RTV_Summary_Inbound {
                 this.job.Id = Database.executeBatch(batch, 100); // 一次处理100个item
             }else {
                 this.isBatchLoading = false;
-                ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.ERROR, '您还未创建'+this.summary.Account_Group__r.Name+'  '+DateTime.now().format('MM')+'月的DEF Summary！'));
+                ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.ERROR, '您还未创建'+this.summary.Account_Group__r.Name+'的DEF Summary！'));
             }
         }
         //D品入库
