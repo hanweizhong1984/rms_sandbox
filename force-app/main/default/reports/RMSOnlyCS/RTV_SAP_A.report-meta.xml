@@ -23,6 +23,12 @@
         <field>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Inspect_QTY_A_Rd__c</field>
     </columns>
     <columns>
+        <field>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Item_Category__c</field>
+    </columns>
+    <columns>
+        <field>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Stock_Category__c</field>
+    </columns>
+    <columns>
         <field>CDF1</field>
     </columns>
     <columns>
@@ -86,6 +92,13 @@
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>WSL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Inspect_QTY_A_Rd__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>0</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>

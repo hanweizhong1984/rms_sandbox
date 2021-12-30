@@ -662,6 +662,7 @@
         <members>RMSOnlyCS/RTV_SAP_B</members>
         <members>RMSOnlyCS/RTV_SAP_D</members>
         <members>RMSOnlyCS/RTV_Summary_Selling_Price</members>
+        <members>RMSOnlyCS/ALL_DEF_Selling_Price_Report_jKu</members>
         <!-- RMSOnlyDTC -->
         <members>RMSOnlyDTC/RMS_DTC_DEF_Summary_KPI_Report</members>
         <members>RMSOnlyDTC/RMS_DTC_Order_KPI_Report</members>

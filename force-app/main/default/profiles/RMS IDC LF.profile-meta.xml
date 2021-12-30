@@ -3095,6 +3095,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Order_Item__c.Item_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Order_Item__c.LF_Order_Auth_Code__c</field>
         <readable>true</readable>
@@ -3228,6 +3233,11 @@
         <editable>false</editable>
         <field>RTV_Order_Item__c.Selling_Unit_Price__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Order_Item__c.Stock_Category__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
