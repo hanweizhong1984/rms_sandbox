@@ -124,21 +124,21 @@ public with sharing class RTV_SummaryCtrl_DTC {
         // orderlist
         this.orders_Ready = [
             SELECT Id, Name, Ship_To__r.Name, Ship_To__r.DTC_Code__c, Ship_To__r.Sales_Channel__c,
-                Earliest_Delivery_Date__c, Application_QTY__c
+                Earliest_Delivery_Date__c, Application_QTY__c,CreatedDate
             FROM RTV_Order__c
             WHERE Return_Summary__c = :this.summaryId AND Status__c = 'Ready'
         ];
         
         this.orders_PostLf = [
             SELECT Id, Name, Ship_To__r.Name, Ship_To__r.DTC_Code__c, Ship_To__r.Sales_Channel__c,
-                Earliest_Delivery_Date__c, Application_QTY__c, Have_Read_Delivery_Report__c
+                Earliest_Delivery_Date__c, Application_QTY__c, Have_Read_Delivery_Report__c,CreatedDate
             FROM RTV_Order__c
             WHERE Return_Summary__c = :this.summaryId AND Status__c = 'POST to LF'
         ];
         
         this.orders_Delivered = [
             SELECT Id, Name, Ship_To__r.Name, Ship_To__r.DTC_Code__c, Ship_To__r.Sales_Channel__c,
-                Application_QTY__c, Delivery_QTY__c
+                Application_QTY__c, Delivery_QTY__c,CreatedDate
             FROM RTV_Order__c
             WHERE Return_Summary__c = :this.summaryId AND Status__c = 'Delivered'
         ];
@@ -146,14 +146,14 @@ public with sharing class RTV_SummaryCtrl_DTC {
         this.orders_Inspected = [
             SELECT Id, Name, Ship_To__r.Name, Ship_To__r.DTC_Code__c, Ship_To__r.Sales_Channel__c,
                 Application_QTY__c, 
-                Inspect_QTY_A_Rd__c, Inspect_QTY_B_Rd__c, Inspect_QTY_C_Rd__c, Inspect_QTY_D_Rd__c
+                Inspect_QTY_A_Rd__c, Inspect_QTY_B_Rd__c, Inspect_QTY_C_Rd__c, Inspect_QTY_D_Rd__c,CreatedDate
             FROM RTV_Order__c
             WHERE Return_Summary__c = :this.summaryId AND Status__c = 'Inspected'
         ];
         
         queryOrderApprovalInfo([
             SELECT Id, Name, Ship_To__r.Name, Ship_To__r.DTC_Code__c, Ship_To__r.Sales_Channel__c,
-                Status__c, Inspect_QTY_A_Rd__c, Inspect_QTY_B_Rd__c, Inspect_QTY_C_Rd__c, Inspect_QTY_D_Rd__c,
+                Status__c, Inspect_QTY_A_Rd__c, Inspect_QTY_B_Rd__c, Inspect_QTY_C_Rd__c, Inspect_QTY_D_Rd__c,CreatedDate,
                 (SELECT Id FROM ProcessInstances ORDER BY CreatedDate DESC LIMIT 1)
             FROM RTV_Order__c
             WHERE Return_Summary__c = :this.summaryId AND Status__c = 'Insp Wait Approval'
@@ -163,7 +163,7 @@ public with sharing class RTV_SummaryCtrl_DTC {
         this.orders_InsConfirmed = [
             SELECT Id, Name, Ship_To__r.Name, Ship_To__r.DTC_Code__c, Ship_To__r.Sales_Channel__c,
                 Inspect_QTY_A_Rd__c, Inspect_QTY_B_Rd__c, Inspect_QTY_C_Rd__c, Inspect_QTY_D_Rd__c,
-                TBD_Count__c, Not_Found_Count__c
+                TBD_Count__c, Not_Found_Count__c,CreatedDate
             FROM RTV_Order__c
             WHERE Return_Summary__c = :this.summaryId AND Status__c = 'Insp Confirmed'
         ];
@@ -171,7 +171,7 @@ public with sharing class RTV_SummaryCtrl_DTC {
         this.orders_Inbound = [
             SELECT Id, Name, Ship_To__r.Name, Ship_To__r.DTC_Code__c, Ship_To__r.Sales_Channel__c,
                 Inspect_QTY_A_Rd__c, Inspect_QTY_B_Rd__c, Inspect_QTY_C_Rd__c, Inspect_QTY_D_Rd__c, 
-                Inbound_QTY__c
+                Inbound_QTY__c,CreatedDate
             FROM RTV_Order__c
             WHERE Return_Summary__c = :this.summaryId AND Status__c = 'Inbound'
         ];
@@ -179,7 +179,7 @@ public with sharing class RTV_SummaryCtrl_DTC {
         this.orders_Completed = [
             SELECT Id, Name, Ship_To__r.Name, Ship_To__r.DTC_Code__c, Ship_To__r.Sales_Channel__c,
                 Inspect_QTY_A_Rd__c, Inspect_QTY_B_Rd__c, Inspect_QTY_C_Rd__c, Inspect_QTY_D_Rd__c, 
-                Inbound_QTY__c
+                Inbound_QTY__c,CreatedDate
             FROM RTV_Order__c
             WHERE Return_Summary__c = :this.summaryId AND Status__c = 'Completed'
         ];

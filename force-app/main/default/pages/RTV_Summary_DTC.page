@@ -100,6 +100,7 @@
                     <apex:column value="{!order.Ship_To__r.Name}" rendered="{!summary.DTC_Type__c=='Digital'}"/>
                     <apex:column value="{!order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
                     <apex:column value="{!order.Application_QTY__c}"/>
+                    <apex:column value="{!order.CreatedDate}"/>
                 </apex:pageBlockTable>
             </apex:pageBlock>
         </apex:tab>
@@ -144,6 +145,7 @@
                     <apex:column value="{!order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
                     <apex:column value="{!order.Application_QTY__c}"/>
                     <apex:column value="{!order.Have_Read_Delivery_Report__c}" headerValue="提货报告已阅"/>
+                    <apex:column value="{!order.CreatedDate}"/>
                 </apex:pageBlockTable>
             </apex:pageBlock>
         </apex:tab>
@@ -176,6 +178,7 @@
                     <apex:column value="{!order.Ship_To__r.DTC_Code__c}" headerValue="Store Code" rendered="{!summary.DTC_Type__c=='CFS'}"/>
                     <apex:column value="{!order.Application_QTY__c}"/>
                     <apex:column value="{!order.Delivery_QTY__c}"/>
+                    <apex:column value="{!order.CreatedDate}"/>
                 </apex:pageBlockTable>
             </apex:pageBlock>
         </apex:tab>
@@ -224,6 +227,7 @@
                     <apex:column value="{!order.Inspect_QTY_B_Rd__c}" headerValue="QTY(B)"/>
                     <apex:column value="{!order.Inspect_QTY_C_Rd__c}" headerValue="QTY(C)"/>
                     <apex:column value="{!order.Inspect_QTY_D_Rd__c}" headerValue="QTY(D)"/>
+                    <apex:column value="{!order.CreatedDate}"/>
                 </apex:pageBlockTable>
             </apex:pageBlock>
         </apex:tab>
@@ -264,6 +268,7 @@
                     <apex:column value="{!orderInfo.order.Inspect_QTY_B_Rd__c}" headerValue="QTY(B)"/>
                     <apex:column value="{!orderInfo.order.Inspect_QTY_C_Rd__c}" headerValue="QTY(C)"/>
                     <apex:column value="{!orderInfo.order.Inspect_QTY_D_Rd__c}" headerValue="QTY(D)"/>
+                    <apex:column value="{!orderInfo.order.CreatedDate}"/>
                     <apex:column headerValue="下一个审批步骤">
                         <apex:outputLink value="/{!orderInfo.nextApprovalStep.Id}" target="_blank"
                             styleClass="
@@ -322,6 +327,7 @@
                     <apex:column value="{!order.Inspect_QTY_B_Rd__c}" headerValue="QTY(B)"/>
                     <apex:column value="{!order.Inspect_QTY_C_Rd__c}" headerValue="QTY(C)"/>
                     <apex:column value="{!order.Inspect_QTY_D_Rd__c}" headerValue="QTY(D)"/>
+                    <apex:column value="{!order.CreatedDate}"/>
                 </apex:pageBlockTable>
             </apex:pageBlock>
         </apex:tab>
@@ -371,6 +377,7 @@
                     <apex:column value="{!order.Inspect_QTY_C_Rd__c}" headerValue="QTY(C)"/>
                     <apex:column value="{!order.Inspect_QTY_D_Rd__c}" headerValue="QTY(D)"/>
                     <apex:column value="{!order.Inbound_QTY__c}"/>
+                    <apex:column value="{!order.CreatedDate}"/>
                 </apex:pageBlockTable>
             </apex:pageBlock>
         </apex:tab>
@@ -413,6 +420,7 @@
                     <apex:column value="{!order.Inspect_QTY_C_Rd__c}" headerValue="QTY(C)"/>
                     <apex:column value="{!order.Inspect_QTY_D_Rd__c}" headerValue="QTY(D)"/>
                     <apex:column value="{!order.Inbound_QTY__c}"/>
+                    <apex:column value="{!order.CreatedDate}"/>
                 </apex:pageBlockTable>
             </apex:pageBlock>
         </apex:tab>
