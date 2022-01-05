@@ -233,6 +233,7 @@
         <members>RTV_Sch_Summary_getBudget</members>
         <members>RTV_Bth_SB_Del</members>
         <members>RTV_Bth_Summary_Budget</members>
+        <members>Test_Trigger_DTC_CombineDuplicate</members>
         <name>ApexClass</name>
     </types>
     <!-- Dashboard -->
@@ -859,6 +860,7 @@
         <members>RTV_POS_Data_AuthCodeChange</members>
         <members>RTV_Program_InitRebuy</members>
         <members>RMS_OrderItem_Size_DTC</members>
+        <members>RMS_OrderItem_DTC_CombineDuplicate</members>
         <name>ApexTrigger</name>
     </types>
     <!-- Workflows -->
