@@ -10,23 +10,26 @@ trigger RMS_OrderItem_DTC_CombineDuplicate on RTV_Order_Item__c (after insert) {
     //分组合计出以POS SKU分组的Application QTY
     Map<String,Long> grpMap = new Map<String,Long>();
     for (AggregateResult grp: [
-        SELECT POS_SKU__c,
+        SELECT 
+        RTV_Order__r.Name orderName,
+        POS_SKU__c,
         SUM(Application_QTY__c) qty
         FROM RTV_Order_Item__c 
         WHERE RTV_Order__c 
         IN :orderIds 
-        GROUP BY POS_SKU__c
+        GROUP BY POS_SKU__c,RTV_Order__r.Name
         ]) {
             Long applicationQty = ((Decimal)grp.get('qty')).round();
             String sku = (String)grp.get('POS_SKU__c');
-            grpMap.put(sku,applicationQty);
+            String orderName = (String)grp.get('orderName');
+            grpMap.put(orderName+sku,applicationQty);
         }
     
     //查出重复记录
     set<string> duplicateCheck = new Set<string>();
     set<Id> dupIds = new Set<Id>();
     for(RTV_Order_Item__c item : [SELECT Id, Name,RTV_Order__c, Application_QTY__c,POS_SKU__c FROM RTV_Order_Item__c WHERE RTV_Order__c IN :orderIds]){
-        if(!duplicateCheck.add(item.POS_SKU__c)){
+        if(!duplicateCheck.add(item.RTV_Order__c+item.POS_SKU__c)){
             dupIds.add(item.Id);
         }
     }
@@ -37,10 +40,10 @@ trigger RMS_OrderItem_DTC_CombineDuplicate on RTV_Order_Item__c (after insert) {
 
      //更新保留记录的Application QTY
      List<RTV_Order_Item__c> upItemList = new List<RTV_Order_Item__c>();
-     for(RTV_Order_Item__c item : [SELECT Id, Name,RTV_Order__c, Application_QTY__c,POS_SKU__c FROM RTV_Order_Item__c WHERE RTV_Order__c IN :orderIds AND POS_SKU__c IN :grpMap.keySet()]){
+     for(RTV_Order_Item__c item : [SELECT Id, Name,RTV_Order__r.Name, Application_QTY__c,POS_SKU__c FROM RTV_Order_Item__c WHERE RTV_Order__c IN :orderIds]){
         RTV_Order_Item__c obj = new RTV_Order_Item__c();
         obj.Id = item.Id;
-        obj.Application_QTY__c = grpMap.get(item.POS_SKU__c);
+        obj.Application_QTY__c = grpMap.get(item.RTV_Order__r.Name+item.POS_SKU__c);
         upItemList.add(obj);
      }
 
