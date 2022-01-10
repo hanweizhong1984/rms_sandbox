@@ -420,6 +420,9 @@ public class RMS_CommonUtil {
         if (bu.startsWith('F')) {
             result = (str2Decimal(lfUsSize, 0) / 10).toPlainString();
         } else {
+            if(bu.startsWith('AC')&&lfUsSize=='OS'){
+                lfUsSize='OSFA';
+            }
             result = lfUsSize;
         }
         return result == null? '': result;
