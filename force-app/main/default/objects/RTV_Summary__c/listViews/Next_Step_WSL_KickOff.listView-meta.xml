@@ -5,11 +5,17 @@
     <columns>Account_Group__c</columns>
     <columns>Program_Finance_Code__c</columns>
     <columns>Owner_Name__c</columns>
+    <columns>Status__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Next_Step__c</field>
         <operation>equals</operation>
         <value>WSL Kickoff</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Remove</value>
     </filters>
     <label>待办[1] 待WSL正式发行</label>
     <sharedTo>
