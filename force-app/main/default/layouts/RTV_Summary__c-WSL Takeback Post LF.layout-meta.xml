@@ -26,10 +26,6 @@
                 <behavior>Readonly</behavior>
                 <field>Property__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Expected_Date_Of_LF_Inbound__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
