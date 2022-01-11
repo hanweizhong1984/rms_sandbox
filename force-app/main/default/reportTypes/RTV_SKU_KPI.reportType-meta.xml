@@ -249,6 +249,16 @@
             <field>OrderStatus__c</field>
             <table>RTV_SKU_KPI__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Expected_Date_of_Billing_Realease__c</field>
+            <table>RTV_SKU_KPI__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Actual_Date_of_Billing_Realease__c</field>
+            <table>RTV_SKU_KPI__c</table>
+        </columns>
         <masterLabel>RTV SKU KPI</masterLabel>
     </sections>
 </ReportType>

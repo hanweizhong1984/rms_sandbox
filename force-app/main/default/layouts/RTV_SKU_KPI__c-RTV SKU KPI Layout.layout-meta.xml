@@ -54,6 +54,14 @@
                 <behavior>Edit</behavior>
                 <field>OrderStatus__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Expected_Date_of_Billing_Realease__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Actual_Date_of_Billing_Realease__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

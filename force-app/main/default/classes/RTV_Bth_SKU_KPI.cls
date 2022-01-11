@@ -7,7 +7,7 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.Al
         System.debug('start RTV_Bth_SKU_KPI...');
         String query = 'SELECT RTV_Order__r.Return_Summary__r.RTV_Program__r.Finance_Code__c, RTV_Order__r.Return_Summary__r.Account_Group__r.Name,' +
             'RTV_Order__r.Return_Summary__c, RTV_Order__r.Return_Summary__r.Name, RTV_Order__r.Return_Summary__r.Status__c, RTV_Order__r.Return_Summary__r.Expected_Date_Of_Inbound__c,' +
-            'RTV_Order__r.Return_Summary__r.CS_Inbound_Date__c, RTV_Order__r.Return_Summary__r.Date_Of_TB_Start__c, RTV_Order__r.Return_Summary__r.Actual_Date_Of_Kick_Off__c,' +
+            'RTV_Order__r.Return_Summary__r.Expected_Date_Of_LF_Inbound__c,RTV_Order__r.Return_Summary__r.LF_WH_Inbound_Date__c,RTV_Order__r.Return_Summary__r.CS_Inbound_Date__c, RTV_Order__r.Return_Summary__r.Date_Of_TB_Start__c, RTV_Order__r.Return_Summary__r.Actual_Date_Of_Kick_Off__c,' +
             'RTV_Order__r.Return_Summary__r.Expected_Date_Of_PTLF__c, RTV_Order__r.Return_Summary__r.Actual_Date_Of_PTLF__c, RTV_Order__r.Return_Summary__r.Expected_Date_Of_Delivered__c,' +
             'RTV_Order__r.Return_Summary__r.Actual_Date_Of_Delivered__c, RTV_Order__r.Return_Summary__r.Actual_Date_Of_Delivered_Complete__c, RTV_Order__r.Return_Summary__r.Expected_Date_Of_Inpected__c,' +
             'RTV_Order__r.Return_Summary__r.Actual_Date_Of_Inspected__c, RTV_Order__r.Return_Summary__r.Expected_Date_Of_CS_Confirmed__c, RTV_Order__r.Return_Summary__r.Actual_Date_Of_CS_Confirmed__c,' +
@@ -111,8 +111,10 @@ public class RTV_Bth_SKU_KPI implements Database.Batchable<sObject>, Database.Al
                     skuItem.Current_Status_QTY__c += (obj.Inspect_QTY_A__c + obj.Inspect_QTY_B__c + obj.Inspect_QTY_C__c + obj.Inspect_QTY_D__c);
                 }
     
-                skuItem.Expected_Date_Of_Inbound__c = obj.RTV_Order__r.Return_Summary__r.Expected_Date_Of_Inbound__c;
-                skuItem.Actual_Date_Of_Inbound__c= obj.RTV_Order__r.Return_Summary__r.CS_Inbound_Date__c;
+                skuItem.Expected_Date_Of_Inbound__c = obj.RTV_Order__r.Return_Summary__r.Expected_Date_Of_LF_Inbound__c;
+                skuItem.Actual_Date_Of_Inbound__c= obj.RTV_Order__r.Return_Summary__r.LF_WH_Inbound_Date__c;
+                skuItem.Expected_Date_of_Billing_Realease__c = obj.RTV_Order__r.Return_Summary__r.Expected_Date_Of_Inbound__c;
+                skuItem.Actual_Date_of_Billing_Realease__c = obj.RTV_Order__r.Return_Summary__r.CS_Inbound_Date__c;
                 skuItem.Date_Of_TB_Start__c = obj.RTV_Order__r.Return_Summary__r.Date_Of_TB_Start__c;
                 skuItem.Actual_Date_Of_Kick_Off__c = obj.RTV_Order__r.Return_Summary__r.Actual_Date_Of_Kick_Off__c;
                 skuItem.Expected_Date_Of_PTLF__c = obj.RTV_Order__r.Return_Summary__r.Expected_Date_Of_PTLF__c;

@@ -4170,6 +4170,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RTV_SKU_KPI__c.Actual_Date_of_Billing_Realease__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RTV_SKU_KPI__c.Applied_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4236,6 +4241,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>RTV_SKU_KPI__c.Expected_Date_Of_WSL_Confirmed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_SKU_KPI__c.Expected_Date_of_Billing_Realease__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
