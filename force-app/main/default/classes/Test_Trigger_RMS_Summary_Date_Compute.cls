@@ -8,10 +8,11 @@ public  class Test_Trigger_RMS_Summary_Date_Compute {
         ConverseRMS__c converseRMS = new ConverseRMS__c();
         converseRMS.Offset_Of_Kick_Off_To_PTLF__c = 1;
         converseRMS.Offset_Of_PTLF_To_Delivered__c = 1;
+        converseRMS.Offset_Of_Delivered_To_Insp__c = 1;
         converseRMS.Offset_Of_Insp_To_CS_Confirm__c = 1;
         converseRMS.Offset_Of_CS_Confirm_To_WSL_Confirm__c = 1;
-        converseRMS.Offset_Of_WSL_Confirm_To_Inbound__c = 1;
-        converseRMS.Offset_Of_Delivered_To_Insp__c = 1;
+        converseRMS.Offset_Of_WSL_Confirm_To_LF_Inbound__c = 1;
+        converseRMS.Offset_Of_LF_Inbound_To_CS_Inbound__c = 1;
         converseRMS.Offset_Of_Inbound_To_Completed__c = 1;
         insert converseRMS;
         RTV_Summary__c summary = new RTV_Summary__c();

@@ -13,6 +13,7 @@
             <operation>notEqual</operation>
             <value/>
         </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
         <fullName>ShareToLF</fullName>
@@ -27,6 +28,7 @@
             <operation>notEqual</operation>
             <value/>
         </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingOwnerRules>
         <fullName>DTC_ShareTo_CFS_Sub</fullName>

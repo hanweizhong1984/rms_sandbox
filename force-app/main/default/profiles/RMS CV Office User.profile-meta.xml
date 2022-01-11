@@ -574,6 +574,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Test_Trigger_DTC_CombineDuplicate</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Test_Trigger_RMS_Access_DEF_Summary</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -4553,6 +4557,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Summary__c.Expected_Date_Of_Kick_Off__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Summary__c.Expected_Date_Of_LF_Inbound__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

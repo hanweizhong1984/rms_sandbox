@@ -34,22 +34,28 @@ trigger RMS_Summary_Date_Compute on RTV_Summary__c (before insert, before update
                 summary.Next_Step__c = 'WSL PKL';
                 
                 //预计时间计算
-                summary.Expected_Date_Of_PTLF__c = summary.Actual_Date_Of_Kick_Off__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_Kick_Off_To_PTLF__c)); 
-                summary.Expected_Date_Of_Delivered__c = summary.Expected_Date_Of_PTLF__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_PTLF_To_Delivered__c));
-                summary.Expected_Date_Of_Inpected__c = summary.Expected_Date_Of_Delivered__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_Delivered_To_Insp__c));
-                summary.Expected_Date_Of_CS_Confirmed__c = summary.Expected_Date_Of_Inpected__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_Insp_To_CS_Confirm__c));
-                summary.Expected_Date_Of_WSL_Confirmed__c = summary.Expected_Date_Of_CS_Confirmed__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_CS_Confirm_To_WSL_Confirm__c));
-                summary.Expected_Date_Of_Inbound__c = summary.Expected_Date_Of_WSL_Confirmed__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_WSL_Confirm_To_Inbound__c));
-                summary.Expected_Date_Of_Completed__c = summary.Expected_Date_Of_Inbound__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_Inbound_To_Completed__c));
+                summary.Expected_Date_Of_PTLF__c = summary.Actual_Date_Of_Kick_Off__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_Kick_Off_To_PTLF__c)); //14天
+                summary.Expected_Date_Of_Delivered__c = summary.Expected_Date_Of_PTLF__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_PTLF_To_Delivered__c));//3天
+                summary.Expected_Date_Of_Inpected__c = summary.Expected_Date_Of_Delivered__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_Delivered_To_Insp__c));//14天
+                summary.Expected_Date_Of_CS_Confirmed__c = summary.Expected_Date_Of_Inpected__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_Insp_To_CS_Confirm__c));//7天
+                summary.Expected_Date_Of_WSL_Confirmed__c = summary.Expected_Date_Of_CS_Confirmed__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_CS_Confirm_To_WSL_Confirm__c));//7天
+                //仓库完成入库预计时间
+                summary.Expected_Date_Of_LF_Inbound__c = summary.Expected_Date_Of_WSL_Confirmed__c+Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_WSL_Confirm_To_LF_Inbound__c));//3天
+                //summary.Expected_Date_Of_Inbound__c = summary.Expected_Date_Of_WSL_Confirmed__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_WSL_Confirm_To_Inbound__c));
+                //CS Billing 完成预计时间
+                summary.Expected_Date_Of_Inbound__c = summary.Expected_Date_Of_LF_Inbound__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_LF_Inbound_To_CS_Inbound__c));//3天
+                summary.Expected_Date_Of_Completed__c = summary.Expected_Date_Of_Inbound__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_Inbound_To_Completed__c));//3天
             }
             
             //当LF修改质检完成预计日期，后面时间往后推移
             if(summary.Expected_Date_Of_Inpected__c != oldSummary.Expected_Date_Of_Inpected__c && summary.Expected_Date_Of_Inpected__c !=null) {
-                
-
                 summary.Expected_Date_Of_CS_Confirmed__c = summary.Expected_Date_Of_Inpected__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_Insp_To_CS_Confirm__c));
                 summary.Expected_Date_Of_WSL_Confirmed__c = summary.Expected_Date_Of_CS_Confirmed__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_CS_Confirm_To_WSL_Confirm__c));
-                summary.Expected_Date_Of_Inbound__c = summary.Expected_Date_Of_WSL_Confirmed__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_WSL_Confirm_To_Inbound__c));
+                //仓库完成入库预计时间
+                summary.Expected_Date_Of_LF_Inbound__c = summary.Expected_Date_Of_WSL_Confirmed__c+Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_WSL_Confirm_To_LF_Inbound__c));
+                //summary.Expected_Date_Of_Inbound__c = summary.Expected_Date_Of_WSL_Confirmed__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_WSL_Confirm_To_Inbound__c));
+                //CS Billing 完成预计时间
+                summary.Expected_Date_Of_Inbound__c = summary.Expected_Date_Of_LF_Inbound__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_LF_Inbound_To_CS_Inbound__c));
                 summary.Expected_Date_Of_Completed__c = summary.Expected_Date_Of_Inbound__c + Integer.valueOf(STRING.valueOf(converseRMS.Offset_Of_Inbound_To_Completed__c));
             }
             

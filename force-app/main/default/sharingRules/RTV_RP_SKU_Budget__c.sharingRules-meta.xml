@@ -13,6 +13,7 @@
             <operation>equals</operation>
             <value>True</value>
         </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
         <fullName>ToConverse</fullName>
@@ -27,5 +28,6 @@
             <operation>notEqual</operation>
             <value/>
         </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
 </SharingRules>

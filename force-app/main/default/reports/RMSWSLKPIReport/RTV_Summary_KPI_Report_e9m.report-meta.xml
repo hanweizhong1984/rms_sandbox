@@ -64,6 +64,12 @@
         <field>RTV_Program__c.RTV_RP_Summary_Budgets__r.RTV_Summaries__r$Actual_Date_Of_WSL_Confirmed__c</field>
     </columns>
     <columns>
+        <field>RTV_Program__c.RTV_RP_Summary_Budgets__r.RTV_Summaries__r$Expected_Date_Of_LF_Inbound__c</field>
+    </columns>
+    <columns>
+        <field>RTV_Program__c.RTV_RP_Summary_Budgets__r.RTV_Summaries__r$LF_WH_Inbound_Date__c</field>
+    </columns>
+    <columns>
         <field>RTV_Program__c.RTV_RP_Summary_Budgets__r.RTV_Summaries__r$Expected_Date_Of_Inbound__c</field>
     </columns>
     <columns>
@@ -97,6 +103,7 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>RTV_Program__c.RTV_RP_Summary_Budgets__r.RTV_Summaries__r$Inspect_QTY_D_Rd__c</field>
     </columns>
+    <currency>CNY</currency>
     <description>Summary 对应KPI Report</description>
     <filter>
         <criteriaItems>

@@ -13,6 +13,7 @@
             <operation>notEqual</operation>
             <value/>
         </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
         <fullName>ToLF</fullName>
@@ -26,5 +27,6 @@
             <operation>notEqual</operation>
             <value/>
         </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
 </SharingRules>

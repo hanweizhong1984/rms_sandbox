@@ -12,5 +12,6 @@
             <operation>equals</operation>
             <value>4691</value>
         </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
 </SharingRules>

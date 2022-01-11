@@ -392,6 +392,10 @@
             <name>RTV Orders</name>
         </sections>
         <sections>
+            <label><!-- RTV Summaries --></label>
+            <name>RTV Summaries</name>
+        </sections>
+        <sections>
             <columns>
                 <label><!-- Finance Code --></label>
                 <name>Finance Code</name>
@@ -1240,6 +1244,10 @@
         <label><!-- RTV DEF Summary KPI --></label>
         <name>RTV_DEF_Summary_KPI</name>
         <sections>
+            <columns>
+                <label><!-- Date of Billing Realease --></label>
+                <name>Date of Billing Realease</name>
+            </columns>
             <label><!-- RTV DEF Summary --></label>
             <name>RTV DEF Summary</name>
         </sections>
@@ -2308,6 +2316,22 @@
             <name>RTV RP Summary Budgets</name>
         </sections>
         <sections>
+            <columns>
+                <label><!-- Actual Date of Billing Realease --></label>
+                <name>Actual Date of Billing Realease</name>
+            </columns>
+            <columns>
+                <label><!-- Actual Date of Inbound --></label>
+                <name>Actual Date of Inbound</name>
+            </columns>
+            <columns>
+                <label><!-- Excepted Date of Billing Realease --></label>
+                <name>Excepted Date of Billing Realease</name>
+            </columns>
+            <columns>
+                <label><!-- Excepted Date of Inbound --></label>
+                <name>Excepted Date of Inbound</name>
+            </columns>
             <columns>
                 <label><!-- Summary Status --></label>
                 <name>Summary Status</name>

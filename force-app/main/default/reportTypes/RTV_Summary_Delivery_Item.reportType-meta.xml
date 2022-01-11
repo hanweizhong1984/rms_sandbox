@@ -138,6 +138,11 @@
             <field>Sales_Channel__c</field>
             <table>RTV_Summary__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Expected_Date_Of_LF_Inbound__c</field>
+            <table>RTV_Summary__c</table>
+        </columns>
         <masterLabel>RTV Summaries</masterLabel>
     </sections>
     <sections>

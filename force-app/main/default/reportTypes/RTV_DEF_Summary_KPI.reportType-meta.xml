@@ -148,6 +148,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Date of Billing Realease</displayNameOverride>
             <field>CS_Inbound_Date__c</field>
             <table>RTV_DEF_Summary__c</table>
         </columns>

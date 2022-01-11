@@ -38,8 +38,12 @@
         <field>RTV_DEF_Summary__c$Date_Of_WSL_Confirm__c</field>
     </columns>
     <columns>
-        <field>RTV_DEF_Summary__c$Date_Of_Inbound__c</field>
+        <field>RTV_DEF_Summary__c$LF_WH_Inbound_Date__c</field>
     </columns>
+    <columns>
+        <field>RTV_DEF_Summary__c$CS_Inbound_Date__c</field>
+    </columns>
+    <currency>CNY</currency>
     <filter>
         <criteriaItems>
             <column>RTV_DEF_Summary__c$Sales_Channel__c</column>
