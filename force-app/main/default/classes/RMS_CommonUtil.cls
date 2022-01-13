@@ -381,7 +381,17 @@ public class RMS_CommonUtil {
         'I'         => 'XXS/XS',
         'II'        => 'S/M',
         'III'       => 'L/XL',
-        'IIII'      => 'XXL3X'
+        'IIII'      => 'XXL3X',
+        '00'        => '24',
+        '0'         => '25',
+        '2'         => '26',
+        '4'         => '27',
+        '6'         => '28',
+        '8'         => '29',
+        '10'        => '30',
+        '12'        => '31',
+        '14'        => '32',
+        '16'        => '34'
     };
     /** 美码转亚码 */
     public static String size_Us2Asia(String usSize, String bu) {
