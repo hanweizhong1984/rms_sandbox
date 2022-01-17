@@ -100,6 +100,16 @@ trigger RMS_OrderItem_ComputePrice on RTV_Order_Item__c (before insert, before u
                             B_UpgradeCost_inv = 0;
                             B_UpgradeCost = 0;
                         } else {
+                            //临时代码（临时增加条件）
+                            if(item.UniqueKey__c.contains('RRRTV24-YY') || item.UniqueKey__c.contains('RTV107-YY')){
+                                //APAC不收B品升级费
+                                B_UpgradeCost_inv = item.BU_2__c.startsWith('F') ? 5.00: 0;
+                            }
+                            if(item.UniqueKey__c.contains('RTV104-BJKT')){
+                                //不收B品升级费
+                                B_UpgradeCost_inv = 0;
+                                B_UpgradeCost = 0;
+                            }
                             //维修费(含税)
                             B_UpgradeCost_inv = item.BU_2__c.startsWith('F') ? 5.00: 3.00;
                             //维修费(除税)（按最新税率计算）

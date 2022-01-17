@@ -17,6 +17,10 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
+        <field>RTV_Summary__c.RTV_Orders__r$Application_QTY__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>RTV_Summary__c.RTV_Orders__r$Current_Status_QTY__c</field>
     </columns>
     <columns>
@@ -63,6 +67,7 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>RTV_Summary__c.RTV_Orders__r$Inspect_QTY_D_Rd__c</field>
     </columns>
+    <currency>CNY</currency>
     <description>Order级别的KPI</description>
     <filter>
         <criteriaItems>
