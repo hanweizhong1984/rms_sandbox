@@ -13,6 +13,7 @@ public class Test_Trigger_RMS_OrderItem_ComputePrice {
         item.RTV_Order__c = order.id;
         item.Material_Code__c = 'PDT000001';
         item.BU_2__c = 'A';
+        item.UniqueKey__c ='XXXXXXX';
         item.Season_Code_CN__c = '20Q1';
         item.SKU_Size_US__c = 'XL';
         item.Selling_Unit_Price__c = 33.45;

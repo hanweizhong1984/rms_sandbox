@@ -104,17 +104,20 @@ trigger RMS_OrderItem_ComputePrice on RTV_Order_Item__c (before insert, before u
                             if(item.UniqueKey__c.contains('RRRTV24-YY') || item.UniqueKey__c.contains('RTV107-YY')){
                                 //APAC不收B品升级费
                                 B_UpgradeCost_inv = item.BU_2__c.startsWith('F') ? 5.00: 0;
-                            }
-                            if(item.UniqueKey__c.contains('RTV104-BJKT')){
+                                //维修费(除税)（按最新税率计算）
+                                B_UpgradeCost = B_UpgradeCost_inv / nowTaxRate;
+                                B_UpgradeCost = B_UpgradeCost.setScale(2, System.RoundingMode.HALF_UP); 
+                            }else if(item.UniqueKey__c.contains('RTV104-BJKT')){
                                 //不收B品升级费
                                 B_UpgradeCost_inv = 0;
                                 B_UpgradeCost = 0;
-                            }
-                            //维修费(含税)
-                            B_UpgradeCost_inv = item.BU_2__c.startsWith('F') ? 5.00: 3.00;
-                            //维修费(除税)（按最新税率计算）
-                            B_UpgradeCost = B_UpgradeCost_inv / nowTaxRate;
-                            B_UpgradeCost = B_UpgradeCost.setScale(2, System.RoundingMode.HALF_UP);    
+                            }else{
+                                //维修费(含税)
+                                B_UpgradeCost_inv = item.BU_2__c.startsWith('F') ? 5.00: 3.00;
+                                //维修费(除税)（按最新税率计算）
+                                B_UpgradeCost = B_UpgradeCost_inv / nowTaxRate;
+                                B_UpgradeCost = B_UpgradeCost.setScale(2, System.RoundingMode.HALF_UP);  
+                           }  
                         }
                         
                         // Amount(A) = Qty(A) * SellingPrice * Program.Discount
