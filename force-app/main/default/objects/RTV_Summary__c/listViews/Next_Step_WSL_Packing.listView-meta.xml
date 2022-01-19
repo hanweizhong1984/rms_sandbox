@@ -11,6 +11,11 @@
         <operation>equals</operation>
         <value>WSL PKL</value>
     </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Remove</value>
+    </filters>
     <label>待办[2] WSL备货上传清单</label>
     <sharedTo>
         <roleAndSubordinates>RMS_Converse</roleAndSubordinates>

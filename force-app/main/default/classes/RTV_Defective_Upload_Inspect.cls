@@ -483,6 +483,9 @@ public with sharing class RTV_Defective_Upload_Inspect {
         updItem.SKU_Style__c = tr.get('Style');
         updItem.SKU_Color__c = tr.get('Color');
         
+        //箱号
+        updItem.Defective_Box_Code__c = tr.get('箱号');
+        
         // item.商品信息
         if(product!=null){
             updItem.Product__c = product.Id;
