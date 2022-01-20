@@ -79,7 +79,8 @@ public with sharing class RTV_SummaryCtrl {
                 Insp_CS_Approve_Required__c, 
                 Insp_CS_Approve_Time__c,
                 Insp_Submit_Time__c, 
-                CS_Inbound_Date__c, LF_DELY_Inbound_Date__c
+                CS_Inbound_Date__c, LF_DELY_Inbound_Date__c,
+                LF_WH_Inbound_Date__c,Inspect_QTY_C__c
             FROM RTV_Summary__c WHERE Id = :this.summaryId
         ];
         

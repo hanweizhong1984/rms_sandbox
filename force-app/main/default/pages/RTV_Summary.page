@@ -358,7 +358,7 @@
                     <!-- 入库 -->
                     <apex:outputLink styleClass="slds-button slds-button_neutral"
                         value="/apex/RTV_Summary_Inbound?summaryId={!summary.Id}"
-                        rendered="{!loginUser.isCS || loginUser.isLF || loginUser.isAdmin}">
+                        rendered="{!(loginUser.isCS && summary.CS_Inbound_Date__c == null) || (loginUser.isLF && summary.LF_WH_Inbound_Date__c == null) || (loginUser.isLF && summary.Inspect_QTY_C__c > 0 && summary.LF_DELY_Inbound_Date__c == null) || loginUser.isAdmin}">
                         提交入库
                     </apex:outputLink>
                 </apex:pageBlockButtons>

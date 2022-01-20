@@ -31,6 +31,7 @@ public with sharing class Test_RTV_SummaryCtrl {
         item.Inspect_QTY_B__c = 1;
         item.Inspect_QTY_C__c = 1;
         item.Inspect_QTY_D__c = 1;
+        item.UniqueKey__c='xxxxx';
         insert item;
         
         // 开始test
