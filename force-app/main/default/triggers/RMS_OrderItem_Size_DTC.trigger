@@ -26,6 +26,30 @@ trigger RMS_OrderItem_Size_DTC on RTV_Order_Item__c (before insert) {
         system.debug('productMap'+productMap);
     }
 
+    //获取特殊尺寸（AP）
+    Map<String,List<RMS_Size_Mapping__c>> sizeMap =new Map<String,List<RMS_Size_Mapping__c>>();
+
+    for(RMS_Size_Mapping__c item:[
+        select Id,BU__c,Material__c,Asia__c,US__c from RMS_Size_Mapping__c
+    ]) {            
+        if(sizeMap.containsKey(item.Material__c)) {
+            sizeMap.get(item.Material__c).add(new RMS_Size_Mapping__c(Id=item.Id,Asia__c=item.Asia__c,US__c=item.US__c));
+        } else {
+            List<RMS_Size_Mapping__c> slist = new List<RMS_Size_Mapping__c>();
+            slist.add(new RMS_Size_Mapping__c(Id=item.Id,Asia__c=item.Asia__c,US__c=item.US__c));
+            sizeMap.put(item.Material__c, slist);
+        }
+    }
+
+    Map<String,String> sizeMap2 = new Map<String,String>();
+    for(String material:sizeMap.keySet()){
+            for(RMS_Size_Mapping__c item:sizeMap.get(material)){
+        String key =material+item.Asia__c;
+        String value = item.US__c;
+        sizeMap2.put(key,value);
+        }
+    }
+
     for (RTV_Order_Item__c item: Trigger.new) {
         if (item.IsDTC__c == true || item.RTV_BaoZun_Seeding__c!=null){
             if(item.SKU_Size_Asia__c != null) {
@@ -34,6 +58,10 @@ trigger RMS_OrderItem_Size_DTC on RTV_Order_Item__c (before insert) {
             //将POS机过来的BU为AP/AC的OrderItem的Material Code转换为和BP上传的SKU Budget中的Material保持一致
             if(productMap.get(item.Material_Code__c)!=null){
                 item.Material_Code__c= productMap.get(item.Material_Code__c).Material_Code__c;
+            }
+            String k= item.Material_Code__c+item.SKU_Size_US__c;
+            if(sizeMap2.containsKey(k)){
+                item.SKU_Size_US__c = sizeMap2.get(k);
             }
             // ALLOrderSet.add(item.RTV_Order__c);
             // ALLMaterialSet.add(item.Material_Code__c);

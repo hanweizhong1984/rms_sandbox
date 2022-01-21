@@ -3,6 +3,13 @@ public class Test_Trigger_RMS_OrderItem_Size_DTC {
     @IsTest
     public static void test() {
 
+        RMS_Size_Mapping__c sizemap = new RMS_Size_Mapping__c();
+        sizemap.BU__c='AP';
+        sizemap.Material__c ='10022855102';
+        sizemap.Asia__c='30';
+        sizemap.US__c='10';
+        insert sizemap;
+
         RMS_Ship_To__c shipto = new RMS_Ship_To__c();
         shipto.Name='104429';
         shipto.DTC_Code__c='6001';
