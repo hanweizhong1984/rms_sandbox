@@ -107,7 +107,7 @@ trigger RMS_OrderItem_ComputePrice on RTV_Order_Item__c (before insert, before u
                                 //维修费(除税)（按最新税率计算）
                                 B_UpgradeCost = B_UpgradeCost_inv / nowTaxRate;
                                 B_UpgradeCost = B_UpgradeCost.setScale(2, System.RoundingMode.HALF_UP); 
-                            }else if(item.UniqueKey__c.contains('RTV104-BJKT')){
+                            }else if(item.UniqueKey__c.contains('RTV104-BJKT') || item.UniqueKey__c.contains('RTV104-Tianji')){
                                 //不收B品升级费
                                 B_UpgradeCost_inv = 0;
                                 B_UpgradeCost = 0;
