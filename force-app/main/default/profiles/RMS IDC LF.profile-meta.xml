@@ -1525,6 +1525,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>RMS_Size_Mapping__c.Asia__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RMS_Size_Mapping__c.BU__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RMS_Size_Mapping__c.Material__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RMS_Size_Mapping__c.US__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>RMS_Sold_To__c.Account_Big_Region__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -4851,6 +4871,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>RMS_Ship_To__c-Empty</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>RMS_Size_Mapping__c-RMS Size Mapping Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>RMS_Sold_To__c-Empty</layout>

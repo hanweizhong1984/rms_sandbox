@@ -430,6 +430,7 @@
         <members>RTV_Summary__c-WSL Takeback Ready Edit</members>
         <members>RTV_Summary__c-WSL Takeback Ready For ShipTo</members>
         <members>RTV_Summary_Sku_Budget__c-RTV Summary Sku Budget Layout</members>
+        <members>RMS_Size_Mapping__c-RMS Size Mapping Layout</members>
         <name>Layout</name>
     </types>
     <!-- objects -->
@@ -472,6 +473,7 @@
         <members>RTV_Summary__c</members>
         <members>RTV_POS_ERROR__c</members>
         <members>RTV_Summary_Sku_Budget__c</members>
+        <members>RMS_Size_Mapping__c</members>
         <name>CustomObject</name>
     </types>
     <!-- pages (Visualforce Pages) -->
@@ -907,6 +909,7 @@
         <members>RTV_RP_Summary_Budget__c-zh_CN</members>
         <members>RTV_SKU_KPI__c-zh_CN</members>
         <members>RTV_Summary__c-zh_CN</members>
+        <members>RMS_Size_Mapping__c-zh_CN</members>
         <name>CustomObjectTranslation</name>
     </types>
     <!-- 翻译 -->
