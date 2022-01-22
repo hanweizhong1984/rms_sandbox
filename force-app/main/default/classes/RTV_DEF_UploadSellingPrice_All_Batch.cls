@@ -49,6 +49,7 @@ public with sharing class RTV_DEF_UploadSellingPrice_All_Batch implements Databa
         'Selling Unit Price (CNY/excl.VAT)',
         0
       );
+      item.SP_TaxRate__c = tr.getDecimal('SP TaxRate',0); 
       this.updateItems.put(item.Id, item);
     }
 
