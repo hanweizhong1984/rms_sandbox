@@ -1,4 +1,7 @@
 <apex:page controller="RTV_Order_UploadInspectCtrl_DTC" lightningStylesheets="True">
+    <head>
+        <apex:slds /> <!-- 用<apex:slds>标签引入lightning的css -->
+    </head>    
     <!-- 上传表单 -->
     <apex:form >
         <apex:pageBlock title="上传质检报告" mode="edit">

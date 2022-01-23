@@ -21,33 +21,18 @@ public with sharing class RTV_Order_UploadInspectCtrl_DTC {
     /** 运行创建item */
     public Boolean createItemIfNotFound {get; set;}
 
-    /** 现存的order和item */
-    private transient Map<String, RTV_Order__c> existOrders;
-    private transient Map<String, RTV_Order_Item__c> existItems;
-    private transient Map<String, RTV_Order_Inspection__c> existInspects;
-    
-    /** 基础表：product */
-    private transient Map<String, RMS_Product__c> products;
-    
-    /** 基础表：tradingTerm */
-    private transient Map<String, RMS_TradingTerm__c> tradingTerms;
-    
-    /** 待更新记录 */
-    private transient Map<String, RTV_Order__c> updateOrders;
-    private transient Map<String, RTV_Order_Item__c> updateItems;
-    private transient Map<String, RTV_Order_Item__c> upsertItems;
-    private transient Map<String, RTV_Order_Inspection__c> upsertInspects;
+    //Loading
+    public Boolean isLoading = false;
+    public Boolean getIsLoading() {return this.isLoading;}
 
-    private transient Map<String,List<Decimal>> actualMaps;
-    private transient Map<String,List<String>> remarkMaps;
+    //当前执行Batch的ProcessJob
+    public AsyncApexJob uploadJob {get; set;}
     
-    /** csv的必须列 */
-    private String[] Csv_Fields = new String[]{
-        '退货授权号', 'Bar code', 'Material code', 'Style', 'Color', 'Size', '申请数量', '实收','备注', 'A', 'B', 'C', 'D', 'Reason code', '差异'};
-        
-    /**item.recordtype */
-    private RecordType dtcItemType = RMS_CommonUtil.getRecordTypes('RTV_Order_Item__c').get('DTC');
-        
+    //Loading进度
+    public Integer batchPercent {get { 
+        return getJobPercent(uploadJob);
+    }}
+
     /** 构造方法 */
     public RTV_Order_UploadInspectCtrl_DTC() {
         // url参数中指定了单个order时
@@ -79,24 +64,78 @@ public with sharing class RTV_Order_UploadInspectCtrl_DTC {
         }
         return new PageReference(url);
     }
+
+    /** 检查batch执行结果（每几秒一次） */
+    public PageReference checkResult() {
+        // 获取job执行状态
+        String uploadStatus = getBatchStatus(this.uploadJob);
+        
+        // 执行完成时
+        if (uploadStatus != 'Loading') {
+            this.isLoading = false;
+            
+            // 执行成功时
+            if (uploadStatus == 'Success') {
+                RMS_CommonUtil.pageAddMessage(ApexPages.Severity.CONFIRM, '上传成功！');
+            }
+        }
+        return null;
+    }
+    
+    /** 检查Batch的执行状态 */
+    private String getBatchStatus(AsyncApexJob job) {
+        if (job == null || job.Id == null) {
+            return 'Not Start';
+        }
+        
+        // 获取Batch执行情况
+        job = [
+            SELECT Id, Status, JobItemsProcessed, TotalJobItems, NumberOfErrors, CompletedDate, ExtendedStatus
+            FROM AsyncApexJob WHERE Id = :job.Id LIMIT 1
+        ];
+        if (job.CompletedDate == null) {
+            return 'Loading';
+        }
+        
+        // 执行结束
+        // 检查异常信息
+        Boolean hasError = false;
+        if (!String.isBlank(job.ExtendedStatus)) {
+            hasError = true;
+            RMS_CommonUtil.pageAddMessage(ApexPages.Severity.ERROR, job.ExtendedStatus);
+        }
+        // 自定义错误信息
+        for (RTV_Log__c log: [SELECT Id, Errors__c FROM RTV_Log__c WHERE Batch_Job_Id__c = :job.Id LIMIT 1]) {
+            for (String msg: log.Errors__c.split('\r\n')) {
+                hasError = true;
+                RMS_CommonUtil.pageAddMessage(ApexPages.Severity.WARNING, msg);
+            }
+            delete log;
+        }
+        return hasError? 'Error': 'Success';
+    }
+    
+    /** 计算job执行进度 */
+    private Integer getJobPercent(AsyncApexJob job) {
+        AsyncApexJob currentjob =null;
+        if(job!=null){
+        currentjob = [
+            SELECT Id, Status, JobItemsProcessed, TotalJobItems, NumberOfErrors, CompletedDate, ExtendedStatus
+            FROM AsyncApexJob WHERE Id = :job.Id LIMIT 1
+        ];
+        }
+        if (currentjob != null && currentjob.TotalJobItems > 0) {
+            Decimal jobProcessed = currentjob.JobItemsProcessed == 0? 1.0: Decimal.valueOf(currentjob.JobItemsProcessed);
+            return Integer.valueOf(jobProcessed / currentjob.TotalJobItems * 100.0);
+        }
+        return 0;
+    }
     
     /** 上传 */
     public void upload() {
-        this.products = new Map<String, RMS_Product__c>();
-        this.tradingTerms = new Map<String, RMS_TradingTerm__c>();
-        
-        this.existOrders = new Map<String, RTV_Order__c>();
-        this.existItems = new Map<String, RTV_Order_Item__c>();
-        this.existInspects = new Map<String, RTV_Order_Inspection__c>();
-        
-        this.updateOrders = new Map<String, RTV_Order__c>();
-        this.updateItems = new Map<String, RTV_Order_Item__c>();
-        this.upsertItems = new Map<String, RTV_Order_Item__c>();
-        this.upsertInspects = new Map<String, RTV_Order_Inspection__c>();
-
-        this.actualMaps = new Map<String,List<Decimal>>();
-        this.remarkMaps = new Map<String,List<String>>();
-        
+        this.uploadJob = new AsyncApexJob();
+        // 开始loading
+        this.isLoading = true;
         // 检查input
         if (this.fileUploadBody == null) {
             ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, '请先选择上传文件！'));
@@ -104,594 +143,15 @@ public with sharing class RTV_Order_UploadInspectCtrl_DTC {
         }
         
         // 执行上传
-        Savepoint savePot = Database.setSavepoint();
-        try {
-            this.doUpload();
-        } 
-        // 捕捉dml错误 (包括自定义的validate rule)
-        catch(Exception err) {
-            if (err.getMessage().contains('FIELD_CUSTOM_VALIDATION_EXCEPTION')) {
-                // 自定义的validate rule会自动添加message
-            } else {
-                ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, err.getMessage()));
-            }
-            Database.rollback(savePot);
-        }
-        
+        RTV_Order_UploadInspectCtrl_DTC_Batch uploadBatch = new RTV_Order_UploadInspectCtrl_DTC_Batch(
+            this.fileUploadBody,
+            this.fileCharset,
+            this.createItemIfNotFound
+        );
+        this.uploadJob.Id = Database.executeBatch(uploadBatch, 1000);
     }
     
-    /** 执行上传 */
-    private void doUpload() {
-        // 创建csv迭代器
-        RMS_CSV_Iterator csvIter = new RMS_CSV_Iterator(this.fileUploadBody, this.fileCharset);
-        csvIter.skipTitleLine(Csv_Fields);
-        
-        // 检索order前，先遍历一次csv缩小检索范围
-        List<RMS_CSV_Iterator.OneLineInfo> csvTable = new List<RMS_CSV_Iterator.OneLineInfo>();
-        Set<String> lfOrderCodes = new Set<String>();
-        Set<String> materialCodes = new Set<String>();
-        while (csvIter.next()) {
-            RMS_CSV_Iterator.OneLineInfo tr = csvIter.getOneLineInfo();
-            
-            // 记录该行内容
-            csvTable.add(tr);
-            lfOrderCodes.add(tr.get('退货授权号'));
-            materialCodes.add(tr.get('Material code'));
-        }
-        // 检索order和item
-        this.queryItems(lfOrderCodes, materialCodes);
-        
-        // 遍历csv
-        for (RMS_CSV_Iterator.OneLineInfo tr: csvTable) {
-            // 通过'退货授权号'获取'OrderCode'和'BU2'
-            String lfOrderCode = tr.get('退货授权号');
-            String orderCode = lfOrderCode.substring(0, lfOrderCode.length()-2);
-            String bu2 = lfOrderCode.substring(lfOrderCode.length()-2, lfOrderCode.length());
-            
-            // 检查csv内容
-            if (!checkCsvValues(tr)) {
-                continue;
-            }
-            
-            // 更新order
-            RTV_Order__c order = changeOrder(orderCode);
-            
-            // 更新item
-            RTV_Order_Item__c item = changeItem(order, bu2, tr);
-            if (item == null) {
-                continue;
-            }
-            
-            // 更新inspect
-            changeInspect(item, tr);
-        }
-
-        for(String itemUniqueKey:this.actualMaps.KeySet()){
-            RTV_Order_Item__c item = this.existItems.get(itemUniqueKey);
-            List<Decimal> actuals = this.actualMaps.get(itemUniqueKey);
-            List<String> remarks = this.remarkMaps.get(itemUniqueKey);
-
-            Decimal num=0;
-            String remark='';
-            if (actuals.size()>0) {
-                for(Decimal d : actuals) {
-                    num+=d;
-                }
-            }
-            if (remarks.size()>0) {
-                for(String r : remarks) {
-                    if(remark==r){
-                        remark=r;
-                    }else{
-                        remark+=r;
-                    }
-                }
-            }
-            if(item!=null){
-                this.updateItems.put(itemUniqueKey, new RTV_Order_Item__c(
-                    Id = item.Id,
-                    Insp_Actual_QTY__c=num,
-                    Insp_WSL_Remark__c=remark
-                ));
-            }
-        }
-        
-        // 创建或更新inspection
-        if (!this.upsertInspects.isEmpty()) {
-            // 更新order
-            if (!this.updateOrders.isEmpty()) {
-                update this.updateOrders.values();
-            }
-            // 创建item
-            if (!this.upsertItems.isEmpty()) {
-                upsert this.upsertItems.values();
-            }
-            // 创建或更新inspection
-            upsert this.upsertInspects.values();
-
-            if(!this.updateItems.isEmpty()){
-                update this.updateItems.values();
-            }
-            
-            // 删除csv中没有的inspect记录
-            deleteOldItems();
-            
-            ApexPages.addMessage(new ApexPages.message(ApexPages.severity.CONFIRM, '上传成功'));
-        } else {
-            ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, '上传失败'));
-        }
-    }
     
-    /**
-     * 统计order和item
-     */
-    private void queryItems(Set<String> csvLfOrderCodes, Set<String> csvMaterialCodes) {
-        Set<String> soldToCodes = new Set<String>();
-        
-        // 检索item，统计各 LF_Order_Auth_Code__c 对应的itemlist
-        for (RTV_Order_Item__c item: [
-            SELECT Id, Name, LF_Order_Auth_Code__c, UniqueKey__c, Product__c,
-                Material_Code__c, BU_2__c, SKU_Size_US__c, Season_Code_CN__c, Bar_Code__c,
-                POS_SKU__c, Application_QTY__c,Insp_Actual_QTY__c,
-                RTV_Order__c,
-                RTV_Order__r.Name,
-                RTV_Order__r.Order_Auth_Code__c,
-                RTV_Order__r.Status__c,
-                RTV_Order__r.RTV_Defective__c,
-                RTV_Order__r.Sold_To__r.Name,
-                RTV_Order__r.Sold_To__r.TT_APP_ACC__c,
-                RTV_Order__r.Sold_To__r.TT_FTW_EG__c,
-                RTV_Order__r.Sold_To__r.TT_FW_Seasonal__c,
-                (SELECT Id FROM RTV_Order_Inspections__r LIMIT 1)
-            FROM RTV_Order_Item__c
-            WHERE LF_Order_Auth_Code__c IN :csvLfOrderCodes
-            AND POS_SKU__c != null
-        ]) {
-            // 获取order
-            String orderCode = item.RTV_Order__r.Order_Auth_Code__c;
-            this.existOrders.put(item.RTV_Order__r.Order_Auth_Code__c, item.RTV_Order__r);
-            
-            // 获取item的key = 授权码 + POS_SKU
-            String itemUniqueKey = RMS_CommonUtil.item_getUniqueKeyDTC(orderCode, item.POS_SKU__c);
-            
-            // 获取现存的item
-            this.existItems.put(itemUniqueKey, item);
-            
-            // 获取现存的inspect
-            if (!item.RTV_Order_Inspections__r.isEmpty()) {
-                this.existInspects.put(item.UniqueKey__c, item.RTV_Order_Inspections__r[0]);
-            }
-            
-            soldToCodes.add(item.RTV_Order__r.Sold_To__r.Name);
-        }
-        
-        // --------- 由于DTC的Inspect没有季节码，所以匹配不到商品 -----------------
-        // 检索csv中提到的Product
-        for (RMS_Product__c pdt: [
-            SELECT Id, SKU__c, Material_Code__c, Season_Code_CN__c,MSRP__c,BUCN__c,BU__c
-            FROM RMS_Product__c 
-            WHERE Material_Code__c IN :csvMaterialCodes
-        ]) {
-            this.products.put(pdt.Material_Code__c, pdt);
-        }
-        // --------- 由于DTC的Inspect没有季节码，所以匹配不到商品 -----------------
-        
-        // 检索各个财年的TradingTerm
-        for (RMS_TradingTerm__c tt: [
-            SELECT TT_APP_ACC__c, TT_FW_Seasonal__c, TT_FTW_EG__c, Year__c, Name 
-            FROM RMS_TradingTerm__c
-            WHERE Sold_To_Code__c IN :soldToCodes
-        ]) {
-            tradingTerms.put(tt.Name, tt);
-        }
-    }
-    
-    /** 修改 RTV_Order__c */
-    private RTV_Order__c changeOrder(String orderCode) {
-        // 获取数据库中的order
-        RTV_Order__c order = this.existOrders.get(orderCode);
-        // 没有时报错
-        if (order == null) {
-            throw new RMS_CommonUtil.RMSException('未知的授权码: ' + orderCode);
-        }
-        // 参数指定了单个order时,不能上传其它order的内容
-        if (this.theOrderId != null && this.theOrderId != order.Id) {
-            throw new RMS_CommonUtil.RMSException('请只上传此授权码的订单:' + orderCode);
-        }
-        // 检查order状态
-        if (!(new String[]{'Delivered', 'Inspected'}).contains(order.Status__c)) {
-            throw new RMS_CommonUtil.RMSException('请不要上传其它状态的订单:' + order.Name + ', 状态=' + order.Status__c);
-        }
-        // 检查遍历过记录
-        if (!this.updateOrders.containsKey(orderCode)) {
-            // 添加到待更新
-            this.updateOrders.put(orderCode, new RTV_Order__c(
-                Id = order.Id,
-                Inspect_By__c = UserInfo.getUserId(),
-                Status__c = 'Inspected'
-            ));
-        }
-        return order;
-    }
-    
-    /** 修改 RTV_Order_Item__c */
-    private RTV_Order_Item__c changeItem(RTV_Order__c order, String itemBu2, RMS_CSV_Iterator.OneLineInfo tr) {
-        // ----------------------------
-        // 获取Product
-        // ※ POS_SKU__c = Product.SKU__c + Size
-        // ----------------------------
-        String posSku;
-        String size;
-        RMS_Product__c pdt = this.products.get(tr.get('Material code'));
-        if (pdt != null) {
-            size = RMS_CommonUtil.size_Us2Asia(tr.get('Size'),itemBu2); //美码转亚码
-            posSku = RMS_CommonUtil.item_getPosSku(pdt, size);
-        }
-        
-        // 获取item.Key
-        String itemUniqueKey = RMS_CommonUtil.item_getUniqueKeyDTC(order.Order_Auth_Code__c, posSku);
-
-        if(this.actualMaps.containsKey(itemUniqueKey)){
-            this.actualMaps.get(itemUniqueKey).add(tr.getDecimal('实收', 0));
-        } else {
-            this.actualMaps.put(itemUniqueKey, new List<Decimal>{tr.getDecimal('实收', 0)});
-        }
-
-        if(this.remarkMaps.containsKey(itemUniqueKey)){
-            this.remarkMaps.get(itemUniqueKey).add(tr.get('备注'));
-        } else {
-            this.remarkMaps.put(itemUniqueKey, new List<String>{tr.get('备注')});
-        }
-
-        // ----------------------------
-        // 新增item
-        // ----------------------------
-        RTV_Order_Item__c item = this.existItems.get(itemUniqueKey);
-        if (pdt == null || item == null) {
-            // 不允许新增时，报错
-            if (createItemIfNotFound == false) {
-                throw new RMS_CommonUtil.RMSException(
-                    '(行'+tr.lineIndex+') 该商品不在申请范围中:' 
-                    + '  Order=' + order.Order_Auth_Code__c
-                    + ', POS SKU=' + posSku
-                    + '  (请确认CSV，或勾选"自动创建装箱单...")');
-            }
-            
-            // 获取遍历过记录
-            item = this.upsertItems.get(itemUniqueKey);
-            if (item == null) {
-                item = new RTV_Order_Item__c();
-                
-                // item.商品信息
-                item.POS_SKU__c = posSku;
-                item.Material_Code__c = tr.get('Material code');
-                item.BU_2__c = itemBu2;
-                item.Season_Code_CN__c = tr.get('季节码');
-                item.SKU_Style__c = tr.get('Style');
-                item.SKU_Color__c = tr.get('Color');
-                item.Bar_Code__c = tr.get('Bar code');
-                //item.Insp_Actual_QTY__c = tr.getDecimal('实收', 0);
-                item.Insp_WSL_Remark__c =tr.get('备注');
-                
-                // item记录中的Size = inseption中(FW的)尺码除以10
-                item.SKU_Size_US__c = RMS_CommonUtil.size_lfUs2Us(size, itemBu2);
-                
-                // item.商品对象信息
-                if (pdt != null) {
-                    item.Product__c = pdt.Id;
-                }
-                
-                // item.唯一键信息
-                item.RTV_Order__r = new RTV_Order__c(Order_Auth_Code__c=order.Order_Auth_Code__c);
-                item.UniqueKey__c = itemUniqueKey;
-                item.Name = RMS_CommonUtil.item_getNameDTC(item);
-                item.RecordTypeId = this.dtcItemType.Id;
-                
-                // 加到待添加的item里
-                this.upsertItems.put(item.UniqueKey__c, item);
-            } 
-        }
-        // ----------------------------
-        // 更新item
-        // ----------------------------
-        else {
-            // 检查遍历过记录
-            if (!this.upsertInspects.containsKey(itemUniqueKey)) {
-                // 更新item信息
-                item.UniqueKey__c = itemUniqueKey;
-                item.Material_Code__c = tr.get('Material Code');
-                item.SKU_Style__c = tr.get('Style');
-                item.SKU_Color__c = tr.get('Color');
-                item.Bar_Code__c = tr.get('Bar code');
-                //item.Insp_Actual_QTY__c = tr.getDecimal('实收', 0);
-                item.Insp_WSL_Remark__c =tr.get('备注');
-                // item记录中的Size = inseption中(FW的)尺码除以10
-                item.SKU_Size_US__c = RMS_CommonUtil.size_lfUs2Us(size, itemBu2);
-                
-                // 添加到待更新（只添加需要更新的字段）
-                this.upsertItems.put(item.UniqueKey__c, new RTV_Order_Item__c(
-                    Id = item.Id,
-                    UniqueKey__c = item.UniqueKey__c,
-                    SKU_Style__c = item.SKU_Style__c,
-                    SKU_Color__c = item.SKU_Color__c,
-                    Bar_Code__c = item.Bar_Code__c,
-                    //Insp_Actual_QTY__c=item.Insp_Actual_QTY__c,
-                    Insp_WSL_Remark__c =item.Insp_WSL_Remark__c
-                ));
-            }
-        }
-        return item;
-    }
-    
-    /** 修改 RTV_Order_Inspection__c */
-    private RTV_Order_Inspection__c changeInspect(RTV_Order_Item__c item, RMS_CSV_Iterator.OneLineInfo tr) {
-        // 获取待更新记录
-        RTV_Order_Inspection__c updInsp = this.upsertInspects.get(item.UniqueKey__c);
-
-        if (updInsp == null) {
-            // 设置空白记录 (PS:每个order都请上传完整的inspection信息)
-            updInsp = new RTV_Order_Inspection__c();
-            updInsp.A__c = 0;
-            updInsp.B1__c = 0;
-            updInsp.B2__c = 0;
-            updInsp.B2_1__c = 0;
-            updInsp.B3__c = 0;
-            updInsp.B4__c = 0;
-            updInsp.B5__c = 0;
-            updInsp.B6__c = 0;
-            updInsp.B7__c = 0;
-            updInsp.C1__c = 0;
-            updInsp.C2_1__c = 0;
-            updInsp.C2_2__c = 0;
-            updInsp.C2_3__c = 0;
-            updInsp.C2_4__c = 0;
-            updInsp.C2_5__c = 0;
-            updInsp.C2_6__c = 0;
-            updInsp.C2_6_1__c = 0;
-            updInsp.C2_7__c = 0;
-            updInsp.D__c = 0;
-            updInsp.Application_QTY_A__c = 0;
-            updInsp.Application_QTY_B1__c = 0;
-            updInsp.Application_QTY_B2__c = 0;
-            updInsp.Application_QTY_B2_1__c = 0;
-            updInsp.Application_QTY_B3__c = 0;
-            updInsp.Application_QTY_B4__c = 0;
-            updInsp.Application_QTY_B5__c = 0;
-            updInsp.Application_QTY_B6__c = 0;
-            updInsp.Application_QTY_B7__c = 0;
-            updInsp.Application_QTY_C1__c = 0;
-            updInsp.Application_QTY_C2_1__c = 0;
-            updInsp.Application_QTY_C2_2__c = 0;
-            updInsp.Application_QTY_C2_3__c = 0;
-            updInsp.Application_QTY_C2_4__c = 0;
-            updInsp.Application_QTY_C2_5__c = 0;
-            updInsp.Application_QTY_C2_6__c = 0;
-            updInsp.Application_QTY_C2_6_1__c = 0;
-            updInsp.Application_QTY_C2_7__c = 0;
-            updInsp.Application_QTY_D__c = 0;
-            updInsp.Diff_QTY_A__c = 0;
-            updInsp.Diff_QTY_B1__c = 0;
-            updInsp.Diff_QTY_B2__c = 0;
-            updInsp.Diff_QTY_B2_1__c = 0;
-            updInsp.Diff_QTY_B3__c = 0;
-            updInsp.Diff_QTY_B4__c = 0;
-            updInsp.Diff_QTY_B5__c = 0;
-            updInsp.Diff_QTY_B6__c = 0;
-            updInsp.Diff_QTY_B7__c = 0;
-            updInsp.Diff_QTY_C1__c = 0;
-            updInsp.Diff_QTY_C2_1__c = 0;
-            updInsp.Diff_QTY_C2_2__c = 0;
-            updInsp.Diff_QTY_C2_3__c = 0;
-            updInsp.Diff_QTY_C2_4__c = 0;
-            updInsp.Diff_QTY_C2_5__c = 0;
-            updInsp.Diff_QTY_C2_6__c = 0;
-            updInsp.Diff_QTY_C2_6_1__c = 0;
-            updInsp.Diff_QTY_C2_7__c = 0;
-            updInsp.Diff_QTY_D__c = 0;
-
-            updInsp.Delivery_QTY_A__c = 0;
-            updInsp.Delivery_QTY_B1__c = 0;
-            updInsp.Delivery_QTY_B2__c = 0;
-            updInsp.Delivery_QTY_B2_1__c = 0;
-            updInsp.Delivery_QTY_B3__c = 0;
-            updInsp.Delivery_QTY_B4__c = 0;
-            updInsp.Delivery_QTY_B5__c = 0;
-            updInsp.Delivery_QTY_B6__c = 0;
-            updInsp.Delivery_QTY_B7__c = 0;
-            updInsp.Delivery_QTY_C1__c = 0;
-            updInsp.Delivery_QTY_C2_1__c = 0;
-            updInsp.Delivery_QTY_C2_2__c = 0;
-            updInsp.Delivery_QTY_C2_3__c = 0;
-            updInsp.Delivery_QTY_C2_4__c = 0;
-            updInsp.Delivery_QTY_C2_5__c = 0;
-            updInsp.Delivery_QTY_C2_6__c = 0;
-            updInsp.Delivery_QTY_C2_6_1__c = 0;
-            updInsp.Delivery_QTY_C2_7__c = 0;
-            updInsp.Delivery_QTY_D__c = 0;
-            
-            // 设置数据库中该inspect的id，即更新该记录
-            RTV_Order_Inspection__c extInsp = this.existInspects.get(item.UniqueKey__c);
-            if (extInsp != null) {
-                updInsp.Id = extInsp.Id;
-            }
-            // 设置关联item
-            updInsp.RTV_Order_Item__r = new RTV_Order_Item__c(UniqueKey__c=item.UniqueKey__c);
-        }
-        // 合计该inspect的Qty
-        this.sumQtyOfOneInspect(updInsp, tr);
-        
-        // 加到待upsert记录里
-        this.upsertInspects.put(item.UniqueKey__c, updInsp);
-        return updInsp;
-    }
-    
-    /** 删除csv中没有的inspection信息 */
-    private void deleteOldItems() {
-        List<RTV_Order_Item__c> delItems = new List<RTV_Order_Item__c>();
-        List<RTV_Order_Inspection__c> delInsps = new List<RTV_Order_Inspection__c>();
-        
-        // 删除csv中没有的inspection信息
-        for (RTV_Order_Item__c item: this.existItems.values()) {
-            // 检查csv中是否有该item
-            if (!this.upsertInspects.containsKey(item.UniqueKey__c)) {
-                
-                // 没有packing信息时，删除整个item和其下inspection
-                if (item.Application_QTY__c == 0) {
-                    delItems.add(item);
-                } else {
-                    delInsps.addAll(item.RTV_Order_Inspections__r);
-                }
-            }
-        }
-        if (!delItems.isEmpty()) { delete delItems; }
-        if (!delInsps.isEmpty()) { delete delInsps; }
-    }
-    
-    /** Inspection中各QTY字段赋值 */
-    private void sumQtyOfOneInspect(RTV_Order_Inspection__c insp, RMS_CSV_Iterator.OneLineInfo tr) {
-        String reasonCode = tr.get('Reason code');
-        Decimal qtyA = tr.getDecimal('A', 0);
-        Decimal qtyB = tr.getDecimal('B', 0);
-        Decimal qtyC = tr.getDecimal('C', 0);
-        Decimal qtyD = tr.getDecimal('D', 0);
-        Decimal appQty = tr.getDecimal('申请数量', 0);
-        Decimal diffQty = tr.getDecimal('差异', 0);
-        Decimal deliveryQty = tr.getDecimal('实收', 0);
-        
-        if (reasonCode == 'A') { 
-            insp.A__c += qtyA; 
-            insp.Application_QTY_A__c += appQty;
-            insp.Diff_QTY_A__c += diffQty;
-            insp.Delivery_QTY_A__c += deliveryQty;
-        } 
-        else if (reasonCode == 'B1') { 
-            insp.B1__c += qtyB; 
-            insp.Application_QTY_B1__c += appQty;
-            insp.Diff_QTY_B1__c += diffQty;
-            insp.Delivery_QTY_B1__c += deliveryQty;
-        }
-        else if (reasonCode == 'B2') { 
-            insp.B2__c += qtyB; 
-            insp.Application_QTY_B2__c += appQty;
-            insp.Diff_QTY_B2__c += diffQty;
-            insp.Delivery_QTY_B2__c += deliveryQty;
-        }
-        else if (reasonCode == 'B2-1') { 
-            insp.B2_1__c += qtyB; 
-            insp.Application_QTY_B2_1__c += appQty;
-            insp.Diff_QTY_B2_1__c += diffQty;
-            insp.Delivery_QTY_B2_1__c += deliveryQty;
-        }
-        else if (reasonCode == 'B3') { 
-            insp.B3__c += qtyB; 
-            insp.Application_QTY_B3__c += appQty;
-            insp.Diff_QTY_B3__c += diffQty;
-            insp.Delivery_QTY_B3__c += deliveryQty;
-        }
-        else if (reasonCode == 'B4') { 
-            insp.B4__c += qtyB; 
-            insp.Application_QTY_B4__c += appQty;
-            insp.Diff_QTY_B4__c += diffQty;
-            insp.Delivery_QTY_B4__c += deliveryQty;
-        }
-        else if (reasonCode == 'B5') { 
-            insp.B5__c += qtyB; 
-            insp.Application_QTY_B5__c += appQty;
-            insp.Diff_QTY_B5__c += diffQty;
-            insp.Delivery_QTY_B5__c += deliveryQty;
-        }
-        else if (reasonCode == 'B6') { 
-            insp.B6__c += qtyB; 
-            insp.Application_QTY_B6__c += appQty;
-            insp.Diff_QTY_B6__c += diffQty;
-            insp.Delivery_QTY_B6__c += deliveryQty;
-        }
-        else if (reasonCode == 'B7') { 
-            insp.B7__c += qtyB; 
-            insp.Application_QTY_B7__c += appQty;
-            insp.Diff_QTY_B7__c += diffQty;
-            insp.Delivery_QTY_B7__c += deliveryQty;
-        }
-        else if (reasonCode == 'C1') { 
-            insp.C1__c += qtyC; 
-            insp.Application_QTY_C1__c += appQty;
-            insp.Diff_QTY_C1__c += diffQty;
-            insp.Delivery_QTY_C1__c += deliveryQty;
-        }
-        else if (reasonCode == 'C2-1') { 
-            insp.C2_1__c += qtyC; 
-            insp.Application_QTY_C2_1__c += appQty;
-            insp.Diff_QTY_C2_1__c += diffQty;
-            insp.Delivery_QTY_C2_1__c += deliveryQty;
-        }
-        else if (reasonCode == 'C2-2') { 
-            insp.C2_2__c += qtyC; 
-            insp.Application_QTY_C2_2__c += appQty;
-            insp.Diff_QTY_C2_2__c += diffQty;
-            insp.Delivery_QTY_C2_2__c += deliveryQty;
-        }
-        else if (reasonCode == 'C2-3') { 
-            insp.C2_3__c += qtyC; 
-            insp.Application_QTY_C2_3__c += appQty;
-            insp.Diff_QTY_C2_3__c += diffQty;
-            insp.Delivery_QTY_C2_3__c += deliveryQty;
-        }
-        else if (reasonCode == 'C2-4') { 
-            insp.C2_4__c += qtyC; 
-            insp.Application_QTY_C2_4__c += appQty;
-            insp.Diff_QTY_C2_4__c += diffQty;
-            insp.Delivery_QTY_C2_4__c += deliveryQty;
-        }
-        else if (reasonCode == 'C2-5') { 
-            insp.C2_5__c += qtyC; 
-            insp.Application_QTY_C2_5__c += appQty;
-            insp.Diff_QTY_C2_5__c += diffQty;
-            insp.Delivery_QTY_C2_5__c += deliveryQty;
-        }
-        else if (reasonCode == 'C2-6') { 
-            insp.C2_6__c += qtyC; 
-            insp.Application_QTY_C2_6__c += appQty;
-            insp.Diff_QTY_C2_6__c += diffQty;
-            insp.Delivery_QTY_C2_6__c += deliveryQty;
-        }
-        else if (reasonCode == 'C2-6-1') { 
-            insp.C2_6_1__c += qtyC; 
-            insp.Application_QTY_C2_6_1__c += appQty;
-            insp.Diff_QTY_C2_6_1__c += diffQty;
-            insp.Delivery_QTY_C2_6_1__c += deliveryQty;
-        }
-        else if (reasonCode == 'C2-7') { 
-            insp.C2_7__c += qtyC; 
-            insp.Application_QTY_C2_7__c += appQty;
-            insp.Diff_QTY_C2_7__c += diffQty;
-            insp.Delivery_QTY_C2_7__c += deliveryQty;
-        }
-        else if (reasonCode == 'D') { 
-            insp.D__c += qtyD; 
-            insp.Application_QTY_D__c += appQty;
-            insp.Diff_QTY_D__c += diffQty;
-            insp.Delivery_QTY_D__c += deliveryQty;
-        }
-        else if (qtyA * qtyB * qtyC * qtyD != 0) {
-            throw new RMS_CommonUtil.RMSException('未知的 Reason code: ' + reasonCode);
-        }
-    }
-    
-    /** 检查CSV中该行的值 */
-    private Boolean checkCsvValues(RMS_CSV_Iterator.OneLineInfo tr) {
-        Boolean isOk = true;
-        
-        if (String.isBlank(tr.get('Material code'))) {
-            RMS_CommonUtil.pageAddMessage(ApexPages.Severity.WARNING, '(行'+tr.lineIndex+'): [Material Code]不能为空');
-            isOk = false;
-        }
-        if (String.isBlank(tr.get('Size'))) {
-            RMS_CommonUtil.pageAddMessage(ApexPages.Severity.WARNING, '(行'+tr.lineIndex+'): [Size]不能为空');
-            isOk = false;
-        }
-        return isOk;
-    }
-
     // 用于跳过代码覆盖率测试
     public static void lieToTest() {
         Integer i = 0;
