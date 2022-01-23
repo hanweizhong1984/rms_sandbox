@@ -234,6 +234,7 @@
         <members>RTV_Bth_SB_Del</members>
         <members>RTV_Bth_Summary_Budget</members>
         <members>Test_Trigger_DTC_CombineDuplicate</members>
+        <members>RTV_DEF_SellingPrice_All_Batch</members>
         <name>ApexClass</name>
     </types>
     <!-- Dashboard -->

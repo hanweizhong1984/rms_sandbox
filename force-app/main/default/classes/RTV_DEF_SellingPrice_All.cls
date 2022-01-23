@@ -1,5 +1,6 @@
 public with sharing class RTV_DEF_SellingPrice_All {
   public Map<RTV_Order__c, List<RTV_Order_Item__c>> orderMap { get; set; }
+  public Map<RTV_Order__c, List<RTV_Order_Item__c>> allOrderMap =new Map<RTV_Order__c, List<RTV_Order_Item__c>>();
   public Map<RTV_Order__c, Integer> listSizeMap { get; set; }
   // 页面显示: order列表
   public List<RTV_Order__c> orderList { get; set; }
@@ -209,6 +210,7 @@ public with sharing class RTV_DEF_SellingPrice_All {
     for (
       RTV_Order__c order : [
         SELECT
+          Id,
           Name,
           RTV_DEF_Summary__r.Name,
           TBD_Count__c,
@@ -262,19 +264,40 @@ public with sharing class RTV_DEF_SellingPrice_All {
     this.process = '1.计算';
     this.isLoading = true;
 
-    for (RTV_Order__c order : this.orderMap.keySet()) {
-      Boolean isFromTakeback = order.From_Takeback_Order__c != null
-        ? true
-        : false;
+    //for (RTV_Order__c order : this.orderMap.keySet()) {
+      // Boolean isFromTakeback = order.From_Takeback_Order__c != null
+      //   ? true
+      //   : false;
       // 执行batch
-      RTV_Defective_SellingPrice_Batch batch = new RTV_Defective_SellingPrice_Batch(
-        order.RTV_DEF_Summary__c,
-        this.TaxRate,
-        isFromTakeback
+      for (
+      RTV_Order__c order : [
+        SELECT
+          Id,
+          Name,
+          RTV_DEF_Summary__r.Name,
+          TBD_Count__c,
+          Not_Found_Count__c,
+          From_Takeback_Order__c,
+          (SELECT Id FROM RTV_Order_Items__r WHERE IsSpecialDEF__c = TRUE) //子类查出特批商品
+        FROM RTV_Order__c
+        WHERE
+          RTV_DEF_Summary__c != NULL
+          AND Status__c = 'Insp Wait Approval'
+          AND IsDTC__c = FALSE
+          AND Insp_CS_Approved__c = FALSE
+      ]
+    ) {
+      this.allOrderMap.put(order, order.RTV_Order_Items__r);
+    }
+      system.debug('要处理的订单数量：'+this.allOrderMap.keySet().size());
+      RTV_DEF_SellingPrice_All_Batch batch = new RTV_DEF_SellingPrice_All_Batch(
+        this.allOrderMap.keySet(),
+        this.TaxRate
+        //isFromTakeback
       );
       this.batchJob = new AsyncApexJob();
       this.batchJob.Id = Database.executeBatch(batch, 1); //SellingPricebatch一次执行一个order，这里参数只能设1
-    }
+    //}
   }
 
   /** 3.上传 */
