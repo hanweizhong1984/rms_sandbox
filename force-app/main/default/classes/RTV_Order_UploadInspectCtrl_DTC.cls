@@ -148,7 +148,7 @@ public with sharing class RTV_Order_UploadInspectCtrl_DTC {
             this.fileCharset,
             this.createItemIfNotFound
         );
-        this.uploadJob.Id = Database.executeBatch(uploadBatch, 1000);
+        this.uploadJob.Id = Database.executeBatch(uploadBatch, 100);
     }
     
     
