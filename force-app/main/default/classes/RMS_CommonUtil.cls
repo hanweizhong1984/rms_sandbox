@@ -377,11 +377,11 @@ public class RMS_CommonUtil {
         'XL/XXL'    => 'XXL/XXXL',
         'XXL/XXXL'  => 'XXXL/XXXXL',
         'XXXL/XXXXL'=> 'XXXXL/XXXXXL',
-        'OS'        => 'OSFA',
-        'I'         => 'XXS/XS',
-        'II'        => 'S/M',
-        'III'       => 'L/XL',
-        'IIII'      => 'XXL3X'
+        'OS'        => 'OSFA'
+        // 'I'         => 'XXS/XS',
+        // 'II'        => 'S/M',
+        // 'III'       => 'L/XL',
+        // 'IIII'      => 'XXL3X'
         // '00'        => '24',
         // '0'         => '25',
         // '2'         => '26',

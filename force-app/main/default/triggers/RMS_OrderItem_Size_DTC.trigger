@@ -59,7 +59,7 @@ trigger RMS_OrderItem_Size_DTC on RTV_Order_Item__c (before insert) {
             if(productMap.get(item.Material_Code__c)!=null){
                 item.Material_Code__c= productMap.get(item.Material_Code__c).Material_Code__c;
             }
-            String k= item.Material_Code__c+item.SKU_Size_US__c;
+            String k= item.Material_Code__c+item.SKU_Size_Asia__c;
             if(sizeMap2.containsKey(k)){
                 item.SKU_Size_US__c = sizeMap2.get(k);
             }
