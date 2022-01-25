@@ -2,7 +2,7 @@ trigger RMS_OrderItem_DTC_CombineDuplicate on RTV_Order_Item__c (after insert) {
     set<Id> orderIds = new set<Id>();
     //先过滤出是DTC的OrderItem
     for (RTV_Order_Item__c item: Trigger.new) {
-        if(item.IsDTC__c){
+        if(item.IsDTC__c ==true && item.RTV_DEF_Summary__c == null){
             orderIds.add(item.RTV_Order__c);
          }
     }
