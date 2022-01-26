@@ -167,6 +167,13 @@
             <operator>notEqual</operator>
             <value/>
         </criteriaItems>
+        <criteriaItems>
+            <column>RTV_SKU_KPI__c$Finance_Code__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value/>
+        </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Tabular</format>
