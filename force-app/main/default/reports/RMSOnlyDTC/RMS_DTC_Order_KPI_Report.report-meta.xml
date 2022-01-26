@@ -7,6 +7,12 @@
         <field>RTV_Summary__c.RTV_Orders__r$Status__c</field>
     </columns>
     <columns>
+        <field>RTV_Summary__c$Program_Name__c</field>
+    </columns>
+    <columns>
+        <field>RTV_Summary__c$Program_Finance_Code__c</field>
+    </columns>
+    <columns>
         <field>RTV_Summary__c$Name</field>
     </columns>
     <columns>
@@ -107,7 +113,7 @@
         <value>1</value>
     </params>
     <reportType>RMS_DTC_Order_KPI__c</reportType>
-    <scope>user</scope>
+    <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
