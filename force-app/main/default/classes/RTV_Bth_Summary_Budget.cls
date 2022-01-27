@@ -42,7 +42,7 @@ public with sharing class RTV_Bth_Summary_Budget implements Database.Batchable<s
   public Database.QueryLocator start(Database.BatchableContext bc) {
     String query =
       'SELECT Id, Name, Return_Program__c,Return_Program__r.Name,Return_Program__r.Finance_Code__c,Return_Program__r.DTC_Type__c, Store__c,' +
-      ' Size__c, Order_Season__c, RP_Ship_To__c, SKU_Material_Code__c, Ship_To__c,' +
+      ' Size__c, Order_Season__c, RP_Ship_To__c,RP_Ship_To__r.Account_Group__c, SKU_Material_Code__c, Ship_To__c,' +
       ' Account_Group__c, Account_Group__r.Name, Application_MSRP__c, Application_NET__c, ' +
       ' Application_QTY__c, Budget_MSRP__c, Budget_NET__c, ' +
       ' Budget_QTY__c, Sold_To__c, Summary_Budget__c ' +
@@ -50,10 +50,7 @@ public with sharing class RTV_Bth_Summary_Budget implements Database.Batchable<s
     return Database.getQueryLocator(query);
   }
 
-  public void execute(
-    Database.BatchableContext bc,
-    List<RTV_RP_SKU_Budget__c> scope
-  ) {
+  public void execute(Database.BatchableContext bc,List<RTV_RP_SKU_Budget__c> scope) {
     wslOneList = new List<RTV_Summary_Sku_Budget__c>();
     cfsList = new List<RTV_Summary_Sku_Budget__c>();
     digitalList = new List<RTV_Summary_Sku_Budget__c>();
@@ -61,36 +58,19 @@ public with sharing class RTV_Bth_Summary_Budget implements Database.Batchable<s
 
     for (RTV_RP_SKU_Budget__c sc : scope) {
       if (sc.Return_Program__c != null && sc.SKU_Material_Code__c != null) {
-        if (
-          sc.Return_Program__r.DTC_Type__c == null &&
-          sc.Summary_Budget__c != null &&
-          sc.Account_Group__c != null &&
-          sc.Budget_QTY__c > 0 &&
-          sc.Budget_NET__c > 0
-        ) {
+        if (sc.Return_Program__r.DTC_Type__c == null &&sc.Summary_Budget__c != null 
+            &&(sc.Account_Group__c != null||sc.RP_Ship_To__r.Account_Group__c!=null) &&sc.Budget_QTY__c > 0 &&sc.Budget_NET__c > 0) {
           RTV_Summary_Sku_Budget__c budgetItem = new RTV_Summary_Sku_Budget__c();
           budgetItem.ProgramName__c = sc.Return_Program__r.Name;
           budgetItem.FinanceCode__c = sc.Return_Program__r.Finance_Code__c;
-          budgetItem.AccountGroup__c = sc.Account_Group__r.Name;
-          if (
-            summaryMap.get(
-              sc.Return_Program__r.Name + sc.Account_Group__r.Name
-            ) != null
-          ) {
-            budgetItem.SummaryName__c = summaryMap.get(
-                sc.Return_Program__r.Name + sc.Account_Group__r.Name
-              )
-              .Name;
-            budgetItem.SummaryStatus__c = summaryMap.get(
-                  sc.Return_Program__r.Name + sc.Account_Group__r.Name
-                )
-                .Status__c == 'POST to LF'
-              ? 'In Progress'
-              : summaryMap.get(
-                    sc.Return_Program__r.Name + sc.Account_Group__r.Name
-                  )
-                  .Status__c;
-          } else {
+          budgetItem.AccountGroup__c = sc.Account_Group__c==null?sc.RP_Ship_To__r.Account_Group__c:sc.Account_Group__r.Name;
+          if (sc.Account_Group__c!=null&&summaryMap.get(sc.Return_Program__r.Name + sc.Account_Group__r.Name) != null) {
+            budgetItem.SummaryName__c = summaryMap.get(sc.Return_Program__r.Name + sc.Account_Group__r.Name).Name;
+            budgetItem.SummaryStatus__c = summaryMap.get(sc.Return_Program__r.Name + sc.Account_Group__r.Name).Status__c == 'POST to LF'? 'In Progress': summaryMap.get(sc.Return_Program__r.Name + sc.Account_Group__r.Name).Status__c;
+          }else if(sc.Account_Group__c==null&&sc.RP_Ship_To__r.Account_Group__c!=null){
+            budgetItem.SummaryName__c = summaryMap.get(sc.Return_Program__r.Name + sc.RP_Ship_To__r.Account_Group__c).Name;
+            budgetItem.SummaryStatus__c = summaryMap.get(sc.Return_Program__r.Name + sc.RP_Ship_To__r.Account_Group__c).Status__c == 'POST to LF'? 'In Progress': summaryMap.get(sc.Return_Program__r.Name + sc.RP_Ship_To__r.Account_Group__c).Status__c;
+          }else {
             budgetItem.SummaryName__c = '';
             budgetItem.SummaryStatus__c = '';
           }
