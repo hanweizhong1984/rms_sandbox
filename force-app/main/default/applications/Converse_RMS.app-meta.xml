@@ -661,25 +661,7 @@
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>RTV_Summary_DTC_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
-        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
-        <type>Flexipage</type>
-        <profile>RMS DIG User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>RTV_Summary_DTC_Record_Page</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
-        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
-        <type>Flexipage</type>
-        <profile>RMS DIG User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>RTV_Summary_DTC_Record_Page</content>
-        <formFactor>Small</formFactor>
         <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
         <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
         <type>Flexipage</type>
@@ -688,7 +670,25 @@
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
         <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
         <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
         <recordType>RTV_Summary__c.DTC_Takeback_Post_LF</recordType>
         <type>Flexipage</type>
@@ -1165,6 +1165,15 @@
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>RTV_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
+        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
+        <type>Flexipage</type>
+        <profile>RMS CS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_Summary_DTC_Record_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
         <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
@@ -1196,15 +1205,6 @@
         <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
         <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
         <type>Flexipage</type>
-        <profile>RMS CS</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>RTV_Summary_DTC_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
-        <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
-        <type>Flexipage</type>
         <profile>RMS CV Office User</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -1516,25 +1516,7 @@
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>RTV_DEF_Summary_DTC_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
-        <recordType>RTV_DEF_Summary__c.DTC</recordType>
-        <type>Flexipage</type>
-        <profile>RMS DIG User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>RTV_DEF_Summary_DTC_Record_Page</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
-        <recordType>RTV_DEF_Summary__c.DTC</recordType>
-        <type>Flexipage</type>
-        <profile>RMS DIG User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>RTV_DEF_Summary_DTC_Record_Page</content>
-        <formFactor>Small</formFactor>
         <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
         <recordType>RTV_DEF_Summary__c.DTC</recordType>
         <type>Flexipage</type>
@@ -1543,7 +1525,25 @@
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
         <formFactor>Large</formFactor>
+        <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
+        <recordType>RTV_DEF_Summary__c.DTC</recordType>
+        <type>Flexipage</type>
+        <profile>RMS DIG User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>RTV_DEF_Summary_DTC_Record_Page</content>
+        <formFactor>Small</formFactor>
         <pageOrSobjectType>RTV_DEF_Summary__c</pageOrSobjectType>
         <recordType>RTV_DEF_Summary__c.DTC</recordType>
         <type>Flexipage</type>
@@ -1588,7 +1588,7 @@
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>RTV_Summary_DTC_Record_Page</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
         <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
         <type>Flexipage</type>
@@ -1597,7 +1597,7 @@
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>RTV_Summary_DTC_Record_Page</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <pageOrSobjectType>RTV_Summary__c</pageOrSobjectType>
         <recordType>RTV_Summary__c.DTC_Takeback_Ready</recordType>
         <type>Flexipage</type>

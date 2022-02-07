@@ -5140,12 +5140,12 @@
         <recordType>RTV_Program__c.CFS_DTC_Takeback_Kick_Off</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>RTV_Program__c-CFS_DTC_Takeback_Off_Policy</layout>
-        <recordType>RTV_Program__c.Digital_DTC_Takeback_Kick_Off</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>RTV_Program__c-Digital DTC Takeback</layout>
         <recordType>RTV_Program__c.Digital_DTC_Takeback</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>RTV_Program__c-Digital_DTC_Takeback_Off_Policy</layout>
+        <recordType>RTV_Program__c.Digital_DTC_Takeback_Kick_Off</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>RTV_Program__c-Discount</layout>
