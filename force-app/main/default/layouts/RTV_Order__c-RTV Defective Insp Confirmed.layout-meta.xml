@@ -131,6 +131,10 @@
                 <field>Actual_Date_Of_WSL_Confirmed__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Actual_Date_Of_Inspected__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>RTV_Defective__c</field>
             </layoutItems>
@@ -143,6 +147,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Actual_Date_Of_WSL_Inbound__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Actual_Date_Of_Inbound__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>

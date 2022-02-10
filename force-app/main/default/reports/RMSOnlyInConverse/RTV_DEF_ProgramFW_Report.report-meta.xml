@@ -54,20 +54,6 @@
     <currency>CNY</currency>
     <filter>
         <criteriaItems>
-            <column>RTV_Defective__c$Type__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>false</isUnlocked>
-            <operator>notEqual</operator>
-            <value/>
-        </criteriaItems>
-        <criteriaItems>
-            <column>RTV_Defective__c.RTV_Orders_FTW__r.RTV_Order_Items__r$BU_2__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>false</isUnlocked>
-            <operator>equals</operator>
-            <value>FW</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>RTV_Defective__c$Name</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
@@ -88,6 +74,20 @@
             <operator>equals</operator>
             <value>WSL</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>RTV_Defective__c$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value/>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RTV_Defective__c.RTV_Orders_FTW__r.RTV_Order_Items__r$BU_2__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>FW</value>
+        </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Tabular</format>
@@ -97,7 +97,7 @@
         <value>1</value>
     </params>
     <reportType>RTV_DEF_Program_FW__c</reportType>
-    <scope>user</scope>
+    <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>

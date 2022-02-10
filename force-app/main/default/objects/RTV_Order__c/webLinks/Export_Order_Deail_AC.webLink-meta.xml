@@ -10,5 +10,5 @@
     <openType>sidebar</openType>
     <protected>false</protected>
     <requireRowSelection>true</requireRowSelection>
-    <url>/apex/RMS_Redirect_To_Report?reportName=RTV_DEF_ProgramAC_Report</url>
+    <url>/apex/RMS_Redirect_To_Report?reportName=RTV_DEF_ProgramAC_Report&amp;fv0={!RTV_Defective__c.Name}</url>
 </WebLink>
