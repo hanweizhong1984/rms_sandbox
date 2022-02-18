@@ -111,7 +111,7 @@ trigger RMS_OrderItem_TotalBudget on RTV_Order_Item__c (after insert, after upda
             // ((Decimal)grp.get('exrate')).setScale(2, System.RoundingMode.HALF_UP): 0; 
             String Material = (String)grp.get('Material_Code__c');
             Decimal budgetNet = budgetNetMap.get(Material);
-            Decimal budgetQty = budgetQTYMap.get(Material);
+            Decimal budgetQty = budgetQTYMap.get(Material)!=null?budgetQTYMap.get(Material).round():0;
             // QTY超出预算时
             if (budgetQty > 0 && sumApplyQty > budgetQty) {
                 workingItems[0].addError('已超出预算数量 ' 
