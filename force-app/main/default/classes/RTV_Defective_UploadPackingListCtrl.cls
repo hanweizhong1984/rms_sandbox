@@ -343,6 +343,14 @@ public with sharing class RTV_Defective_UploadPackingListCtrl {
             this.resErrorCsv += '季节码格式错误! 请输入正确如: "20Q1"';
             return;
         }
+
+        if(tr.get('BU') != null && tr.get('BU').startsWithIgnoreCase('F') 
+        && (tr.get('尺寸(美码)').toUpperCase().contains('-')||tr.get('尺寸(亚码)').toUpperCase().contains('-'))){
+            isError = true;
+            this.isNeedErrorCsv = true;
+            this.resErrorCsv += '尺码中半码不能用-来表示，例如4-请用4.5';
+            return;
+        }
         
         // ----------------------------
         // 添加item
