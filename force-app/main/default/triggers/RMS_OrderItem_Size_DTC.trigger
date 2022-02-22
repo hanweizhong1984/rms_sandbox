@@ -14,7 +14,7 @@ trigger RMS_OrderItem_Size_DTC on RTV_Order_Item__c (before insert) {
 
     if(!APACMaterialSet.isEmpty()){
         for (RMS_Product__c product: [ 
-            SELECT Id, Name, Material_Code__c, SKU__c 
+            SELECT Id, Name,BU__c, Material_Code__c, SKU__c 
             FROM RMS_Product__c 
             WHERE SKU__c IN :APACMaterialSet
         ]){
@@ -57,6 +57,12 @@ trigger RMS_OrderItem_Size_DTC on RTV_Order_Item__c (before insert) {
             }
             //将POS机过来的BU为AP/AC的OrderItem的Material Code转换为和BP上传的SKU Budget中的Material保持一致
             if(productMap.get(item.Material_Code__c)!=null){
+                //item.BU_2__c=productMap.get(item.Material_Code__c).BU__c.startsWith('F')?'FW':productMap.get(item.Material_Code__c).BU__c;
+                if(productMap.get(item.Material_Code__c).BU__c=='FW' ||productMap.get(item.Material_Code__c).BU__c=='FT'){
+                    item.BU_2__c='FW';
+                }else{
+                    item.BU_2__c=productMap.get(item.Material_Code__c).BU__c;
+                }
                 item.Material_Code__c= productMap.get(item.Material_Code__c).Material_Code__c;
             }
             String k= item.Material_Code__c+item.SKU_Size_Asia__c;
