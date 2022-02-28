@@ -12,7 +12,7 @@
         <!-- 按钮 -->
         <apex:commandButton styleClass="slds-button slds-button--brand" 
             action="{!createOrderForm.open}" value="申请退残订单"
-            rendered="{!ISNULL(summary.LF_WH_Inbound_Date__c) && summary.Apply_Close_Date__c > Today}">
+            rendered="{!ISNULL(summary.LF_WH_Inbound_Date__c) && summary.Apply_Close_Date__c >= Today}">
         </apex:commandButton>
         <apex:commandButton styleClass="slds-button slds-button--brand" 
             action="{!createOrderForm.open}" value="该月的订单已入库，请勿申请新订单"
