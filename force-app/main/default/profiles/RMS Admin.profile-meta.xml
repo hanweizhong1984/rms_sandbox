@@ -2268,6 +2268,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Order_Inspection__c.Application_QTY_No_ReasonCode__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Order_Inspection__c.Application_QTY__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Order_Inspection__c.B1_Desc__c</field>
         <readable>true</readable>
@@ -2678,6 +2688,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Order_Inspection__c.Diff_QTY_No_ReasonCode__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTV_Order_Inspection__c.Diff_QTY__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Order_Inspection__c.Reason_A__c</field>
         <readable>true</readable>
@@ -2863,6 +2883,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Order_Item__c.APACNoB__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Order_Item__c.Actual_Amount_Rd__c</field>
         <readable>true</readable>
@@ -2961,6 +2986,11 @@
         <editable>false</editable>
         <field>RTV_Order_Item__c.FOB_USD__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Order_Item__c.FWNoB__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -4428,6 +4458,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Summary__c.APACNoB__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Summary__c.Account_Group__c</field>
         <readable>true</readable>
@@ -4605,6 +4640,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>RTV_Summary__c.Expected_Date_Of_WSL_Confirmed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTV_Summary__c.FWNoB__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

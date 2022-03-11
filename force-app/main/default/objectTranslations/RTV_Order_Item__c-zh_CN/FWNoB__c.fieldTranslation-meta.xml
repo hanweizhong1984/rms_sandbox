@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 如果checkbox为true,该Summary下所有BU为FW的商品B品免除加工费 --></help>
+    <label><!-- FWNoB --></label>
+    <name>FWNoB__c</name>
+</CustomFieldTranslation>

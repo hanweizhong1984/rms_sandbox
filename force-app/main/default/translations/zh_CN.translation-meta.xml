@@ -636,6 +636,10 @@
             <name>Inspection Details</name>
         </sections>
         <sections>
+            <label><!-- RTV Order Inspections --></label>
+            <name>RTV Order Inspections</name>
+        </sections>
+        <sections>
             <label><!-- RTV Order Items --></label>
             <name>RTV Order Items</name>
         </sections>
@@ -1363,6 +1367,10 @@
             </columns>
             <label><!-- RTV Order Inspection --></label>
             <name>RTV Order Inspection</name>
+        </sections>
+        <sections>
+            <label><!-- RTV Order Inspections --></label>
+            <name>RTV Order Inspections</name>
         </sections>
         <sections>
             <columns>

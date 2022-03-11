@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FWNoB__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>如果checkbox为true,该Summary下所有BU为FW的商品B品免除加工费</description>
+    <externalId>false</externalId>
+    <inlineHelpText>如果checkbox为true,该Summary下所有BU为FW的商品B品免除加工费</inlineHelpText>
+    <label>FWNoB</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

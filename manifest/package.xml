@@ -88,6 +88,7 @@
         <members>RTV_Order_UploadFOB</members>
         <members>RTV_Order_UploadInspectCtrl</members>
         <members>RTV_Order_UploadInspectCtrl_DTC</members>
+        <members>RTV_Order_UploadInspectCtrl_DTC_Batch</members>
         <members>RTV_Order_UploadPackingCtrl</members>
         <members>RTV_Order_UploadPacking_Batch</members>
         <members>RTV_Order_UploadSellingPriceCtrl</members>

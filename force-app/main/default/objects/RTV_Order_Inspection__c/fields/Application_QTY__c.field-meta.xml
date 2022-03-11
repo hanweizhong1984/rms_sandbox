@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_QTY__c</fullName>
+    <description>LF上传质检报告中所填写的申请数量（有多条的话相加）</description>
+    <externalId>false</externalId>
+    <formula>Application_QTY_A__c + Application_QTY_B1__c + Application_QTY_B2__c + Application_QTY_B2_1__c +Application_QTY_B3__c+ Application_QTY_B4__c + Application_QTY_B5__c + Application_QTY_B6__c + Application_QTY_B7__c + Application_QTY_C1__c + Application_QTY_C2_1__c + Application_QTY_C2_2__c + Application_QTY_C2_3__c + Application_QTY_C2_4__c + Application_QTY_C2_5__c + Application_QTY_C2_6__c + Application_QTY_C2_6_1__c + Application_QTY_C2_7__c+ Application_QTY_D__c+ Application_QTY_No_ReasonCode__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Application QTY</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

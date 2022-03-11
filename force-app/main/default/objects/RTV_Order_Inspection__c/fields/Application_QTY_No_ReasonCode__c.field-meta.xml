@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_QTY_No_ReasonCode__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>质检报告中无ReasonCode的商品申请数量</description>
+    <externalId>false</externalId>
+    <label>Application QTY No ReasonCode</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
