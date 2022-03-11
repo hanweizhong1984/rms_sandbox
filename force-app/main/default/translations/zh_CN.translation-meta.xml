@@ -466,6 +466,10 @@
         <label><!-- RMS DTC Summary Inspection --></label>
         <name>RMS_DTC_Summary_Inspection</name>
         <sections>
+            <label><!-- RTV Order Inspections --></label>
+            <name>RTV Order Inspections</name>
+        </sections>
+        <sections>
             <label><!-- RTV Order Items --></label>
             <name>RTV Order Items</name>
         </sections>

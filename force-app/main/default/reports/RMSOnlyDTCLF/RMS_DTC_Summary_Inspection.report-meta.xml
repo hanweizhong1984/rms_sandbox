@@ -38,7 +38,7 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Application_QTY__c</field>
+        <field>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r.RTV_Order_Inspections__r$Application_QTY__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -62,7 +62,7 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Inspect_QTY_Difference__c</field>
+        <field>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r.RTV_Order_Inspections__r$Diff_QTY__c</field>
     </columns>
     <columns>
         <field>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Insp_WSL_Remark__c</field>
@@ -78,7 +78,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>a4Y6w000000VjWq</value>
+            <value>a4Y6w000000W95S</value>
         </criteriaItems>
         <criteriaItems>
             <column>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r$Inspect_QTY_Difference__c</column>

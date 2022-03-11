@@ -891,6 +891,16 @@
             <field>Stock_Category__c</field>
             <table>RTV_Defective__c.RTV_Orders__r.RTV_Order_Items__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>APACNoB__c</field>
+            <table>RTV_Defective__c.RTV_Orders__r.RTV_Order_Items__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FWNoB__c</field>
+            <table>RTV_Defective__c.RTV_Orders__r.RTV_Order_Items__r</table>
+        </columns>
         <masterLabel>RTV Order Items</masterLabel>
     </sections>
     <sections>

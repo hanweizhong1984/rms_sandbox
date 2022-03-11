@@ -6,6 +6,10 @@
     <description>单个Summary的检验报告</description>
     <join>
         <join>
+            <join>
+                <outerJoin>false</outerJoin>
+                <relationship>RTV_Order_Inspections__r</relationship>
+            </join>
             <outerJoin>false</outerJoin>
             <relationship>RTV_Order_Items__r</relationship>
         </join>
@@ -68,6 +72,16 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Expected_Date_Of_LF_Inbound__c</field>
+            <table>RTV_Summary__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>APACNoB__c</field>
+            <table>RTV_Summary__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FWNoB__c</field>
             <table>RTV_Summary__c</table>
         </columns>
         <masterLabel>RTV Summaries</masterLabel>
@@ -500,6 +514,29 @@
             <field>Stock_Category__c</field>
             <table>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>APACNoB__c</field>
+            <table>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FWNoB__c</field>
+            <table>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r</table>
+        </columns>
         <masterLabel>RTV Order Items</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Application_QTY__c</field>
+            <table>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r.RTV_Order_Inspections__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Diff_QTY__c</field>
+            <table>RTV_Summary__c.RTV_Orders__r.RTV_Order_Items__r.RTV_Order_Inspections__r</table>
+        </columns>
+        <masterLabel>RTV Order Inspections</masterLabel>
     </sections>
 </ReportType>

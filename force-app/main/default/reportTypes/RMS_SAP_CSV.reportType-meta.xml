@@ -468,6 +468,16 @@
             <field>Stock_Category__c</field>
             <table>RTV_Order__c.RTV_Order_Items__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>APACNoB__c</field>
+            <table>RTV_Order__c.RTV_Order_Items__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FWNoB__c</field>
+            <table>RTV_Order__c.RTV_Order_Items__r</table>
+        </columns>
         <masterLabel>RTV Order Items</masterLabel>
     </sections>
     <sections>
@@ -602,5 +612,28 @@
             <table>RTV_Order__c.RTV_Order_Items__r.RTV_Order_Inspections__r</table>
         </columns>
         <masterLabel>Inspection Details</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Application_QTY__c</field>
+            <table>RTV_Order__c.RTV_Order_Items__r.RTV_Order_Inspections__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Diff_QTY__c</field>
+            <table>RTV_Order__c.RTV_Order_Items__r.RTV_Order_Inspections__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Application_QTY_No_ReasonCode__c</field>
+            <table>RTV_Order__c.RTV_Order_Items__r.RTV_Order_Inspections__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Diff_QTY_No_ReasonCode__c</field>
+            <table>RTV_Order__c.RTV_Order_Items__r.RTV_Order_Inspections__r</table>
+        </columns>
+        <masterLabel>RTV Order Inspections</masterLabel>
     </sections>
 </ReportType>
