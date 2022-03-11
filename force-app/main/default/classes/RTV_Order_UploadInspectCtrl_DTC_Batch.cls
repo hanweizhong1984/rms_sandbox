@@ -466,6 +466,7 @@ public class RTV_Order_UploadInspectCtrl_DTC_Batch implements Database.Batchable
       updInsp.Application_QTY_C2_6_1__c = 0;
       updInsp.Application_QTY_C2_7__c = 0;
       updInsp.Application_QTY_D__c = 0;
+      updInsp.Application_QTY_No_ReasonCode__c = 0;
       updInsp.Diff_QTY_A__c = 0;
       updInsp.Diff_QTY_B1__c = 0;
       updInsp.Diff_QTY_B2__c = 0;
@@ -485,6 +486,7 @@ public class RTV_Order_UploadInspectCtrl_DTC_Batch implements Database.Batchable
       updInsp.Diff_QTY_C2_6_1__c = 0;
       updInsp.Diff_QTY_C2_7__c = 0;
       updInsp.Diff_QTY_D__c = 0;
+      updInsp.Diff_QTY_No_ReasonCode__c = 0;
 
       updInsp.Delivery_QTY_A__c = 0;
       updInsp.Delivery_QTY_B1__c = 0;
@@ -630,7 +632,10 @@ public class RTV_Order_UploadInspectCtrl_DTC_Batch implements Database.Batchable
       insp.Application_QTY_D__c += appQty;
       insp.Diff_QTY_D__c += diffQty;
       insp.Delivery_QTY_D__c += deliveryQty;
-    } else if (qtyA * qtyB * qtyC * qtyD != 0) {
+    } else if(reasonCode==''){
+      insp.Application_QTY_No_ReasonCode__c += appQty;
+      insp.Diff_QTY_No_ReasonCode__c += diffQty;
+    }else if (qtyA * qtyB * qtyC * qtyD != 0) {
       throw new RMS_CommonUtil.RMSException(
         '未知的 Reason code: ' + reasonCode
       );
